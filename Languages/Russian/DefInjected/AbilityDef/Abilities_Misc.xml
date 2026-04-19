@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: shape bioferrite -->
+  <NAT_ShapeRust.label>формировка ржавчины</NAT_ShapeRust.label>
+  <!-- EN: Use dark psychic powers to shape the closest 100 bioferrite pieces into a living rust. -->
+  <NAT_ShapeRust.description>Использовать темные архо-силы чтобы преобразовать блидайшие 100 биоферрита в живую ржавчину.</NAT_ShapeRust.description>
+  
+</LanguageData>

@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+  <PawnKindDef ParentName="NAT_RustedSoldierKindBase">
+    <defName>NAT_RustedBannerman</defName>
+    <label>rusted bannerman</label>
+    <labelPlural>rusted bannermen</labelPlural>
+    <weaponTags>
+      <li>NAT_RustedArmyBanner</li>
+    </weaponTags>
+    <combatPower>70</combatPower>
+    <maxPerGroup>1</maxPerGroup>
+    <combatEnhancingDrugsCount>-1~1</combatEnhancingDrugsCount>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="NAT_RustedSoldierKindBase">
+    <defName>NAT_RustedGrenadier</defName>
+    <label>rusted grenadier</label>
+    <canBeSapper>true</canBeSapper>
+    <isGoodBreacher>true</isGoodBreacher>
+    <weaponTags>
+      <li>NAT_RustedGrenade</li>
+    </weaponTags>
+    <combatPower>160</combatPower>
+    <combatEnhancingDrugsCount>-10~2</combatEnhancingDrugsCount>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="NAT_RustedSoldierKindBase">
+    <defName>NAT_RustedRifleman</defName>
+    <label>rusted rifleman</label>
+    <labelPlural>rusted riflemen</labelPlural>
+    <weaponTags>
+      <li>NAT_RustedBoltRifle</li>
+      <li>NAT_RustedCarabine</li>
+    </weaponTags>
+    <combatEnhancingDrugsCount>-11~2</combatEnhancingDrugsCount>
+    <inventoryOptions>
+      <subOptionsTakeAll>
+        <li>
+          <skipChance>0.9</skipChance>
+          <countRange>1</countRange>
+          <thingDef>NAT_RustedContactGrenade</thingDef>
+        </li>
+      </subOptionsTakeAll>
+    </inventoryOptions>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="NAT_RustedSoldierKindBase">
+    <defName>NAT_RustedGunner</defName>
+    <label>rusted gunner</label>
+    <weaponTags>
+      <li>NAT_RustedSMG</li>
+      <li>NAT_RustedAssaultSMG</li>
+    </weaponTags>
+    <combatPower>190</combatPower>
+    <combatEnhancingDrugsCount>-9~2</combatEnhancingDrugsCount>
+    <inventoryOptions>
+      <subOptionsTakeAll>
+        <li>
+          <skipChance>0.85</skipChance>
+          <countRange>1</countRange>
+          <thingDef>NAT_RustedContactGrenade</thingDef>
+        </li>
+      </subOptionsTakeAll>
+    </inventoryOptions>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="NAT_RustedSoldierKindBase">
+    <defName>NAT_RustedGunner_Heavy</defName>
+    <label>heavy rusted gunner</label>
+    <weaponTags>
+      <li>NAT_RustedLMG</li>
+      <li>NAT_RustedGrenadeLauncher</li>
+    </weaponTags>
+    <combatPower>320</combatPower>
+    <combatEnhancingDrugsCount>-7~2</combatEnhancingDrugsCount>
+    <aiAvoidCover>false</aiAvoidCover>
+    <startingHediffs>
+      <li>
+        <def>NAT_ActivatedDurability</def>
+        <durationTicksRange>60000~300000</durationTicksRange>
+        <chance>1</chance>
+      </li>
+    </startingHediffs>
+    <inventoryOptions>
+      <subOptionsTakeAll>
+        <li>
+          <skipChance>0</skipChance>
+          <countRange>2~4</countRange>
+          <thingDef>NAT_RustedContactGrenade</thingDef>
+        </li>
+      </subOptionsTakeAll>
+    </inventoryOptions>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="NAT_RustedSoldierKindBase">
+    <defName>NAT_RustedHussar</defName>
+    <label>rusted hussar</label>
+    <weaponTags>
+      <li>NAT_RustedMelee</li>
+    </weaponTags>
+    <combatPower>225</combatPower>
+    <combatEnhancingDrugsCount>-7~2</combatEnhancingDrugsCount>
+  </PawnKindDef>
+
+  <PawnKindDef MayRequire="Aoba.DeadManSwitch.Core" ParentName="NAT_RustedSoldierKindBase">
+    <defName>NAT_RustedRenegade</defName>
+    <label>rusted renegade</label>
+    <biocodeWeaponChance>0.4</biocodeWeaponChance>
+    <defaultFactionType MayRequire="GoGaTio.DeadManSwitch.RenegadeClan">DMSRC_RenegadeClan</defaultFactionType>
+    <combatEnhancingDrugsCount>1~3</combatEnhancingDrugsCount>
+    <apparelTags>
+      <li>BeltDefensePop</li>
+    </apparelTags>
+    <apparelMoney>1000~1350</apparelMoney>
+    <weaponTags>
+      <li>A_SG_LongRifle</li>
+      <li>DMS_MechWeaponMedium</li>
+    </weaponTags>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="NAT_RustedTrooperKindBase">
+    <defName>NAT_RustedSapper</defName>
+    <label>rusted sapper</label>
+    <canBeSapper>true</canBeSapper>
+    <isGoodBreacher>true</isGoodBreacher>
+    <weaponTags Inherit="False">
+      <li>NAT_RustedBreach</li>
+    </weaponTags>
+    <combatPower>180</combatPower>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="NAT_RustedTrooperKindBase">
+    <defName>NAT_RustedTrooper_Heavy</defName>
+    <label>heavy rusted stormtrooper</label>
+    <weaponTags Inherit="False">
+      <li>NAT_RustedLMG</li>
+      <li>NAT_RustedGrenadeLauncher</li>
+    </weaponTags>
+    <combatPower>300</combatPower>
+    <combatEnhancingDrugsCount>-7~2</combatEnhancingDrugsCount>
+    <aiAvoidCover>false</aiAvoidCover>
+    <startingHediffs>
+      <li>
+        <def>NAT_ActivatedDurability</def>
+        <durationTicksRange>60000~300000</durationTicksRange>
+        <chance>1</chance>
+      </li>
+    </startingHediffs>
+    <inventoryOptions>
+      <subOptionsTakeAll>
+        <li>
+          <skipChance>0</skipChance>
+          <countRange>2~4</countRange>
+          <thingDef>NAT_RustedContactGrenade</thingDef>
+        </li>
+      </subOptionsTakeAll>
+    </inventoryOptions>
+  </PawnKindDef>
+
+</Defs>

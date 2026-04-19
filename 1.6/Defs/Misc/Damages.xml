@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <DamageDef Name="NAT_RustedBomb" ParentName="Bomb">
+    <defName>NAT_RustedBomb</defName>
+    <plantDamageFactor>8</plantDamageFactor>
+    <explosionColorCenter>(0.55, 0, 0)</explosionColorCenter>
+    <explosionColorEdge>(0.75, 0.35, 0.25)</explosionColorEdge>
+  </DamageDef>
+
+  <DamageDef ParentName="NAT_RustedBomb">
+    <defName>NAT_RustedAntiTankBomb</defName>
+    <explosionCellEffecter>NAT_ExplosionDust</explosionCellEffecter>
+    <explosionCellEffecterChance>0.5</explosionCellEffecterChance>
+    <explosionCellEffecterMaxRadius>20</explosionCellEffecterMaxRadius>
+  </DamageDef>
+
+  <DamageDef Name="NAT_RustedBullet" ParentName="Bullet">
+    <defName>NAT_RustedBullet</defName>
+    <plantDamageFactor>2</plantDamageFactor>
+  </DamageDef>
+
+  <DamageDef ParentName="NAT_RustedBullet">
+    <defName>NAT_RustedAntiTankBullet</defName>
+  </DamageDef>
+
+<DamageDef Name="NAT_RustedScratch">
+    <defName>NAT_RustedScratch</defName>
+    <label>scratch</label>
+    <workerClass>DamageWorker_Scratch</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been torn to death.</deathMessage>
+    <hediff>Scratch</hediff>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Slice</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
+    <scratchSplitPercentage>0.67</scratchSplitPercentage>
+  </DamageDef>
+
+<DamageDef ParentName="NAT_RustedScratch">
+    <defName>NAT_RustedDemolish</defName>
+    <buildingDamageFactor>10</buildingDamageFactor>
+    <buildingDamageFactorImpassable>10</buildingDamageFactorImpassable>
+  </DamageDef>
+
+</Defs>

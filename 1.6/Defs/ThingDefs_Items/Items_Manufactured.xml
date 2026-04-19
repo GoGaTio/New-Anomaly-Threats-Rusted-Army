@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>NAT_AncientFabric</defName>
+    <label>ancient fabric</label>
+    <description>Ancient fabric usually found in Rusted army furnisments. It is soft, light, non-flammable, and insulates well.</description>
+    <graphicData>
+      <texPath>Things/Item/NAT_AncientFabric</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <tradeability>None</tradeability>
+    <hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <MarketValue>3</MarketValue>
+      <Mass>0.025</Mass>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>3</DeteriorationRate>
+      <StuffPower_Armor_Sharp>0.94</StuffPower_Armor_Sharp>
+      <StuffPower_Armor_Blunt>0.26</StuffPower_Armor_Blunt>
+      <StuffPower_Armor_Heat>0.90</StuffPower_Armor_Heat>
+      <StuffPower_Insulation_Cold>12</StuffPower_Insulation_Cold>
+      <StuffPower_Insulation_Heat>12</StuffPower_Insulation_Heat>
+    </statBases>
+    <burnableByRecipe>true</burnableByRecipe>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <stuffProps>
+      <categories>
+        <li>Fabric</li>
+      </categories>
+      <commonality>0</commonality>
+      <color>(155,124,108)</color>
+      <statFactors>
+        <Flammability>0</Flammability>
+        <MaxHitPoints>1.2</MaxHitPoints>
+        <Beauty>1</Beauty>
+      </statFactors>
+    </stuffProps>
+    <thingCategories>
+      <li>Textiles</li>
+    </thingCategories>
+    <allowedArchonexusCount>80</allowedArchonexusCount>
+  </ThingDef>
+
+  <ThingDef Name="NAT_AnomalousResourceBase" Abstract="True">
+    <thingClass>ThingWithComps</thingClass>
+    <tradeability>None</tradeability>
+    <category>Item</category>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <tickerType>Normal</tickerType>
+    <rotatable>false</rotatable>
+    <altitudeLayer>Item</altitudeLayer>
+    <selectable>true</selectable>
+    <alwaysHaulable>true</alwaysHaulable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <useHitPoints>false</useHitPoints>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Standard_Pickup</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <intricate>true</intricate>
+    <statBases>
+      <Mass>1</Mass>
+      <Beauty>-4</Beauty>
+      <Flammability>0</Flammability>
+    </statBases>
+    <thingCategories>
+      <li>ItemsMisc</li>
+    </thingCategories>
+    <hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
+    <comps>
+      <li Class="CompProperties_Forbiddable" />
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="NAT_AnomalousResourceBase">
+    <defName>NAT_VoidmetalMedal</defName>
+    <label>voidmetal medal</label>
+    <description>A small metal icosahedron. Slowly grows bioferrite on surface.</description>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Item/NAT_RustedMedal</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <drawSize>(1, 1)</drawSize>
+    </graphicData>
+    <statBases>
+      <Mass>1</Mass>
+      <Beauty>0</Beauty>
+      <Flammability>0</Flammability>
+    </statBases>
+    <comps>
+      <li Class="NAT.CompProperties_UniqueName">
+        <nameMaker>NAT_NamerVoidmetalMedal</nameMaker>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef Name="NAT_RustedShellBase" Abstract="True" ParentName="NAT_AnomalousResourceBase">
+    <drawerType>MapMeshOnly</drawerType>
+    <rotatable>false</rotatable>
+    <useHitPoints>true</useHitPoints>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <graphicData>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>(1, 1)</drawSize>
+    </graphicData>
+    <stackLimit>25</stackLimit>
+    <techLevel>Archotech</techLevel>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <MarketValue>55</MarketValue>
+      <Mass>1.25</Mass>
+      <Flammability>1.5</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+  </ThingDef>
+
+  <ThingDef ParentName="NAT_RustedShellBase">
+    <defName>NAT_RustedShell_Explosive</defName>
+    <label>rusted explosive shell</label>
+    <description>A piece of clotted pain.</description>
+    <graphicData>
+      <texPath>Things/Item/NAT_RustedShell_Explosive</texPath>
+    </graphicData>
+    <projectileWhenLoaded>NAT_RustedShell_Explosive_Flying</projectileWhenLoaded>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>NAT_RustedShell_Explosive_Flying</defName>
+    <label>rusted explosive shell</label>
+    <graphicData>
+      <texPath>Things/Projectile/NAT_RustedShell</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawSize>(2, 2)</drawSize>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <damageDef>NAT_RustedBomb</damageDef>
+      <speed>41</speed>
+      <explosionRadius>3.9</explosionRadius>
+      <flyOverhead>true</flyOverhead>
+      <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+      <soundExplode>MortarBomb_Explode</soundExplode>
+      <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+      <soundAmbient>MortarRound_Ambient</soundAmbient>
+      <preExplosionSpawnSingleThingDef>Filth_BlastMark</preExplosionSpawnSingleThingDef>
+    </projectile>
+  </ThingDef>
+
+</Defs>

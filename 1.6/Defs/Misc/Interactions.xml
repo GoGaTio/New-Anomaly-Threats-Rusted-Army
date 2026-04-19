@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <InteractionDef>
+    <defName>NAT_RustedChat</defName>
+    <label>rusts' chitchat</label>
+    <symbol>Things/Mote/NAT_RustedChat</symbol>
+    <logRulesInitiator>
+      <include>
+        <li>DarkDialogue</li>
+        <li>NAT_RustedDialogue</li>
+      </include>
+      <rulesStrings>
+        <li>r_logentry->[INITIATOR_nameDef] [spoke] [maybeDarkSpeechAdverb] to [RECIPIENT_nameDef] about [subjectDisturbing]</li>
+        
+        <li>spoke->spoke</li>
+        <li>spoke->muttered</li>
+        <li>spoke->stammered</li>
+        <li>spoke->whined</li>
+        <li>spoke->grunted</li>
+        <li>spoke->mumbled</li>
+        <li>spoke(p=5)->[rambled]</li>
+
+        <li>subjectDisturbing(p=3)->[subjectRustAbstract]</li>
+        <li>subjectDisturbing(p=5)->[subjectRust]</li>
+        <li>subjectDisturbing(p=2)->[subjectDarkStudy]</li>
+        <li>subjectDisturbing(p=2)->[subjectInsane]</li>
+
+
+        <li>maybeDarkSpeechAdverb(p=3)-></li>
+        <li>maybeDarkSpeechAdverb->[darkSpeechAdverb]</li>
+
+
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>
+
+</Defs>

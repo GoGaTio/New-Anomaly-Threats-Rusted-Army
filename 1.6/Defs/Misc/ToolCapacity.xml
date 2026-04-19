@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ToolCapacityDef>
+    <defName>NAT_RustedScratch</defName>
+    <label>scratch</label>
+  </ToolCapacityDef>
+
+  <ToolCapacityDef>
+    <defName>NAT_RustedScratchExplode</defName>
+    <label>scratch</label>
+  </ToolCapacityDef>
+
+  <ToolCapacityDef>
+    <defName>NAT_RustedDemolish</defName>
+    <label>demolish</label>
+  </ToolCapacityDef>
+
+</Defs>

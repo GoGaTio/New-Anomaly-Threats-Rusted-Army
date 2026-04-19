@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+ <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef/comps/li[@Class="NAT.CompProperties_RustedShield" or @Class="NAT.CompProperties_RustedArmor" or @Class="NAT.CompProperties_RustedTurretPawn"]</xpath>
+    <value>
+      <combatExtendedArmor>true</combatExtendedArmor>
+    </value>
+  </Operation>
+
+</Patch>

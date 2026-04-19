@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: arm -->
+  <NAT_RustedArm.label>рука</NAT_RustedArm.label>
+  
+  <!-- EN: core -->
+  <NAT_RustedCore.label>ядро</NAT_RustedCore.label>
+  
+  <!-- EN: eye socket -->
+  <NAT_RustedEyeSocket.label>глазница</NAT_RustedEyeSocket.label>
+  
+  <!-- EN: finger -->
+  <NAT_RustedFinger.label>палец</NAT_RustedFinger.label>
+  
+  <!-- EN: foot -->
+  <NAT_RustedFoot.label>ступня</NAT_RustedFoot.label>
+  
+  <!-- EN: head -->
+  <NAT_RustedHead.label>голова</NAT_RustedHead.label>
+  
+  <!-- EN: leg -->
+  <NAT_RustedLeg.label>нога</NAT_RustedLeg.label>
+  
+  <!-- EN: shoulder -->
+  <NAT_RustedShoulder.label>плечо</NAT_RustedShoulder.label>
+  
+  <!-- EN: torso -->
+  <NAT_RustedTorso.label>торс</NAT_RustedTorso.label>
+  
+</LanguageData>

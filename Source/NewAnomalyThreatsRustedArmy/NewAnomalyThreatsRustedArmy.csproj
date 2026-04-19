@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NAT</RootNamespace>
+    <AssemblyName>NewAnomalyThreatsRustedArmy</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\1.6\Assemblies\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NewAnomalyThreats">
+      <HintPath>..\..\..\NewAnomalyThreatsFramework\1.6\Assemblies\NewAnomalyThreats.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abilities\CompAbilityEffect_Reinforcements.cs" />
+    <Compile Include="Abilities\CompAbilityEffect_ArtOfWar.cs" />
+    <Compile Include="Hediffs\HediffComp_RustedBuff.cs" />
+    <Compile Include="Hediffs\HediffComp_GiveHediffsToRustInRange.cs" />
+    <Compile Include="ThingComps\CompRustedBuffGiver.cs" />
+    <Compile Include="ThingComps\CompBoss.cs" />
+    <Compile Include="Verb_MeleeAttackExplode.cs" />
+    <Compile Include="Abilities\CompAbilityEffect_RustedCommander.cs" />
+    <Compile Include="Abilities\Abilities_Misc.cs" />
+    <Compile Include="DefOf.cs" />
+    <Compile Include="FloatOptions.cs" />
+    <Compile Include="MapGen\GenStep_RustedFloorSpace.cs" />
+    <Compile Include="Harmony\CaravanPatches.cs" />
+    <Compile Include="Harmony\GearPatches.cs" />
+    <Compile Include="Harmony\Main.cs" />
+    <Compile Include="Harmony\MiscPatch.cs" />
+    <Compile Include="Harmony\Work.cs" />
+    <Compile Include="Hediff_RustedBoost.cs" />
+    <Compile Include="Incidents\IncidentWorker_RustedArmyRaid.cs" />
+    <Compile Include="Incidents\IncidentWorker_RustedArmySiege.cs" />
+    <Compile Include="Incidents\IncidentWorker_RustedMassArrival.cs" />
+    <Compile Include="Jobs\JobDrivers_Misc.cs" />
+    <Compile Include="Jobs\JobGivers.cs" />
+    <Compile Include="Jobs\Lords.cs" />
+    <Compile Include="MapGen\GenStep_RustedBase.cs" />
+    <Compile Include="MapGen\GenStep_RustedDish.cs" />
+    <Compile Include="MapGen\GenStep_RustedNode.cs" />
+    <Compile Include="MapGen\GenStep_RustedOutpost.cs" />
+    <Compile Include="MapGen\GenStep_RustedPlatform.cs" />
+    <Compile Include="MapGen\LayoutWorker_RustedBase.cs" />
+    <Compile Include="MapGen\RoomContents.cs" />
+    <Compile Include="MapGen\SitePartWorkers.cs" />
+    <Compile Include="Mod.cs" />
+    <Compile Include="NAT_RustedArmy.cs" />
+    <Compile Include="Need_RustRest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PsychicRituals.cs" />
+    <Compile Include="Render.cs" />
+    <Compile Include="RustHeadDef.cs" />
+    <Compile Include="ScenParts.cs" />
+    <Compile Include="ThingComps\CompBombardmentBeacon.cs" />
+    <Compile Include="ThingComps\CompReinforcementsBeacon.cs" />
+    <Compile Include="ThingComps\CompRustedArmor.cs" />
+    <Compile Include="ThingComps\CompRustedCommander.cs" />
+    <Compile Include="ThingComps\CompRustedDish.cs" />
+    <Compile Include="ThingComps\CompRustedEquipment.cs" />
+    <Compile Include="ThingComps\CompRustedSidearm.cs" />
+    <Compile Include="ThingComps\CompRustedMass.cs" />
+    <Compile Include="ThingComps\CompRustedMassDeactivation.cs" />
+    <Compile Include="ThingComps\CompRustedSculpture.cs" />
+    <Compile Include="ThingComps\CompRustedShield.cs" />
+    <Compile Include="ThingComps\CompRustedSoldier.cs" />
+    <Compile Include="ThingComps\CompRustedTurret.cs" />
+    <Compile Include="ThingComps\CompRustedTurretPawn.cs" />
+    <Compile Include="ThingComps\CompRustedWorker.cs" />
+    <Compile Include="ThingComps\CompSquareDetector.cs" />
+    <Compile Include="ThingComps\CompUsableByRust.cs" />
+    <Compile Include="ThingSetMaker.cs" />
+    <Compile Include="Things\Building_RustedTurret.cs" />
+    <Compile Include="Things\RustedBoostField.cs" />
+    <Compile Include="Things\RustedCore.cs" />
+    <Compile Include="Things\RustedPawn.cs" />
+    <Compile Include="Things\Skyfaller_RustedChunk.cs" />
+    <Compile Include="UI\Dialog_NameRustedSoldier.cs" />
+    <Compile Include="UI\ITabs.cs" />
+    <Compile Include="UI\Gizmo.cs" />
+    <Compile Include="UI\MainButtons.cs" />
+    <Compile Include="UI\PawnColumnWorkers.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

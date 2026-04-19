@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: rusted charge activator -->
+  <NAT_RustedActivator_Charge.label>ржавый активатор заряда</NAT_RustedActivator_Charge.label>
+  <!-- EN: A small device that increases work speed of rust. -->
+  <NAT_RustedActivator_Charge.description>Малое устройство увеличивающее скорость работы ржавчины.</NAT_RustedActivator_Charge.description>
+  
+  <!-- EN: rusted durability activator -->
+  <NAT_RustedActivator_Durability.label>ржавый активатор прочности</NAT_RustedActivator_Durability.label>
+  <!-- EN: A small device that increases durability of rust. -->
+  <NAT_RustedActivator_Durability.description>Малое устройство увеличивающее прочность ржавчины.</NAT_RustedActivator_Durability.description>
+  
+  <!-- EN: rusted regeneration activator -->
+  <NAT_RustedActivator_Regeneration.label>ржавый активатор регенерации</NAT_RustedActivator_Regeneration.label>
+  <!-- EN: A small device that increases regeneration of rust. -->
+  <NAT_RustedActivator_Regeneration.description>Малое устройство увеличивающее регенерацию ржавчины.</NAT_RustedActivator_Regeneration.description>
+  
+  <!-- EN: rusted speed activator -->
+  <NAT_RustedActivator_Speed.label>ржавый активатор скорости</NAT_RustedActivator_Speed.label>
+  <!-- EN: A small device that increases speed of rust. -->
+  <NAT_RustedActivator_Speed.description>Малое устройство увеличивающее скорость передвижения ржавчины.</NAT_RustedActivator_Speed.description>
+
+  <!-- EN: rusted stability activator -->
+  <NAT_RustedActivator_Stability.label>ржавый активатор стабильности</NAT_RustedActivator_Stability.label>
+  <!-- EN: A small device that increases stability of rust's core. -->
+  <NAT_RustedActivator_Stability.description>Малое устройство увеличивающее стабильность ядра ржавчины.</NAT_RustedActivator_Stability.description>
+  
+  <!-- EN: shard upgrader -->
+  <NAT_ShardUpgrader.label>осколочный улучшатель</NAT_ShardUpgrader.label>
+  <!-- EN: Special device that can upgrade rust using shard of dark archotechnology.\n\nMakes rust core fully stable. -->
+  <NAT_ShardUpgrader.description>Специальное устройство, которое улучшает ржавчину при помощи тёмного архо-осколка.\n\nДелает ядро ржавчины полностью стабильным.</NAT_ShardUpgrader.description>
+  
+
+</LanguageData>

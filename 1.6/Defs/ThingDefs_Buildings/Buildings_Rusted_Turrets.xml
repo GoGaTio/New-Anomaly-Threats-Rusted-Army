@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+  <ThingDef Name="NAT_BaseRustedTurret" ParentName="NAT_RustedBuildingBase" Abstract="True">
+    <thingClass>NAT.Building_RustedTurret</thingClass>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <receivesSignals>true</receivesSignals>
+    <size>(1,1)</size>
+    <hasTooltip>true</hasTooltip>
+    <passability>PassThroughOnly</passability>
+    <tickerType>Normal</tickerType>
+    <fillPercent>0.4</fillPercent>
+    <comps>
+      <li Class="NAT.CompProperties_PreventFrendlyFire"/>
+      <li Class="NAT.CompProperties_RustedArmor"/>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Stunnable">
+        <affectedDamageDefs>
+          <li>Stun</li>
+          <li>EMP</li>
+          <li>NerveStun</li>
+        </affectedDamageDefs>
+        <adaptableDamageDefs>
+          <li>EMP</li>
+        </adaptableDamageDefs>
+      </li>
+      <li Class="CompProperties_CanBeDormant">
+        <maxDistAwakenByOther>5</maxDistAwakenByOther>
+        <wakeUpDelayRange>100~200</wakeUpDelayRange>
+        <dormantStateLabelKey>NAT_RustDormant</dormantStateLabelKey>
+        <dontShowDevGizmos>false</dontShowDevGizmos>
+      </li>
+      <li Class="CompProperties_WakeUpDormant">
+        <wakeUpOnDamage>true</wakeUpOnDamage>
+        <wakeUpCheckRadius>4.9</wakeUpCheckRadius>
+        <wakeUpIfAnyTargetClose>true</wakeUpIfAnyTargetClose>
+        <wakeUpWithDelay>true</wakeUpWithDelay>
+        <wakeUpOnThingConstructedRadius>4.9</wakeUpOnThingConstructedRadius>
+        <wakeUpSound>NAT_Pawn_RustedSoldier_Call</wakeUpSound>
+        <wakeUpTargetingParams>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>true</canTargetMechs>
+          <canTargetHumans>true</canTargetHumans>
+        </wakeUpTargetingParams>
+      </li>
+    </comps>
+    <statBases>
+      <ArmorRating_Blunt>0.7</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+    </statBases>
+    <building>
+      <buildingTags>
+        <li>NAT_RustedTurret</li>
+        <li>NAT_RustedSiegeMember</li>
+      </buildingTags>
+      <playTargetAcquiredSound>false</playTargetAcquiredSound>
+      <ai_combatDangerous>true</ai_combatDangerous>
+    </building>
+    <soundImpactDefault>NAT_Pawn_RustedSoldier_Wounded</soundImpactDefault>
+    <drawHighlight>true</drawHighlight>
+    <placeWorkers>
+      <li>PlaceWorker_TurretTop</li>
+      <li>PlaceWorker_ShowTurretRadius</li>
+    </placeWorkers>
+    <uiIconScale>1.1</uiIconScale>
+  </ThingDef>
+
+  <!--=============== Mini-turret ===============-->
+
+  <ThingDef ParentName="NAT_BaseRustedTurret">
+    <defName>NAT_RustedTurret_Mini</defName>
+    <label>rusted mini-turret</label>
+    <description>A rusted bioferrite piece shaped like a small automatic turret. Not actually a turret, rusted mini-turret is a static rusted creature, powered by dark archotechnology shard. Can shoot through the smoke and slowly regenerate.</description>
+    <graphicData>
+      <texPath>Things/Building/NAT_RustedTurret</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <shadowData>
+        <volume>(0.27,0.25,0.27)</volume>
+        <offset>(0,0,0)</offset>
+      </shadowData>
+    </graphicData>
+    <uiIconPath>Things/Building/NAT_RustedMiniTurret_Icon</uiIconPath>
+    <uiIconScale>0.90</uiIconScale>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>500</ticksPerHeal>
+      </li>
+      <li Class="NAT.CompProperties_RustedTurretPawn">
+        <kindDef>NAT_RustedTurretKind_Mini</kindDef>
+      </li>
+    </comps>
+    <building>
+      <combatPower>80</combatPower>
+      <turretGunDef>NAT_Gun_RustedMiniTurret</turretGunDef>
+      <turretBurstCooldownTime>4.8</turretBurstCooldownTime>
+      <turretTopOffset>(0, 0)</turretTopOffset>
+    </building>
+    <killedLeavingsRanges>
+      <Bioferrite>2~6</Bioferrite>
+      <Shard>-18~1</Shard>
+    </killedLeavingsRanges>
+  </ThingDef>
+
+  <!--=============== Autocannon turret ===============-->
+
+  <ThingDef ParentName="NAT_BaseRustedTurret" Name="NAT_HeavyRustedTurret" Abstract="True">
+    <graphicData>
+      <texPath>Things/Building/NAT_RustedHeavyTurret</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2, 2)</drawSize>
+      <shadowData>
+        <volume>(1.5,0.35,1.5)</volume>
+      </shadowData>
+    </graphicData>
+    <size>(2,2)</size>
+    <comps>
+      <li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>200</ticksPerHeal>
+      </li>
+    </comps>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Mass>100</Mass>
+      <ArmorRating_Blunt>0.8</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.65</ArmorRating_Sharp>
+    </statBases>
+    <fillPercent>0.5</fillPercent>
+    <building>
+      <turretTopDrawSize>3</turretTopDrawSize>
+      <turretTopOffset>(0, 0)</turretTopOffset>
+      <destroyEffecter>NAT_RustedOfficerDeath</destroyEffecter>
+    </building>
+    <uiIconScale>0.95</uiIconScale>
+    <soundImpactDefault>NAT_Pawn_RustedOfficer_Wounded</soundImpactDefault>
+  </ThingDef>
+
+  <ThingDef ParentName="NAT_HeavyRustedTurret">
+    <defName>NAT_RustedTurret_Auto</defName>
+    <label>rusted autocannon turret</label>
+    <description>A rusted bioferrite piece shaped like a heavy automatic turret. Not actually a turret, rusted autocannon turret is a static rusted creature, powered by dark archotechnology shard. Can shoot through the smoke and slowly regenerate.</description>
+    <uiIconPath>Things/Building/NAT_RustedAutoTurret_Icon</uiIconPath>
+    <statBases>
+      <ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
+    </statBases>
+    <comps>
+      <li Class="NAT.CompProperties_RustedTurretPawn">
+        <kindDef>NAT_RustedTurretKind_Auto</kindDef>
+      </li>
+    </comps>
+    <building>
+      <combatPower>230</combatPower>
+      <turretGunDef>NAT_Gun_RustedAutoTurret</turretGunDef>
+      <turretBurstCooldownTime>3.5</turretBurstCooldownTime>
+    </building>
+    <killedLeavingsRanges>
+      <Bioferrite>10~25</Bioferrite>
+      <Shard>-7~1</Shard>
+    </killedLeavingsRanges>
+  </ThingDef>
+
+  <!--=============== Sniper ===============-->
+
+  <ThingDef ParentName="NAT_HeavyRustedTurret">
+    <defName>NAT_RustedTurret_Sniper</defName>
+    <label>rusted sniper turret</label>
+    <description>A rusted bioferrite piece shaped like an armor-piercing turret. Not actually a turret, rusted sniper turret is a static rusted creature, powered by dark archotechnology shard. Can shoot through the smoke and slowly regenerate.</description>
+    <uiIconPath>Things/Building/NAT_RustedSniperTurret_Icon</uiIconPath>
+    <statBases>
+      <ShootingAccuracyTurret>0.985</ShootingAccuracyTurret>
+    </statBases>
+    <comps>
+      <li Class="NAT.CompProperties_RustedTurretPawn">
+        <kindDef>NAT_RustedTurretKind_Sniper</kindDef>
+      </li>
+    </comps>
+    <building>
+      <combatPower>290</combatPower>
+      <turretGunDef>NAT_Gun_RustedSniperTurret</turretGunDef>
+      <turretBurstCooldownTime>3.2</turretBurstCooldownTime>
+    </building>
+    <generateCommonality>0.7</generateCommonality>
+    <killedLeavingsRanges>
+      <Bioferrite>10~30</Bioferrite>
+      <Shard>-6~1</Shard>
+    </killedLeavingsRanges>
+  </ThingDef>
+
+  <!--=============== Foam ===============-->
+
+  <ThingDef ParentName="NAT_BaseRustedTurret">
+    <defName>NAT_RustedTurret_Foam</defName>
+    <label>rusted foam turret</label>
+    <description>A rusted bioferrite piece shaped like a foam turret. Not actually a turret, rusted foam turret is a static rusted creature, powered by dark archotechnology shard. Can shoot through the smoke and slowly regenerate.</description>
+    <thingClass>NAT.Building_RustedTurretFoam</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Things/Building/NAT_RustedTurret</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1, 1)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/NAT_RustedFoamTurret_Icon</uiIconPath>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <ShootingAccuracyTurret>1</ShootingAccuracyTurret>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <wickTicks>0</wickTicks>
+        <explosiveRadius>3</explosiveRadius>
+        <explodeOnKilled>true</explodeOnKilled>
+        <explosiveExpandPerFuel>1.25</explosiveExpandPerFuel>
+        <explosiveDamageType>Extinguish</explosiveDamageType>
+        <chanceNeverExplodeFromDamage>1</chanceNeverExplodeFromDamage>
+      </li>
+      <li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>500</ticksPerHeal>
+      </li>
+      <li Class="NAT.CompProperties_RustedTurretPawn">
+        <kindDef>NAT_RustedTurretKind_Foam</kindDef>
+      </li>
+    </comps>
+    <generateCommonality>0.2</generateCommonality>
+    <building>
+      <combatPower>5</combatPower>
+      <ai_combatDangerous>false</ai_combatDangerous>
+      <turretGunDef>NAT_Gun_RustedFoamTurret</turretGunDef>
+      <turretTopDrawSize>2</turretTopDrawSize>
+      <turretBurstCooldownTime>0.1</turretBurstCooldownTime>
+      <buildingTags Inherit="False">
+        <li>NAT_RustedSiegeMember</li>
+      </buildingTags>
+      <turretBurstWarmupTime>0</turretBurstWarmupTime>
+    </building>
+    <killedLeavingsRanges>
+      <Bioferrite>2~6</Bioferrite>
+      <Shard>-18~1</Shard>
+    </killedLeavingsRanges>
+  </ThingDef>
+
+  <!--=============== Mortar ===============-->
+
+  <ThingDef ParentName="NAT_BaseRustedTurret">
+    <defName>NAT_RustedTurret_Artillery</defName>
+    <label>rusted mortar</label>
+    <description>A rusted bioferrite piece shaped like a mortar.</description>
+    <thingClass>NAT.Building_RustedTurret</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Things/Building/NAT_RustedHeavyTurret</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3, 3)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Building/NAT_RustedFoamTurret_Icon</uiIconPath>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <ShootingAccuracyTurret>1</ShootingAccuracyTurret>
+      <ArmorRating_Blunt>1.1</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.85</ArmorRating_Sharp>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_SelfhealHitpoints">
+        <ticksPerHeal>1000</ticksPerHeal>
+      </li>
+    </comps>
+    <inspectorTabs>
+      <li>ITab_Shells</li>
+    </inspectorTabs>
+    <size>(3,3)</size>
+    <rotatable>true</rotatable>
+    <building>
+      <combatPower>500</combatPower>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>NAT_Gun_RustedArtillery</turretGunDef>
+      <turretTopDrawSize>5</turretTopDrawSize>
+      <turretBurstWarmupTime>1.0</turretBurstWarmupTime>
+      <turretBurstCooldownTime>10.0</turretBurstCooldownTime>
+      <buildingTags Inherit="False">
+        <li>NAT_RustedSiegeMortar</li>
+        <li>NAT_RustedSiegeProblem</li>
+        <li>NAT_RustedSiegeMember</li>
+      </buildingTags>
+    </building>
+  </ThingDef>
+
+</Defs>

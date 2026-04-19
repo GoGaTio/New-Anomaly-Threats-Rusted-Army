@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  
+  <Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[defName="Apparel_Bandolier"]</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="Apparel_Bandolier"]/apparel/tags</xpath>
+			<value>
+				<li>NAT_Rust_Belt</li>
+			</value>
+		</match>
+	</Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/LayoutDef[defName = "Labyrinth"]/roomDefs</xpath>
+    <value>
+      <NAT_LabyrinthRustedOutpost>0.01</NAT_LabyrinthRustedOutpost>
+    </value>
+  </Operation>
+  
+</Patch>

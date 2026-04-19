@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- ========== Rusted Army========== -->
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[@Name="NAT_HeavyRustedTurret" or @Name="NAT_BaseHeavyRustedTurretRace"]/statBases/ArmorRating_Sharp</xpath>
+    <value>
+      <ArmorRating_Sharp>14</ArmorRating_Sharp>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[@Name="NAT_HeavyRustedTurret" or @Name="NAT_BaseHeavyRustedTurretRace"]/statBases/ArmorRating_Blunt</xpath>
+    <value>
+      <ArmorRating_Blunt>110</ArmorRating_Blunt>
+    </value>
+  </Operation>
+
+<Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[@Name="NAT_BaseRustedTurret" or @Name="NAT_BaseLightRustedTurretRace"]/statBases/ArmorRating_Sharp</xpath>
+    <value>
+      <ArmorRating_Sharp>6</ArmorRating_Sharp>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[@Name="NAT_BaseRustedTurret" or @Name="NAT_BaseLightRustedTurretRace"]/statBases/ArmorRating_Blunt</xpath>
+    <value>
+      <ArmorRating_Blunt>60</ArmorRating_Blunt>
+    </value>
+  </Operation>
+
+</Patch>

@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="NAT_BaseRustedSidearm">
+    <defName>NAT_RustedContactGrenade</defName>
+    <label>rusted contact grenade</label>
+    <description>A rusted stick grenade with contact detonator. Can detonate if used by rusted creature.</description>
+    <graphicData>
+      <texPath>Things/Projectile/NAT_RustedStickGrenade/NAT_RustedStickGrenade_A</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>1</Mass>
+      <MaxHitPoints>100</MaxHitPoints>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+      <MarketValue>50</MarketValue>
+    </statBases>
+    <weaponTags>
+      <li>NAT_RustedContactGrenade</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_LaunchProjectileStaticOneUse</verbClass>
+        <label>throw rusted contact grenade</label>
+        <defaultProjectile>NAT_Proj_RustedContactGrenade</defaultProjectile>
+        <warmupTime>1.5</warmupTime>
+        <range>19.9</range>
+        <burstShotCount>1</burstShotCount>
+        <hasStandardCommand>true</hasStandardCommand>
+        <targetable>true</targetable>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <soundCast>ThrowGrenade</soundCast>
+        <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+        <forcedMissRadius>2.1</forcedMissRadius>
+        <defaultCooldownTime>1</defaultCooldownTime>
+      </li>
+    </verbs>
+    <stackLimit>10</stackLimit>
+    <tools>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>NAT_RustedScratchExplode</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>1</cooldownTime>
+        <chanceFactor>10</chanceFactor>
+      </li>
+    </tools>
+    <butcherProducts>
+      <Bioferrite>13</Bioferrite>
+    </butcherProducts>
+  </ThingDef>
+
+  <ThingDef ParentName="NAT_BaseRustedSidearm">
+    <defName>NAT_Gun_RustedRocketLauncher</defName>
+    <label>rusted rocket launcher</label>
+    <description>A piece of bioferrite shaped like a light machine gun.\n\nSomehow can shoot if wielded by rusted creature.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Weapon/NAT_RustedLMG</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>8.5</Mass>
+      <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
+      <MarketValue>600</MarketValue>
+    </statBases>
+    <weaponTags>
+      <li>NAT_RustedRocketLauncher</li>
+    </weaponTags>
+    <generateCommonality>0.1</generateCommonality>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>NAT_Proj_RustedRocket</defaultProjectile>
+        <warmupTime>2.3</warmupTime>
+        <range>34.9</range>
+        <forcedMissRadius>1.9</forcedMissRadius>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>InfernoCannon_Fire</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+      </li>
+    </verbs>
+    <butcherProducts>
+      <Bioferrite>22</Bioferrite>
+    </butcherProducts>
+  </ThingDef>
+
+</Defs>

@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <BodyDef>
+    <defName>NAT_RustedTurret</defName>
+    <label>turret</label>
+    <corePart>
+      <def>NAT_RustedTorso</def>
+      <height>Middle</height>
+      <depth>Outside</depth>
+      <groups>
+        <li>Torso</li>
+      </groups>
+      <parts>
+        <li>
+          <def>NAT_RustedCore</def>
+          <coverage>0.02</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>NAT_RustedTurret</def>
+          <customLabel>turret</customLabel>
+          <coverage>0.05</coverage>
+          <groups>
+            <li>NAT_RustedTurret</li>
+          </groups>
+          <parts>
+            <li>
+              <def>NAT_RustedEyeSocket</def>
+              <customLabel>eye socket</customLabel>
+              <coverage>0.03</coverage>
+              <groups>
+                <li>Eyes</li>
+              </groups>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>NAT_RustedLeg</def>
+          <customLabel>front left leg</customLabel>
+          <coverage>0.1</coverage>
+          <height>Bottom</height>
+          <groups>
+            <li>Legs</li>
+          </groups>
+          <parts>
+            <li>
+              <def>NAT_RustedFoot</def>
+              <customLabel>front left foot</customLabel>
+              <coverage>0.1</coverage>
+              <groups>
+                <li>Feet</li>
+              </groups>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>NAT_RustedLeg</def>
+          <customLabel>front right leg</customLabel>
+          <coverage>0.1</coverage>
+          <height>Bottom</height>
+          <groups>
+            <li>Legs</li>
+          </groups>
+          <parts>
+            <li>
+              <def>NAT_RustedFoot</def>
+              <customLabel>front right foot</customLabel>
+              <coverage>0.1</coverage>
+              <groups>
+                <li>Feet</li>
+              </groups>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>NAT_RustedLeg</def>
+          <customLabel>rear left leg</customLabel>
+          <coverage>0.1</coverage>
+          <height>Bottom</height>
+          <groups>
+            <li>Legs</li>
+          </groups>
+          <parts>
+            <li>
+              <def>NAT_RustedFoot</def>
+              <customLabel>rear left foot</customLabel>
+              <coverage>0.1</coverage>
+              <groups>
+                <li>Feet</li>
+              </groups>
+            </li>
+          </parts>
+        </li>
+        <li>
+          <def>NAT_RustedLeg</def>
+          <customLabel>rear right leg</customLabel>
+          <coverage>0.1</coverage>
+          <height>Bottom</height>
+          <groups>
+            <li>Legs</li>
+          </groups>
+          <parts>
+            <li>
+              <def>NAT_RustedFoot</def>
+              <customLabel>rear right foot</customLabel>
+              <coverage>0.1</coverage>
+              <groups>
+                <li>Feet</li>
+              </groups>
+            </li>
+          </parts>
+        </li>
+      </parts>
+    </corePart>
+  </BodyDef>
+
+</Defs>

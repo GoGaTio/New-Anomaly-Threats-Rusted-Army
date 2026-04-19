@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<!--Rusted army-->
+	<NAT_RustedArmyRaid>Налёт: Ржавая Армия</NAT_RustedArmyRaid>
+  <NAT_RustedArmyRaid_CenterDrop>Группа ржавчин приземляется прямо на поселение.</NAT_RustedArmyRaid_CenterDrop>
+  <NAT_RustedArmyRaid_RandomDrop>Ржавчины приземляются по всему региону.</NAT_RustedArmyRaid_RandomDrop>
+  <NAT_RustedArmyRaid_EdgeDrop>Группа ржавчин приземляется неподалёку.</NAT_RustedArmyRaid_EdgeDrop>
+	<NAT_RustedArmyRaid_NoGroups>Группа ржавчин расположилась поблизости.</NAT_RustedArmyRaid_NoGroups>
+	<NAT_RustedArmyRaid_Groups>{0} группы ржавчин расположилось поблизости.</NAT_RustedArmyRaid_Groups>
+	<NAT_RustedArmyRaid_Immediate>Они атакуют немедленно.</NAT_RustedArmyRaid_Immediate>
+	<NAT_RustedArmyRaid_Stage>Они будут готовиться перед атакой некоторое время.</NAT_RustedArmyRaid_Stage>
+	<NAT_RustedArmyRaid_Mass>Они при шли на зов ржавой массы.</NAT_RustedArmyRaid_Mass>
+	<NAT_RustedArmyRaid_VoidDefence_Desc>Они пришли защищать структуру пустоты.</NAT_RustedArmyRaid_VoidDefence_Desc>
+  <NAT_RustedArmySiege>Осада: Ржавая Армия</NAT_RustedArmySiege>
+  <NAT_RustedArmySiege_Desc>Группа ржавчин приземлилась поблизости. Они будут защищать точку падения.</NAT_RustedArmySiege_Desc>
+  <NAT_VoidSiege>Похоже, они здесь чтобы защищать пустотный объект.</NAT_VoidSiege>
+
+  <NAT_RustedSoldiers>ржавчины</NAT_RustedSoldiers>
+  <NAT_RustedArmy>Ржавая армия</NAT_RustedArmy>
+
+  <NAT_RustedSoldierGainsName>Новое имя ржавчины - {0}</NAT_RustedSoldierGainsName>
+  <NAT_RustedSculptureActivateMissingShards>Недостаточно осколков.</NAT_RustedSculptureActivateMissingShards>
+  <NAT_RustedSoldier>Ржавчина</NAT_RustedSoldier>
+
+  <NAT_CannotDrop_Roof>Крыша мешает</NAT_CannotDrop_Roof>
+  <NAT_NoUnits>Нет доступных подкреплений</NAT_NoUnits>
+  <NAT_Restoring>Подготовка</NAT_Restoring>
+  <NAT_Drops>Юниты</NAT_Drops>
+  <NAT_Restored>Восстановлено</NAT_Restored>
+  <NAT_RustedShield>Ржавая броня</NAT_RustedShield>
+  <NAT_RustedShieldTip>Ржавая броня защищает от урона, но теряет прочность.</NAT_RustedShieldTip>
+  <NAT_DropRequested>{0} вызвал подкрепление!</NAT_DropRequested>
+  <NAT_MessageRustedTroopersLeaving>Подкрепления уходят.</NAT_MessageRustedTroopersLeaving>
+
+  <NAT_RustResurrected>{0} возродился</NAT_RustResurrected>
+  <NAT_RustResurrected_Desc>{0} успешно набрало достаточно биоферрита, чтобы {1} смог возродиться.</NAT_RustResurrected_Desc>
+
+  <NAT_ResurrectIn>Возродится через {0}</NAT_ResurrectIn>
+
+  <NAT_RustedCoreLabel>ядро {0}</NAT_RustedCoreLabel>
+
+  <NAT_DestroyCoreConfirmation>Уничтожив это ядро вы убьёте {0} навсегда.\n\n{0} - {1} колонии.\n\nВы уверены, что хотите продолжить?</NAT_DestroyCoreConfirmation>
+
+  <NAT_RustedCoreDeactivate>Уничтожить {0}</NAT_RustedCoreDeactivate>
+  <NAT_RustedCoreDeactivateDesc>Навсегда уничтожить {0}.</NAT_RustedCoreDeactivateDesc>
+
+  <!--Rusted mass-->
+  <NAT_RustedSphereDeactivateMissingShards>Для деактивации ржавой массы вам необходимо: осколок x{0}!</NAT_RustedSphereDeactivateMissingShards>
+  <NAT_RustedMassArrival>Ржавая масса</NAT_RustedMassArrival>
+  <NAT_RustedMassArrival_Desc>Неподалёку упал странный кусок биоферрита, будто наполняющийся тёмной энергией.\n\nОтправьте кого-нибудь изучить его.</NAT_RustedMassArrival_Desc>
+
+  <NAT_SelectAllRusts>Выбрать всех</NAT_SelectAllRusts>
+  <NAT_UseItem>Использовать {0}</NAT_UseItem>
+  <NAT_CannotEquip_NotRust>Не ржавчина</NAT_CannotEquip_NotRust>
+  <NAT_CannotEquip_Bladelink>Ржавчины не могут свзываться с личным оружием</NAT_CannotEquip_Bladelink>
+  <NAT_CannotEquip_Apparel>Не может носить</NAT_CannotEquip_Apparel>
+  <NAT_CannotEquip_Size>Необходим размер тела не меньше (0)</NAT_CannotEquip_Size>
+
+  <TerrainTagNAT_Rusted>ржавое</TerrainTagNAT_Rusted>
+
+  <NAT_RustDormant>Неактивно</NAT_RustDormant>
+
+  <NAT_PsychicRitual_NotEnoughBioferrite>Недостаточно биоферрита</NAT_PsychicRitual_NotEnoughBioferrite>
+  <NAT_CreateRustCompleteText_Success>{INVOKER_nameDef} завершает ритуал «{RITUAL_definite}», в результате которого биоферрит трансмутировался в живую ржавчину: {RUST_nameDef}({RUST_kind}).</NAT_CreateRustCompleteText_Success>
+  <NAT_CreateRustCompleteText_Fail>{INVOKER_nameDef} завершает ритуал «{RITUAL_definite}», в результате которого ничего не происходит. Подношения потрачены впустую.</NAT_CreateRustCompleteText_Fail>
+
+</LanguageData>

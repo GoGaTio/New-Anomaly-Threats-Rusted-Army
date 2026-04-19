@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <TerrainDef Name="NAT_RustedFloorBase">
+    <defName>NAT_RustedFloor</defName>
+    <label>rusted surface</label>
+    <description>TODO</description>
+    <pollutionShaderType MayRequire="Ludeon.RimWorld.Biotech">TerrainFadeRoughLinearBurn</pollutionShaderType>
+    <pollutionOverlayTexturePath>Terrain/Surfaces/PollutionFloorSmooth</pollutionOverlayTexturePath>
+    <pollutionColor>(1, 1, 1, 0.8)</pollutionColor>
+    <pollutionOverlayScale>(0.75, 0.75)</pollutionOverlayScale>
+    <canEverTerraform>false</canEverTerraform>
+    <texturePath>Terrain/NAT_RustedFloor</texturePath>
+    <renderPrecedence>393</renderPrecedence>
+    <fertility>0</fertility>
+    <layerable>true</layerable>
+    <designationCategory />
+    <pathCost>10</pathCost>
+    <edgeType>FadeRough</edgeType>
+    <statBases>
+      <Beauty>-4</Beauty>
+      <Cleanliness>1</Cleanliness>
+      <Flammability>0</Flammability>
+      <CleaningTimeFactor>0.8</CleaningTimeFactor>
+    </statBases>
+    <tags>
+      <li>NAT_Rusted</li>
+    </tags>
+    <affordances>
+      <li>Light</li>
+      <li>Medium</li>
+      <li>Heavy</li>
+      <li>Walkable</li>
+    </affordances>
+    <costList>
+      <Bioferrite>5</Bioferrite>
+    </costList>
+    <resourcesFractionWhenDeconstructed>0.1</resourcesFractionWhenDeconstructed>
+  </TerrainDef>
+
+  <TerrainDef ParentName="NAT_RustedFloorBase">
+    <defName>NAT_RustedPlatform</defName>
+    <edgeType>Hard</edgeType>
+    <spaceEdgeGraphicData Inherit="False" MayRequire="Ludeon.RimWorld.Odyssey">
+      <OShapeTexPath>NAT_RustedPlatformBorderInside_OShape</OShapeTexPath>
+      <UShapeTexPath>NAT_RustedPlatformBorderInside_UShape</UShapeTexPath>
+      <CornerInnerTexPath>NAT_RustedPlatformBorderInside_CornerInner</CornerInnerTexPath>
+      <CornerOuterTexPath>NAT_RustedPlatformBorderInside_CornerOuter</CornerOuterTexPath>
+      <FlatTexPath>NAT_RustedPlatformBorderInside_Flat</FlatTexPath>
+
+      <LoopLeftTexPath>NAT_RustedPlatformEdge_Left</LoopLeftTexPath>
+      <LoopRightTexPath>NAT_RustedPlatformEdge_Right</LoopRightTexPath>
+      <LoopSingleTexPath>NAT_RustedPlatformEdge_Single</LoopSingleTexPath>
+
+      <LoopTexPaths>
+        <li>NAT_RustedPlatformEdge_Loop1</li>
+        <li>NAT_RustedPlatformEdge_Loop2</li>
+        <li>NAT_RustedPlatformEdge_Loop3</li>
+        <li>NAT_RustedPlatformEdge_Loop4</li>
+        <li>NAT_RustedPlatformEdge_Loop5</li>
+      </LoopTexPaths>
+    </spaceEdgeGraphicData>
+    <layerable>false</layerable>
+  </TerrainDef>
+
+  <TerrainDef ParentName="NAT_RustedFloorBase">
+    <defName>NAT_AncientCarpet</defName>
+    <label>ancient carpet</label>
+    <description>Soft carpet made from fibers dyed a single color. It's welcoming, cozy, and boosts the beauty of the room it's in. It's also quite flammable, and cleaning it is a laborious process.</description>
+    <texturePath>Terrain/NAT_AncientFabricCarpet</texturePath>
+    <edgeType>Hard</edgeType>
+    <costList Inherit="False">
+      <NAT_AncientFabric>7</NAT_AncientFabric>
+    </costList>
+    <statBases>
+      <Beauty>1</Beauty>
+      <Flammability>0.4</Flammability>
+      <WorkToBuild>800</WorkToBuild>
+      <CleaningTimeFactor>2</CleaningTimeFactor>
+      <BedRestEffectiveness>1.25</BedRestEffectiveness>
+    </statBases>
+    <renderPrecedence>60</renderPrecedence>
+    <pathCost>0</pathCost>
+  </TerrainDef>
+
+  <!--<TerrainDef ParentName="FloorBase">
+    <defName>NAT_RustedTile</defName>
+    <label>rusted tile</label>
+    <description>TODO</description>
+    <texturePath>Terrain/NAT_RustedTile</texturePath>
+    <renderPrecedence>40</renderPrecedence>
+    <fertility>0</fertility>
+    <edgeType>FadeRough</edgeType>
+    <designationCategory />
+    <pathCost>0</pathCost>
+    <statBases>
+      <WorkToBuild>8000</WorkToBuild>
+      <Beauty>-10</Beauty>
+      <Cleanliness>1</Cleanliness>
+      <Flammability>0</Flammability>
+      <CleaningTimeFactor>0.8</CleaningTimeFactor>
+    </statBases>
+    <affordances>
+      <li>Light</li>
+      <li>Medium</li>
+      <li>Heavy</li>
+    </affordances>
+  </TerrainDef>-->
+
+</Defs>

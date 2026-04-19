@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="EtherealThingBase">
+    <defName>NAT_RustedBoostField</defName>
+    <label>spark field</label>
+    <description>Marks the place where you intend to build a monument. Once placed, this cannot be moved.</description>
+    <thingClass>NAT.RustedBoostField</thingClass>
+    <tickerType>Normal</tickerType>
+    <size>(11,11)</size>
+    <rotatable>true</rotatable>
+    <selectable>true</selectable>
+    <!--<hasCustomRectForSelector>true</hasCustomRectForSelector>-->
+    <drawerType>None</drawerType>
+    <canLoadIntoCaravan>false</canLoadIntoCaravan>
+    <forceDebugSpawnable>true</forceDebugSpawnable>
+  </ThingDef>
+
+</Defs>

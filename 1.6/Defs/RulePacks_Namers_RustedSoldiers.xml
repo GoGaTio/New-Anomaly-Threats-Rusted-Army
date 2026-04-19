@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RulePackDef>
+    <defName>NAT_NamerRustedPawn</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>nnumber(p=6)->I</li>
+        <li>nnumber(p=6)->II</li>
+        <li>nnumber(p=4)->III</li>
+        <li>nnumber(p=6)->IV</li>
+        <li>nnumber(p=6)->V</li>
+        <li>nnumber(p=6)->VI</li>
+        <li>nnumber(p=3)->VII</li>
+        <li>nnumber(p=2)->VIII</li>
+        <li>nnumber(p=4)->IX</li>
+        <li>nnumber(p=4)->X</li>
+        <li>nnumber(p=4)->XI</li>
+        <li>nnumber(p=2)->XII</li>
+        <li>nnumber(p=2)->XIII</li>
+        <li>nnumber->XIV</li>
+        <li>nnumber(p=2)->XV</li>
+        <li>nnumber->XVI</li>
+        <li>nnumber->XVII</li>
+        <li>nnumber->XVIII</li>
+        <li>nnumber->XIX</li>
+        <li>nnumber->XX</li>
+        <li>nnumber->XXI</li>
+        <li>nnumber->XXII</li>
+        <li>nnumber->XXIII</li>
+        <li>nnumber->XXIV</li>
+        <li>nnumber->XXV</li>
+        <li>nnumber->XXVI</li>
+      </rulesStrings>
+      <rulesFiles>
+        <li>nat_prefix->Names/NAT_RustedSoldier_Prefix</li>
+        <li>nat_postfix->Names/NAT_RustedSoldier_Postfix</li>
+        <li>nat_solid->Names/NAT_RustedSoldier_Solid</li>
+      </rulesFiles>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NAT_NamerRustedSoldier</defName>
+    <include>
+      <li>NAT_NamerRustedPawn</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=10)->[nat_prefix][nat_postfix]</li>
+        <li>r_name->[nat_solid]</li>
+        <li>r_name(p=6)->[nat_prefix][nat_postfix] [nnumber]</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NAT_NamerRustedDumb</defName>
+    <include>
+      <li>NAT_NamerRustedPawn</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=10)->[nat_prefix][nat_postfix_dumb]</li>
+        <li>r_name(p=3)->[nat_solid]</li>
+        <li>r_name(p=6)->[nat_postfix][nat_prefix]</li>
+      </rulesStrings>
+      <rulesFiles>
+        <li>nat_postfix_dumb->Names/NAT_RustedSoldier_PostfixDumb</li>
+      </rulesFiles>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NAT_NamerRustedOfficer</defName>
+    <include>
+      <li>NAT_NamerRustedPawn</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=10)->[nat_prefix]-[nat_prefix][nat_postfix]</li>
+        <li>r_name(p=4)->[nat_prefix]-[nat_prefix][nat_postfix] [nnumber]</li>
+        <li>r_name(p=6)->[nat_prefix][nat_postfix] [nnumber]</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NAT_NamerEliteRust</defName>
+    <include>
+      <li>NAT_NamerRustedPawn</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name(p=6)->[nat_twisted][nat_postfix]</li>
+        <li>r_name(p=5)->[nat_twisted][nat_twisted]</li>
+        <li>r_name(p=7)->[nat_prefix][nat_twisted]</li>
+        <li>r_name(p=3)->[nat_twisted][nat_twisted][nat_postfix]</li>
+        <li>r_name->[nat_twisted][nat_twisted][nat_twisted]</li>
+        <li>r_name(p=4)->[nat_prefix][nat_twisted][nat_twisted]</li>
+      </rulesStrings>
+      <rulesFiles>
+        <li>nat_twisted->Names/NAT_Twisted</li>
+      </rulesFiles>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NAT_RustedDialogue</defName>
+    <rulePack>
+      <rulesStrings>
+
+        <li>placeAdj->western</li>
+        <li>placeAdj->eastern</li>
+        <li>placeAdj->northern</li>
+        <li>placeAdj->southern</li>
+        <li>placeAdj->highland</li>
+        <li>placeAdj->coastal</li>
+
+        <li>placeRust->the Citadel</li>
+        <li>placeRust->the Collector's lair</li>
+        <li>placeRust->rusted fortress</li>
+        <li>placeRust->abandoned city</li>
+        <li>placeRust->the [placeAdj] outpost</li>
+        <li>placeRust->the basement</li>
+
+        <li>subjectRust->danger of fire</li>
+        <li>subjectRust->bioferrite</li>
+        <li>subjectRust->new rust</li>
+        <li>subjectRust->mechanoids</li>
+        <li>subjectRust->pain</li>
+        <li>subjectRust->sieges</li>
+        <li>subjectRust->raids</li>
+        <li>subjectRust->cultists</li>
+        <li>subjectRust->waffers</li>
+        <li>subjectRust->dust</li>
+        <li>subjectRust->waiting</li>
+        <li>subjectRust->languages</li>
+        <li>subjectRust->armor</li>
+        <li>subjectRust->needles</li>
+
+        <li>subjectRustAbstract->greatness of rust</li>
+        <li>subjectRustAbstract->building of the Citadel</li>
+        <li>subjectRustAbstract->the Fieldmarshal</li>
+        <li>subjectRustAbstract->WD-40</li>
+        <li>subjectRustAbstract->the death</li>
+        <li>subjectRustAbstract->the G.O.D.</li>
+        <li>subjectRustAbstract->the Hate</li>
+        <li>subjectRustAbstract->the raining frogs</li>
+        <li>subjectRustAbstract->the dust in the sky</li>
+        <li>subjectRustAbstract->the sweetness of blood</li>
+        <li>subjectRustAbstract->the basements</li>
+        <li>subjectRustAbstract->the future</li>
+        <li>subjectRustAbstract->the past</li>
+        <li>subjectRustAbstract->the freedom</li>
+
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NAT_NamerVoidmetalMedal</defName>
+    <include>
+      <li>NAT_NamerRustedPawn</li>
+    </include>
+    <rulePack>
+      <rulesStrings>
+        <li>medal->medal</li>
+        <li>medal->order</li>
+        <li>medal->medalet</li>
+
+        <li>subject->the death</li>
+        <li>subject->the G.O.D.</li>
+        <li>subject->the Hate</li>
+        <li>subject->the blood</li>
+        <li>subject->the dust</li>
+        <li>subject->the honor</li>
+        <li>subject->the malice</li>
+        <li>subject->the future</li>
+        <li>subject->the past</li>
+        <li>subject->the freedom</li>
+
+        <li>class->1st class</li>
+        <li>class->2nd class</li>
+        <li>class->3rd class</li>
+
+        <li>r_name(p=10)->[medal] of [subject]</li>
+        <li>r_name(p=6)->[class] [medal] of [subject]</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>

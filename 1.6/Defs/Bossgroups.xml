@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <NAT.AnomalyBossDef>
+    <defName>Diabolus</defName>
+    <boss>Diabolus</boss>
+    <counter Class="NAT.BossWaveCounter_Basic"/>
+    <escorts>
+      <li>
+        <allowedWaves>1</allowedWaves>
+<weight>1</weight>
+        <kinds>
+          <Mech_Militor>3</Mech_Militor>
+        </kinds>
+<kindsRequired>
+          <Mech_Militor>3</Mech_Militor>
+        </kindsRequired>
+      </li>
+    </escorts>
+  </NAT.AnomalyBossDef>
+
+</Defs>

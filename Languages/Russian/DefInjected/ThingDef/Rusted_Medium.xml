@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <!-- EN: rusted rifle -->
+  <NAT_Gun_RustedBoltActionRifle.label>ржавая винтовка</NAT_Gun_RustedBoltActionRifle.label>
+  <!-- EN: A piece of bioferrite shaped like a bolt-action rifle.\n\nSomehow can shoot if wielded by rusted creature. -->
+  <NAT_Gun_RustedBoltActionRifle.description>Кусок биоферрита в форме винтовки.\n\nМожет стрелять, если используется ржавым созданием.</NAT_Gun_RustedBoltActionRifle.description>
+  <!-- EN: stock -->
+  <NAT_Gun_RustedBoltActionRifle.tools.stock.label>приклад</NAT_Gun_RustedBoltActionRifle.tools.stock.label>
+  <!-- EN: barrel -->
+  <NAT_Gun_RustedBoltActionRifle.tools.barrel.label>ствол</NAT_Gun_RustedBoltActionRifle.tools.barrel.label>
+  <!-- EN: rusted rifle -->
+  <NAT_Gun_RustedBoltActionRifle.verbs.Verb_Shoot.label>ржавая винтовка</NAT_Gun_RustedBoltActionRifle.verbs.Verb_Shoot.label>
+
+  <!-- EN: rusted carabine -->
+  <NAT_Gun_RustedCarabine.label>ржавый карабин</NAT_Gun_RustedCarabine.label>
+  <!-- EN: A piece of bioferrite shaped like a carabine.\n\nSomehow can shoot if wielded by rusted creature. -->
+  <NAT_Gun_RustedCarabine.description>Кусок биоферрита в форме самозарядного карабина.\n\nМожет стрелять, если используется ржавым созданием.</NAT_Gun_RustedCarabine.description>
+  <!-- EN: stock -->
+  <NAT_Gun_RustedCarabine.tools.stock.label>приклад</NAT_Gun_RustedCarabine.tools.stock.label>
+  <!-- EN: barrel -->
+  <NAT_Gun_RustedCarabine.tools.barrel.label>ствол</NAT_Gun_RustedCarabine.tools.barrel.label>
+  <!-- EN: rusted carabine -->
+  <NAT_Gun_RustedCarabine.verbs.Verb_Shoot.label>ржавый карабин</NAT_Gun_RustedCarabine.verbs.Verb_Shoot.label>
+  
+  <!-- EN: rusted revolver -->
+  <NAT_Gun_RustedRevolver.label>ржавый револьвер</NAT_Gun_RustedRevolver.label>
+  <!-- EN: A piece of bioferrite shaped like a revolver.\n\nSomehow can shoot if wielded by rusted creature. -->
+  <NAT_Gun_RustedRevolver.description>Кусок биоферрита в форме револьвера.\n\nМожет стрелять, если используется ржавым созданием.</NAT_Gun_RustedRevolver.description>
+  <!-- EN: grip -->
+  <NAT_Gun_RustedRevolver.tools.grip.label>рукоятка</NAT_Gun_RustedRevolver.tools.grip.label>
+  <!-- EN: barrel -->
+  <NAT_Gun_RustedRevolver.tools.barrel.label>ствол</NAT_Gun_RustedRevolver.tools.barrel.label>
+  <!-- EN: rusted revolver -->
+  <NAT_Gun_RustedRevolver.verbs.Verb_Shoot.label>ржавый револьвер</NAT_Gun_RustedRevolver.verbs.Verb_Shoot.label>
+  
+  <!-- EN: rusted shotgun -->
+  <NAT_Gun_RustedShotgun.label>ржавый дробовик</NAT_Gun_RustedShotgun.label>
+  <!-- EN: A piece of bioferrite shaped like a shotgun.\n\nSomehow can shoot if wielded by rusted creature. -->
+  <NAT_Gun_RustedShotgun.description>Кусок биоферрита в форме дробовика.\n\nМожет стрелять, если используется ржавым созданием.</NAT_Gun_RustedShotgun.description>
+  <!-- EN: stock -->
+  <NAT_Gun_RustedShotgun.tools.stock.label>приклад</NAT_Gun_RustedShotgun.tools.stock.label>
+  <!-- EN: barrel -->
+  <NAT_Gun_RustedShotgun.tools.barrel.label>ствол</NAT_Gun_RustedShotgun.tools.barrel.label>
+  <!-- EN: rusted shotgun -->
+  <NAT_Gun_RustedShotgun.verbs.Verb_Shoot.label>ржавый дробовик</NAT_Gun_RustedShotgun.verbs.Verb_Shoot.label>
+  
+  <!-- EN: rusted SMG -->
+  <NAT_Gun_RustedSMG.label>ржавый пистолет-пулемёт</NAT_Gun_RustedSMG.label>
+  <!-- EN: A piece of bioferrite shaped like a sub-machine gun.\n\nSomehow can shoot if wielded by rusted creature. -->
+  <NAT_Gun_RustedSMG.description>Кусок биоферрита в форме пистолет-пулемёта.\n\nМожет стрелять, если используется ржавым созданием.</NAT_Gun_RustedSMG.description>
+  <!-- EN: grip -->
+  <NAT_Gun_RustedSMG.tools.grip.label>рукоятка</NAT_Gun_RustedSMG.tools.grip.label>
+  <!-- EN: barrel -->
+  <NAT_Gun_RustedSMG.tools.barrel.label>ствол</NAT_Gun_RustedSMG.tools.barrel.label>
+  <!-- EN: rusted SMG -->
+  <NAT_Gun_RustedSMG.verbs.Verb_Shoot.label>ржавый пистолет-пулемёт</NAT_Gun_RustedSMG.verbs.Verb_Shoot.label>
+
+  <!-- EN: rusted assault SMG -->
+  <NAT_Gun_RustedAssaultSMG.label>ржавый штурмовой пистолет-пулемёт</NAT_Gun_RustedAssaultSMG.label>
+  <!-- EN: A piece of bioferrite shaped like an assault sub-machine gun.\n\nSomehow can shoot if wielded by rusted creature. -->
+  <NAT_Gun_RustedAssaultSMG.description>Кусок биоферрита в форме штурмового пистолет-пулемёта.\n\nМожет стрелять, если используется ржавым созданием.</NAT_Gun_RustedAssaultSMG.description>
+  <!-- EN: grip -->
+  <NAT_Gun_RustedAssaultSMG.tools.grip.label>рукоятка</NAT_Gun_RustedAssaultSMG.tools.grip.label>
+  <!-- EN: barrel -->
+  <NAT_Gun_RustedAssaultSMG.tools.barrel.label>ствол</NAT_Gun_RustedAssaultSMG.tools.barrel.label>
+  <!-- EN: rusted assault SMG -->
+  <NAT_Gun_RustedAssaultSMG.verbs.Verb_Shoot.label>ржавый штурмовой пистолет-пулемёт</NAT_Gun_RustedAssaultSMG.verbs.Verb_Shoot.label>
+  
+  <!-- EN: rusted army banner -->
+  <NAT_MeleeWeapon_RustedArmyBanner.label>знамя ржавой армии</NAT_MeleeWeapon_RustedArmyBanner.label>
+  <!-- EN: A piece of ancient fabric on a rusted bioferrite rod. -->
+  <NAT_MeleeWeapon_RustedArmyBanner.description>Кусок древней ткани на ржавом шесте.</NAT_MeleeWeapon_RustedArmyBanner.description>
+  <!-- EN: handle -->
+  <NAT_MeleeWeapon_RustedArmyBanner.tools.handle.label>рукоять</NAT_MeleeWeapon_RustedArmyBanner.tools.handle.label>
+  <!-- EN: point -->
+  <NAT_MeleeWeapon_RustedArmyBanner.tools.point.label>остриё</NAT_MeleeWeapon_RustedArmyBanner.tools.point.label>
+  
+  <!-- EN: rusted axe -->
+  <NAT_MeleeWeapon_RustedAxe.label>ржавый топор</NAT_MeleeWeapon_RustedAxe.label>
+  <!-- EN: A sharp bioferrite piece shaped like an axe. -->
+  <NAT_MeleeWeapon_RustedAxe.description>Заточенный обломок биоферрита с тяжёлой ударной частью в форме топора.</NAT_MeleeWeapon_RustedAxe.description>
+  <!-- EN: handle -->
+  <NAT_MeleeWeapon_RustedAxe.tools.handle.label>рукоять</NAT_MeleeWeapon_RustedAxe.tools.handle.label>
+  <!-- EN: head -->
+  <NAT_MeleeWeapon_RustedAxe.tools.head.label>head</NAT_MeleeWeapon_RustedAxe.tools.head.label>
+  
+  <!-- EN: rusted sword -->
+  <NAT_MeleeWeapon_RustedSword.label>ржавый меч</NAT_MeleeWeapon_RustedSword.label>
+  <!-- EN: A sharp bioferrite piece shaped like a sword. -->
+  <NAT_MeleeWeapon_RustedSword.description>Заточенный обломок биоферрита в форме меча.</NAT_MeleeWeapon_RustedSword.description>
+  <!-- EN: handle -->
+  <NAT_MeleeWeapon_RustedSword.tools.handle.label>рукоять</NAT_MeleeWeapon_RustedSword.tools.handle.label>
+  <!-- EN: point -->
+  <NAT_MeleeWeapon_RustedSword.tools.point.label>остриё</NAT_MeleeWeapon_RustedSword.tools.point.label>
+  <!-- EN: edge -->
+  <NAT_MeleeWeapon_RustedSword.tools.edge.label>лезвие</NAT_MeleeWeapon_RustedSword.tools.edge.label>
+  
+  <!-- EN: rusted grenade -->
+  <NAT_Proj_RustedGrenade.label>ржавая граната</NAT_Proj_RustedGrenade.label>
+  
+  <!-- EN: rusted grenades -->
+  <NAT_Weapon_RustedGrenade.label>ржавые гранаты</NAT_Weapon_RustedGrenade.label>
+  <!-- EN: A pieces of bioferrite shaped like grenades.\n\nSomehow can explode if were thrown by rusted creature. -->
+  <NAT_Weapon_RustedGrenade.description>Кусок биоферрита в форме ручных гранат.\n\nМогут детонировать, если использованы ржавым созданием.</NAT_Weapon_RustedGrenade.description>
+  <!-- EN: throw rusted grenade -->
+  <NAT_Weapon_RustedGrenade.verbs.throw_rusted_grenade.label>кинуть ржавую гранату</NAT_Weapon_RustedGrenade.verbs.throw_rusted_grenade.label>
+  
+</LanguageData>

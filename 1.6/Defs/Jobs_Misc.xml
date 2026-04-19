@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <JobDef>
+    <defName>NAT_UseItemByRust</defName>
+    <driverClass>NAT.JobDriver_UseItemByRust</driverClass>
+    <reportString>using TargetA.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>NAT_CarryShell</defName>
+    <driverClass>NAT.JobDriver_CarryShell</driverClass>
+    <reportString>loading TargetA.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>NAT_DanceRust</defName>
+    <driverClass>NAT.JobDriver_DanceRust</driverClass>
+    <reportString>dancing</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>NAT_RustedTurretSetUp</defName>
+    <driverClass>NAT.JobDriver_TurretSetUp</driverClass>
+    <reportString>setting up</reportString>
+  </JobDef>
+
+</Defs>

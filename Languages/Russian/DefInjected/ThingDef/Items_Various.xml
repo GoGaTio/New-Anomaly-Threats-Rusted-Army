@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: core of rust -->
+  <NAT_RustedCore.label>ядро ржавчины</NAT_RustedCore.label>
+  <!-- EN: A small metal icosahedron. Slowly grows bioferrite on surface. -->
+  <NAT_RustedCore.description>Небольшой экосаэдр из скользкого тёмного металла. Медленно обрастает биоферритом.</NAT_RustedCore.description>
+  <!-- EN: None -->
+  <NAT_RustedCore.comps.CompDestroyRustedCore.activateDescString>None</NAT_RustedCore.comps.CompDestroyRustedCore.activateDescString>
+  <!-- EN: None -->
+  <NAT_RustedCore.comps.CompDestroyRustedCore.activateLabelString>None</NAT_RustedCore.comps.CompDestroyRustedCore.activateLabelString>
+  <!-- EN: destroying {0}: {1}s -->
+  <NAT_RustedCore.comps.CompDestroyRustedCore.activatingString>уничтожает {0}: {1}s</NAT_RustedCore.comps.CompDestroyRustedCore.activatingString>
+  <!-- EN: destroying {0} -->
+  <NAT_RustedCore.comps.CompDestroyRustedCore.activatingStringPending>уничтожает {0}</NAT_RustedCore.comps.CompDestroyRustedCore.activatingStringPending>
+  <!-- EN: Choose who should destroy this. -->
+  <NAT_RustedCore.comps.CompDestroyRustedCore.guiLabelString>Выберите кто должен уничтожить это ядро.</NAT_RustedCore.comps.CompDestroyRustedCore.guiLabelString>
+  <!-- EN: destroy -->
+  <NAT_RustedCore.comps.CompDestroyRustedCore.jobString>уничтожить</NAT_RustedCore.comps.CompDestroyRustedCore.jobString>
+  
+</LanguageData>

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <EntityCodexEntryDef>
+    <defName>NAT_RustedMass</defName>
+    <label>rusted mass</label>
+    <useDescriptionFrom>NAT_RustedMass</useDescriptionFrom>
+    <uiIconPath>UI/CodexEntries/NAT_RustedMass</uiIconPath>
+    <category>Advanced</category>
+    <linkedThings>
+      <li>NAT_RustedMass</li>
+    </linkedThings>
+    <provocationIncidents>
+      <li>NAT_RustedMassArrival</li>
+    </provocationIncidents>
+    <discoveredResearchProjects>
+      <li>NAT_RustCreation</li>
+    </discoveredResearchProjects>
+    <orderInCategory>393</orderInCategory>
+    <modExtensions>
+      <li Class="NAT.CodexEntryExtension"/>
+    </modExtensions>
+  </EntityCodexEntryDef>
+  
+  <EntityCodexEntryDef>
+    <defName>NAT_RustedArmy</defName>
+    <label>rusted army</label>
+    <description>Alive bioferrite pieces, behaving like some kind of military organization. Rough bioferrite bodies make them tough, but also very flammable.\n\nOutlander researchers don't fully understand the nature of rusted creatures, their goals and function mechanism, but designate that rusts have signs of separation from Horax mind.</description>
+    <uiIconPath>UI/CodexEntries/NAT_RustedArmy</uiIconPath>
+    <category>Advanced</category>
+    <linkedThings>
+      <li>NAT_RustedSoldier</li>
+      <li>NAT_RustedTrooper</li>
+      <li>NAT_RustedGuardsman</li>
+      <li>NAT_RustedOfficer</li>
+      <li>NAT_RustedTurret_Mini</li>
+      <li>NAT_RustedTurret_Auto</li>
+      <li>NAT_RustedTurret_Sniper</li>
+    </linkedThings>
+    <provocationIncidents>
+      <li>NAT_RustedArmyRaid</li>
+      <li>NAT_RustedArmySiege</li>
+    </provocationIncidents>
+    <discoveredResearchProjects>
+      <li>NAT_RustedActivators</li>
+    </discoveredResearchProjects>
+    <orderInCategory>394</orderInCategory>
+    <modExtensions>
+      <li Class="NAT.CodexEntryExtension"/>
+    </modExtensions>
+  </EntityCodexEntryDef>
+
+  <EntityCodexEntryDef>
+    <defName>NAT_RustedGeneral</defName>
+    <label>rusted general</label>
+    <useDescriptionFrom>NAT_RustedGeneral</useDescriptionFrom>
+    <uiIconPath>UI/CodexEntries/NAT_RustedArmy</uiIconPath>
+    <category>Advanced</category>
+    <linkedThings>
+      <li>NAT_RustedGeneral</li>
+    </linkedThings>
+    <discoveredResearchProjects>
+      <li>NAT_AdvancedRustCreation</li>
+<li>NAT_RustedCoreUpgrades</li>
+    </discoveredResearchProjects>
+    <orderInCategory>395</orderInCategory>
+  </EntityCodexEntryDef>
+
+</Defs>

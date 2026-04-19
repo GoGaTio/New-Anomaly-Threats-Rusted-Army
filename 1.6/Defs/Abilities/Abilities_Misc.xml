@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!--<AbilityDef>
+    <defName>NAT_ShapeRust</defName>
+    <label>shape bioferrite</label>
+    <description>Use dark psychic powers to shape the closest 100 bioferrite pieces into a living rust.</description>
+    <iconPath>UI/Abilities/NAT_ShapeRust</iconPath>
+    <hostile>false</hostile>
+    <statBases>
+      <Ability_Duration>1000</Ability_Duration>
+    </statBases>
+    <cooldownTicksRange>1800000</cooldownTicksRange>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <warmupEffecter>PsychicRitual_Sustained</warmupEffecter>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <warmupTime>5</warmupTime>
+      <range>9.9</range>
+      <targetParams>
+        <canTargetPawns>False</canTargetPawns>
+        <canTargetLocations>True</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="NAT.CompProperties_AbilityShapeRust">
+        <bioferriteCount>100</bioferriteCount>
+        <connectRadius>2.9</connectRadius>
+        <kinds>
+          <NAT_RustedSoldier>10</NAT_RustedSoldier>
+          <NAT_RustedTrooper>6</NAT_RustedTrooper>
+        </kinds>
+      </li>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>DarkPsychicShock</hediffDef>
+        <onlyApplyToSelf>True</onlyApplyToSelf>
+      </li>
+    </comps>
+  </AbilityDef>-->
+
+</Defs>

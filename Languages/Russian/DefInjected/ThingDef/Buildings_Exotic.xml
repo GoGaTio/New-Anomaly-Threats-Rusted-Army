@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- EN: large rusted sculpture -->
+  <NAT_RustedSculpture_Guardsman.label>большая ржавая скульптура</NAT_RustedSculpture_Guardsman.label>
+  <!-- EN: A large bioferrite piece shaped like humanoid creature.\n\nCan be activated into rusted guardsman using shard. -->
+  <NAT_RustedSculpture_Guardsman.description>Большой кусок биоферрита похожий на гуманоидную фигуру.\n\nМожет активированна при помощи осколка.</NAT_RustedSculpture_Guardsman.description>
+  <!-- EN: Order a pawn to activate rusted guardsman. -->
+  <NAT_RustedSculpture_Guardsman.comps.CompRustedSculpture.activateDescString>Выбрать того, кто активирует ржавую скульптуру.</NAT_RustedSculpture_Guardsman.comps.CompRustedSculpture.activateDescString>
+  <!-- EN: Order activating -->
+  <NAT_RustedSculpture_Guardsman.comps.CompRustedSculpture.activateLabelString>Активировать</NAT_RustedSculpture_Guardsman.comps.CompRustedSculpture.activateLabelString>
+  <!-- EN: activating rusted guardsman -->
+  <NAT_RustedSculpture_Guardsman.comps.CompRustedSculpture.activatingString>активирует ржавого гвардейца</NAT_RustedSculpture_Guardsman.comps.CompRustedSculpture.activatingString>
+  <!-- EN: activating rusted guardsman -->
+  <NAT_RustedSculpture_Guardsman.comps.CompRustedSculpture.activatingStringPending>активирует ржавого гвардейца</NAT_RustedSculpture_Guardsman.comps.CompRustedSculpture.activatingStringPending>
+  <!-- EN: Choose who should activate rusted guardsman. -->
+  <NAT_RustedSculpture_Guardsman.comps.CompRustedSculpture.guiLabelString>Выбрать того, кто активирует ржавую скульптуру.</NAT_RustedSculpture_Guardsman.comps.CompRustedSculpture.guiLabelString>
+  <!-- EN: activate -->
+  <NAT_RustedSculpture_Guardsman.comps.CompRustedSculpture.jobString>активировать</NAT_RustedSculpture_Guardsman.comps.CompRustedSculpture.jobString>
+  
+  <!-- EN: rusted sculpture -->
+  <NAT_RustedSculpture_Soldier.label>ржавая скульптура</NAT_RustedSculpture_Soldier.label>
+  <!-- EN: A bioferrite piece shaped like humanoid creature.\n\nCan be activated into rusted infantryman using shard. -->
+  <NAT_RustedSculpture_Soldier.description>Кусок биоферрита похожий на гуманоидную фигуру.\n\nМожет активированна при помощи осколка.</NAT_RustedSculpture_Soldier.description>
+  <!-- EN: Order a pawn to activate rusted infantryman. -->
+  <NAT_RustedSculpture_Soldier.comps.CompRustedSculpture.activateDescString>Выбрать того, кто активирует ржавую скульптуру.</NAT_RustedSculpture_Soldier.comps.CompRustedSculpture.activateDescString>
+  <!-- EN: Order activating -->
+  <NAT_RustedSculpture_Soldier.comps.CompRustedSculpture.activateLabelString>Активировать</NAT_RustedSculpture_Soldier.comps.CompRustedSculpture.activateLabelString>
+  <!-- EN: activating rusted infantryman -->
+  <NAT_RustedSculpture_Soldier.comps.CompRustedSculpture.activatingString>активирует ржавого пехотинца</NAT_RustedSculpture_Soldier.comps.CompRustedSculpture.activatingString>
+  <!-- EN: activating rusted infantryman -->
+  <NAT_RustedSculpture_Soldier.comps.CompRustedSculpture.activatingStringPending>активирует ржавого пехотинца</NAT_RustedSculpture_Soldier.comps.CompRustedSculpture.activatingStringPending>
+  <!-- EN: Choose who should activate rusted infantryman. -->
+  <NAT_RustedSculpture_Soldier.comps.CompRustedSculpture.guiLabelString>Выбрать того, кто активирует ржавую скульптуру.</NAT_RustedSculpture_Soldier.comps.CompRustedSculpture.guiLabelString>
+  <!-- EN: activate -->
+  <NAT_RustedSculpture_Soldier.comps.CompRustedSculpture.jobString>активировать</NAT_RustedSculpture_Soldier.comps.CompRustedSculpture.jobString>
+  
+  <!-- EN: small rusted sculpture -->
+  <NAT_RustedSculpture_Trooper.label>малая ржавая скульптура</NAT_RustedSculpture_Trooper.label>
+  <!-- EN: A small bioferrite piece shaped like humanoid creature.\n\nCan be activated into rusted stormtrooper using shard. -->
+  <NAT_RustedSculpture_Trooper.description>Малый кусок биоферрита похожий на гуманоидную фигуру.\n\nМожет активированна при помощи осколка.</NAT_RustedSculpture_Trooper.description>
+  <!-- EN: Order a pawn to activate rusted stormtrooper. -->
+  <NAT_RustedSculpture_Trooper.comps.CompRustedSculpture.activateDescString>Выбрать того, кто активирует ржавую скульптуру.</NAT_RustedSculpture_Trooper.comps.CompRustedSculpture.activateDescString>
+  <!-- EN: Order activating -->
+  <NAT_RustedSculpture_Trooper.comps.CompRustedSculpture.activateLabelString>Активировать</NAT_RustedSculpture_Trooper.comps.CompRustedSculpture.activateLabelString>
+  <!-- EN: activating rusted stormtrooper -->
+  <NAT_RustedSculpture_Trooper.comps.CompRustedSculpture.activatingString>активирует ржавого десантника</NAT_RustedSculpture_Trooper.comps.CompRustedSculpture.activatingString>
+  <!-- EN: activating rusted stormtrooper -->
+  <NAT_RustedSculpture_Trooper.comps.CompRustedSculpture.activatingStringPending>активирует ржавого десантника</NAT_RustedSculpture_Trooper.comps.CompRustedSculpture.activatingStringPending>
+  <!-- EN: Choose who should activate rusted stormtrooper. -->
+  <NAT_RustedSculpture_Trooper.comps.CompRustedSculpture.guiLabelString>Выбрать того, кто активирует ржавую скульптуру.</NAT_RustedSculpture_Trooper.comps.CompRustedSculpture.guiLabelString>
+  <!-- EN: activate -->
+  <NAT_RustedSculpture_Trooper.comps.CompRustedSculpture.jobString>активировать</NAT_RustedSculpture_Trooper.comps.CompRustedSculpture.jobString>
+  
+</LanguageData>

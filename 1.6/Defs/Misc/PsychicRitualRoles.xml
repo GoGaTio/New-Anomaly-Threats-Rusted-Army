@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <PsychicRitualRoleDef>
+    <defName>NAT_InvokerRust</defName>
+    <label>invoker</label>
+    <allowedCount>1</allowedCount>
+    <canHandleOfferings>true</canHandleOfferings>
+    <showInvocationVfx>true</showInvocationVfx>
+    <allowedConditions>DefaultInvoker, NonHumanlike</allowedConditions>
+  </PsychicRitualRoleDef>
+
+  <PsychicRitualRoleDef ParentName="ChanterBase">
+    <defName>NAT_ChanterRust</defName> <!-- Same role, just allow rusts -->
+    <allowedCount>0~6</allowedCount>
+    <allowedConditions>Default, NonHumanlike</allowedConditions>
+  </PsychicRitualRoleDef>
+
+</Defs>

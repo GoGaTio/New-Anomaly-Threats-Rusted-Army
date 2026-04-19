@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <NAT.PsychicRitualDef_CreateRust>
+    <defName>NAT_CreateRust_Soldier</defName>
+    <label>rusted infantryman creation</label>
+    <description>Create rusted infantryman using bioferrite and dark archotechnology shards. There's always a fail chance, so ritual may require many attempts.</description>
+    <researchPrerequisite>NAT_RustCreation</researchPrerequisite>
+    <outcomeDescription>With the current ritual quality, there is a {0} chance of successful rusted infantryman creation.\n\nIf the ritual fails, some bioferrite and all shards will be lost.</outcomeDescription>
+    <hoursUntilOutcome>4</hoursUntilOutcome>
+    <successLetterText>{INVOKER_nameDef} has completed {RITUAL_definite} ritual, turning bioferrite into {PAWN_nameDef}({PAWN_kind}).</successLetterText>
+    <failLetterText>{INVOKER_nameDef} has completed {RITUAL_definite} ritual, but nothing happens.</failLetterText>
+    <invokerRole>NAT_InvokerRust</invokerRole>
+    <chanterRole>NAT_ChanterRust</chanterRole>
+    <requiredOffering>
+      <filter>
+        <thingDefs>
+          <li>Shard</li>
+        </thingDefs>
+      </filter>
+      <count>1</count>
+    </requiredOffering>
+    <additionalOfferings>
+      <Bioferrite>125</Bioferrite>
+    </additionalOfferings>
+    <clearEquipment>true</clearEquipment>
+    <ageBiologicalYears>0</ageBiologicalYears>
+    <ageChronologicalYears>0</ageChronologicalYears>
+    <pawnKind>NAT_RustedSoldier</pawnKind>
+    <successChanceFromQualityCurve>
+      <points>
+        <li>(0, 0.1)</li>
+        <li>(0.5, 0.55)</li>
+        <li>(0.7, 0.7)</li>
+        <li>(1, 0.99)</li>
+      </points>
+    </successChanceFromQualityCurve>
+    <cooldownHours>480</cooldownHours>
+    <iconPath>UI/PsychicRituals/NAT_PsychicRitual_CreateRustedSoldier</iconPath>
+  </NAT.PsychicRitualDef_CreateRust>
+
+  <NAT.PsychicRitualDef_CreateRust>
+    <defName>NAT_CreateRust_Trooper</defName>
+    <label>rusted stormtrooper creation</label>
+    <description>Create rusted trooper using bioferrite and dark archotechnology shards. There's always a fail chance, so ritual may require many attempts.</description>
+    <researchPrerequisite>NAT_RustCreation</researchPrerequisite>
+    <outcomeDescription>With the current ritual quality, there is a {0} chance of successful rusted stormtrooper creation.\n\nIf the ritual fails, some bioferrite and all shards will be lost.</outcomeDescription>
+    <hoursUntilOutcome>4</hoursUntilOutcome>
+    <successLetterText>{INVOKER_nameDef} has completed {RITUAL_definite} ritual, turning bioferrite into {PAWN_nameDef}({PAWN_kind}).</successLetterText>
+    <failLetterText>{INVOKER_nameDef} has completed {RITUAL_definite} ritual, but nothing happens.</failLetterText>
+    <invokerRole>NAT_InvokerRust</invokerRole>
+    <chanterRole>NAT_ChanterRust</chanterRole>
+    <requiredOffering>
+      <filter>
+        <thingDefs>
+          <li>Shard</li>
+        </thingDefs>
+      </filter>
+      <count>1</count>
+    </requiredOffering>
+    <additionalOfferings>
+      <Bioferrite>75</Bioferrite>
+    </additionalOfferings>
+    <clearEquipment>true</clearEquipment>
+    <ageBiologicalYears>0</ageBiologicalYears>
+    <ageChronologicalYears>0</ageChronologicalYears>
+    <pawnKind>NAT_RustedTrooper</pawnKind>
+    <successChanceFromQualityCurve>
+      <points>
+        <li>(0, 0.1)</li>
+        <li>(0.5, 0.6)</li>
+        <li>(0.7, 0.75)</li>
+        <li>(1, 0.99)</li>
+      </points>
+    </successChanceFromQualityCurve>
+    <cooldownHours>480</cooldownHours>
+    <iconPath>UI/PsychicRituals/NAT_PsychicRitual_CreateRustedTrooper</iconPath>
+  </NAT.PsychicRitualDef_CreateRust>
+
+  <NAT.PsychicRitualDef_CreateRust>
+    <defName>NAT_CreateRust_Guardsman</defName>
+    <label>rusted guardsman creation</label>
+    <description>Create rusted guardsman using bioferrite and dark archotechnology shards. There's always a fail chance, so ritual may require many attempts.</description>
+    <researchPrerequisite>NAT_AdvancedRustCreation</researchPrerequisite>
+    <outcomeDescription>With the current ritual quality, there is a {0} chance of successful rusted guardsman creation.\n\nIf the ritual fails, some bioferrite and all shards will be lost.</outcomeDescription>
+    <hoursUntilOutcome>5</hoursUntilOutcome>
+    <successLetterText>{INVOKER_nameDef} has completed {RITUAL_definite} ritual, turning bioferrite into {PAWN_nameDef}({PAWN_kind}).</successLetterText>
+    <failLetterText>{INVOKER_nameDef} has completed {RITUAL_definite} ritual, but nothing happens.</failLetterText>
+    <invokerRole>NAT_InvokerRust</invokerRole>
+    <chanterRole>NAT_ChanterRust</chanterRole>
+    <requiredOffering>
+      <filter>
+        <thingDefs>
+          <li>Shard</li>
+        </thingDefs>
+      </filter>
+      <count>2</count>
+    </requiredOffering>
+    <additionalOfferings>
+      <Bioferrite>225</Bioferrite>
+    </additionalOfferings>
+    <clearEquipment>true</clearEquipment>
+    <ageBiologicalYears>0</ageBiologicalYears>
+    <ageChronologicalYears>0</ageChronologicalYears>
+    <pawnKind>NAT_RustedGuardsman</pawnKind>
+    <successChanceFromQualityCurve>
+      <points>
+        <li>(0, 0.1)</li>
+        <li>(0.5, 0.55)</li>
+        <li>(0.7, 0.7)</li>
+        <li>(1, 0.99)</li>
+      </points>
+    </successChanceFromQualityCurve>
+    <cooldownHours>720</cooldownHours>
+    <iconPath>UI/PsychicRituals/NAT_PsychicRitual_CreateRustedGuardsman</iconPath>
+  </NAT.PsychicRitualDef_CreateRust>
+
+  <NAT.PsychicRitualDef_CreateRust>
+    <defName>NAT_CreateRust_Officer</defName>
+    <label>rusted officer creation</label>
+    <description>Create rusted officer using bioferrite and dark archotechnology shards. There's always a fail chance, so ritual may require many attempts.</description>
+    <researchPrerequisite>NAT_AdvancedRustCreation</researchPrerequisite>
+    <outcomeDescription>With the current ritual quality, there is a {0} chance of successful rusted officer creation.\n\nIf the ritual fails, some bioferrite and all shards will be lost.</outcomeDescription>
+    <hoursUntilOutcome>6</hoursUntilOutcome>
+    <successLetterText>{INVOKER_nameDef} has completed {RITUAL_definite} ritual, turning bioferrite into {PAWN_nameDef}({PAWN_kind}).</successLetterText>
+    <failLetterText>{INVOKER_nameDef} has completed {RITUAL_definite} ritual, but nothing happens.</failLetterText>
+    <invokerRole>NAT_InvokerRust</invokerRole>
+    <chanterRole>NAT_ChanterRust</chanterRole>
+    <requiredOffering>
+      <filter>
+        <thingDefs>
+          <li>Shard</li>
+        </thingDefs>
+      </filter>
+      <count>3</count>
+    </requiredOffering>
+    <additionalOfferings>
+      <Bioferrite>300</Bioferrite>
+      <NAT_VoidmetalMedal>1</NAT_VoidmetalMedal>
+    </additionalOfferings>
+    <unremovableThings>
+      <li>NAT_VoidmetalMedal</li>
+    </unremovableThings>
+    <clearEquipment>true</clearEquipment>
+    <ageBiologicalYears>0</ageBiologicalYears>
+    <ageChronologicalYears>0</ageChronologicalYears>
+    <pawnKind>NAT_RustedOfficer</pawnKind>
+    <successChanceFromQualityCurve>
+      <points>
+        <li>(0, 0.1)</li>
+        <li>(0.5, 0.55)</li>
+        <li>(0.7, 0.7)</li>
+        <li>(1, 0.99)</li>
+      </points>
+    </successChanceFromQualityCurve>
+    <cooldownHours>960</cooldownHours>
+    <iconPath>UI/PsychicRituals/NAT_PsychicRitual_CreateRustedOfficer</iconPath>
+  </NAT.PsychicRitualDef_CreateRust>
+
+</Defs>

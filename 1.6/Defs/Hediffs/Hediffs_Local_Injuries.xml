@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HediffDef ParentName="InjuryBase">
+    <defName>NAT_DecayWound</defName>
+    <label>decay</label>
+    <labelNoun>a decay wound</labelNoun>
+    <description>A decay wound.</description>
+    <comps>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>decay scar</permanentLabel>
+      </li>
+      <li Class="HediffCompProperties_TendDuration">
+        <labelTendedWell>bandaged</labelTendedWell>
+        <labelTendedWellInner>tended</labelTendedWellInner>
+        <labelSolidTendedWell>tended</labelSolidTendedWell>
+      </li>
+    </comps>
+    <injuryProps>
+      <painPerSeverity>0.01875</painPerSeverity>
+      <averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
+      <canMerge>true</canMerge>
+      <destroyedLabel>Decayed off</destroyedLabel>
+      <destroyedOutLabel>Decayed out</destroyedOutLabel>
+    </injuryProps>
+  </HediffDef>
+
+</Defs>

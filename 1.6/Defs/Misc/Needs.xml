@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <NeedDef>
+    <defName>NAT_RustRest</defName>
+    <needClass>NAT.Need_RustRest</needClass>
+    <label>shouldn't be translated</label>
+    <description>shouldn't be translated</description>
+    <listPriority>700</listPriority>
+    <major>true</major>
+    <showForCaravanMembers>true</showForCaravanMembers>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+  </NeedDef>
+
+</Defs>

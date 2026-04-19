@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="NAT_BaseRustedPawn">
+    <defName>NAT_RustedGeneral</defName>
+    <label>rusted general</label>
+    <description>Bioferrite pieces shaped like tall human figure. This type of rusted creature is Rusted army elite unit, so has thicker armor and better combat skills than regular soldiers.</description>
+    <statBases>
+      <MoveSpeed>3</MoveSpeed>
+      <MarketValue>7900</MarketValue>
+      <ArmorRating_Blunt>1.5</ArmorRating_Blunt>
+      <ArmorRating_Sharp>1.15</ArmorRating_Sharp>
+      <MinimumContainmentStrength>370</MinimumContainmentStrength>
+      <StaggerDurationFactor>0</StaggerDurationFactor>
+      <NAT_CoreDropChance>0</NAT_CoreDropChance>
+      <AimingDelayFactor>0.25</AimingDelayFactor>
+      <NAT_ReinforcementsCooldown>3</NAT_ReinforcementsCooldown>
+    </statBases>
+    <race>
+      <body>NAT_RustedGeneral</body>
+      <baseHealthScale>6</baseHealthScale>
+      <baseBodySize>3.4</baseBodySize>
+      <lifeStageAges>
+        <li>
+          <def>EntityFullyFormed</def>
+          <soundCall>NAT_Pawn_RustedOfficer_Call</soundCall>
+          <soundWounded>NAT_Pawn_RustedOfficer_Wounded</soundWounded>
+          <soundDeath>NAT_Pawn_RustedOfficer_Death</soundDeath>
+        </li>
+      </lifeStageAges>
+    </race>
+    <uiIconPath>Things/Pawn/NAT_RustedGuardsman_Icon</uiIconPath>
+    <uiIconScale>1</uiIconScale>
+    <comps>
+      <li Class="CompProperties_HoldingPlatformTarget">
+        <baseEscapeIntervalMtbDays>60</baseEscapeIntervalMtbDays>
+      </li>
+      <li Class="CompProperties_EffecterOnDeath">
+        <effecterDef>NAT_RustedOfficerDeath</effecterDef>
+      </li>
+      <li Class="CompProperties_AttachPoints">
+        <points>
+          <li>
+            <offset>(-.52, 0, .21)</offset>
+            <type>PlatformRestraint0</type>
+          </li>
+          <li>
+            <offset>(.6, 0, .35)</offset>
+            <type>PlatformRestraint1</type>
+          </li>
+          <li>
+            <offset>(.28, 0, -.57)</offset>
+            <type>PlatformRestraint2</type>
+          </li>
+          <li>
+            <offset>(-.22, 0, -.65)</offset>
+            <type>PlatformRestraint3</type>
+          </li>
+        </points>
+      </li>
+      <li Class="CompProperties_ProducesBioferrite">
+        <bioferriteDensity>2.5</bioferriteDensity>
+      </li>
+      <li Class="CompProperties_Studiable">
+        <frequencyTicks>120000</frequencyTicks>
+        <knowledgeCategory>Advanced</knowledgeCategory>
+        <anomalyKnowledge>7</anomalyKnowledge>
+        <minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+        <requiresHoldingPlatform>true</requiresHoldingPlatform>
+      </li>
+      <li Class="NAT.CompProperties_RustedSoldier">
+        <bodyType>Hulk</bodyType>
+        <interaction>NAT_RustedChat</interaction>
+        <canInteract>false</canInteract>
+        <canRecieveInteraction>false</canRecieveInteraction>
+        <hasHead>true</hasHead>
+        <canWearApparel>false</canWearApparel>
+        <drawData>
+          <dataNorth>
+            <offset>(-0.1, 0, 0.8)</offset>
+          </dataNorth>
+          <dataEast>
+            <offset>(0.1, 0, 0.65)</offset>
+          </dataEast>
+          <dataSouth>
+            <offset>(0.1, 0, 0.8)</offset>
+          </dataSouth>
+          <dataWest>
+            <offset>(-0.1, 0, 0.65)</offset>
+          </dataWest>
+        </drawData>
+        <headTags>
+          <li>General</li>
+        </headTags>
+      </li>
+      <li Class="NAT.CompProperties_RustedCommander">
+        <startingUnits>18</startingUnits>
+        <ticksToRestore>2500</ticksToRestore>
+      </li>
+      <li Class="NAT.CompProperties_RustedWorker">
+        <skills>
+          <Shooting>20</Shooting>
+          <Melee>20</Melee>
+          <Construction>6</Construction>
+          <Cooking>5</Cooking>
+          <Mining>4</Mining>
+          <Plants>4</Plants>
+          <Crafting>18</Crafting>
+          <Medicine>10</Medicine>
+          <Intellectual>20</Intellectual>
+        </skills>
+        <canWork>false</canWork>
+      </li>
+      <li Class="NAT.CompProperties_RustedTurret">
+        <turretDef>NAT_Gun_RustedAutoTurret</turretDef>
+        <saveKeysPrefix>NAT_Auto</saveKeysPrefix>
+        <angleOffset>-90</angleOffset>
+        <renderNodeProperty>
+          <parentTagDef>Body</parentTagDef>
+          <baseLayer>25</baseLayer>
+          <drawData>
+            <dataNorth>
+              <offset>(1.2, 0, 0.8)</offset>
+            </dataNorth>
+            <dataEast>
+              <offset>(0.1, 0, 0.85)</offset>
+            </dataEast>
+            <dataSouth>
+              <offset>(-1.2, 0, 0.8)</offset>
+            </dataSouth>
+            <dataWest>
+              <offset>(-0.1, 0, 0.85)</offset>
+              <rotationOffset>180</rotationOffset>
+            </dataWest>
+          </drawData>
+        </renderNodeProperty>
+      </li>
+      <li Class="NAT.CompProperties_RustedTurret">
+        <turretDef>NAT_Gun_RustedFoamTurret</turretDef>
+        <saveKeysPrefix>NAT_Foam</saveKeysPrefix>
+        <angleOffset>-90</angleOffset>
+        <foamTurret>true</foamTurret>
+        <extraCooldownTicks>60</extraCooldownTicks>
+        <renderNodeProperty>
+          <parentTagDef>Body</parentTagDef>
+          <baseLayer>25</baseLayer>
+          <drawData>
+            <dataNorth>
+              <offset>(-0.8, 0, 0.6)</offset>
+            </dataNorth>
+            <dataEast>
+              <offset>(0.1, 0, 0.6)</offset>
+            </dataEast>
+            <dataSouth>
+              <offset>(0.8, 0, 0.6)</offset>
+            </dataSouth>
+            <dataWest>
+              <offset>(-0.1, 0, 0.6)</offset>
+              <rotationOffset>180</rotationOffset>
+            </dataWest>
+          </drawData>
+        </renderNodeProperty>
+      </li>
+      <!--<li Class="NAT.CompProperties_BossStages">
+        <stages>
+          <li>
+            <abilities>
+      <li>NAT_Reinforcement_AutoTurret</li>
+      <li>NAT_Reinforcement_Guardsman</li>
+      <li>NAT_Reinforcement_SniperTurret</li>
+    </abilities>
+            <statOffsets>
+          <MoveSpeed>0.4</MoveSpeed>
+          <MeleeDodgeChance>10</MeleeDodgeChance>
+        </statOffsets>
+            <statFactors>
+          <IncomingDamageFactor>0.75</IncomingDamageFactor>
+          <Flammability>0.5</Flammability>
+        </statFactors>
+            <dataWest>
+              <offset>(-0.1, 0, 0.6)</offset>
+              <rotationOffset>180</rotationOffset>
+            </dataWest>
+          </li>
+        </stages>
+      </li>-->
+    </comps>
+    <tools Inherit="False">
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>NAT_RustedDemolish</li>
+        </capacities>
+        <power>20</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+      <li>
+        <label>left claw</label>
+        <labelNoLocation>claw</labelNoLocation>
+        <capacities>
+          <li>NAT_RustedDemolish</li>
+        </capacities>
+        <power>35</power>
+        <cooldownTime>1.5</cooldownTime>
+        <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+        <extraMeleeDamages>
+          <li>
+            <def>Stun</def>
+            <amount>60</amount>
+          </li>
+        </extraMeleeDamages>
+      </li>
+      <li>
+        <label>right claw</label>
+        <labelNoLocation>claw</labelNoLocation>
+        <capacities>
+          <li>NAT_RustedDemolish</li>
+        </capacities>
+        <power>35</power>
+        <cooldownTime>1.5</cooldownTime>
+        <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+        <extraMeleeDamages>
+          <li>
+            <def>Stun</def>
+            <amount>60</amount>
+          </li>
+        </extraMeleeDamages>
+      </li>
+    </tools>
+    <killedLeavingsRanges>
+      <Bioferrite>40~100</Bioferrite>
+    </killedLeavingsRanges>
+  </ThingDef>
+
+  <PawnKindDef Name="NAT_RustedGeneralKindBase" ParentName="NAT_RustKindBase">
+    <defName>NAT_RustedGeneral</defName>
+    <label>rusted general</label>
+    <startingHediffs>
+      <li>
+        <def>NAT_RustedRegeneration</def>
+        <severity>1</severity>
+      </li>
+    </startingHediffs>
+    <race>NAT_RustedGeneral</race>
+    <weaponTags>
+      <li>NAT_RustedMachineGun</li>
+      <li>NAT_RustedSniperRifle</li>
+      <li>NAT_RustedAssaultShotgun</li>
+    </weaponTags>
+    <skipResistant>true</skipResistant>
+    <aiAvoidCover>true</aiAvoidCover>
+    <isBoss>true</isBoss>
+    <modExtensions>
+      <li Class="NAT.RustedPawnExtention">
+        <scenarioAvailable>false</scenarioAvailable>
+      </li>
+    </modExtensions>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Bodies/NAT_General</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>3</drawSize>
+        </bodyGraphicData>
+        <silhouetteGraphicData>
+          <texPath>Things/Pawn/NAT_RustedGuardsman_Icon</texPath>
+          <drawSize>2.34</drawSize>
+        </silhouetteGraphicData>
+      </li>
+    </lifeStages>
+    <combatPower>900</combatPower>
+    <weaponMoney>9999~9999</weaponMoney>
+    <combatEnhancingDrugsCount>0</combatEnhancingDrugsCount>
+    <startingHediffs>
+      <li>
+        <def>NAT_ActivatedSpeed</def>
+        <durationTicksRange>60000~300000</durationTicksRange>
+        <chance>0.5</chance>
+      </li>
+      <li>
+        <def>NAT_ActivatedDurability</def>
+        <durationTicksRange>60000~300000</durationTicksRange>
+        <chance>0.5</chance>
+      </li>
+      <li>
+        <def>NAT_ActivatedCharge</def>
+        <durationTicksRange>60000~300000</durationTicksRange>
+        <chance>0.6</chance>
+      </li>
+      <li>
+        <def>NAT_ActivatedRegeneration</def>
+        <durationTicksRange>60000~300000</durationTicksRange>
+      </li>
+    </startingHediffs>
+    <abilities>
+      <li>NAT_Reinforcement_AutoTurret</li>
+      <li>NAT_Reinforcement_Guardsman</li>
+      <li>NAT_Reinforcement_SniperTurret</li>
+    </abilities>
+  </PawnKindDef>
+
+
+</Defs>

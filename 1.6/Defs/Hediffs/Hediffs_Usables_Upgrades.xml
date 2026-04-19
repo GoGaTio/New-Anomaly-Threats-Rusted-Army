@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+ <HediffDef Name="NAT_RustedCoreUpgradeBase" Abstract="True">
+    <hediffClass>Hediff_Level</hediffClass>
+    <defaultLabelColor>(1.0, 0.6, 0.6)</defaultLabelColor>
+    <isBad>false</isBad>
+    <priceImpact>true</priceImpact>
+    <initialSeverity>1</initialSeverity> <!-- Severity is bound to level of implant -->
+    <minSeverity>0</minSeverity>
+    <maxSeverity>3</maxSeverity>
+    <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+    <levelIsQuantity>true</levelIsQuantity>
+    <duplicationAllowed>false</duplicationAllowed>
+    <defaultInstallPart>NAT_RustedCore</defaultInstallPart>
+  </HediffDef>
+
+<HediffDef ParentName="NAT_RustedCoreUpgradeBase" >
+    <defName>NAT_CoreUpgrade_Stability</defName>
+    <label>shard stabilizator</label>
+    <description>An implant which increases a mechanitor's control group count and the work speed of a mechanitor's mechs.\n\nThis implant can be installed up to 6 times to increase its effect.</description>
+    <stages>
+      <li>
+        <minSeverity>1</minSeverity>
+        <statOffsets>
+          <NAT_CoreDropChance>0.33</NAT_CoreDropChance>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>2</minSeverity>
+        <statOffsets>
+          <NAT_CoreDropChance>0.66</NAT_CoreDropChance>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>3</minSeverity>
+        <statOffsets>
+          <NAT_CoreDropChance>0.99</NAT_CoreDropChance>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+<HediffDef ParentName="NAT_RustedCoreUpgradeBase" >
+    <defName>NAT_CoreUpgrade_Stimulator</defName>
+    <label>shard stimulator</label>
+    <description>An implant which increases a mechanitor's control group count and the work speed of a mechanitor's mechs.\n\nThis implant can be installed up to 6 times to increase its effect.</description>
+    <stages>
+      <li>
+        <minSeverity>1</minSeverity>
+        <statOffsets>
+          <RestFallRateFactor>-0.15</RestFallRateFactor>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>2</minSeverity>
+        <statOffsets>
+          <RestFallRateFactor>-0.3</RestFallRateFactor>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>3</minSeverity>
+        <statOffsets>
+          <RestFallRateFactor>-0.45</RestFallRateFactor>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="NAT_BaseRustedWeapon">
+    <defName>NAT_MeleeWeapon_RustedSword</defName>
+    <label>rusted sword</label>
+    <description>A sharp bioferrite piece shaped like a sword.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Weapon/NAT_RustedSword</texPath>
+    </graphicData>
+    <weaponClasses>
+      <li>Melee</li>
+    </weaponClasses>
+    <weaponTags>
+      <li>NAT_RustedMelee</li>
+    </weaponTags>
+    <statBases>
+      <Mass>0.85</Mass>
+      <MarketValue>250</MarketValue>
+    </statBases>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>16</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>NAT_RustedScratch</li>
+        </capacities>
+        <power>16</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <butcherProducts>
+      <Bioferrite>17</Bioferrite>
+    </butcherProducts>
+  </ThingDef>
+
+  <ThingDef ParentName="NAT_BaseRustedWeapon">
+    <defName>NAT_MeleeWeapon_RustedAxe</defName>
+    <label>rusted axe</label>
+    <description>A sharp bioferrite piece shaped like an axe.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Weapon/NAT_RustedAxe</texPath>
+    </graphicData>
+    <weaponClasses>
+      <li>Melee</li>
+    </weaponClasses>
+    <weaponTags>
+      <li>NAT_RustedBreach</li>
+    </weaponTags>
+    <statBases>
+      <Mass>1.5</Mass>
+      <MarketValue>250</MarketValue>
+    </statBases>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>NAT_RustedDemolish</li>
+        </capacities>
+        <power>14</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <butcherProducts>
+      <Bioferrite>17</Bioferrite>
+    </butcherProducts>
+
+  </ThingDef>
+
+  <ThingDef ParentName="NAT_BaseRustedWeapon">
+    <defName>NAT_MeleeWeapon_RustedArmyBanner</defName>
+    <label>rusted army banner</label>
+    <description>A piece of ancient fabric on a rusted bioferrite rod.</description>
+    <tickerType>Normal</tickerType>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Weapon/NAT_RustedArmyBanner</texPath>
+      <drawSize>(3, 3)</drawSize>
+    </graphicData>
+    <uiIconPath>Things/Item/Equipment/Weapon/NAT_RustedArmyBanner_Icon</uiIconPath>
+    <uiIconScale>1</uiIconScale>
+    <weaponClasses>
+      <li>Melee</li>
+    </weaponClasses>
+    <weaponTags Inherit="False">
+      <li>NAT_RustedArmyBanner</li>
+    </weaponTags>
+    <thingSetMakerTags Inherit="False">
+      <li>NAT_RustedArmyBanner</li>
+    </thingSetMakerTags>
+    <statBases>
+      <Mass>2.65</Mass>
+      <MarketValue>100</MarketValue>
+    </statBases>
+    <equippedStatOffsets>
+      <MoveSpeed>0.2</MoveSpeed>
+    </equippedStatOffsets>
+    <equippedAngleOffset>-75</equippedAngleOffset>
+    <tools>
+      <li>
+        <label>handle</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>14</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <butcherProducts>
+      <Bioferrite>17</Bioferrite>
+    </butcherProducts>
+    <comps>
+      <li Class="NAT.CompProperties_RustedBuffGiver">
+        <range>14.9</range>
+        <hediff>NAT_BannerBuff</hediff>
+        <onlyEquippedUse>true</onlyEquippedUse>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

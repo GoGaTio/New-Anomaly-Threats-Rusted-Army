@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="NAT_RustedTurretWeapon">
+    <defName>NAT_Gun_RustedMiniTurret</defName>
+    <label>rusted mini-turret gun</label>
+    <description>A pieces of bioferrite shaped like simple automatic gun.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Weapon/NAT_RustedMiniTurret</texPath>
+      <drawSize>2</drawSize>
+    </graphicData>
+    <statBases>
+      <AccuracyTouch>0.80</AccuracyTouch>
+      <AccuracyShort>0.70</AccuracyShort>
+      <AccuracyMedium>0.45</AccuracyMedium>
+      <AccuracyLong>0.15</AccuracyLong>
+      <RangedWeapon_Cooldown>4.8</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Mass>5</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <defaultProjectile>NAT_Bullet_RustedSmall</defaultProjectile>
+        <warmupTime>0</warmupTime>
+        <range>44.9</range>
+        <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+        <burstShotCount>3</burstShotCount>
+        <soundCast>GunShotA</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+        <defaultCooldownTime>4.8</defaultCooldownTime>
+        <ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
+        <linkedBodyPartsGroup>NAT_RustedTurret</linkedBodyPartsGroup>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <ThingDef ParentName="NAT_RustedTurretWeapon">
+    <defName>NAT_Gun_RustedAutoTurret</defName>
+    <label>rusted autocannon</label>
+    <description>A pieces of bioferrite shaped like self-loading large-bore cannon.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Weapon/NAT_RustedAutoTurret</texPath>
+      <drawSize>3</drawSize>
+    </graphicData>
+    <statBases>
+      <AccuracyTouch>0.30</AccuracyTouch>
+      <AccuracyShort>0.70</AccuracyShort>
+      <AccuracyMedium>0.65</AccuracyMedium>
+      <AccuracyLong>0.5</AccuracyLong>
+      <RangedWeapon_Cooldown>3.5</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Mass>40</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <defaultProjectile>NAT_Bullet_RustedLarge</defaultProjectile>
+        <warmupTime>0</warmupTime>
+        <minRange>3.9</minRange>
+        <range>34.9</range>
+        <ticksBetweenBurstShots>17</ticksBetweenBurstShots>
+        <burstShotCount>3</burstShotCount>
+        <soundCast>Shot_Autocannon</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>12</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+        <defaultCooldownTime>3.5</defaultCooldownTime>
+        <ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
+        <linkedBodyPartsGroup>NAT_RustedTurret</linkedBodyPartsGroup>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <ThingDef ParentName="NAT_RustedTurretWeapon">
+    <defName>NAT_Gun_RustedSniperTurret</defName>
+    <label>rusted sniper cannon</label>
+    <description>A pieces of bioferrite shaped like self-loading uranium slug cannon.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Weapon/NAT_RustedSniperTurret</texPath>
+      <drawSize>3</drawSize>
+    </graphicData>
+    <statBases>
+      <AccuracyTouch>0.10</AccuracyTouch>
+      <AccuracyShort>0.60</AccuracyShort>
+      <AccuracyMedium>0.60</AccuracyMedium>
+      <AccuracyLong>0.95</AccuracyLong>
+      <RangedWeapon_Cooldown>3.2</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Mass>40</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <defaultProjectile>NAT_Bullet_RustedHighVelocity</defaultProjectile>
+        <warmupTime>0</warmupTime>
+        <minRange>5.9</minRange>
+        <range>49.9</range>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>Shot_TurretSniper</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>18</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+        <defaultCooldownTime>3.2</defaultCooldownTime>
+        <ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
+        <linkedBodyPartsGroup>NAT_RustedTurret</linkedBodyPartsGroup>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <ThingDef ParentName="NAT_RustedTurretWeapon">
+    <defName>NAT_Gun_RustedArtillery</defName>
+    <label>rusted artillery</label>
+    <description>Mortar launcher. Lobs bombs over walls. Very inaccurate but long-ranged.</description>
+    <recoilPower>5</recoilPower>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Weapon/NAT_RustedArtillery</texPath>
+      <drawSize>5</drawSize>
+    </graphicData>
+    <destroyOnDrop>True</destroyOnDrop>
+    <drawerType>RealtimeOnly</drawerType>
+    <canGenerateDefaultDesignator>false</canGenerateDefaultDesignator>
+    <tradeability>None</tradeability>
+    <useHitPoints>false</useHitPoints>
+    <weaponTags>
+      <li>NAT_RustedMortar</li>
+    </weaponTags>
+    <weaponClasses>
+      <li>Ranged</li>
+    </weaponClasses>
+    <allowedArchonexusCount>0</allowedArchonexusCount>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+        <warmupTime>9.0</warmupTime>
+        <forcedMissRadius>5</forcedMissRadius>
+        <requireLineOfSight>false</requireLineOfSight>
+        <minRange>9.9</minRange>
+        <range>500</range>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>Mortar_LaunchA</soundCast>
+        <muzzleFlashScale>16</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CompProperties_ChangeableProjectile" />
+    </comps>
+    <building>
+      <fixedStorageSettings>
+        <filter>
+          <thingDefs>
+            <li>NAT_RustedShell_Explosive</li>
+          </thingDefs>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <filter>
+          <thingDefs>
+            <li>NAT_RustedShell_Explosive</li>
+          </thingDefs>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="NAT_RustedTurretWeapon">
+    <defName>NAT_Gun_RustedFoamTurret</defName>
+    <label>rusted foam sprayer</label>
+    <description>A pieces of bioferrite shaped like firefoam sprayer.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Weapon/NAT_RustedFoamTurret</texPath>
+      <drawSize>2</drawSize>
+    </graphicData>
+    <statBases>
+      <AccuracyTouch>1</AccuracyTouch>
+      <AccuracyShort>1</AccuracyShort>
+      <AccuracyMedium>1</AccuracyMedium>
+      <AccuracyLong>1</AccuracyLong>
+      <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Mass>5</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <defaultProjectile>NAT_Proj_FoamBomb</defaultProjectile>
+        <warmupTime>0</warmupTime>
+        <range>19.9</range>
+        <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+        <burstShotCount>5</burstShotCount>
+        <forcedMissRadius>2.5</forcedMissRadius>
+        <sprayEffecterDef>FoamSpray_Directional</sprayEffecterDef>
+        <ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <ThingDef Name="ProjectileFoamBase">
+    <defName>NAT_Proj_FoamBomb</defName>
+    <label>foam bomb</label>
+    <thingClass>Projectile_Explosive</thingClass>
+    <category>Projectile</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Projectile</altitudeLayer>
+    <useHitPoints>False</useHitPoints>
+    <neverMultiSelect>True</neverMultiSelect>
+    <graphicData>
+      <texPath>Things/Projectile/FoamLong/Foam</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Extinguish</damageDef>
+      <speed>27</speed>
+      <damageAmountBase>9999</damageAmountBase>
+      <arcHeightFactor>2</arcHeightFactor>
+      <armorPenetrationBase>0.8</armorPenetrationBase>
+      <stoppingPower>1</stoppingPower>
+      <shadowSize>0.4</shadowSize>
+      <filth>Filth_FireFoam</filth>
+      <filthCount>1</filthCount>
+      <landedEffecter>ExtinguisherPuffSmall</landedEffecter>
+      <doExplosionVFX>false</doExplosionVFX>
+      <screenShakeFactor>0</screenShakeFactor>
+      <soundExplode>Foam_Impact</soundExplode>
+      <explosionRadius>1.9</explosionRadius>
+    </projectile>
+  </ThingDef>
+
+</Defs>

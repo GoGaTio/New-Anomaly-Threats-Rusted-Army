@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  
+  <ThingDef ParentName="NAT_AnomalousResourceBase">
+    <defName>NAT_RustedCore</defName>
+    <label>core of rust</label>
+    <description>A small metal icosahedron. Slowly grows bioferrite on surface.</description>
+    <thingClass>NAT.RustedCore</thingClass>
+    <tickerType>Normal</tickerType>
+    <useHitPoints>false</useHitPoints>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <graphicData>
+      <texPath>Things/Item/NAT_RustedCore/NAT_RustedCore_A</texPath>
+      <drawSize>(1, 1)</drawSize>
+    </graphicData>
+    <statBases>
+      <Mass>1</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <comps>
+      <li Class="NAT.CompProperties_DestroyRustedCore">
+        <jobString>destroy</jobString>
+        <activateLabelString>None</activateLabelString>
+        <activateDescString>None</activateDescString> 
+        <guiLabelString>Choose who should destroy this.</guiLabelString>
+        <activatingString>destroying {0}: {1}s</activatingString>
+        <activatingStringPending>destroying {0}</activatingStringPending>
+        <showMustBeActivatedByColonist>false</showMustBeActivatedByColonist>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

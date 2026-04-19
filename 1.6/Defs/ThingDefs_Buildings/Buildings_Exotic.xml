@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Name="NAT_RustedSculptureBase" ParentName="BuildingBase" Abstract="True">
+    <genericMarketSellable>false</genericMarketSellable>
+    <tradeability>None</tradeability>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <category>Building</category>
+    <pathCost>50</pathCost>
+    <useHitPoints>true</useHitPoints>
+    <rotatable>false</rotatable>
+    <tickerType>Normal</tickerType>
+    <thingClass>Building</thingClass>
+    <building>
+      <roofCollapseDamageMultiplier>0.2</roofCollapseDamageMultiplier>
+      <displayAttackToDestroyOnInspectPane>false</displayAttackToDestroyOnInspectPane>
+      <paintable>false</paintable>
+      <neverBuildable>true</neverBuildable>
+      <deconstructible>false</deconstructible>
+      <repairable>false</repairable>
+      <alwaysUninstallable>true</alwaysUninstallable>
+      <destroyEffecter>NAT_RustedSoldierDeath</destroyEffecter>
+      <claimable>true</claimable>
+    </building>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>110</MaxHitPoints>
+      <Beauty>-10</Beauty>
+      <Flammability>1.5</Flammability>
+      <Mass>45</Mass>
+    </statBases>
+    <fillPercent>0.55</fillPercent>
+    <size>(1, 1)</size>
+    <filthLeaving>NAT_Filth_RustedDebris</filthLeaving>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="NAT_RustedSculptureBase">
+    <defName>NAT_RustedSculpture_Soldier</defName>
+    <label>rusted sculpture</label>
+    <description>A bioferrite piece shaped like humanoid creature.\n\nCan be activated into rusted infantryman using shard.</description>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/NAT_RustedSculpture/NAT_RustedSculpture_Soldier</texPath>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <comps>
+      <li Class="NAT.CompProperties_RustedSculpture">
+        <pawnKind>NAT_RustedSoldier</pawnKind>
+        <offset>0.25</offset>
+        <activeTicks>1</activeTicks>
+        <ticksToActivate>210</ticksToActivate>
+        <activateTexPath>UI/Commands/NAT_ActivateSoldier</activateTexPath>
+        <jobString>activate</jobString>
+        <activateLabelString>Order activating</activateLabelString>
+        <activateDescString>Order a pawn to activate rusted infantryman.</activateDescString>
+        <guiLabelString>Choose who should activate rusted infantryman.</guiLabelString>
+        <activatingString>activating rusted infantryman</activatingString>
+        <activatingStringPending>activating rusted infantryman</activatingStringPending>
+        <showMustBeActivatedByColonist>false</showMustBeActivatedByColonist>
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="NAT_RustedSculptureBase">
+    <defName>NAT_RustedSculpture_Trooper</defName>
+    <label>small rusted sculpture</label>
+    <description>A small bioferrite piece shaped like humanoid creature.\n\nCan be activated into rusted stormtrooper using shard.</description>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/NAT_RustedSculpture/NAT_RustedSculpture_Trooper</texPath>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <comps>
+      <li Class="NAT.CompProperties_RustedSculpture">
+        <pawnKind>NAT_RustedTrooper</pawnKind>
+        <offset>0.15</offset>
+        <activeTicks>1</activeTicks>
+        <ticksToActivate>210</ticksToActivate>
+        <activateTexPath>UI/Commands/NAT_ActivateSoldier</activateTexPath>
+        <jobString>activate</jobString>
+        <activateLabelString>Order activating</activateLabelString>
+        <activateDescString>Order a pawn to activate rusted stormtrooper.</activateDescString>
+        <guiLabelString>Choose who should activate rusted stormtrooper.</guiLabelString>
+        <activatingString>activating rusted stormtrooper</activatingString>
+        <activatingStringPending>activating rusted stormtrooper</activatingStringPending>
+        <showMustBeActivatedByColonist>false</showMustBeActivatedByColonist>
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="NAT_RustedSculptureBase">
+    <defName>NAT_RustedSculpture_Guardsman</defName>
+    <label>large rusted sculpture</label>
+    <description>A large bioferrite piece shaped like humanoid creature.\n\nCan be activated into rusted guardsman using shard.</description>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Building/NAT_RustedSculpture/NAT_RustedSculpture_Guardsman</texPath>
+      <drawSize>(3,3)</drawSize>
+    </graphicData>
+    <comps>
+      <li Class="NAT.CompProperties_RustedSculpture">
+        <pawnKind>NAT_RustedGuardsman</pawnKind>
+        <offset>0.65</offset>
+        <activeTicks>1</activeTicks>
+        <ticksToActivate>210</ticksToActivate>
+        <activateTexPath>UI/Commands/NAT_ActivateSoldier</activateTexPath>
+        <jobString>activate</jobString>
+        <activateLabelString>Order activating</activateLabelString>
+        <activateDescString>Order a pawn to activate rusted guardsman.</activateDescString>
+        <guiLabelString>Choose who should activate rusted guardsman.</guiLabelString>
+        <activatingString>activating rusted guardsman</activatingString>
+        <activatingStringPending>activating rusted guardsman</activatingStringPending>
+        <showMustBeActivatedByColonist>false</showMustBeActivatedByColonist>
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
+    </comps>
+  </ThingDef>
+  
+</Defs>
