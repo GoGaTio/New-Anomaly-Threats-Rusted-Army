@@ -32,6 +32,8 @@
       <li Class="CompProperties_Forbiddable" />
     </comps>
   </ThingDef>
+  
+  <!--============================================Activators======================================================================-->
 
   <ThingDef Name="NAT_RustActivatorBase" Abstract="True" ParentName="NAT_ItemUsableByRust">
     <thingSetMakerTags>
@@ -174,6 +176,61 @@
       <NAT_PainClot>10</NAT_PainClot>
     </costList>
   </ThingDef>
+
+  <!--============================================Skills======================================================================-->
+
+  <ThingDef Name="NAT_RustSkillTrainerBase" Abstract="True" ParentName="NAT_ItemUsableByRust">
+    <thingSetMakerTags>
+      <li>NAT_RustedSkillTrainer</li>
+    </thingSetMakerTags>
+    <recipeMaker>
+      <researchPrerequisite>NAT_RustedActivators</researchPrerequisite>
+      <workAmount>7000</workAmount>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+      <productCount>1</productCount>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <effectWorking>Cook</effectWorking>
+      <workSkill>Crafting</workSkill>
+      <recipeUsers>
+        <li>BioferriteShaper</li>
+      </recipeUsers>
+    </recipeMaker>
+    <costList>
+      <ComponentIndustrial>1</ComponentIndustrial>
+      <Bioferrite>20</Bioferrite>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="NAT_RustSkillTrainerBase">
+    <defName>NAT_RustedSkillTrainer_</defName>
+    <label>rusted speed activator</label>
+    <description>A small device that increases speed of rust.</description>
+    <graphicData>
+      <texPath>Things/Item/NAT_UsableByRust/NAT_RustedActivator_Speed</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.75</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>55</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="NAT.CompProperties_UsableByRust">
+        <skillGains>
+          <Shooting>1</Shooting>
+        </skillGains>
+        <maxSkillLevel>12</maxSkillLevel>
+        <useEffect>NAT_ActivatorUsed_Speed</useEffect>
+      </li>
+    </comps>
+    <costList>
+      <Neutroamine>5</Neutroamine>
+    </costList>
+  </ThingDef>
+  
+  <!--============================================Upgrades======================================================================-->
 
   <ThingDef ParentName="NAT_ItemUsableByRust">
     <defName>NAT_ShardUpgrader</defName>

@@ -5,32 +5,51 @@
     <defName>NAT_NamerRustedPawn</defName>
     <rulePack>
       <rulesStrings>
-        <li>nnumber(p=6)->I</li>
-        <li>nnumber(p=6)->II</li>
-        <li>nnumber(p=4)->III</li>
-        <li>nnumber(p=6)->IV</li>
-        <li>nnumber(p=6)->V</li>
-        <li>nnumber(p=6)->VI</li>
-        <li>nnumber(p=3)->VII</li>
-        <li>nnumber(p=2)->VIII</li>
-        <li>nnumber(p=4)->IX</li>
-        <li>nnumber(p=4)->X</li>
-        <li>nnumber(p=4)->XI</li>
-        <li>nnumber(p=2)->XII</li>
-        <li>nnumber(p=2)->XIII</li>
-        <li>nnumber->XIV</li>
-        <li>nnumber(p=2)->XV</li>
-        <li>nnumber->XVI</li>
-        <li>nnumber->XVII</li>
-        <li>nnumber->XVIII</li>
-        <li>nnumber->XIX</li>
-        <li>nnumber->XX</li>
-        <li>nnumber->XXI</li>
-        <li>nnumber->XXII</li>
-        <li>nnumber->XXIII</li>
-        <li>nnumber->XXIV</li>
-        <li>nnumber->XXV</li>
-        <li>nnumber->XXVI</li>
+        <li>nnumber_s(p=8)->I</li>
+        <li>nnumber_s(p=10)->II</li>
+        <li>nnumber_s(p=11)->III</li>
+        <li>nnumber_s(p=8)->IV</li>
+        <li>nnumber_s(p=7)->V</li>
+        <li>nnumber_s(p=6)->VI</li>
+        <li>nnumber_s(p=6)->VII</li>
+
+        <li>nnumber_m(p=6)->V</li>
+        <li>nnumber_m(p=6)->VI</li>
+        <li>nnumber_m(p=6)->VII</li>
+        <li>nnumber_m(p=3)->VIII</li>
+        <li>nnumber_m(p=5)->IX</li>
+        <li>nnumber_m(p=4)->X</li>
+        <li>nnumber_m(p=4)->XI</li>
+        <li>nnumber_m(p=2)->XII</li>
+        <li>nnumber_m(p=2)->XIII</li>
+        <li>nnumber_m->XIV</li>
+        <li>nnumber_m(p=2)->XV</li>
+        <li>nnumber_m->XVI</li>
+
+        <li>nnumber_b->XIV</li>
+        <li>nnumber_b(p=2)->XV</li>
+        <li>nnumber_b->XVI</li>
+        <li>nnumber_b->XVII</li>
+        <li>nnumber_b->XVIII</li>
+        <li>nnumber_b->XIX</li>
+        <li>nnumber_b->XX</li>
+        <li>nnumber_b->XXI</li>
+        <li>nnumber_b->XXII</li>
+        <li>nnumber_b->XXIII</li>
+        <li>nnumber_b->XXIV</li>
+        <li>nnumber_b->XXV</li>
+        <li>nnumber_b->XXVI</li>
+
+        <li>nnumber->[nnumber_s]</li>
+        <li>nnumber->[nnumber_m]</li>
+        <li>nnumber->[nnumber_b]</li>
+
+        <li>nnumber_mb->[nnumber_m]</li>
+        <li>nnumber_mb->[nnumber_b]</li>
+
+        <li>nnumber_sm->[nnumber_s]</li>
+        <li>nnumber_sm->[nnumber_m]</li>
+
       </rulesStrings>
       <rulesFiles>
         <li>nat_prefix->Names/NAT_RustedSoldier_Prefix</li>
@@ -49,7 +68,7 @@
       <rulesStrings>
         <li>r_name(p=10)->[nat_prefix][nat_postfix]</li>
         <li>r_name->[nat_solid]</li>
-        <li>r_name(p=6)->[nat_prefix][nat_postfix] [nnumber]</li>
+        <li>r_name(p=6)->[nat_prefix][nat_postfix] [nnumber_sm]</li>
       </rulesStrings>
     </rulePack>
   </RulePackDef>
@@ -86,22 +105,16 @@
   </RulePackDef>
 
   <RulePackDef>
-    <defName>NAT_NamerEliteRust</defName>
+    <defName>NAT_NamerRustedGeneral</defName>
     <include>
       <li>NAT_NamerRustedPawn</li>
     </include>
     <rulePack>
       <rulesStrings>
-        <li>r_name(p=6)->[nat_twisted][nat_postfix]</li>
-        <li>r_name(p=5)->[nat_twisted][nat_twisted]</li>
-        <li>r_name(p=7)->[nat_prefix][nat_twisted]</li>
-        <li>r_name(p=3)->[nat_twisted][nat_twisted][nat_postfix]</li>
-        <li>r_name->[nat_twisted][nat_twisted][nat_twisted]</li>
-        <li>r_name(p=4)->[nat_prefix][nat_twisted][nat_twisted]</li>
+        <li>r_name(p=10)->[nat_prefix]-[nat_prefix][nat_postfix]</li>
+        <li>r_name(p=4)->[nat_prefix]-[nat_prefix][nat_postfix] [nnumber_mb]</li>
+        <li>r_name(p=6)->[nat_prefix][nat_postfix] [nnumber_mb]</li>
       </rulesStrings>
-      <rulesFiles>
-        <li>nat_twisted->Names/NAT_Twisted</li>
-      </rulesFiles>
     </rulePack>
   </RulePackDef>
 

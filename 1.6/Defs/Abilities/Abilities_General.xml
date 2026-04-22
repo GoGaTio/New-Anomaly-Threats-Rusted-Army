@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <AbilityDef>
+    <defName>NAT_ArtOfWar</defName>
+    <label>art of war</label>
+    <description>Create an aura that boosts the combat skills of everyone nearby. The effect lasts 24 hours and remains attached to the leader for the duration.</description>
+    <jobDef>CastAbilityOnThing</jobDef>
+    <targetRequired>False</targetRequired>
+    <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+    <iconPath>UI/Abilities/CombatCommand</iconPath>
+    <stunTargetWhileCasting>True</stunTargetWhileCasting>
+    <showPsycastEffects>False</showPsycastEffects>
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <uiOrder>3</uiOrder>
+    <warmupStartSound>CombatCommand_Warmup</warmupStartSound>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <cooldownTicksRange>5000</cooldownTicksRange>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <warmupTime>3</warmupTime>
+      <drawAimPie>False</drawAimPie>
+      <requireLineOfSight>False</requireLineOfSight>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetHumans>false</canTargetHumans>
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="NAT.CompProperties_AbilityArtOfWar">
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef>
+    <defName>NAT_HateSphere</defName>
+    <label>hate sphere</label>
+    <description>Launch a large bolt of energy which generates a high-temperature explosion.</description>
+    <writeCombatLog>True</writeCombatLog>
+    <showPsycastEffects>False</showPsycastEffects>
+    <cooldownTicksRange>500</cooldownTicksRange>
+    <aiCanUse>true</aiCanUse>
+    <verbProperties>
+      <verbClass>Verb_AbilityShoot</verbClass>
+      <defaultProjectile>NAT_Proj_HateSphere</defaultProjectile>
+      <range>24.9</range>
+      <warmupTime>1.5</warmupTime>
+      <muzzleFlashScale>9</muzzleFlashScale>
+      <burstShotCount>1</burstShotCount>
+      <accuracyTouch>0.9</accuracyTouch>
+      <accuracyShort>0.8</accuracyShort>
+      <accuracyMedium>0.7</accuracyMedium>
+      <accuracyLong>0.6</accuracyLong>
+      <soundAiming>FleshmelterBolt_Charging</soundAiming>
+      <ai_IsWeapon>false</ai_IsWeapon>
+      <ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
+
+      <aimingLineMote>Mote_FleshmelterBolt_Aim</aimingLineMote>
+      <aimingChargeMote>Mote_FleshmelterBolt_Charge</aimingChargeMote>
+      <aimingChargeMoteOffset>1.07</aimingChargeMoteOffset>
+      <aimingLineMoteFixedLength>15.9</aimingLineMoteFixedLength>
+      <aimingTargetMote>Mote_FleshmelterBolt_Target</aimingTargetMote>
+
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetSelf>false</canTargetSelf>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+        <canTargetPlants>true</canTargetPlants>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>NAT_Proj_HateSphere</defName>
+    <label>hate sphere</label>
+    <thingClass>Projectile_Explosive</thingClass>
+    <graphicData>
+      <texPath>Things/Mote/NAT_ArtOfWarWarmup</texPath>
+      <graphicClass>Graphic_Single_AgeSecs</graphicClass>
+      <shaderType>GlowAnimated</shaderType>
+      <shaderParameters>
+        <_NumFrames>6</_NumFrames>
+        <_FramesPerSec>12</_FramesPerSec>
+      </shaderParameters>
+    </graphicData>
+    <projectile>
+      <damageDef>NAT_HateVaporize</damageDef>
+      <useGraphicClass>True</useGraphicClass>
+      <damageAmountBase>300</damageAmountBase>
+      <speed>20</speed>
+      <soundAmbient>FleshmelterBolt_Launch</soundAmbient>
+      <explosionRadius>2.9</explosionRadius>
+      <screenShakeFactor>1.25</screenShakeFactor>
+      <filth>Filth_BlastMark</filth>
+      <filthCount>1</filthCount>
+      <explosionSpawnsSingleFilth>true</explosionSpawnsSingleFilth>
+    </projectile>
+  </ThingDef>
+
+</Defs>

@@ -21,7 +21,7 @@
       <li Class="NAT.CodexEntryExtension"/>
     </modExtensions>
   </EntityCodexEntryDef>
-  
+
   <EntityCodexEntryDef>
     <defName>NAT_RustedArmy</defName>
     <label>rusted army</label>
@@ -54,14 +54,14 @@
     <defName>NAT_RustedGeneral</defName>
     <label>rusted general</label>
     <useDescriptionFrom>NAT_RustedGeneral</useDescriptionFrom>
-    <uiIconPath>UI/CodexEntries/NAT_RustedArmy</uiIconPath>
+    <uiIconPath>UI/CodexEntries/NAT_RustedGeneral</uiIconPath>
     <category>Advanced</category>
     <linkedThings>
       <li>NAT_RustedGeneral</li>
     </linkedThings>
     <discoveredResearchProjects>
       <li>NAT_AdvancedRustCreation</li>
-<li>NAT_RustedCoreUpgrades</li>
+      <li>NAT_RustedCoreUpgrades</li>
     </discoveredResearchProjects>
     <orderInCategory>395</orderInCategory>
   </EntityCodexEntryDef>

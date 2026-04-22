@@ -131,6 +131,16 @@
           </subNodes>
         </li>
 
+        <!-- Leave if lordless -->
+        <li Class="ThinkNode_Tagger">
+          <tagToGive>Misc</tagToGive>
+          <subNodes>
+            <li Class="JobGiver_ExitMapBest">
+              <defaultLocomotion>Walk</defaultLocomotion>
+            </li>
+          </subNodes>
+        </li>
+
         <!-- Idle -->
         <li Class="ThinkNode_Tagger">
           <tagToGive>Idle</tagToGive>

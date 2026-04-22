@@ -51,6 +51,7 @@ using Verse.Noise;
 using Verse.Profile;
 using Verse.Sound;
 using Verse.Steam;
+using static HarmonyLib.Code;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace NAT
@@ -78,6 +79,11 @@ namespace NAT
 		public EffecterDef useEffect;
 
 		public bool combatEnhancing = true;
+
+		public List<SkillGain> skillGains = new List<SkillGain>();
+
+		public int maxSkillLevel = -1;
+
 		public CompProperties_UsableByRust()
 		{
 			compClass = typeof(CompUsableByRust);
@@ -86,11 +92,14 @@ namespace NAT
 		public override void ResolveReferences(ThingDef parentDef)
 		{
 			base.ResolveReferences(parentDef);
-			if (parentDef.descriptionHyperlinks.NullOrEmpty())
+			if(hediff != null)
 			{
-				parentDef.descriptionHyperlinks = new List<DefHyperlink>();
+				if (parentDef.descriptionHyperlinks.NullOrEmpty())
+				{
+					parentDef.descriptionHyperlinks = new List<DefHyperlink>();
+				}
+				parentDef.descriptionHyperlinks.Add(new DefHyperlink(hediff));
 			}
-			parentDef.descriptionHyperlinks.Add(new DefHyperlink(hediff));
 		}
 
         public override IEnumerable<StatDrawEntry> SpecialDisplayStats(StatRequest req)
@@ -99,7 +108,7 @@ namespace NAT
 			{
 				yield return item;
 			}
-			HediffCompProperties_Disappears comp = hediff.CompProps<HediffCompProperties_Disappears>();
+			HediffCompProperties_Disappears comp = hediff?.CompProps<HediffCompProperties_Disappears>();
 			if (comp != null)
 			{
 				yield return new StatDrawEntry(StatCategoryDefOf.Drug, "StatsReport_SerumDuration".Translate(), comp.disappearsAfterTicks.min.ToStringTicksToPeriod(), "StatsReport_SerumDuration_Desc".Translate(), 1000);
@@ -109,11 +118,19 @@ namespace NAT
 				string text = ((restOffset > 0f) ? "+" : string.Empty);
 				yield return new StatDrawEntry(StatCategoryDefOf.Drug, NATRADefOf.NAT_RustRest.LabelCap, text + restOffset.ToStringPercent(), NATRADefOf.NAT_RustRest.description, 500);
 			}
+			if (!skillGains.NullOrEmpty())
+			{
+				foreach (SkillGain s in skillGains)
+				{
+					yield return new StatDrawEntry(StatCategoryDefOf.Drug, s.skill.LabelCap, "+" + s.amount.ToString() + ", (" + "MaxValue".Translate(maxSkillLevel) + ")", s.skill.description, 500);
+				}
+			}
 		}
     }
 	public class CompUsableByRust : ThingComp
 	{
 		public CompProperties_UsableByRust Props => (CompProperties_UsableByRust)props;
+
 		public virtual string JobReport => Props.jobReport ?? "NAT_UseItem".Translate();
 
 		public virtual AcceptanceReport CanBeUsedBy(RustedPawn rust)
@@ -123,6 +140,10 @@ namespace NAT
 				return false;
 			}
 			if (!Props.replaceHediff && Props.hediff != null && rust.health.hediffSet.GetFirstHediffOfDef(Props.hediff) != null)
+			{
+				return false;
+			}
+			if(!Props.skillGains.NullOrEmpty() && rust.skills == null)
 			{
 				return false;
 			}
@@ -144,7 +165,19 @@ namespace NAT
 
 		public virtual void UsedBy(RustedPawn rust)
 		{
-			if(Props.restOffset > 0f && rust.restNeed != null)
+			if (!Props.skillGains.NullOrEmpty() && rust.skills != null)
+			{
+				foreach (SkillGain s in Props.skillGains)
+				{
+					SkillRecord skill = rust.skills.GetSkill(s.skill);
+					if(skill.Level >= Props.maxSkillLevel)
+					{
+						continue;
+					}
+					skill.Level = s.amount;
+				}
+			}
+			if (Props.restOffset > 0f && rust.restNeed != null)
             {
 				rust.restNeed.CurLevel += Props.restOffset;
 			}
@@ -167,7 +200,6 @@ namespace NAT
 			if(Props.useEffect != null && rust.SpawnedOrAnyParentSpawned)
             {
 				Props.useEffect.SpawnAttached(rust.SpawnedParentOrMe, rust.MapHeld);
-
 			}
             if (Props.destroyAfterUse)
             {

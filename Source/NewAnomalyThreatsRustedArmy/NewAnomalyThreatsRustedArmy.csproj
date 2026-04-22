@@ -68,10 +68,10 @@
   <ItemGroup>
     <Compile Include="Abilities\CompAbilityEffect_Reinforcements.cs" />
     <Compile Include="Abilities\CompAbilityEffect_ArtOfWar.cs" />
+    <Compile Include="Damages.cs" />
     <Compile Include="Hediffs\HediffComp_RustedBuff.cs" />
     <Compile Include="Hediffs\HediffComp_GiveHediffsToRustInRange.cs" />
     <Compile Include="ThingComps\CompRustedBuffGiver.cs" />
-    <Compile Include="ThingComps\CompBoss.cs" />
     <Compile Include="Verb_MeleeAttackExplode.cs" />
     <Compile Include="Abilities\CompAbilityEffect_RustedCommander.cs" />
     <Compile Include="Abilities\Abilities_Misc.cs" />
@@ -135,6 +135,5 @@
     <Compile Include="UI\MainButtons.cs" />
     <Compile Include="UI\PawnColumnWorkers.cs" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

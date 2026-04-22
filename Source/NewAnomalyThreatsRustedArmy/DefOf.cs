@@ -62,6 +62,8 @@ namespace NAT
 
 		public static ThingDef NAT_RustedArmyBanner;
 
+		public static ThingDef NAT_Mote_ArtOfWarPreCast;
+
 		public static JobDef NAT_CarryShell;
 
 		public static JobDef NAT_DanceRust;
@@ -113,7 +115,7 @@ namespace NAT
 
 		public static PrefabDef NAT_RustedAutoTurretLabyrinth;
 
-		public static EffecterDef NAT_BannerBoostEffect;
+		public static EffecterDef NAT_HateVaporize_Heatwave;
 
 		public static SoundDef NAT_World_RustedBannerCall;
 

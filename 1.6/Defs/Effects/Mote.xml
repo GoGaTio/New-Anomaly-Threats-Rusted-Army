@@ -2,6 +2,26 @@
 <Defs>
 
   <ThingDef ParentName="MoteBase">
+    <defName>NAT_Mote_ArtOfWarPreCast</defName>
+    <thingClass>MoteAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0</fadeInTime>
+      <fadeOutTime>0</fadeOutTime>
+      <solidTime>999999</solidTime>
+    </mote>
+    <graphicData>
+      <texPath>Things/Mote/NAT_ArtOfWarWarmup</texPath>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>GlowAnimated</shaderType>
+      <shaderParameters>
+        <_NumFrames>6</_NumFrames>
+        <_FramesPerSec>12</_FramesPerSec>
+      </shaderParameters>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
     <defName>NAT_Mote_BannerBoost_RustedFlash</defName>
     <thingClass>MoteAttached</thingClass>
     <altitudeLayer>MoteOverheadLow</altitudeLayer>

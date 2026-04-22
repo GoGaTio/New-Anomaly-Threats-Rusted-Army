@@ -24,7 +24,7 @@
     <defName>NAT_RustedAntiTankBullet</defName>
   </DamageDef>
 
-<DamageDef Name="NAT_RustedScratch">
+  <DamageDef Name="NAT_RustedScratch">
     <defName>NAT_RustedScratch</defName>
     <label>scratch</label>
     <workerClass>DamageWorker_Scratch</workerClass>
@@ -39,10 +39,17 @@
     <scratchSplitPercentage>0.67</scratchSplitPercentage>
   </DamageDef>
 
-<DamageDef ParentName="NAT_RustedScratch">
+  <DamageDef ParentName="NAT_RustedScratch">
     <defName>NAT_RustedDemolish</defName>
     <buildingDamageFactor>10</buildingDamageFactor>
     <buildingDamageFactorImpassable>10</buildingDamageFactorImpassable>
+  </DamageDef>
+
+  <DamageDef ParentName="Vaporize">
+    <defName>NAT_HateVaporize</defName>
+    <workerClass>NAT.DamageWorker_HateVaporize</workerClass>
+    <explosionColorCenter>(255,70,70)</explosionColorCenter>
+    <explosionColorEdge>(255,30,30)</explosionColorEdge>
   </DamageDef>
 
 </Defs>

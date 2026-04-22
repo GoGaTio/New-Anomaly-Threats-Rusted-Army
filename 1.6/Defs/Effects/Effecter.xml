@@ -2,6 +2,61 @@
 <Defs>
 
   <EffecterDef>
+    <defName>NAT_HateVaporize_Heatwave</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Fleck_HeatWaveDistortion</fleckDef>
+        <burstCount>1</burstCount>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Fleck_HeatDiffusion</fleckDef>
+        <burstCount>1</burstCount>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Fleck_RadialSparks</fleckDef>
+        <burstCount>1</burstCount>
+        <spawnLocType>OnSource</spawnLocType>
+        <color>(255,30,30)</color>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Fleck_VaporizeGlow</fleckDef>
+        <burstCount>1</burstCount>
+        <spawnLocType>OnSource</spawnLocType>
+        <color>(255,30,30)</color>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Fleck_VaporizeRays_A</fleckDef>
+        <burstCount>1</burstCount>
+        <rotationRate>30</rotationRate>
+        <spawnLocType>OnSource</spawnLocType>
+        <color>(255,30,30)</color>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Fleck_VaporizeRays_B</fleckDef>
+        <burstCount>1</burstCount>
+        <rotationRate>-20</rotationRate>
+        <spawnLocType>OnSource</spawnLocType>
+        <color>(255,30,30)</color>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>Fleck_VaporizeCenterFlash</fleckDef>
+        <burstCount>1</burstCount>
+        <spawnLocType>OnSource</spawnLocType>
+        <color>(255,30,30)</color>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
     <defName>NAT_ExplosionDust</defName>
     <children>
       <li>

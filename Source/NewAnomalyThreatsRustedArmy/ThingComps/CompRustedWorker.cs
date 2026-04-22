@@ -61,6 +61,8 @@ namespace NAT
 
 		public bool canWork = false;
 
+		public bool skillsCanBeImproved = true;
+
 		public WorkTags workTags;
 
 		public List<WorkTypeDef> forceAllowWorkTypes = new List<WorkTypeDef>();

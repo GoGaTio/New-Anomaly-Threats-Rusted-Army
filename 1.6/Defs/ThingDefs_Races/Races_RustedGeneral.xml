@@ -13,13 +13,12 @@
       <MinimumContainmentStrength>370</MinimumContainmentStrength>
       <StaggerDurationFactor>0</StaggerDurationFactor>
       <NAT_CoreDropChance>0</NAT_CoreDropChance>
-      <AimingDelayFactor>0.25</AimingDelayFactor>
-      <NAT_ReinforcementsCooldown>3</NAT_ReinforcementsCooldown>
     </statBases>
     <race>
       <body>NAT_RustedGeneral</body>
-      <baseHealthScale>6</baseHealthScale>
-      <baseBodySize>3.4</baseBodySize>
+      <nameGenerator>NAT_NamerRustedGeneral</nameGenerator>
+      <baseHealthScale>7</baseHealthScale>
+      <baseBodySize>5</baseBodySize>
       <lifeStageAges>
         <li>
           <def>EntityFullyFormed</def>
@@ -29,8 +28,8 @@
         </li>
       </lifeStageAges>
     </race>
-    <uiIconPath>Things/Pawn/NAT_RustedGuardsman_Icon</uiIconPath>
-    <uiIconScale>1</uiIconScale>
+    <uiIconPath>Things/Pawn/NAT_RustedGeneral_Icon</uiIconPath>
+    <uiIconScale>0.65</uiIconScale>
     <comps>
       <li Class="CompProperties_HoldingPlatformTarget">
         <baseEscapeIntervalMtbDays>60</baseEscapeIntervalMtbDays>
@@ -77,26 +76,26 @@
         <canWearApparel>false</canWearApparel>
         <drawData>
           <dataNorth>
-            <offset>(-0.1, 0, 0.8)</offset>
+            <offset>(0, 0, 0.5)</offset>
           </dataNorth>
           <dataEast>
-            <offset>(0.1, 0, 0.65)</offset>
+            <offset>(0.65, 0, 0.4)</offset>
           </dataEast>
           <dataSouth>
-            <offset>(0.1, 0, 0.8)</offset>
+            <offset>(0, 0, 0.5)</offset>
           </dataSouth>
           <dataWest>
-            <offset>(-0.1, 0, 0.65)</offset>
+            <offset>(-0.65, 0, 0.4)</offset>
           </dataWest>
         </drawData>
         <headTags>
           <li>General</li>
         </headTags>
       </li>
-      <li Class="NAT.CompProperties_RustedCommander">
+      <!--<li Class="NAT.CompProperties_RustedCommander">
         <startingUnits>18</startingUnits>
         <ticksToRestore>2500</ticksToRestore>
-      </li>
+      </li>-->
       <li Class="NAT.CompProperties_RustedWorker">
         <skills>
           <Shooting>20</Shooting>
@@ -120,17 +119,19 @@
           <baseLayer>25</baseLayer>
           <drawData>
             <dataNorth>
-              <offset>(1.2, 0, 0.8)</offset>
+              <offset>(0.9, 0, 0.25)</offset>
             </dataNorth>
             <dataEast>
-              <offset>(0.1, 0, 0.85)</offset>
+              <offset>(-0.1, 0, 0.25)</offset>
+              <layer>60</layer>
             </dataEast>
             <dataSouth>
-              <offset>(-1.2, 0, 0.8)</offset>
+              <offset>(-0.9, 0, 0.25)</offset>
             </dataSouth>
             <dataWest>
-              <offset>(-0.1, 0, 0.85)</offset>
+              <offset>(0.1, 0, 0.25)</offset>
               <rotationOffset>180</rotationOffset>
+              <layer>-30</layer>
             </dataWest>
           </drawData>
         </renderNodeProperty>
@@ -146,17 +147,19 @@
           <baseLayer>25</baseLayer>
           <drawData>
             <dataNorth>
-              <offset>(-0.8, 0, 0.6)</offset>
+              <offset>(-0.55, 0, -0.5)</offset>
             </dataNorth>
             <dataEast>
-              <offset>(0.1, 0, 0.6)</offset>
+              <offset>(0, 0, -0.5)</offset>
+              <layer>-30</layer>
             </dataEast>
             <dataSouth>
-              <offset>(0.8, 0, 0.6)</offset>
+              <offset>(0.55, 0, -0.5)</offset>
             </dataSouth>
             <dataWest>
-              <offset>(-0.1, 0, 0.6)</offset>
+              <offset>(0, 0, -0.5)</offset>
               <rotationOffset>180</rotationOffset>
+              <layer>60</layer>
             </dataWest>
           </drawData>
         </renderNodeProperty>
@@ -164,19 +167,14 @@
       <!--<li Class="NAT.CompProperties_BossStages">
         <stages>
           <li>
-            <abilities>
-      <li>NAT_Reinforcement_AutoTurret</li>
-      <li>NAT_Reinforcement_Guardsman</li>
-      <li>NAT_Reinforcement_SniperTurret</li>
-    </abilities>
             <statOffsets>
-          <MoveSpeed>0.4</MoveSpeed>
-          <MeleeDodgeChance>10</MeleeDodgeChance>
-        </statOffsets>
+              <MoveSpeed>0.4</MoveSpeed>
+              <MeleeDodgeChance>10</MeleeDodgeChance>
+            </statOffsets>
             <statFactors>
-          <IncomingDamageFactor>0.75</IncomingDamageFactor>
-          <Flammability>0.5</Flammability>
-        </statFactors>
+              <IncomingDamageFactor>0.75</IncomingDamageFactor>
+              <Flammability>0.5</Flammability>
+            </statFactors>
             <dataWest>
               <offset>(-0.1, 0, 0.6)</offset>
               <rotationOffset>180</rotationOffset>
@@ -246,9 +244,6 @@
     </startingHediffs>
     <race>NAT_RustedGeneral</race>
     <weaponTags>
-      <li>NAT_RustedMachineGun</li>
-      <li>NAT_RustedSniperRifle</li>
-      <li>NAT_RustedAssaultShotgun</li>
     </weaponTags>
     <skipResistant>true</skipResistant>
     <aiAvoidCover>true</aiAvoidCover>
@@ -266,39 +261,17 @@
           <drawSize>3</drawSize>
         </bodyGraphicData>
         <silhouetteGraphicData>
-          <texPath>Things/Pawn/NAT_RustedGuardsman_Icon</texPath>
-          <drawSize>2.34</drawSize>
+          <texPath>Things/Pawn/NAT_RustedGeneral_Icon</texPath>
+          <drawSize>3</drawSize>
         </silhouetteGraphicData>
       </li>
     </lifeStages>
     <combatPower>900</combatPower>
-    <weaponMoney>9999~9999</weaponMoney>
+    <weaponMoney>0</weaponMoney>
     <combatEnhancingDrugsCount>0</combatEnhancingDrugsCount>
-    <startingHediffs>
-      <li>
-        <def>NAT_ActivatedSpeed</def>
-        <durationTicksRange>60000~300000</durationTicksRange>
-        <chance>0.5</chance>
-      </li>
-      <li>
-        <def>NAT_ActivatedDurability</def>
-        <durationTicksRange>60000~300000</durationTicksRange>
-        <chance>0.5</chance>
-      </li>
-      <li>
-        <def>NAT_ActivatedCharge</def>
-        <durationTicksRange>60000~300000</durationTicksRange>
-        <chance>0.6</chance>
-      </li>
-      <li>
-        <def>NAT_ActivatedRegeneration</def>
-        <durationTicksRange>60000~300000</durationTicksRange>
-      </li>
-    </startingHediffs>
     <abilities>
-      <li>NAT_Reinforcement_AutoTurret</li>
-      <li>NAT_Reinforcement_Guardsman</li>
-      <li>NAT_Reinforcement_SniperTurret</li>
+      <li>NAT_ArtOfWar</li>
+      <li>NAT_HateSphere</li>
     </abilities>
   </PawnKindDef>
 
