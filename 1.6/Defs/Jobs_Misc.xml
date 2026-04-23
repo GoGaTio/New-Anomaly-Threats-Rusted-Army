@@ -8,12 +8,6 @@
   </JobDef>
 
   <JobDef>
-    <defName>NAT_CarryShell</defName>
-    <driverClass>NAT.JobDriver_CarryShell</driverClass>
-    <reportString>loading TargetA.</reportString>
-  </JobDef>
-
-  <JobDef>
     <defName>NAT_DanceRust</defName>
     <driverClass>NAT.JobDriver_DanceRust</driverClass>
     <reportString>dancing</reportString>

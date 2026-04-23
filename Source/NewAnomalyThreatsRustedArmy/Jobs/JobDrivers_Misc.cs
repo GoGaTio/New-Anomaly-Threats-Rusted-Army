@@ -54,7 +54,7 @@ using Verse.Steam;
 
 namespace NAT
 {
-	public class JobDriver_CarryShell : JobDriver
+	/*public class JobDriver_CarryShell : JobDriver
 	{
 		private Building_TurretGun Turret => (Building_TurretGun)job.GetTarget(TargetIndex.A).Thing;
 
@@ -149,7 +149,7 @@ namespace NAT
 			};
 			yield return loadShell;
 		}
-	}
+	}*/
 
 	public class JobDriver_UseItemByRust : JobDriver
 	{

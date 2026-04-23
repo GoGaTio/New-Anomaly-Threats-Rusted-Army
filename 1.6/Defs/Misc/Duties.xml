@@ -7,9 +7,6 @@
     <thinkNode Class="ThinkNode_Priority">
       <subNodes>
         
-        <li Class="NAT.JobGiver_CarryShells">
-          <maxDistFromPoint>25</maxDistFromPoint>
-        </li>
         <li Class="JobGiver_AIDefendPoint">
           <targetAcquireRadius>65</targetAcquireRadius>
           <targetKeepRadius>72</targetKeepRadius>

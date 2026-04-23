@@ -182,18 +182,6 @@ namespace NAT
 			}
 		}
 
-        protected override void Tick()
-		{
-			base.Tick();
-			if (Faction?.IsPlayer != false)
-			{
-				return;
-			}
-			if (this.IsHashIntervalTick(300) && Map != null && this.GetLord() == null)
-			{
-				LordMaker.MakeNewLord(Faction, new LordJob_AssaultColony(), MapHeld, new List<Pawn>() { this });
-			}
-		}
         public override void PostPostMake()
         {
             base.PostPostMake();
@@ -205,7 +193,14 @@ namespace NAT
 
 		public override void PreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
 		{
-			if(dinfo.Tool != null)
+			if(dinfo.Tool == null)
+			{
+				if(dinfo.Def == DamageDefOf.Blunt)
+				{
+					dinfo.SetAmount(dinfo.Amount * 0.25f);
+				}
+			}
+			else
 			{
 				dinfo.SetAmount(dinfo.Amount * 0.75f);
 			}

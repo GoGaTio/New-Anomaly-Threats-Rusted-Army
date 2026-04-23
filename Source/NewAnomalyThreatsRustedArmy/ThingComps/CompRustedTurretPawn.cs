@@ -88,6 +88,20 @@ namespace NAT
 			}
 		}
 
+		private CompRustedTurret turret;
+
+		public CompRustedTurret Turret
+		{
+			get
+			{
+				if (turret == null)
+				{
+					turret = parent.GetComp<CompRustedTurret>();
+				}
+				return turret;
+			}
+		}
+
 		public CompRustedTurretPawn()
 		{
 			innerContainer = new ThingOwner<RustedPawn>(this, oneStackOnly: true, LookMode.Deep, removeContentsIfDestroyed: false);
@@ -114,8 +128,6 @@ namespace NAT
 		public long ageTicks = 0;
 
 		public bool destroyed = false;
-
-		public static FieldInfo cachedSummaryHealthPercent = AccessTools.Field(typeof(SummaryHealthHandler), "cachedSummaryHealthPercent");
 
 		public CellRect PlaceRect => new CellRect(parent.Position.x, parent.Position.z, Props.buildingDef.Size.x, Props.buildingDef.Size.z);
 
@@ -231,17 +243,16 @@ namespace NAT
 			Building_RustedTurret building = ThingMaker.MakeThing(Props.buildingDef) as Building_RustedTurret;
 			building.HitPoints = health;
 			building.SetFaction(parent.Faction);
-			CompRustedTurret comp = parent.GetComp<CompRustedTurret>();
 			Lord lord = (parent as Pawn).GetLord();
 			if (lord != null)
 			{
 				lord.AddBuilding(building);
 			}
-			building.SetTarget(comp.currentTarget, comp.targetForced);
+			building.SetTarget(Turret.currentTarget, Turret.targetForced);
 			parent.DeSpawn();
 			building.GetComp<CompRustedTurretPawn>().Rust = (parent as RustedPawn);
 			GenSpawn.Spawn(building, pos, map, WipeMode.VanishOrMoveAside);
-			building.Top.CurRotation = comp.CurRotation - comp.Props.angleOffset;
+			building.Top.CurRotation = Turret.CurRotation - Turret.Props.angleOffset;
 			if (selected)
 			{
 				Find.Selector.Select(building, false, false);
@@ -299,11 +310,15 @@ namespace NAT
 			else
 			{
 				ageTicks++;
+				if(parent.IsHashIntervalTick(60) && parent is Building_RustedTurret turret && !turret.CurrentTarget.IsValid)
+				{
+					string name = turret.GetLord()?.CurLordToil?.GetType().Name;
+					if(name != null && !name.Contains("Defend") && !name.Contains("Stage"))
+					{
+						SpawnPawn(parent.Position, parent.Map);
+					}
+				}
 			}
-			/*if (parent.IsHashIntervalTick(20))
-			{
-				cachedSummaryHealthPercent.SetValue((parent as Pawn).health.summaryHealth, ((float)health) / ((float)Props.hitPoints));
-			}*/
 		}
 
 		public override void PostPreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
@@ -314,7 +329,16 @@ namespace NAT
 				return;
 			}
 			Pawn pawn = parent as Pawn;
-			if(pawn == null || !dinfo.Def.ExternalViolenceFor(parent))
+			if(pawn == null)
+			{
+				Thing instigator = dinfo.Instigator;
+				if (instigator != null && instigator.Map == parent.Map && parent is Building_RustedTurret turret && !turret.CurrentTarget.IsValid)
+				{
+					SpawnPawn(parent.Position, parent.Map);
+				}
+				return;
+			}
+			if (!dinfo.Def.ExternalViolenceFor(parent))
 			{
 				return;
 			}
@@ -420,7 +444,6 @@ namespace NAT
 				}
 				else
 				{
-					//cachedSummaryHealthPercent.SetValue(pawn.health.summaryHealth, ((float)health) / ((float)Props.hitPoints));
 					if (dinfo.Def.makesBlood && Rand.Chance(0.5f))
 					{
 						pawn.health.DropBloodFilth();
@@ -435,6 +458,10 @@ namespace NAT
 			Scribe_Values.Look(ref ticksToRegen, "ticksToRegen");
 			Scribe_Values.Look(ref ageTicks, "ageTicks", defaultValue: 0);
 			Scribe_Deep.Look(ref innerContainer, "innerContainer", this);
+			if(innerContainer == null)
+			{
+				innerContainer = new ThingOwner<RustedPawn>(this, oneStackOnly: true, LookMode.Deep, removeContentsIfDestroyed: false);
+			}
 			if (Scribe.mode == LoadSaveMode.PostLoadInit && innerContainer.removeContentsIfDestroyed)
 			{
 				innerContainer.removeContentsIfDestroyed = false;

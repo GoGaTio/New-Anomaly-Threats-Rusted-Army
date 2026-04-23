@@ -38,8 +38,8 @@
   </AbilityDef>
 
   <AbilityDef>
-    <defName>NAT_HateSphere</defName>
-    <label>hate sphere</label>
+    <defName>NAT_HateCube</defName>
+    <label>hate cube</label>
     <description>Launch a large bolt of energy which generates a high-temperature explosion.</description>
     <writeCombatLog>True</writeCombatLog>
     <showPsycastEffects>False</showPsycastEffects>
@@ -47,7 +47,7 @@
     <aiCanUse>true</aiCanUse>
     <verbProperties>
       <verbClass>Verb_AbilityShoot</verbClass>
-      <defaultProjectile>NAT_Proj_HateSphere</defaultProjectile>
+      <defaultProjectile>NAT_Proj_HateCube</defaultProjectile>
       <range>24.9</range>
       <warmupTime>1.5</warmupTime>
       <muzzleFlashScale>9</muzzleFlashScale>
@@ -75,32 +75,5 @@
       </targetParams>
     </verbProperties>
   </AbilityDef>
-
-  <ThingDef ParentName="BaseBullet">
-    <defName>NAT_Proj_HateSphere</defName>
-    <label>hate sphere</label>
-    <thingClass>Projectile_Explosive</thingClass>
-    <graphicData>
-      <texPath>Things/Mote/NAT_ArtOfWarWarmup</texPath>
-      <graphicClass>Graphic_Single_AgeSecs</graphicClass>
-      <shaderType>GlowAnimated</shaderType>
-      <shaderParameters>
-        <_NumFrames>6</_NumFrames>
-        <_FramesPerSec>12</_FramesPerSec>
-      </shaderParameters>
-    </graphicData>
-    <projectile>
-      <damageDef>NAT_HateVaporize</damageDef>
-      <useGraphicClass>True</useGraphicClass>
-      <damageAmountBase>300</damageAmountBase>
-      <speed>20</speed>
-      <soundAmbient>FleshmelterBolt_Launch</soundAmbient>
-      <explosionRadius>2.9</explosionRadius>
-      <screenShakeFactor>1.25</screenShakeFactor>
-      <filth>Filth_BlastMark</filth>
-      <filthCount>1</filthCount>
-      <explosionSpawnsSingleFilth>true</explosionSpawnsSingleFilth>
-    </projectile>
-  </ThingDef>
 
 </Defs>

@@ -1,4 +1,20 @@
-﻿using System;
+﻿using DelaunatorSharp;
+using Gilzoide.ManagedJobs;
+using Ionic.Crc;
+using Ionic.Zlib;
+using JetBrains.Annotations;
+using KTrie;
+using LudeonTK;
+using NVorbis.NAudioSupport;
+using RimWorld;
+using RimWorld.BaseGen;
+using RimWorld.IO;
+using RimWorld.Planet;
+using RimWorld.QuestGen;
+using RimWorld.SketchGen;
+using RimWorld.Utility;
+using RuntimeAudioClipLoader;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -19,22 +35,6 @@ using System.Xml.Linq;
 using System.Xml.Serialization;
 using System.Xml.XPath;
 using System.Xml.Xsl;
-using DelaunatorSharp;
-using Gilzoide.ManagedJobs;
-using Ionic.Crc;
-using Ionic.Zlib;
-using JetBrains.Annotations;
-using KTrie;
-using LudeonTK;
-using NVorbis.NAudioSupport;
-using RimWorld;
-using RimWorld.BaseGen;
-using RimWorld.IO;
-using RimWorld.Planet;
-using RimWorld.QuestGen;
-using RimWorld.SketchGen;
-using RimWorld.Utility;
-using RuntimeAudioClipLoader;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Jobs;
@@ -51,6 +51,7 @@ using Verse.Noise;
 using Verse.Profile;
 using Verse.Sound;
 using Verse.Steam;
+using static HarmonyLib.Code;
 
 namespace NAT
 {
@@ -195,6 +196,51 @@ namespace NAT
 		}
 	}
 
+	public class JobGiver_RustedTurret : ThinkNode_JobGiver
+	{
+		protected override Job TryGiveJob(Pawn pawn)
+		{
+			/*Lord lord = pawn.GetLord();
+			if(lord.CurLordToil.GetType().Name.Contains("Assault"))
+			{
+				
+			}*/
+			if(pawn.CurJobDef == NATRADefOf.NAT_RustedTurretSetUp)
+			{
+				return pawn.CurJob;
+			}
+			if(!pawn.TryGetComp(out CompRustedTurretPawn comp) || !pawn.TryGetComp(out CompRustedTurret turret) || turret.currentTarget == null || !turret.ShouldKeepTarget)
+			{
+				return null;
+			}
+			if(RCellFinder.TryFindRandomCellNearWith(pawn.Position, (c) => !CellRectOccupied(new CellRect(c.x, c.z, comp.Props.buildingDef.Size.x, comp.Props.buildingDef.Size.z), pawn.Map), pawn.Map, out var cell, 0, 5))
+			{
+				Job job = JobMaker.MakeJob(NATRADefOf.NAT_RustedTurretSetUp, cell);
+				return job;
+			}
+			return null;
+		}
+
+		public bool CellRectOccupied(CellRect rect, Map map)
+		{
+			foreach (IntVec3 c in rect)
+			{
+				if (!c.Standable(map) || !c.GetAffordances(map).Contains(TerrainAffordanceDefOf.Light))
+				{
+					return true;
+				}
+				foreach (Thing t in c.GetThingList(map))
+				{
+					if (t.def.IsEdifice() || t.def.Fillage != FillCategory.None)
+					{
+						return true;
+					}
+				}
+			}
+			return false;
+		}
+	}
+
 	public class ThinkNode_ConditionalReinforcement : ThinkNode_Conditional
 	{
         protected override bool Satisfied(Pawn pawn)
@@ -207,7 +253,7 @@ namespace NAT
         }
     }
 
-	public class JobGiver_CarryShells : ThinkNode_JobGiver
+	/*public class JobGiver_CarryShells : ThinkNode_JobGiver
 	{
 		public float maxDistFromPoint = -1f;
 
@@ -250,7 +296,7 @@ namespace NAT
 		}
 
 		protected IntVec3 GetRoot(Pawn pawn) => pawn.GetLord()?.CurLordToil.FlagLoc ?? pawn.Position;
-	}
+	}*/
 
 	public class JobGiver_DanceRust : ThinkNode_JobGiver
 	{

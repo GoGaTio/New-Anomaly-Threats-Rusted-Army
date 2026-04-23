@@ -169,6 +169,18 @@ namespace NAT
 			}
 		}
 
+		public bool ShouldKeepTarget
+		{
+			get
+			{
+				if(currentTarget.ThingDestroyed || (!targetForced && currentTarget.Pawn?.Downed == true))
+				{
+					return false;
+				}
+				return true;
+			}
+		}
+
 		public bool TurretDestroyed
 		{
 			get
@@ -249,7 +261,6 @@ namespace NAT
 			{
 				return;
 			}
-			
 			if (currentTarget.IsValid)
 			{
 				curRotation = (currentTarget.Cell.ToVector3Shifted() - parent.DrawPos).AngleFlat() + Props.angleOffset;

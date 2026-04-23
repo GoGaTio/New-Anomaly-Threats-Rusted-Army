@@ -85,16 +85,6 @@ namespace NAT
 			}
 		}
 
-		public override void PostDrawExtraSelectionOverlays()
-		{
-			base.PostDrawExtraSelectionOverlays();
-			if (DebugSettings.ShowDevGizmos && Rust.mindState.enemyTarget != null)
-			{
-				GenDraw.DrawCircleOutline(Rust.mindState.enemyTarget.TrueCenter(), 0.7f, SimpleColor.Red);
-				GenDraw.DrawLineBetween(parent.TrueCenter(), Rust.mindState.enemyTarget.TrueCenter(), SimpleColor.Red);
-			}
-		}
-
 		public override void CompTick()
 		{
 			base.CompTick();

@@ -208,6 +208,8 @@ namespace NAT
 		}
 	}
 
+	
+
 	public class LordJob_RustedArmy : LordJob
 	{
 		private bool canKidnap = true;

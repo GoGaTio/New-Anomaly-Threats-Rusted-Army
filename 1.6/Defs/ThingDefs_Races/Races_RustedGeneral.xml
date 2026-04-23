@@ -271,7 +271,7 @@
     <combatEnhancingDrugsCount>0</combatEnhancingDrugsCount>
     <abilities>
       <li>NAT_ArtOfWar</li>
-      <li>NAT_HateSphere</li>
+      <li>NAT_HateCube</li>
     </abilities>
   </PawnKindDef>
 

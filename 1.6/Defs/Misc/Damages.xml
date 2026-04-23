@@ -50,6 +50,7 @@
     <workerClass>NAT.DamageWorker_HateVaporize</workerClass>
     <explosionColorCenter>(255,70,70)</explosionColorCenter>
     <explosionColorEdge>(255,30,30)</explosionColorEdge>
+    <hediff>NAT_HateBurn</hediff>
   </DamageDef>
 
 </Defs>

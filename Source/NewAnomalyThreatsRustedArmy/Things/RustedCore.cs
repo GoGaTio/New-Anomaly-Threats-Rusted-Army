@@ -168,8 +168,8 @@ namespace NAT
             if (rust.Discarded)
             {
                 Log.Warning("New Anomaly Threats - " + rust.Name.ToStringFull + " was discarded during resurrection, fixing");
-                ForceSetStateToUnspawned();
-                DecrementMapIndex();
+                rust.ForceSetStateToUnspawned();
+                rust.DecrementMapIndex();
             };
             string label = Label;
             ResurrectionParams parms = new ResurrectionParams();

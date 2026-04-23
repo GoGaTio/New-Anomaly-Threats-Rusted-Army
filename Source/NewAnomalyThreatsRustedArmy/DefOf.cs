@@ -64,8 +64,6 @@ namespace NAT
 
 		public static ThingDef NAT_Mote_ArtOfWarPreCast;
 
-		public static JobDef NAT_CarryShell;
-
 		public static JobDef NAT_DanceRust;
 
 		public static JobDef NAT_UseItemByRust;

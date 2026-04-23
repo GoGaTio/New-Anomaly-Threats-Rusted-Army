@@ -141,6 +141,19 @@ namespace NAT
 
 		public RustedPawn Rust => parent as RustedPawn;
 
+		[TweakValue("Rust", 0f, 100f)]
+		public static bool DrawEnemyTarget = false;
+
+		public override void PostDrawExtraSelectionOverlays()
+		{
+			base.PostDrawExtraSelectionOverlays();
+			if (DrawEnemyTarget && Rust.mindState.enemyTarget != null)
+			{
+				GenDraw.DrawCircleOutline(Rust.mindState.enemyTarget.TrueCenter(), 0.7f, SimpleColor.Red);
+				GenDraw.DrawLineBetween(parent.TrueCenter(), Rust.mindState.enemyTarget.TrueCenter(), SimpleColor.Red);
+			}
+		}
+
 		public override void PostExposeData()
 		{
 			base.PostExposeData();

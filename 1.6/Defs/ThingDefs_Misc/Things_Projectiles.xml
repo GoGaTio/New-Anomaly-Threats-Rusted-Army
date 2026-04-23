@@ -174,4 +174,33 @@
     </projectile>
   </ThingDef>
 
+  <ThingDef ParentName="BaseBullet">
+    <defName>NAT_Proj_HateCube</defName>
+    <label>hate cube</label>
+    <thingClass>Projectile_Explosive</thingClass>
+    <defaultPlacingRot>East</defaultPlacingRot>
+    <graphicData>
+      <texPath>Things/Projectile/NAT_HateCube</texPath>
+      <graphicClass>Graphic_Single_AgeSecs</graphicClass>
+      <shaderType>GlowAnimated</shaderType>
+      <shaderParameters>
+        <_NumFrames>6</_NumFrames>
+        <_FramesPerSec>12</_FramesPerSec>
+      </shaderParameters>
+      <drawSize>3</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>NAT_HateVaporize</damageDef>
+      <useGraphicClass>True</useGraphicClass>
+      <damageAmountBase>300</damageAmountBase>
+      <speed>20</speed>
+      <soundAmbient>FleshmelterBolt_Launch</soundAmbient>
+      <explosionRadius>2.9</explosionRadius>
+      <screenShakeFactor>1.25</screenShakeFactor>
+      <filth>Filth_BlastMark</filth>
+      <filthCount>1</filthCount>
+      <explosionSpawnsSingleFilth>true</explosionSpawnsSingleFilth>
+    </projectile>
+  </ThingDef>
+
 </Defs>

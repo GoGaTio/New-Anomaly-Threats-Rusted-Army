@@ -43,9 +43,17 @@
           </subNodes>
         </li>
 
-        <li Class="JobGiver_FleeForDistance">
-          <enemyDistToFleeRange>2.9~7.9</enemyDistToFleeRange>
-          <fleeDistRange>13.5~20</fleeDistRange>
+        <!-- Turret specific jobs -->
+        <li Class="ThinkNode_ConditionalOfPlayerFaction">
+          <invert>true</invert>
+          <subNodes>
+            <li Class="NAT.JobGiver_RustedTurret" />
+
+            <li Class="JobGiver_FleeForDistance">
+              <enemyDistToFleeRange>2.9~7.9</enemyDistToFleeRange>
+              <fleeDistRange>13.5~20</fleeDistRange>
+            </li>
+          </subNodes>
         </li>
 
         <!-- Lord -->

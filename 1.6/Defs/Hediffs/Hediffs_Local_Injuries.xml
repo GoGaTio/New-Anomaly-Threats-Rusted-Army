@@ -2,13 +2,13 @@
 <Defs>
 
   <HediffDef ParentName="InjuryBase">
-    <defName>NAT_DecayWound</defName>
-    <label>decay</label>
-    <labelNoun>a decay wound</labelNoun>
-    <description>A decay wound.</description>
+    <defName>NAT_HateBurn</defName>
+    <label>hate burn</label>
+    <labelNoun>a hate burn wound</labelNoun>
+    <description>A hate burn wound.</description>
     <comps>
       <li Class="HediffCompProperties_GetsPermanent">
-        <permanentLabel>decay scar</permanentLabel>
+        <permanentLabel>hate burn scar</permanentLabel>
       </li>
       <li Class="HediffCompProperties_TendDuration">
         <labelTendedWell>bandaged</labelTendedWell>
@@ -20,8 +20,8 @@
       <painPerSeverity>0.01875</painPerSeverity>
       <averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
       <canMerge>true</canMerge>
-      <destroyedLabel>Decayed off</destroyedLabel>
-      <destroyedOutLabel>Decayed out</destroyedOutLabel>
+      <destroyedLabel>Burned off</destroyedLabel>
+      <destroyedOutLabel>Burned out</destroyedOutLabel>
     </injuryProps>
   </HediffDef>
 
