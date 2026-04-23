@@ -359,9 +359,9 @@ namespace NAT
 		{
 			get
 			{
-				if(pawn.def.size.x == 2)
+				if(CurToilIndex == 1 && Comp.Props.buildingDef.Size.x == 2)
 				{
-					return Vector3.one * 0.5f * ((float)AgeTicks / 180f);
+					return Vector3.one * 0.5f * ((180f - (float)ticksLeftThisToil) / 180f);
 				}
 				return Vector3.zero;
 			}

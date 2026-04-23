@@ -58,6 +58,7 @@
       </buildingTags>
       <playTargetAcquiredSound>false</playTargetAcquiredSound>
       <ai_combatDangerous>true</ai_combatDangerous>
+      <expandHomeArea>false</expandHomeArea>
     </building>
     <soundImpactDefault>NAT_Pawn_RustedSoldier_Wounded</soundImpactDefault>
     <drawHighlight>true</drawHighlight>

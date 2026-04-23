@@ -66,9 +66,9 @@ namespace NAT
 		public override Vector3 OffsetFor(PawnRenderNode node, PawnDrawParms parms, out Vector3 pivot)
 		{
 			Vector3 vec = base.OffsetFor(node, parms, out pivot);
-			if (parms.pawn.jobs != null && parms.pawn.CurJobDef == NATRADefOf.NAT_RustedTurretSetUp)
+			if (parms.pawn.jobs != null && parms.pawn.CurJobDef == NATRADefOf.NAT_RustedTurretSetUp && parms.pawn.jobs.curDriver.CurToilIndex == 1)
 			{
-				vec *= OffsetFactorFromJobAge.Evaluate(Find.TickManager.TicksGame - parms.pawn.CurJob.startTick);
+				vec *= OffsetFactorFromJobAge.Evaluate(180 - parms.pawn.jobs.curDriver.ticksLeftThisToil);
 			}
 			return vec;
 		}

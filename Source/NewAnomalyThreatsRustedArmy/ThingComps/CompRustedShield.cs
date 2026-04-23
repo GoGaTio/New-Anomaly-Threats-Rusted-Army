@@ -249,6 +249,8 @@ namespace NAT
 			{
 				absorbed = true;
 				health -= Mathf.RoundToInt(dinfo.Amount * pawn.GetStatValue(StatDefOf.IncomingDamageFactor));
+				pawn.mindState.Notify_DamageTaken(dinfo);
+				pawn.GetLord()?.Notify_PawnDamaged(pawn, dinfo);
 				if (health <= 0)
 				{
 					Destroy();

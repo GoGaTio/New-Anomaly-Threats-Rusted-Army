@@ -151,6 +151,11 @@ namespace NAT
 			{
 				GenDraw.DrawCircleOutline(Rust.mindState.enemyTarget.TrueCenter(), 0.7f, SimpleColor.Red);
 				GenDraw.DrawLineBetween(parent.TrueCenter(), Rust.mindState.enemyTarget.TrueCenter(), SimpleColor.Red);
+				if (Rust.mindState.duty?.focus.IsValid == true)
+				{
+					GenDraw.DrawCircleOutline(Rust.mindState.duty.focus.CenterVector3, 0.7f, SimpleColor.Cyan);
+					GenDraw.DrawLineBetween(parent.TrueCenter(), Rust.mindState.duty.focus.CenterVector3, SimpleColor.Cyan);
+				}
 			}
 		}
 

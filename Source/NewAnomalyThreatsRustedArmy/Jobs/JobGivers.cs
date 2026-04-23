@@ -209,8 +209,20 @@ namespace NAT
 			{
 				return pawn.CurJob;
 			}
-			if(!pawn.TryGetComp(out CompRustedTurretPawn comp) || !pawn.TryGetComp(out CompRustedTurret turret) || turret.currentTarget == null || !turret.ShouldKeepTarget)
+			int ticksGame = Find.TickManager.TicksGame;
+			if (ticksGame - pawn.spawnedTick < 600 || ticksGame - pawn.mindState.lastHarmTick < 1200)
 			{
+				//Log.Message("1");
+				return null;
+			}
+			if(!pawn.TryGetComp(out CompRustedTurretPawn comp) || !pawn.TryGetComp(out CompRustedTurret turret) || turret.currentTarget != null)
+			{
+				//Log.Message("2");
+				return null;
+			}
+			if (pawn.mindState.duty?.focus.IsValid == true && pawn.mindState.duty.focus.Cell.DistanceTo(pawn.Position) > (pawn.mindState.duty.wanderRadius ?? pawn.mindState.duty.radius))
+			{
+				//Log.Message("3");
 				return null;
 			}
 			if(RCellFinder.TryFindRandomCellNearWith(pawn.Position, (c) => !CellRectOccupied(new CellRect(c.x, c.z, comp.Props.buildingDef.Size.x, comp.Props.buildingDef.Size.z), pawn.Map), pawn.Map, out var cell, 0, 5))

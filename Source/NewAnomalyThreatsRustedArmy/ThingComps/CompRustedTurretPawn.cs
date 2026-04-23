@@ -14,6 +14,7 @@ using Verse.AI;
 using Verse.AI.Group;
 using Verse.Noise;
 using Verse.Sound;
+using static HarmonyLib.Code;
 
 namespace NAT
 {
@@ -43,7 +44,7 @@ namespace NAT
 		public override void ResolveReferences(ThingDef parentDef)
 		{
 			base.ResolveReferences(parentDef);
-			if(kindDef != null)
+			if (kindDef != null)
 			{
 				CompProperties_RustedTurretPawn comp = kindDef.race.GetCompProperties<CompProperties_RustedTurretPawn>();
 				comp.buildingDef = parentDef;
@@ -131,26 +132,25 @@ namespace NAT
 
 		public CellRect PlaceRect => new CellRect(parent.Position.x, parent.Position.z, Props.buildingDef.Size.x, Props.buildingDef.Size.z);
 
-		public bool RectOccupied
+		public bool RectOccupied => IsRectOccupied(PlaceRect);
+
+		public bool IsRectOccupied(CellRect rect)
 		{
-			get
+			foreach (IntVec3 c in rect)
 			{
-				foreach (IntVec3 c in PlaceRect)
+				if (!c.Standable(parent.Map) || !c.GetAffordances(parent.Map).Contains(TerrainAffordanceDefOf.Light))
 				{
-					if (!c.Standable(parent.Map) || !c.GetAffordances(parent.Map).Contains(Props.buildingDef.terrainAffordanceNeeded))
+					return true;
+				}
+				foreach (Thing t in c.GetThingList(parent.Map))
+				{
+					if (t.def.IsEdifice() || t.def.Fillage != FillCategory.None)
 					{
 						return true;
 					}
-					foreach(Thing t in c.GetThingList(parent.Map))
-					{
-						if (t.def.IsEdifice() || t.def.Fillage != FillCategory.None)
-						{
-							return true;
-						}
-					}
 				}
-				return false;
 			}
+			return false;
 		}
 
 		public override void PostSpawnSetup(bool respawningAfterLoad)
@@ -158,14 +158,14 @@ namespace NAT
 			base.PostSpawnSetup(respawningAfterLoad);
 			if (!respawningAfterLoad && parent is Pawn pawn)
 			{
-				if(Props.buildingDef.entityCodexEntry == null)
+				if (Props.buildingDef.entityCodexEntry == null)
 				{
 					Find.HiddenItemsManager.SetDiscovered(Props.buildingDef);
 				}
 				else
 				{
 					Find.EntityCodex.SetDiscovered(new List<EntityCodexEntryDef>() { Props.buildingDef.entityCodexEntry }, Props.buildingDef, pawn);
-				}	
+				}
 			}
 			if (parent is Building && Rust == null)
 			{
@@ -175,7 +175,7 @@ namespace NAT
 
 		public override string CompInspectStringExtra()
 		{
-			if(parent is Pawn)
+			if (parent is Pawn)
 			{
 				return base.CompInspectStringExtra();
 			}
@@ -211,7 +211,7 @@ namespace NAT
 					{
 						return;
 					}
-					foreach(Pawn p in Find.Selector.SelectedPawns)
+					foreach (Pawn p in Find.Selector.SelectedPawns)
 					{
 						if (p.TryGetComp<CompRustedTurretPawn>(out var comp))
 						{
@@ -232,6 +232,39 @@ namespace NAT
 				{
 					SpawnPawn(parent.Position, parent.Map);
 				};
+				Command_Action command_Action2 = new Command_Action();
+				command_Action2.defaultLabel = "MU_InsertMech".Translate() + "...";
+				command_Action2.defaultDesc = "MU_InsertMech_Desc".Translate();
+				command_Action2.icon = ContentFinder<Texture2D>.Get("UI/Commands/HoldFire");
+				command_Action2.groupable = false;
+				command_Action2.action = delegate
+				{
+					Find.Targeter.BeginTargeting(TargetingParameters.ForCell(), delegate (LocalTargetInfo target)
+					{
+						SpawnPawn(parent.Position, parent.Map).jobs.TryTakeOrderedJob(JobMaker.MakeJob(NATRADefOf.NAT_RustedTurretSetUp, target), JobTag.Misc);
+					}, delegate (LocalTargetInfo targ)
+					{
+						CellRect cellRect = new CellRect(targ.Cell.x, targ.Cell.z, parent.def.Size.x, parent.def.Size.z);
+						bool flag = false;
+						Vector3 vec = cellRect.CenterVector3;
+						if (!cellRect.InBounds(parent.Map))
+						{
+							cellRect.ClipInsideMap(parent.Map);
+							flag = true;
+						}
+						if (flag || IsRectOccupied(cellRect))
+						{
+							GenDraw.DrawFieldEdges(cellRect.ToList(), Color.red);
+							GenDraw.DrawLineBetween(vec, parent.TrueCenter(), SimpleColor.Red);
+						}
+						else
+						{
+							GenDraw.DrawFieldEdges(cellRect.ToList(), Color.white);
+							GenDraw.DrawLineBetween(vec, parent.TrueCenter(), SimpleColor.White);
+						}
+					}, (t) => t.Cell.InBounds(parent.Map) && !IsRectOccupied(new CellRect(t.Cell.x, t.Cell.z, parent.def.Size.x, parent.def.Size.z)));
+				};
+				yield return command_Action2;
 			}
 			yield return command_Action;
 		}
@@ -259,7 +292,7 @@ namespace NAT
 			}
 		}
 
-		public void SpawnPawn(IntVec3 pos, Map map)
+		public Pawn SpawnPawn(IntVec3 pos, Map map)
 		{
 			destroyed = true;
 			bool selected = Find.Selector.IsSelected(parent);
@@ -270,7 +303,7 @@ namespace NAT
 			pawn.ageTracker.AgeBiologicalTicks += ageTicks;
 			pawn.ageTracker.AgeChronologicalTicks += ageTicks;
 			Lord lord = ((Building_TurretGun)parent).GetLord();
-			if(lord != null && !lord.ownedPawns.Contains(pawn))
+			if (lord != null && !lord.ownedPawns.Contains(pawn))
 			{
 				lord.AddPawn(pawn);
 			}
@@ -281,6 +314,7 @@ namespace NAT
 			{
 				Find.Selector.Select(pawn, false, false);
 			}
+			return pawn;
 		}
 
 		public override void PostPostMake()
@@ -295,7 +329,7 @@ namespace NAT
 		public override void CompTick()
 		{
 			base.CompTick();
-			if(parent is Pawn)
+			if (parent is Pawn)
 			{
 				if (Props.hitPoints > health)
 				{
@@ -310,10 +344,10 @@ namespace NAT
 			else
 			{
 				ageTicks++;
-				if(parent.IsHashIntervalTick(60) && parent is Building_RustedTurret turret && !turret.CurrentTarget.IsValid)
+				if (parent.IsHashIntervalTick(60) && parent is Building_RustedTurret turret && !turret.CurrentTarget.IsValid)
 				{
 					string name = turret.GetLord()?.CurLordToil?.GetType().Name;
-					if(name != null && !name.Contains("Defend") && !name.Contains("Stage"))
+					if (name != null && !name.Contains("Defend") && !name.Contains("Stage"))
 					{
 						SpawnPawn(parent.Position, parent.Map);
 					}
@@ -329,7 +363,7 @@ namespace NAT
 				return;
 			}
 			Pawn pawn = parent as Pawn;
-			if(pawn == null)
+			if (pawn == null)
 			{
 				Thing instigator = dinfo.Instigator;
 				if (instigator != null && instigator.Map == parent.Map && parent is Building_RustedTurret turret && !turret.CurrentTarget.IsValid)
@@ -436,6 +470,8 @@ namespace NAT
 			{
 				absorbed = true;
 				health -= Mathf.RoundToInt(dinfo.Amount * pawn.GetStatValue(StatDefOf.IncomingDamageFactor));
+				pawn.mindState.Notify_DamageTaken(dinfo);
+				pawn.GetLord()?.Notify_PawnDamaged(pawn, dinfo);
 				if (health <= 0)
 				{
 					health = 0;
@@ -458,7 +494,7 @@ namespace NAT
 			Scribe_Values.Look(ref ticksToRegen, "ticksToRegen");
 			Scribe_Values.Look(ref ageTicks, "ageTicks", defaultValue: 0);
 			Scribe_Deep.Look(ref innerContainer, "innerContainer", this);
-			if(innerContainer == null)
+			if (innerContainer == null)
 			{
 				innerContainer = new ThingOwner<RustedPawn>(this, oneStackOnly: true, LookMode.Deep, removeContentsIfDestroyed: false);
 			}
