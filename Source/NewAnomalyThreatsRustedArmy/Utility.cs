@@ -60,6 +60,7 @@ namespace NAT
     {
 
 		public static readonly Texture2D Use = ContentFinder<Texture2D>.Get("UI/Buttons/NAT_RustUse");
+
 		public static NewAnomalyThreatsRustedArmySettings Settings
 		{
 			get

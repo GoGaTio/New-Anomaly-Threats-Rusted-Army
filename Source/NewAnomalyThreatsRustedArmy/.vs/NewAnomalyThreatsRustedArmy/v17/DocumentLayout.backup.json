@@ -3,26 +3,81 @@
   "WorkspaceRootPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\newanomalythreatsrustedarmy\\source\\newanomalythreatsrustedarmy\\things\\building_rustedturret.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|solutionrelative:things\\building_rustedturret.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\thingcomps\\comprustedturret.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|solutionrelative:thingcomps\\comprustedturret.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\ThingDefs_Races\\Races_RustedGeneral.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\Misc\\Damages.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\damages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|solutionrelative:damages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Anomaly\\Defs\\DamageDefs\\Damages_Misc.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Core\\Defs\\DamageDefs\\Damages_Misc.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Royalty\\Defs\\AbilityDefs\\Abilities.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\ThingDefs_Buildings\\Buildings_Rusted_Turrets.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\newanomalythreatsrustedarmy\\source\\newanomalythreatsrustedarmy\\render.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|solutionrelative:render.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\thingcomps\\comprustedsoldier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|solutionrelative:thingcomps\\comprustedsoldier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\thingcomps\\comprustedturretpawn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|solutionrelative:thingcomps\\comprustedturretpawn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\newanomalythreatsrustedarmy\\source\\newanomalythreatsrustedarmy\\incidents\\incidentworker_rustedarmyraid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|solutionrelative:incidents\\incidentworker_rustedarmyraid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\newanomalythreatsrustedarmy\\source\\newanomalythreatsrustedarmy\\incidents\\incidentworker_rustedarmysiege.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|solutionrelative:incidents\\incidentworker_rustedarmysiege.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\newanomalythreatsrustedarmy\\source\\newanomalythreatsrustedarmy\\incidents\\incidentworker_rustedmassarrival.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|solutionrelative:incidents\\incidentworker_rustedmassarrival.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\newanomalythreatsrustedarmy\\source\\newanomalythreatsrustedarmy\\abilities\\compabilityeffect_shaperust.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|solutionrelative:abilities\\compabilityeffect_shaperust.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\newanomalythreatsrustedarmy\\source\\newanomalythreatsrustedarmy\\psychicrituals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|solutionrelative:psychicrituals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\thingcomps\\comprustedsoldier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|solutionrelative:thingcomps\\comprustedsoldier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\newanomalythreatsrustedarmy\\source\\newanomalythreatsrustedarmy\\utility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|solutionrelative:utility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\newanomalythreatsrustedarmy\\source\\newanomalythreatsrustedarmy\\things\\skyfaller_rustedchunk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|solutionrelative:things\\skyfaller_rustedchunk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\render.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|solutionrelative:render.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\jobs\\jobdrivers_misc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|solutionrelative:jobs\\jobdrivers_misc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\newanomalythreatsrustedarmy\\source\\newanomalythreatsrustedarmy\\thingcomps\\comprustedmassdeactivation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\thingcomps\\comprustedmassdeactivation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|solutionrelative:thingcomps\\comprustedmassdeactivation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -30,19 +85,15 @@
       "RelativeMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|solutionrelative:mapgen\\genstep_rustedoutpost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\newanomalythreatsrustedarmy\\source\\newanomalythreatsrustedarmy\\thingcomps\\comprustedbuffgiver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\thingcomps\\comprustedbuffgiver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|solutionrelative:thingcomps\\comprustedbuffgiver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\thingcomps\\comprustedturret.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|solutionrelative:thingcomps\\comprustedturret.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\newanomalythreatsrustedarmy\\source\\newanomalythreatsrustedarmy\\thingcomps\\comprustedshield.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\thingcomps\\comprustedshield.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|solutionrelative:thingcomps\\comprustedshield.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|c:\\program files (x86)\\steam\\steamapps\\common\\rimworld\\mods\\newanomalythreatsrustedarmy\\source\\newanomalythreatsrustedarmy\\jobs\\jobgivers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\jobs\\jobgivers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|solutionrelative:jobs\\jobgivers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -116,9 +167,6 @@
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Core\\Defs\\Effects\\Mote_Visual.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\ThingDefs_Races\\Races_RustedGeneral.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Anomaly\\Defs\\AbilityDefs\\Abilities.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
@@ -133,19 +181,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\PawnKinds_Rusts.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Core\\Defs\\DamageDefs\\Damages_Misc.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Anomaly\\Defs\\DamageDefs\\Damages_Misc.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\damages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|solutionrelative:damages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\Misc\\Damages.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Anomaly\\Defs\\ThingDefs_Buildings\\Buildings_Fleshmass.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
@@ -223,15 +258,7 @@
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\ThingDefs_Races\\Races_RustedMass.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\nat_rustedarmy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|solutionrelative:nat_rustedarmy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\ThingDefs_Races\\Races_RustedTurrets.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\abilities\\abilities_misc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{70F33C3F-37B1-4119-BCF4-C7AB32A28A84}|NewAnomalyThreatsRustedArmy.csproj|solutionrelative:abilities\\abilities_misc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -250,19 +277,110 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Building_RustedTurret.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\Things\\Building_RustedTurret.cs",
+              "RelativeDocumentMoniker": "Things\\Building_RustedTurret.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\Things\\Building_RustedTurret.cs*",
+              "RelativeToolTip": "Things\\Building_RustedTurret.cs*",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAnwJIAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T09:47:03.911Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Abilities.xml",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Royalty\\Defs\\AbilityDefs\\Abilities.xml",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Data\\Royalty\\Defs\\AbilityDefs\\Abilities.xml",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Royalty\\Defs\\AbilityDefs\\Abilities.xml",
+              "RelativeToolTip": "..\\..\\..\\..\\Data\\Royalty\\Defs\\AbilityDefs\\Abilities.xml",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAAAOUAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2026-04-24T09:38:44.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IncidentWorker_RustedMassArrival.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\Incidents\\IncidentWorker_RustedMassArrival.cs",
+              "RelativeDocumentMoniker": "Incidents\\IncidentWorker_RustedMassArrival.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\Incidents\\IncidentWorker_RustedMassArrival.cs",
+              "RelativeToolTip": "Incidents\\IncidentWorker_RustedMassArrival.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T07:39:30.12Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IncidentWorker_RustedArmySiege.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\Incidents\\IncidentWorker_RustedArmySiege.cs",
+              "RelativeDocumentMoniker": "Incidents\\IncidentWorker_RustedArmySiege.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\Incidents\\IncidentWorker_RustedArmySiege.cs",
+              "RelativeToolTip": "Incidents\\IncidentWorker_RustedArmySiege.cs",
+              "ViewState": "AgIAAHYBAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T07:39:19.035Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IncidentWorker_RustedArmyRaid.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\Incidents\\IncidentWorker_RustedArmyRaid.cs",
+              "RelativeDocumentMoniker": "Incidents\\IncidentWorker_RustedArmyRaid.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\Incidents\\IncidentWorker_RustedArmyRaid.cs",
+              "RelativeToolTip": "Incidents\\IncidentWorker_RustedArmyRaid.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T07:39:14.783Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "PsychicRituals.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\PsychicRituals.cs",
+              "RelativeDocumentMoniker": "PsychicRituals.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\PsychicRituals.cs",
+              "RelativeToolTip": "PsychicRituals.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T07:36:10.797Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Skyfaller_RustedChunk.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\Things\\Skyfaller_RustedChunk.cs",
+              "RelativeDocumentMoniker": "Things\\Skyfaller_RustedChunk.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\Things\\Skyfaller_RustedChunk.cs",
+              "RelativeToolTip": "Things\\Skyfaller_RustedChunk.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAgwEoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T06:59:25.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Buildings_Rusted_Turrets.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\ThingDefs_Buildings\\Buildings_Rusted_Turrets.xml",
               "RelativeDocumentMoniker": "..\\..\\1.6\\Defs\\ThingDefs_Buildings\\Buildings_Rusted_Turrets.xml",
               "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\ThingDefs_Buildings\\Buildings_Rusted_Turrets.xml",
               "RelativeToolTip": "..\\..\\1.6\\Defs\\ThingDefs_Buildings\\Buildings_Rusted_Turrets.xml",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAADwAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
               "WhenOpened": "2026-04-23T22:44:32.155Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 18,
               "Title": "Render.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\Render.cs",
               "RelativeDocumentMoniker": "Render.cs",
@@ -270,12 +388,11 @@
               "RelativeToolTip": "Render.cs",
               "ViewState": "AgIAADMAAAAAAAAAAAAAAEQAAACJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-23T22:08:26.511Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-23T22:08:26.511Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 20,
               "Title": "CompRustedMassDeactivation.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\ThingComps\\CompRustedMassDeactivation.cs",
               "RelativeDocumentMoniker": "ThingComps\\CompRustedMassDeactivation.cs",
@@ -283,12 +400,11 @@
               "RelativeToolTip": "ThingComps\\CompRustedMassDeactivation.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-23T21:13:33.294Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-23T21:13:33.294Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 22,
               "Title": "CompRustedBuffGiver.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\ThingComps\\CompRustedBuffGiver.cs",
               "RelativeDocumentMoniker": "ThingComps\\CompRustedBuffGiver.cs",
@@ -296,12 +412,11 @@
               "RelativeToolTip": "ThingComps\\CompRustedBuffGiver.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-23T21:13:30.342Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-23T21:13:30.342Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 23,
               "Title": "CompRustedShield.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\ThingComps\\CompRustedShield.cs",
               "RelativeDocumentMoniker": "ThingComps\\CompRustedShield.cs",
@@ -309,25 +424,24 @@
               "RelativeToolTip": "ThingComps\\CompRustedShield.cs",
               "ViewState": "AgIAAKwAAAAAAAAAAAAAAPwAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-23T20:16:59.503Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-23T20:16:59.503Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
               "Title": "CompRustedTurret.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\ThingComps\\CompRustedTurret.cs",
               "RelativeDocumentMoniker": "ThingComps\\CompRustedTurret.cs",
               "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\ThingComps\\CompRustedTurret.cs",
               "RelativeToolTip": "ThingComps\\CompRustedTurret.cs",
-              "ViewState": "AgIAAI8BAAAAAAAAAAAAAJ4BAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAIwHEAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-23T10:12:31.652Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 27,
               "Title": "Jobs_Misc.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\Jobs_Misc.xml",
               "RelativeDocumentMoniker": "..\\..\\1.6\\Defs\\Jobs_Misc.xml",
@@ -339,7 +453,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 24,
               "Title": "JobGivers.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\Jobs\\JobGivers.cs",
               "RelativeDocumentMoniker": "Jobs\\JobGivers.cs",
@@ -347,12 +461,11 @@
               "RelativeToolTip": "Jobs\\JobGivers.cs",
               "ViewState": "AgIAAMUAAAAAAAAAAAAcwOAAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-23T08:45:22.953Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-23T08:45:22.953Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 21,
               "Title": "GenStep_RustedOutpost.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\MapGen\\GenStep_RustedOutpost.cs",
               "RelativeDocumentMoniker": "MapGen\\GenStep_RustedOutpost.cs",
@@ -360,12 +473,11 @@
               "RelativeToolTip": "MapGen\\GenStep_RustedOutpost.cs",
               "ViewState": "AgIAADYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-23T09:52:10.781Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-23T09:52:10.781Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 31,
               "Title": "LayoutWorker_RustedBase.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\MapGen\\LayoutWorker_RustedBase.cs",
               "RelativeDocumentMoniker": "MapGen\\LayoutWorker_RustedBase.cs",
@@ -377,7 +489,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 30,
               "Title": "RoomContents.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\MapGen\\RoomContents.cs",
               "RelativeDocumentMoniker": "MapGen\\RoomContents.cs",
@@ -389,7 +501,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 34,
               "Title": "GenStep_RustedFloorSpace.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\MapGen\\GenStep_RustedFloorSpace.cs",
               "RelativeDocumentMoniker": "MapGen\\GenStep_RustedFloorSpace.cs",
@@ -401,7 +513,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 19,
               "Title": "JobDrivers_Misc.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\Jobs\\JobDrivers_Misc.cs",
               "RelativeDocumentMoniker": "Jobs\\JobDrivers_Misc.cs",
@@ -409,25 +521,24 @@
               "RelativeToolTip": "Jobs\\JobDrivers_Misc.cs",
               "ViewState": "AgIAAGIBAAAAAAAAAAAcwGkBAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-23T09:40:50.784Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-23T09:40:50.784Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 15,
               "Title": "CompRustedSoldier.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\ThingComps\\CompRustedSoldier.cs",
               "RelativeDocumentMoniker": "ThingComps\\CompRustedSoldier.cs",
               "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\ThingComps\\CompRustedSoldier.cs",
               "RelativeToolTip": "ThingComps\\CompRustedSoldier.cs",
-              "ViewState": "AgIAAIkAAAAAAAAAAAAIwKAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAALgAAAAAAAAAAAAYwKAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-18T15:15:37.013Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 25,
               "Title": "CompRustedCommander.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\ThingComps\\CompRustedCommander.cs",
               "RelativeDocumentMoniker": "ThingComps\\CompRustedCommander.cs",
@@ -435,25 +546,24 @@
               "RelativeToolTip": "ThingComps\\CompRustedCommander.cs",
               "ViewState": "AgIAADYAAAAAAAAAAAAqwFUAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-23T09:24:46.967Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-23T09:24:46.967Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "CompRustedTurretPawn.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\ThingComps\\CompRustedTurretPawn.cs",
               "RelativeDocumentMoniker": "ThingComps\\CompRustedTurretPawn.cs",
               "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\ThingComps\\CompRustedTurretPawn.cs",
               "RelativeToolTip": "ThingComps\\CompRustedTurretPawn.cs",
-              "ViewState": "AgIAAOsAAAAAAAAAAAAQwAMBAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAN8AAAAAAAAAAAAQwP4AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-19T20:28:56.3Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 32,
               "Title": "Duties.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\Misc\\Duties.xml",
               "RelativeDocumentMoniker": "..\\..\\1.6\\Defs\\Misc\\Duties.xml",
@@ -465,7 +575,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 29,
               "Title": "RustedTurret.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\ThinkTreeDefs\\RustedTurret.xml",
               "RelativeDocumentMoniker": "..\\..\\1.6\\Defs\\ThinkTreeDefs\\RustedTurret.xml",
@@ -477,7 +587,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 38,
               "Title": "MiscPatch.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\Harmony\\MiscPatch.cs",
               "RelativeDocumentMoniker": "Harmony\\MiscPatch.cs",
@@ -489,7 +599,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 37,
               "Title": "Work.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\Harmony\\Work.cs",
               "RelativeDocumentMoniker": "Harmony\\Work.cs",
@@ -501,7 +611,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 36,
               "Title": "CaravanPatches.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\Harmony\\CaravanPatches.cs",
               "RelativeDocumentMoniker": "Harmony\\CaravanPatches.cs",
@@ -513,7 +623,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 41,
               "Title": "CompAbilityEffect_ArtOfWar.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\Abilities\\CompAbilityEffect_ArtOfWar.cs",
               "RelativeDocumentMoniker": "Abilities\\CompAbilityEffect_ArtOfWar.cs",
@@ -525,7 +635,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 35,
               "Title": "Lords.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\Jobs\\Lords.cs",
               "RelativeDocumentMoniker": "Jobs\\Lords.cs",
@@ -537,7 +647,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 45,
               "Title": "RustedCore.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\Things\\RustedCore.cs",
               "RelativeDocumentMoniker": "Things\\RustedCore.cs",
@@ -549,7 +659,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 46,
               "Title": "Buildings_VoidAwakening.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Anomaly\\Defs\\ThingDefs_Buildings\\Buildings_VoidAwakening.xml",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Data\\Anomaly\\Defs\\ThingDefs_Buildings\\Buildings_VoidAwakening.xml",
@@ -561,7 +671,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 47,
               "Title": "Races_RustedTrooper.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\ThingDefs_Races\\Races_RustedTrooper.xml",
               "RelativeDocumentMoniker": "..\\..\\1.6\\Defs\\ThingDefs_Races\\Races_RustedTrooper.xml",
@@ -573,7 +683,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 48,
               "Title": "PawnKinds_Rusts.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\PawnKinds_Rusts.xml",
               "RelativeDocumentMoniker": "..\\..\\1.6\\Defs\\PawnKinds_Rusts.xml",
@@ -585,19 +695,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 6,
               "Title": "Damages_Misc.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Core\\Defs\\DamageDefs\\Damages_Misc.xml",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Data\\Core\\Defs\\DamageDefs\\Damages_Misc.xml",
               "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Core\\Defs\\DamageDefs\\Damages_Misc.xml",
               "RelativeToolTip": "..\\..\\..\\..\\Data\\Core\\Defs\\DamageDefs\\Damages_Misc.xml",
-              "ViewState": "AgIAAGwAAAAAAAAAAAAAAH4AAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAAAH4AAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2026-04-21T18:10:54.68Z"
+              "WhenOpened": "2026-04-21T18:10:54.68Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 49,
               "Title": "Buildings_Fleshmass.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Anomaly\\Defs\\ThingDefs_Buildings\\Buildings_Fleshmass.xml",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Data\\Anomaly\\Defs\\ThingDefs_Buildings\\Buildings_Fleshmass.xml",
@@ -609,7 +720,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 43,
               "Title": "Mote_Visual.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Core\\Defs\\Effects\\Mote_Visual.xml",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Data\\Core\\Defs\\Effects\\Mote_Visual.xml",
@@ -621,7 +732,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 44,
               "Title": "Abilities.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Anomaly\\Defs\\AbilityDefs\\Abilities.xml",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Data\\Anomaly\\Defs\\AbilityDefs\\Abilities.xml",
@@ -633,7 +744,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 39,
               "Title": "Abilities_General.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\Abilities\\Abilities_General.xml",
               "RelativeDocumentMoniker": "..\\..\\1.6\\Defs\\Abilities\\Abilities_General.xml",
@@ -645,19 +756,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 2,
               "Title": "Races_RustedGeneral.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\ThingDefs_Races\\Races_RustedGeneral.xml",
               "RelativeDocumentMoniker": "..\\..\\1.6\\Defs\\ThingDefs_Races\\Races_RustedGeneral.xml",
               "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\ThingDefs_Races\\Races_RustedGeneral.xml",
               "RelativeToolTip": "..\\..\\1.6\\Defs\\ThingDefs_Races\\Races_RustedGeneral.xml",
-              "ViewState": "AgIAAAIBAAAAAAAAAAAhwBIBAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAhwGYAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2026-04-20T13:47:15.181Z"
+              "WhenOpened": "2026-04-20T13:47:15.181Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 52,
               "Title": "RangedMechanoid_Heavy.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Biotech\\Defs\\ThingDefs_Misc\\Weapons\\RangedMechanoid_Heavy.xml",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Data\\Biotech\\Defs\\ThingDefs_Misc\\Weapons\\RangedMechanoid_Heavy.xml",
@@ -669,7 +781,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 54,
               "Title": "Abilities_Officer.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\Abilities\\Abilities_Officer.xml",
               "RelativeDocumentMoniker": "..\\..\\1.6\\Defs\\Abilities\\Abilities_Officer.xml",
@@ -681,7 +793,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 55,
               "Title": "Abilities_Misc.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\Abilities\\Abilities_Misc.xml",
               "RelativeDocumentMoniker": "..\\..\\1.6\\Defs\\Abilities\\Abilities_Misc.xml",
@@ -693,7 +805,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 57,
               "Title": "EntityCodexEntryDefs.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\Misc\\EntityCodexEntryDefs.xml",
               "RelativeDocumentMoniker": "..\\..\\1.6\\Defs\\Misc\\EntityCodexEntryDefs.xml",
@@ -705,7 +817,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 59,
               "Title": "Humanlike.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Core\\Defs\\ThinkTreeDefs\\Humanlike.xml",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Data\\Core\\Defs\\ThinkTreeDefs\\Humanlike.xml",
@@ -717,7 +829,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 58,
               "Title": "Rust.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\ThinkTreeDefs\\Rust.xml",
               "RelativeDocumentMoniker": "..\\..\\1.6\\Defs\\ThinkTreeDefs\\Rust.xml",
@@ -729,7 +841,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 60,
               "Title": "Items_UsableByRusts.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\ThingDefs_Items\\Items_UsableByRusts.xml",
               "RelativeDocumentMoniker": "..\\..\\1.6\\Defs\\ThingDefs_Items\\Items_UsableByRusts.xml",
@@ -741,7 +853,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 50,
               "Title": "Skills.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Core\\Defs\\SkillDefs\\Skills.xml",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Data\\Core\\Defs\\SkillDefs\\Skills.xml",
@@ -753,7 +865,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 26,
               "Title": "CompUsableByRust.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\ThingComps\\CompUsableByRust.cs",
               "RelativeDocumentMoniker": "ThingComps\\CompUsableByRust.cs",
@@ -761,12 +873,11 @@
               "RelativeToolTip": "ThingComps\\CompUsableByRust.cs",
               "ViewState": "AgIAAGsAAAAAAAAAAAAAAFQAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-21T15:05:27.93Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-21T15:05:27.93Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 63,
               "Title": "Bossgroups.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\Bossgroups.xml",
               "RelativeDocumentMoniker": "..\\..\\1.6\\Defs\\Bossgroups.xml",
@@ -778,7 +889,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 56,
               "Title": "Ethereal_SignalActions.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\GoGaTioTools\\Defs\\Ethereal_SignalActions.xml",
               "RelativeDocumentMoniker": "..\\..\\..\\GoGaTioTools\\Defs\\Ethereal_SignalActions.xml",
@@ -790,7 +901,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 65,
               "Title": "Mote_Visual.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Anomaly\\Defs\\Effects\\Mote_Visual.xml",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Data\\Anomaly\\Defs\\Effects\\Mote_Visual.xml",
@@ -802,7 +913,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 51,
               "Title": "Mote.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\Effects\\Mote.xml",
               "RelativeDocumentMoniker": "..\\..\\1.6\\Defs\\Effects\\Mote.xml",
@@ -814,7 +925,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 66,
               "Title": "Abilities.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Ideology\\Defs\\AbilityDefs\\Abilities.xml",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Data\\Ideology\\Defs\\AbilityDefs\\Abilities.xml",
@@ -826,7 +937,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 5,
               "Title": "Damages_Misc.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Anomaly\\Defs\\DamageDefs\\Damages_Misc.xml",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Data\\Anomaly\\Defs\\DamageDefs\\Damages_Misc.xml",
@@ -834,11 +945,12 @@
               "RelativeToolTip": "..\\..\\..\\..\\Data\\Anomaly\\Defs\\DamageDefs\\Damages_Misc.xml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2026-04-21T10:07:09.315Z"
+              "WhenOpened": "2026-04-21T10:07:09.315Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 33,
               "Title": "DefOf.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\DefOf.cs",
               "RelativeDocumentMoniker": "DefOf.cs",
@@ -850,7 +962,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 4,
               "Title": "Damages.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\Damages.cs",
               "RelativeDocumentMoniker": "Damages.cs",
@@ -858,23 +970,25 @@
               "RelativeToolTip": "Damages.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAAwCIAAABfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-21T10:04:20.43Z"
+              "WhenOpened": "2026-04-21T10:04:20.43Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 3,
               "Title": "Damages.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\Misc\\Damages.xml",
               "RelativeDocumentMoniker": "..\\..\\1.6\\Defs\\Misc\\Damages.xml",
               "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\Misc\\Damages.xml",
               "RelativeToolTip": "..\\..\\1.6\\Defs\\Misc\\Damages.xml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAC8AAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAADUAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2026-04-21T10:03:47.783Z"
+              "WhenOpened": "2026-04-21T10:03:47.783Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 42,
               "Title": "Things_Projectiles.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\ThingDefs_Misc\\Things_Projectiles.xml",
               "RelativeDocumentMoniker": "..\\..\\1.6\\Defs\\ThingDefs_Misc\\Things_Projectiles.xml",
@@ -886,7 +1000,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 67,
               "Title": "Effecter.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\Effects\\Effecter.xml",
               "RelativeDocumentMoniker": "..\\..\\1.6\\Defs\\Effects\\Effecter.xml",
@@ -898,7 +1012,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 68,
               "Title": "Effecter_Misc.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Core\\Defs\\Effects\\Effecter_Misc.xml",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Data\\Core\\Defs\\Effects\\Effecter_Misc.xml",
@@ -910,7 +1024,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 69,
               "Title": "Effecter_Damage.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Core\\Defs\\Effects\\Effecter_Damage.xml",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Data\\Core\\Defs\\Effects\\Effecter_Damage.xml",
@@ -922,7 +1036,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 71,
               "Title": "SubTrees_Ability.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Data\\Core\\Defs\\ThinkTreeDefs\\SubTrees_Ability.xml",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Data\\Core\\Defs\\ThinkTreeDefs\\SubTrees_Ability.xml",
@@ -934,7 +1048,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 53,
               "Title": "Races_RustedOfficer.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\ThingDefs_Races\\Races_RustedOfficer.xml",
               "RelativeDocumentMoniker": "..\\..\\1.6\\Defs\\ThingDefs_Races\\Races_RustedOfficer.xml",
@@ -946,7 +1060,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 72,
               "Title": "Races_RustedMass.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\ThingDefs_Races\\Races_RustedMass.xml",
               "RelativeDocumentMoniker": "..\\..\\1.6\\Defs\\ThingDefs_Races\\Races_RustedMass.xml",
@@ -958,7 +1072,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 64,
               "Title": "RulePacks_Namers_RustedSoldiers.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\RulePacks_Namers_RustedSoldiers.xml",
               "RelativeDocumentMoniker": "..\\..\\1.6\\Defs\\RulePacks_Namers_RustedSoldiers.xml",
@@ -970,19 +1084,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
-              "Title": "NAT_RustedArmy.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\NAT_RustedArmy.cs",
-              "RelativeDocumentMoniker": "NAT_RustedArmy.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\NAT_RustedArmy.cs",
-              "RelativeToolTip": "NAT_RustedArmy.cs",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAgwGAAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 16,
+              "Title": "Utility.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\Utility.cs",
+              "RelativeDocumentMoniker": "Utility.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\Utility.cs",
+              "RelativeToolTip": "Utility.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAgwEwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-20T08:17:56.606Z"
+              "WhenOpened": "2026-04-20T08:17:56.606Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 40,
               "Title": "GearPatches.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\Harmony\\GearPatches.cs",
               "RelativeDocumentMoniker": "Harmony\\GearPatches.cs",
@@ -994,7 +1109,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 73,
               "Title": "Races_RustedTurrets.xml",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\1.6\\Defs\\ThingDefs_Races\\Races_RustedTurrets.xml",
               "RelativeDocumentMoniker": "..\\..\\1.6\\Defs\\ThingDefs_Races\\Races_RustedTurrets.xml",
@@ -1006,7 +1121,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 28,
               "Title": "RustedPawn.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\Things\\RustedPawn.cs",
               "RelativeDocumentMoniker": "Things\\RustedPawn.cs",
@@ -1018,7 +1133,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 70,
               "Title": "CompAbilityEffect_Reinforcements.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\Abilities\\CompAbilityEffect_Reinforcements.cs",
               "RelativeDocumentMoniker": "Abilities\\CompAbilityEffect_Reinforcements.cs",
@@ -1030,7 +1145,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 61,
               "Title": "CompAbilityEffect_RustedCommander.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\Abilities\\CompAbilityEffect_RustedCommander.cs",
               "RelativeDocumentMoniker": "Abilities\\CompAbilityEffect_RustedCommander.cs",
@@ -1042,19 +1157,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
-              "Title": "Abilities_Misc.cs",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\Abilities\\Abilities_Misc.cs",
-              "RelativeDocumentMoniker": "Abilities\\Abilities_Misc.cs",
-              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\Abilities\\Abilities_Misc.cs",
-              "RelativeToolTip": "Abilities\\Abilities_Misc.cs",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 13,
+              "Title": "CompAbilityEffect_ShapeRust.cs",
+              "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\Abilities\\CompAbilityEffect_ShapeRust.cs",
+              "RelativeDocumentMoniker": "Abilities\\CompAbilityEffect_ShapeRust.cs",
+              "ToolTip": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\Abilities\\CompAbilityEffect_ShapeRust.cs",
+              "RelativeToolTip": "Abilities\\CompAbilityEffect_ShapeRust.cs",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAAwD4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-18T15:15:55.054Z"
+              "WhenOpened": "2026-04-18T15:15:55.054Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 62,
               "Title": "CompRustedWorker.cs",
               "DocumentMoniker": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\NewAnomalyThreatsRustedArmy\\Source\\NewAnomalyThreatsRustedArmy\\ThingComps\\CompRustedWorker.cs",
               "RelativeDocumentMoniker": "ThingComps\\CompRustedWorker.cs",

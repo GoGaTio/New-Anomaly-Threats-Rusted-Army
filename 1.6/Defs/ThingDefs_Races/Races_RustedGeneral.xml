@@ -100,12 +100,6 @@
         <skills>
           <Shooting>20</Shooting>
           <Melee>20</Melee>
-          <Construction>6</Construction>
-          <Cooking>5</Cooking>
-          <Mining>4</Mining>
-          <Plants>4</Plants>
-          <Crafting>18</Crafting>
-          <Medicine>10</Medicine>
           <Intellectual>20</Intellectual>
         </skills>
         <canWork>false</canWork>
@@ -190,6 +184,7 @@
           <li>NAT_RustedDemolish</li>
         </capacities>
         <power>20</power>
+        <armorPenetration>1</armorPenetration>
         <cooldownTime>2</cooldownTime>
         <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
         <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
@@ -202,6 +197,7 @@
           <li>NAT_RustedDemolish</li>
         </capacities>
         <power>35</power>
+        <armorPenetration>1.5</armorPenetration>
         <cooldownTime>1.5</cooldownTime>
         <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
         <extraMeleeDamages>
@@ -218,6 +214,7 @@
           <li>NAT_RustedDemolish</li>
         </capacities>
         <power>35</power>
+        <armorPenetration>1.5</armorPenetration>
         <cooldownTime>1.5</cooldownTime>
         <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
         <extraMeleeDamages>

@@ -141,6 +141,11 @@ namespace NAT
 			return true;
 		}
 
+		public override void PreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
+		{
+			dinfo.SetAmount(dinfo.Amount / (dinfo.Def.buildingDamageFactor * dinfo.Def.buildingDamageFactorPassable));
+			base.PreApplyDamage(ref dinfo, out absorbed);
+		}
         public override void PostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
         {
             base.PostApplyDamage(dinfo, totalDamageDealt);

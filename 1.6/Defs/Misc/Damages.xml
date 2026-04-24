@@ -51,6 +51,8 @@
     <explosionColorCenter>(255,70,70)</explosionColorCenter>
     <explosionColorEdge>(255,30,30)</explosionColorEdge>
     <hediff>NAT_HateBurn</hediff>
+    <buildingDamageFactorImpassable>40</buildingDamageFactorImpassable>
+    <buildingDamageFactorPassable>20</buildingDamageFactorPassable>
   </DamageDef>
 
 </Defs>

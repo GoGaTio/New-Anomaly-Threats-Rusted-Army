@@ -3,14 +3,17 @@ using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using Verse;
+using Verse.AI.Group;
+using Verse.Noise;
 
 namespace NAT
 {
-	/*public class CompProperties_AbilityShapeRust : CompProperties_AbilityEffect
+	public class CompProperties_AbilityShapeRust : CompProperties_AbilityEffect
 	{
 		public int bioferriteCount;
 
@@ -41,8 +44,15 @@ namespace NAT
 			List<Thing> list = FindClosestBioferrite(target).ToList();
 			if (list.Sum((Thing x) => x.stackCount) >= Props.bioferriteCount)
 			{
-				PsychicRitualToil_ActivateRust.RemoveItem(list, Props.bioferriteCount);
-				GenSpawn.Spawn(PsychicRitualToil_ActivateRust.CreateRust(Props.kinds.RandomElementByWeight((PawnKindDefCount x) => x.count).kindDef, parent.pawn.Faction), target.Cell, map);
+				PsychicRitualDef_AdditionalOfferings.RemoveItem(list, Props.bioferriteCount);
+				Pawn pawn = PawnGenerator.GeneratePawn(Props.kinds.RandomElementByWeight((PawnKindDefCount x) => x.count).kindDef, parent.pawn.Faction);
+				pawn.equipment.DestroyAllEquipment();
+				pawn.inventory.DestroyAll();
+				pawn.apparel.DestroyAll();
+				pawn.ageTracker.AgeBiologicalTicks = 0;
+				pawn.ageTracker.AgeChronologicalTicks = 0;
+				pawn.Notify_SignalReceived(new Signal("NAT_CreatedByPsychicRitual", (1f).Named("QUALITY")));
+				GenSpawn.Spawn(pawn, target.Cell, map);
 				EffecterDefOf.PsychicRitual_Complete.SpawnMaintained(target.Cell, map);
 			}
 			else
@@ -162,5 +172,5 @@ namespace NAT
 			}
 			return base.ExtraLabelMouseAttachment(target);
 		}
-	}*/
+	}
 }

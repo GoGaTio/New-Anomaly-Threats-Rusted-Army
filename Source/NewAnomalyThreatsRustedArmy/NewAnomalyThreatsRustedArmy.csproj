@@ -74,7 +74,7 @@
     <Compile Include="ThingComps\CompRustedBuffGiver.cs" />
     <Compile Include="Verb_MeleeAttackExplode.cs" />
     <Compile Include="Abilities\CompAbilityEffect_RustedCommander.cs" />
-    <Compile Include="Abilities\Abilities_Misc.cs" />
+    <Compile Include="Abilities\CompAbilityEffect_ShapeRust.cs" />
     <Compile Include="DefOf.cs" />
     <Compile Include="FloatOptions.cs" />
     <Compile Include="MapGen\GenStep_RustedFloorSpace.cs" />
@@ -99,7 +99,7 @@
     <Compile Include="MapGen\RoomContents.cs" />
     <Compile Include="MapGen\SitePartWorkers.cs" />
     <Compile Include="Mod.cs" />
-    <Compile Include="NAT_RustedArmy.cs" />
+    <Compile Include="Utility.cs" />
     <Compile Include="Need_RustRest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PsychicRituals.cs" />

@@ -71,24 +71,6 @@ namespace NAT
             {
                 GenExplosion.DoExplosion(pos, map, def.skyfaller.explosionRadius, NATRADefOf.NAT_RustedBomb, base.innerContainer.FirstOrDefault(), GenMath.RoundRandom((float)NATRADefOf.NAT_RustedBomb.defaultDamage * def.skyfaller.explosionDamageFactor), -1f, null, null, null, null, null, 0f, 1, null, null, 255, applyDamageToExplosionCellsNeighbors: false, null, 0f, 1, 0f, damageFalloff: false, null, frendlies.ConcatIfNotNull(Frendlies())?.ToList());
             }
-			if (base.innerContainer.First() is Building b)
-			{
-                CellRect rect = new CellRect(pos.x, pos.z, b.def.Size.x, b.def.Size.z).ExpandedBy(b.def.Size.x);
-                int seed = Rand.Int;
-                for (int i = 0; i < 3; i++)
-                {
-                    seed += i;
-					rect = rect.ExpandedBy(i).ClipInsideMap(map);
-					foreach (IntVec3 c in rect)
-					{
-						if (!c.GetTerrain(map).layerable && Rand.ChanceSeeded(1f - ((float)i * 0.25f), seed))
-						{
-							map.terrainGrid.SetTerrain(c, NATRADefOf.NAT_RustedFloor);
-						}
-						seed += c.LengthHorizontalSquared;
-					}
-				}
-			}
 			base.Impact();
         }
 

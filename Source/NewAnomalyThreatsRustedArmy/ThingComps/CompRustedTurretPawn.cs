@@ -195,8 +195,8 @@ namespace NAT
 			Command_Action command_Action = new Command_Action();
 			if (parent is Pawn pawn)
 			{
-				command_Action.defaultLabel = "CommandStopForceAttack".Translate();
-				command_Action.defaultDesc = "CommandStopForceAttackDesc".Translate();
+				command_Action.defaultLabel = "NAT_CommandSetUp".Translate();
+				command_Action.defaultDesc = "NAT_CommandSetUpDesc".Translate();
 				command_Action.icon = ContentFinder<Texture2D>.Get("UI/Commands/NAT_RustedTurret_SetUp");
 				command_Action.action = delegate
 				{
@@ -225,17 +225,17 @@ namespace NAT
 			}
 			else
 			{
-				command_Action.defaultLabel = "CommandStopForceAttack".Translate();
-				command_Action.defaultDesc = "CommandStopForceAttackDesc".Translate();
+				command_Action.defaultLabel = "NAT_CommandSetOff".Translate();
+				command_Action.defaultDesc = "NAT_CommandSetOffDesc".Translate();
 				command_Action.icon = ContentFinder<Texture2D>.Get("UI/Commands/NAT_RustedTurret_SetOff");
 				command_Action.action = delegate
 				{
 					SpawnPawn(parent.Position, parent.Map);
 				};
 				Command_Action command_Action2 = new Command_Action();
-				command_Action2.defaultLabel = "MU_InsertMech".Translate() + "...";
-				command_Action2.defaultDesc = "MU_InsertMech_Desc".Translate();
-				command_Action2.icon = ContentFinder<Texture2D>.Get("UI/Commands/HoldFire");
+				command_Action2.defaultLabel = "NAT_CommandReSetUp".Translate();
+				command_Action2.defaultDesc = "NAT_CommandReSetUpDesc".Translate();
+				command_Action2.icon = ContentFinder<Texture2D>.Get("UI/Commands/NAT_RustedTurret_ReSetUp");
 				command_Action2.groupable = false;
 				command_Action2.action = delegate
 				{
@@ -530,6 +530,4 @@ namespace NAT
 			return list;
 		}
 	}
-
-
 }
