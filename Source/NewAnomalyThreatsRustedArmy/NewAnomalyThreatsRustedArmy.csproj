@@ -83,7 +83,6 @@
     <Compile Include="Harmony\Main.cs" />
     <Compile Include="Harmony\MiscPatch.cs" />
     <Compile Include="Harmony\Work.cs" />
-    <Compile Include="Hediff_RustedBoost.cs" />
     <Compile Include="Incidents\IncidentWorker_RustedArmyRaid.cs" />
     <Compile Include="Incidents\IncidentWorker_RustedArmySiege.cs" />
     <Compile Include="Incidents\IncidentWorker_RustedMassArrival.cs" />
@@ -130,7 +129,6 @@
     <Compile Include="Things\RustedPawn.cs" />
     <Compile Include="Things\Skyfaller_RustedChunk.cs" />
     <Compile Include="UI\Dialog_NameRustedSoldier.cs" />
-    <Compile Include="UI\ITabs.cs" />
     <Compile Include="UI\Gizmo.cs" />
     <Compile Include="UI\MainButtons.cs" />
     <Compile Include="UI\PawnColumnWorkers.cs" />
