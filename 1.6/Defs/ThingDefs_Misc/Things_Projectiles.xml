@@ -120,7 +120,7 @@
       <speed>40</speed>
       <damageDef>NAT_RustedBomb</damageDef>
       <explosionRadius>1.9</explosionRadius>
-      <arcHeightFactor>0.4</arcHeightFactor>
+      <arcHeightFactor>2</arcHeightFactor>
       <shadowSize>0.6</shadowSize>
     </projectile>
   </ThingDef>
@@ -157,11 +157,11 @@
   </ThingDef>
 
   <ThingDef ParentName="BaseGrenadeProjectile">
-    <defName>NAT_Proj_RustedContactGrenade</defName>
-    <label>rusted contact grenade</label>
+    <defName>NAT_Proj_RustedImpactGrenade</defName>
+    <label>rusted impact grenade</label>
     <thingClass>Projectile_Explosive</thingClass>
     <graphicData>
-      <texPath>Things/Projectile/NAT_RustedStickGrenade</texPath>
+      <texPath>Things/Projectile/NAT_RustedImpactGrenade</texPath>
       <graphicClass>Graphic_Random</graphicClass>
     </graphicData>
     <projectile>
@@ -178,7 +178,6 @@
     <defName>NAT_Proj_HateCube</defName>
     <label>hate cube</label>
     <thingClass>Projectile_Explosive</thingClass>
-    <defaultPlacingRot>East</defaultPlacingRot>
     <graphicData>
       <texPath>Things/Projectile/NAT_HateCube</texPath>
       <graphicClass>Graphic_Single_AgeSecs</graphicClass>

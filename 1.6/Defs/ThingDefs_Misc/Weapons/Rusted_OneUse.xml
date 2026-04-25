@@ -2,11 +2,11 @@
 <Defs>
 
   <ThingDef ParentName="NAT_BaseRustedSidearm">
-    <defName>NAT_RustedContactGrenade</defName>
-    <label>rusted contact grenade</label>
+    <defName>NAT_RustedImpactGrenade</defName>
+    <label>rusted impact grenade</label>
     <description>A rusted stick grenade with contact detonator. Can detonate if used by rusted creature.</description>
     <graphicData>
-      <texPath>Things/Projectile/NAT_RustedStickGrenade/NAT_RustedStickGrenade_A</texPath>
+      <texPath>Things/Projectile/NAT_RustedImpactGrenade/NAT_RustedImpactGrenade_A</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -16,13 +16,13 @@
       <MarketValue>50</MarketValue>
     </statBases>
     <weaponTags>
-      <li>NAT_RustedContactGrenade</li>
+      <li>NAT_RustedImpactGrenade</li>
     </weaponTags>
     <verbs>
       <li>
         <verbClass>Verb_LaunchProjectileStaticOneUse</verbClass>
-        <label>throw rusted contact grenade</label>
-        <defaultProjectile>NAT_Proj_RustedContactGrenade</defaultProjectile>
+        <label>throw rusted impact grenade</label>
+        <defaultProjectile>NAT_Proj_RustedImpactGrenade</defaultProjectile>
         <warmupTime>1.5</warmupTime>
         <range>19.9</range>
         <burstShotCount>1</burstShotCount>

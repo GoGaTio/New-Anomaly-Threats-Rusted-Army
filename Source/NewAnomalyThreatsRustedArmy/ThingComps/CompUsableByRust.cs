@@ -143,9 +143,24 @@ namespace NAT
 			{
 				return false;
 			}
-			if(!Props.skillGains.NullOrEmpty() && rust.skills == null)
+			if(!Props.skillGains.NullOrEmpty())
 			{
-				return false;
+				if(rust.skills == null)
+				{
+					return false;
+				}
+				bool flag = true;
+				foreach(SkillGain item in Props.skillGains)
+				{
+					if(rust.skills.GetSkill(item.skill).Level < Props.maxSkillLevel)
+					{
+						flag = false;
+					}
+				}
+				if (flag)
+				{
+					return false;
+				}
 			}
 			return true;
 		}
@@ -174,7 +189,7 @@ namespace NAT
 					{
 						continue;
 					}
-					skill.Level = s.amount;
+					skill.Level = Mathf.Min(skill.Level + s.amount, skill.Level);
 				}
 			}
 			if (Props.restOffset > 0f && rust.restNeed != null)

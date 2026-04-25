@@ -10,7 +10,7 @@
       <MoveSpeed>3.2</MoveSpeed>
       <MarketValue>3700</MarketValue>
       <ArmorRating_Blunt>0.8</ArmorRating_Blunt>
-      <ArmorRating_Sharp>0.6</ArmorRating_Sharp>
+      <ArmorRating_Sharp>0.65</ArmorRating_Sharp>
       <MinimumContainmentStrength>100</MinimumContainmentStrength>
       <StaggerDurationFactor>0</StaggerDurationFactor>
       <NAT_CoreDropChance>0.45</NAT_CoreDropChance>

@@ -67,7 +67,6 @@
     <graphicData>
       <texPath>Things/Item/NAT_UsableByRust/NAT_RustedActivator_Speed</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>0.75</drawSize>
     </graphicData>
     <statBases>
       <MarketValue>55</MarketValue>
@@ -90,7 +89,6 @@
     <graphicData>
       <texPath>Things/Item/NAT_UsableByRust/NAT_RustedActivator_Durability</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>0.75</drawSize>
     </graphicData>
     <statBases>
       <MarketValue>55</MarketValue>
@@ -113,7 +111,6 @@
     <graphicData>
       <texPath>Things/Item/NAT_UsableByRust/NAT_RustedActivator_Charge</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>0.75</drawSize>
     </graphicData>
     <statBases>
       <MarketValue>35</MarketValue>
@@ -137,7 +134,6 @@
     <graphicData>
       <texPath>Things/Item/NAT_UsableByRust/NAT_RustedActivator_Regeneration</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>0.75</drawSize>
     </graphicData>
     <statBases>
       <MarketValue>45</MarketValue>
@@ -160,7 +156,6 @@
     <graphicData>
       <texPath>Things/Item/NAT_UsableByRust/NAT_RustedActivator_Stability</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>0.75</drawSize>
     </graphicData>
     <statBases>
       <MarketValue>60</MarketValue>
@@ -220,6 +215,7 @@
       <li Class="NAT.CompProperties_UsableByRust">
         <skillGains>
           <Shooting>1</Shooting>
+          <Melee>1</Melee>
         </skillGains>
         <maxSkillLevel>12</maxSkillLevel>
         <useEffect>NAT_ActivatorUsed_Speed</useEffect>
@@ -261,25 +257,5 @@
     </recipeMaker>
     <stackLimit>1</stackLimit>
   </ThingDef>
-
-  <HediffDef>
-    <defName>NAT_ShardUpgrade</defName>
-    <label>shard upgrade</label>
-    <hediffClass>HediffWithComps</hediffClass>
-    <description>This rusted soldier is upgraded using shard of dark archotechnology.</description>
-    <isBad>false</isBad>
-    <stages>
-      <li>
-        <statFactors>
-          <IncomingDamageFactor>0.75</IncomingDamageFactor>
-          <Flammability>0.75</Flammability>
-        </statFactors>
-        <statOffsets>
-          <NAT_CoreDropChance>1</NAT_CoreDropChance>
-        </statOffsets>
-        <regeneration>15</regeneration>
-      </li>
-    </stages>
-  </HediffDef>
 
 </Defs>

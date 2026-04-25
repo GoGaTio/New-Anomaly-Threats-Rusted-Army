@@ -40,7 +40,7 @@
         <li>
           <skipChance>0.9</skipChance>
           <countRange>1</countRange>
-          <thingDef>NAT_RustedContactGrenade</thingDef>
+          <thingDef>NAT_RustedImpactGrenade</thingDef>
         </li>
       </subOptionsTakeAll>
     </inventoryOptions>
@@ -60,7 +60,7 @@
         <li>
           <skipChance>0.85</skipChance>
           <countRange>1</countRange>
-          <thingDef>NAT_RustedContactGrenade</thingDef>
+          <thingDef>NAT_RustedImpactGrenade</thingDef>
         </li>
       </subOptionsTakeAll>
     </inventoryOptions>
@@ -88,7 +88,7 @@
         <li>
           <skipChance>0</skipChance>
           <countRange>2~4</countRange>
-          <thingDef>NAT_RustedContactGrenade</thingDef>
+          <thingDef>NAT_RustedImpactGrenade</thingDef>
         </li>
       </subOptionsTakeAll>
     </inventoryOptions>
@@ -153,7 +153,7 @@
         <li>
           <skipChance>0</skipChance>
           <countRange>2~4</countRange>
-          <thingDef>NAT_RustedContactGrenade</thingDef>
+          <thingDef>NAT_RustedImpactGrenade</thingDef>
         </li>
       </subOptionsTakeAll>
     </inventoryOptions>

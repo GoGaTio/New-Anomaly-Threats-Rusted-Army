@@ -233,7 +233,7 @@
         <li>
           <skipChance>0.5</skipChance>
           <countRange>1~3</countRange>
-          <thingDef>NAT_RustedContactGrenade</thingDef>
+          <thingDef>NAT_RustedImpactGrenade</thingDef>
         </li>
       </subOptionsTakeAll>
     </inventoryOptions>

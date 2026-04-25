@@ -108,7 +108,7 @@ namespace NAT
 
 		public override IEnumerable<StatDrawEntry> SpecialDisplayStats(StatRequest req)
 		{
-			if(req.Thing == null || !(req.Thing is RustedPawn rust))
+			if(req.Thing == null || !(req.Thing is RustedPawn rust) || rust.Faction?.IsPlayer != true)
 			{
 				yield break;
 			}
@@ -123,10 +123,6 @@ namespace NAT
 						entry.overridesHideStats = true;
 						yield return entry;
 					}
-				}
-				else
-				{
-					yield return new StatDrawEntry(item.category, item);
 				}
 			}
 		}
