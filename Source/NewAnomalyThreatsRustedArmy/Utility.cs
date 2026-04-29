@@ -198,27 +198,6 @@ namespace NAT
 			return NATRADefOf.NAT_RustedChunk3x3Incoming;
 		}
 
-		[DebugAction("NAT", "Add shell", false, false, false, false, false, 0, false, allowedGameStates = AllowedGameStates.PlayingOnMap, actionType = DebugActionType.ToolMap)]
-		public static void AddShellDebug()
-		{
-			List<FloatMenuOption> list = new List<FloatMenuOption>();
-			Building_TurretGun turret = Find.CurrentMap.thingGrid.ThingsAt(UI.MouseCell()).FirstOrDefault((x)=> TurretGunUtility.NeedsShells(x.def)) as Building_TurretGun;
-			if(turret == null)
-			{
-				return;
-			}
-			foreach (ThingDef def in turret.gun.def.building.fixedStorageSettings.filter.AllowedThingDefs)
-			{
-				ThingDef localDef = def;
-				FloatMenuOption item = new FloatMenuOption(localDef.LabelCap, delegate
-				{
-					turret.gun.TryGetComp<CompChangeableProjectile>().LoadShell(localDef, 1);
-				});
-				list.Add(item);
-			}
-			Find.WindowStack.Add(new FloatMenu(list));
-		}
-
 		[DebugAction("NAT", "Execute Rusted Army raid", false, false, false, false, false, 0, false, allowedGameStates = AllowedGameStates.PlayingOnMap)]
 		public static void ExecuteRaidDebug()
 		{

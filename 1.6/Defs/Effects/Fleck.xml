@@ -2,6 +2,60 @@
 <Defs>
 
   <FleckDef ParentName="FleckBase_Thrown">
+    <defName>NAT_BuffAura</defName>
+    <graphicData>
+      <texPath>Things/Mote/StressAura</texPath>
+      <shaderType>Mote</shaderType>
+      <renderInstanced>false</renderInstanced>
+      <color>(.7, 0, 0, .5)</color>
+      <drawSize>(.75, .75)</drawSize>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+    </graphicData>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <fadeInTime>.1</fadeInTime>
+    <solidTime>1.1</solidTime>
+    <fadeOutTime>.2</fadeOutTime>
+    <useAttachLink>true</useAttachLink>
+    <scalers>
+      <li>
+        <scaleTime>2</scaleTime>
+        <scaleAmt>5</scaleAmt>
+        <curve>
+          <points>
+            <li>(0,0.8027145)</li>
+            <li>(0.04,0.8332495)</li>
+            <li>(0.08,0.879966)</li>
+            <li>(0.12,0.9267562)</li>
+            <li>(0.16,0.9666791)</li>
+            <li>(0.2,0.992794)</li>
+            <li>(0.24,0.9982609)</li>
+            <li>(0.28,0.9818959)</li>
+            <li>(0.32,0.9501885)</li>
+            <li>(0.36,0.9101336)</li>
+            <li>(0.3999999,0.8687258)</li>
+            <li>(0.4399999,0.8329597)</li>
+            <li>(0.4799999,0.8098301)</li>
+            <li>(0.5199999,0.8064002)</li>
+            <li>(0.5599999,0.8270092)</li>
+            <li>(0.6,0.864563)</li>
+            <li>(0.64,0.9097805)</li>
+            <li>(0.68,0.9533802)</li>
+            <li>(0.72,0.9860811)</li>
+            <li>(0.7600001,0.9986354)</li>
+            <li>(0.8000001,0.9910107)</li>
+            <li>(0.8400001,0.9701501)</li>
+            <li>(0.8800001,0.9398005)</li>
+            <li>(0.9200001,0.9037092)</li>
+            <li>(0.9600002,0.8656235)</li>
+            <li>(1,0.8292906)</li>
+          </points>
+        </curve>
+      </li>
+    </scalers>
+
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
     <defName>NAT_DustPuff</defName>
     <graphicData>
       <texPath>Things/Mote/DustPuff</texPath>
@@ -62,7 +116,7 @@
         <shaderType>Mote</shaderType>
         <drawSize>0.75</drawSize>
       </li>
-	  <li>
+      <li>
         <graphicClass>Graphic_Fleck</graphicClass>
         <texPath>Things/Mote/NAT_RustedShardB</texPath>
         <shaderType>Mote</shaderType>

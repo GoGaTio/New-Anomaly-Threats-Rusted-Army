@@ -43,6 +43,20 @@
         <renderNodeProperty>
           <parentTagDef>Body</parentTagDef>
           <baseLayer>25</baseLayer>
+          <drawData>
+            <dataNorth>
+              <offset>(0, 0, 0)</offset>
+            </dataNorth>
+            <dataEast>
+              <offset>(0, 0, 0)</offset>
+            </dataEast>
+            <dataSouth>
+              <offset>(0, 0, 0)</offset>
+            </dataSouth>
+            <dataWest>
+              <offset>(0, 0, 0)</offset>
+            </dataWest>
+          </drawData>
         </renderNodeProperty>
       </li>
     </comps>

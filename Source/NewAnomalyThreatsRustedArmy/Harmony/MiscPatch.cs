@@ -534,7 +534,7 @@ namespace NAT
 		[HarmonyPostfix]
 		public static void Postfix(Pawn p, ref bool __result)
 		{
-			if (p is RustedPawn rust && rust.EverControllable)
+			if (p is RustedPawn rust)
 			{
 				__result = false;
 			}
@@ -794,5 +794,4 @@ namespace NAT
 			failStr = failStr.CapitalizeFirst();
 		}
 	}
-
 }

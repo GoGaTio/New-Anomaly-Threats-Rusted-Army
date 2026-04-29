@@ -54,62 +54,6 @@ using Verse.Steam;
 
 namespace NAT
 {
-	public class ITab_RustedSoldier : ITab
-	{
-		private static readonly Vector2 WinSize = new Vector2(420f, 160f);
-
-		protected Thing SelTable => base.SelThing;
-
-		public ITab_RustedSoldier()
-		{
-			size = WinSize;
-			labelKey = "NAT_RustedSoldierControl";
-			tutorTag = "NAT_RustedControl";
-		}
-
-		public override bool IsVisible => (SelTable is RustedPawn p && p.EverControllable);
-
-		protected override void FillTab()
-		{
-			Text.Font = GameFont.Medium;
-			Rect rect1 = new Rect(0f, 0f, WinSize.x, WinSize.y);
-			Rect rect2 = new Rect(rect1).ContractedBy(10f);
-			Rect rect3 = new Rect(rect2.xMax - 50f, 10f, 30f, 30f);
-			Widgets.Label(rect2, (SelTable as Pawn).Name.ToStringFull.CapitalizeFirst());
-			Text.Font = GameFont.Medium;
-			TooltipHandler.TipRegionByKey(rect3, "Rename");
-			if (Widgets.ButtonImage(rect3, TexButton.Rename))
-			{
-				Find.WindowStack.Add(NamePawnDialog(SelTable as Pawn));
-			}
-		}
-
-		public static Dialog_NameRustedSoldier NamePawnDialog(Pawn pawn, string initialFirstNameOverride = null)
-		{
-			Dictionary<NameFilter, List<string>> suggestedNames = null;
-			NameFilter editableNames;
-			NameFilter visibleNames;
-			if (pawn.babyNamingDeadline >= Find.TickManager.TicksGame || DebugSettings.ShowDevGizmos)
-			{
-				editableNames = NameFilter.First | NameFilter.Nick | NameFilter.Last;
-				visibleNames = NameFilter.First | NameFilter.Nick | NameFilter.Last;
-				List<string> list = new List<string>();
-				list.RemoveDuplicates();
-				suggestedNames = new Dictionary<NameFilter, List<string>> {
-				{
-					NameFilter.Last,
-					list
-				} };
-			}
-			else
-			{
-				visibleNames = NameFilter.First | NameFilter.Nick | NameFilter.Last | NameFilter.Title;
-				editableNames = NameFilter.Nick | NameFilter.Title;
-			}
-			return new Dialog_NameRustedSoldier(pawn, visibleNames, editableNames, suggestedNames, initialFirstNameOverride);
-		}
-	}
-
 	public class Dialog_NameRustedSoldier : Window
 	{
 		private class NameContext

@@ -14,7 +14,7 @@
       <parts>
         <li>
           <def>NAT_RustedHead</def>
-          <coverage>0.17</coverage>
+          <coverage>0.16</coverage>
           <height>Top</height>
           <groups>
             <li>HeadAttackTool</li>

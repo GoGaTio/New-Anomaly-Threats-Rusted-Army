@@ -81,6 +81,8 @@ namespace NAT
 
 		private bool idleTurnClockwise;
 
+		public bool setTargetForAllComps;
+
 		public virtual TargetingParameters targetParams => AttackVerb.targetParams;
 
 		public bool MultiSelect => AttackVerb.MultiSelect;
@@ -219,14 +221,25 @@ namespace NAT
 		{
 			targetForced = true;
 			currentTarget = target;
-			foreach(object o in Find.Selector.SelectedObjects)
+			if (setTargetForAllComps)
 			{
-				if(o is Thing t && t.TryGetComp<CompRustedTurret>(out var comp))
+				foreach (object o in Find.Selector.SelectedObjects)
 				{
-					comp.targetForced = true;
-					comp.currentTarget = target;
+					if (o is ThingWithComps t)
+					{
+						foreach (CompRustedTurret comp in t.GetComps<CompRustedTurret>())
+						{
+							if (comp.Props.foamTurret)
+							{
+								continue;
+							}
+							comp.targetForced = true;
+							comp.currentTarget = target;
+						}
+					}
 				}
 			}
+			setTargetForAllComps = false;
 		}
 
 		public bool AutoAttack => Props.autoAttack;
@@ -349,7 +362,7 @@ namespace NAT
 		{
 			if (targetForced && currentTarget.IsValid && !currentTarget.ThingDestroyed)
 			{
-				GenDraw.DrawLineBetween(parent.TrueCenter(), currentTarget.CenterVector3, Building_TurretGun.ForcedTargetLineMat);
+				GenDraw.DrawLineBetween(parent.TrueCenter() + (Props.renderNodeProperty?.drawData?.OffsetForRot(parent.Rotation) ?? Vector3.zero), currentTarget.CenterVector3, Building_TurretGun.ForcedTargetLineMat);
 			}
 		}
 
@@ -499,6 +512,8 @@ namespace NAT
 
 		public bool requiresAvailableVerb = true;
 
+		public bool singleCast = false;
+
 		public override Color IconDrawColor
 		{
 			get
@@ -563,10 +578,45 @@ namespace NAT
 
 		public override void ProcessInput(Event ev)
 		{
+			if (Event.current.button == 1)
+			{
+				return;
+			}
 			base.ProcessInput(ev);
 			SoundDefOf.Tick_Tiny.PlayOneShotOnCamera();
-			Targeter targeter = Find.Targeter;
+			//Targeter targeter = Find.Targeter;
+			comp.setTargetForAllComps = true;
 			Find.Targeter.BeginTargeting(comp, null, allowNonSelectedTargetingSource: false, null, null, requiresAvailableVerb);
+		}
+
+		public override bool InheritInteractionsFrom(Gizmo other)
+		{
+			if(Event.current.button == 1)
+			{
+				return false;
+			}
+			return base.InheritInteractionsFrom(other);
+		}
+
+		public override void ProcessGroupInput(Event ev, List<Gizmo> group)
+		{
+			if (Event.current.button == 1)
+			{
+				List<FloatMenuOption> list = new List<FloatMenuOption>();
+				foreach (Gizmo item in group)
+				{
+					if(item is Command_RustedTurretTarget command)
+					{
+						list.Add(new FloatMenuOption(command.comp.parent.LabelCap + ": " + command.comp.gun.LabelCap, delegate
+						{
+							command.comp.setTargetForAllComps = false;
+							Find.Targeter.BeginTargeting(command.comp, null, allowNonSelectedTargetingSource: false, null, null, command.requiresAvailableVerb);
+						}));
+					}
+				}
+				Find.WindowStack.Add(new FloatMenu(list));
+			}
+			else base.ProcessGroupInput(ev, group);
 		}
 	}
 }

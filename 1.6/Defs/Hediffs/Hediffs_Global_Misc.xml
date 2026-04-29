@@ -14,6 +14,9 @@
       <li Class="NAT.HediffCompProperties_RustedBuff">
         <ticksToDecreaseLevel>5000</ticksToDecreaseLevel>
       </li>
+<li Class="HediffCompProperties_Effecter">
+        <stateEffecter>NAT_BannerBuff</stateEffecter>
+      </li>
     </comps>
     <stages>
       <li>
@@ -39,6 +42,9 @@
     <comps>
       <li Class="NAT.HediffCompProperties_RustedBuff">
         <ticksToDecreaseLevel>5000</ticksToDecreaseLevel>
+      </li>
+<li Class="HediffCompProperties_Effecter">
+        <stateEffecter>NAT_BannerBuff</stateEffecter>
       </li>
     </comps>
     <stages>

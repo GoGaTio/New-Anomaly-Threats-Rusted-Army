@@ -2,6 +2,30 @@
 <Defs>
 
   <EffecterDef>
+    <defName>NAT_BannerBuff</defName>
+    <offsetMode>Free</offsetMode>
+    <!-- don't spawn attached, since the flecks already anchor themselves correctly, spawning attached can introduce bad offsets -->
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <fleckDef>NAT_BuffAura</fleckDef>
+        <ticksBetweenMotes>30</ticksBetweenMotes>
+        <burstCount>1</burstCount>
+        <spawnLocType>OnSource</spawnLocType>
+        <positionRadius>0</positionRadius>
+        <scale>1</scale>
+        <rotation>0~0</rotation>
+        <rotationRate>0</rotationRate>
+        <absoluteAngle>True</absoluteAngle>
+        <angle>0</angle>
+        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
+        <speed>0</speed>
+      </li>
+
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
     <defName>NAT_HateVaporize_Heatwave</defName>
     <children>
       <li>
@@ -200,7 +224,7 @@
   </EffecterDef>
 
   <EffecterDef>
-    <defName>NAT_RustedSoldierDeath</defName>
+    <defName>NAT_RustDeathExplosion_Small</defName>
     <maintainTicks>400</maintainTicks>
     <children>
       <li>
@@ -235,7 +259,7 @@
   </EffecterDef>
 
   <EffecterDef>
-    <defName>NAT_RustedOfficerDeath</defName>
+    <defName>NAT_RustDeathExplosion_Medium</defName>
     <maintainTicks>400</maintainTicks>
     <children>
       <li>
@@ -248,6 +272,21 @@
         <angle>0~360</angle>
         <positionOffset>(0, 0, 0)</positionOffset>
         <positionRadius>.5</positionRadius>
+        <positionRadiusMin>.5</positionRadiusMin>
+        <rotationRate>-600~600</rotationRate>
+        <rotation>0~360</rotation>
+        <speed>15~35</speed>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>NAT_RustedSoldierDeath</fleckDef>
+        <spawnLocType>OnSource</spawnLocType>
+        <scale>1.5~2.5</scale>
+        <fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
+        <burstCount>8~10</burstCount>
+        <angle>0~360</angle>
+        <positionOffset>(0, 0, 0)</positionOffset>
+        <positionRadius>1</positionRadius>
         <positionRadiusMin>.5</positionRadiusMin>
         <rotationRate>-600~600</rotationRate>
         <rotation>0~360</rotation>
@@ -270,7 +309,7 @@
   </EffecterDef>
 
   <EffecterDef>
-    <defName>NAT_RustedBuildingDeath</defName>
+    <defName>NAT_RustDeathExplosion_Large</defName>
     <maintainTicks>400</maintainTicks>
     <children>
       <li>
@@ -278,6 +317,86 @@
         <fleckDef>NAT_RustedSoldierDeath</fleckDef>
         <spawnLocType>OnSource</spawnLocType>
         <scale>2~3</scale>
+        <fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
+        <burstCount>8~10</burstCount>
+        <angle>0~360</angle>
+        <positionOffset>(0, 0, 0)</positionOffset>
+        <positionRadius>2</positionRadius>
+        <positionRadiusMin>.5</positionRadiusMin>
+        <rotationRate>-600~600</rotationRate>
+        <rotation>0~360</rotation>
+        <speed>35~65</speed>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>NAT_RustedSoldierDeath</fleckDef>
+        <spawnLocType>OnSource</spawnLocType>
+        <scale>1~2</scale>
+        <fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
+        <burstCount>8~10</burstCount>
+        <angle>0~360</angle>
+        <positionOffset>(0, 0, 0)</positionOffset>
+        <positionRadius>.5</positionRadius>
+        <positionRadiusMin>.5</positionRadiusMin>
+        <rotationRate>-600~600</rotationRate>
+        <rotation>0~360</rotation>
+        <speed>15~35</speed>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>NAT_RustedSoldierDeath</fleckDef>
+        <spawnLocType>OnSource</spawnLocType>
+        <scale>1.5~2.5</scale>
+        <fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
+        <burstCount>8~10</burstCount>
+        <angle>0~360</angle>
+        <positionOffset>(0, 0, 0)</positionOffset>
+        <positionRadius>1.25</positionRadius>
+        <positionRadiusMin>.5</positionRadiusMin>
+        <rotationRate>-600~600</rotationRate>
+        <rotation>0~360</rotation>
+        <speed>15~35</speed>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>NAT_RustedSoldierDeathFlash</fleckDef>
+        <spawnLocType>OnSource</spawnLocType>
+        <scale>3</scale>
+        <angle>0</angle>
+        <positionOffset>(0, 0, 0)</positionOffset>
+        <positionRadius>0</positionRadius>
+        <positionRadiusMin>0</positionRadiusMin>
+        <rotationRate>0</rotationRate>
+        <rotation>0</rotation>
+        <speed>0</speed>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
+    <defName>NAT_RustDeathExplosion_Giant</defName>
+    <maintainTicks>400</maintainTicks>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>NAT_RustedSoldierDeath</fleckDef>
+        <spawnLocType>OnSource</spawnLocType>
+        <scale>2~3</scale>
+        <fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
+        <burstCount>8~10</burstCount>
+        <angle>0~360</angle>
+        <positionOffset>(0, 0, 0)</positionOffset>
+        <positionRadius>2.5</positionRadius>
+        <positionRadiusMin>.5</positionRadiusMin>
+        <rotationRate>-600~600</rotationRate>
+        <rotation>0~360</rotation>
+        <speed>35~65</speed>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>NAT_RustedSoldierDeath</fleckDef>
+        <spawnLocType>OnSource</spawnLocType>
+        <scale>4~5</scale>
         <fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
         <burstCount>8~10</burstCount>
         <angle>0~360</angle>
@@ -307,12 +426,27 @@
         <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
         <fleckDef>NAT_RustedSoldierDeath</fleckDef>
         <spawnLocType>OnSource</spawnLocType>
-        <scale>1~2</scale>
+        <scale>1.5~2.5</scale>
         <fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
         <burstCount>8~10</burstCount>
         <angle>0~360</angle>
         <positionOffset>(0, 0, 0)</positionOffset>
-        <positionRadius>.5</positionRadius>
+        <positionRadius>1</positionRadius>
+        <positionRadiusMin>.5</positionRadiusMin>
+        <rotationRate>-600~600</rotationRate>
+        <rotation>0~360</rotation>
+        <speed>15~35</speed>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>NAT_RustedSoldierDeath</fleckDef>
+        <spawnLocType>OnSource</spawnLocType>
+        <scale>2.5~3.5</scale>
+        <fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
+        <burstCount>8~10</burstCount>
+        <angle>0~360</angle>
+        <positionOffset>(0, 0, 0)</positionOffset>
+        <positionRadius>1.5</positionRadius>
         <positionRadiusMin>.5</positionRadiusMin>
         <rotationRate>-600~600</rotationRate>
         <rotation>0~360</rotation>
@@ -322,7 +456,7 @@
         <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
         <fleckDef>NAT_RustedSoldierDeathFlash</fleckDef>
         <spawnLocType>OnSource</spawnLocType>
-        <scale>2</scale>
+        <scale>4</scale>
         <angle>0</angle>
         <positionOffset>(0, 0, 0)</positionOffset>
         <positionRadius>0</positionRadius>

@@ -92,10 +92,6 @@
           <li>General</li>
         </headTags>
       </li>
-      <!--<li Class="NAT.CompProperties_RustedCommander">
-        <startingUnits>18</startingUnits>
-        <ticksToRestore>2500</ticksToRestore>
-      </li>-->
       <li Class="NAT.CompProperties_RustedWorker">
         <skills>
           <Shooting>20</Shooting>
@@ -158,24 +154,21 @@
           </drawData>
         </renderNodeProperty>
       </li>
-      <!--<li Class="NAT.CompProperties_BossStages">
+      <li Class="NAT.CompProperties_BossStages">
         <stages>
+          <li/>
           <li>
             <statOffsets>
               <MoveSpeed>0.4</MoveSpeed>
               <MeleeDodgeChance>10</MeleeDodgeChance>
             </statOffsets>
             <statFactors>
-              <IncomingDamageFactor>0.75</IncomingDamageFactor>
+              <IncomingDamageFactor>0.5</IncomingDamageFactor>
               <Flammability>0.5</Flammability>
             </statFactors>
-            <dataWest>
-              <offset>(-0.1, 0, 0.6)</offset>
-              <rotationOffset>180</rotationOffset>
-            </dataWest>
           </li>
         </stages>
-      </li>-->
+      </li>
     </comps>
     <tools Inherit="False">
       <li>

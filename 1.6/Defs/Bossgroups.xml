@@ -2,21 +2,15 @@
 <Defs>
 
   <NAT.AnomalyBossDef>
-    <defName>Diabolus</defName>
-    <boss>Diabolus</boss>
-    <counter Class="NAT.BossWaveCounter_Basic"/>
-    <escorts>
+    <defName>NAT_RustedGeneral</defName>
+    <bossKind>NAT_RustedGeneral</bossKind>
+    <groups>
       <li>
-        <allowedWaves>1</allowedWaves>
-<weight>1</weight>
-        <kinds>
-          <Mech_Militor>3</Mech_Militor>
-        </kinds>
-<kindsRequired>
-          <Mech_Militor>3</Mech_Militor>
-        </kindsRequired>
+        <escorts>
+          <NAT_RustedTrooper>3</NAT_RustedTrooper>
+        </escorts>
       </li>
-    </escorts>
+    </groups>
   </NAT.AnomalyBossDef>
 
 </Defs>

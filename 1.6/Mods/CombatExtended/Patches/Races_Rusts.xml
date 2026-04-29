@@ -110,10 +110,23 @@
   <!--===================== Soldier & Trooper ========================-->
 
   <Operation Class="PatchOperationAddModExtension">
-    <xpath>Defs/ThingDef[defName="NAT_RustedSoldier" or defName="NAT_RustedTrooper"]</xpath>
+    <xpath>Defs/ThingDef[defName="NAT_RustedSoldier"]</xpath>
     <value>
       <li Class="CombatExtended.RacePropertiesExtensionCE">
         <bodyShape>Humanoid</bodyShape>
+        <horiScale>0.55</horiScale>
+        <vertScale>1</vertScale>
+      </li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/ThingDef[defName="NAT_RustedTrooper"]</xpath>
+    <value>
+      <li Class="CombatExtended.RacePropertiesExtensionCE">
+        <bodyShape>Humanoid</bodyShape>
+        <horiScale>1</horiScale>
+        <vertScale>1.2</vertScale>
       </li>
     </value>
   </Operation>
@@ -132,6 +145,8 @@
     <value>
       <li Class="CombatExtended.RacePropertiesExtensionCE">
         <bodyShape>QuadrupedTall</bodyShape>
+        <horiScale>0.7</horiScale>
+        <vertScale>0.85</vertScale>
       </li>
     </value>
   </Operation>
@@ -290,6 +305,8 @@
     <value>
       <li Class="CombatExtended.RacePropertiesExtensionCE">
         <bodyShape>Humanoid</bodyShape>
+        <horiScale>0.4</horiScale>
+        <vertScale>0.8</vertScale>
       </li>
     </value>
   </Operation>

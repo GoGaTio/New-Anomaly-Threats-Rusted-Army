@@ -588,6 +588,15 @@ namespace NAT
 			}
 		}
 
+		public override void SetFaction(Faction newFaction, Pawn recruiter = null)
+		{
+			base.SetFaction(newFaction, recruiter);
+			if (Name == null && newFaction == Faction.OfPlayer)
+			{
+				Name = PawnBioAndNameGenerator.GeneratePawnName(this, NameStyle.Numeric);
+			}
+		}
+
         public override void ExposeData()
 		{
 			base.ExposeData();
