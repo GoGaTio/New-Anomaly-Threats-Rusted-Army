@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -290,10 +291,15 @@ namespace NAT
 			{
 				Find.Selector.Select(building, false, false);
 			}
+			Log.Message(building.ToString() + ":SpawnedTurretBuilding");
 		}
 
 		public Pawn SpawnPawn(IntVec3 pos, Map map)
 		{
+			if (destroyed)
+			{
+				return null;
+			}
 			destroyed = true;
 			bool selected = Find.Selector.IsSelected(parent);
 			Pawn pawn = Rust;
@@ -303,7 +309,8 @@ namespace NAT
 			pawn.ageTracker.AgeBiologicalTicks += ageTicks;
 			pawn.ageTracker.AgeChronologicalTicks += ageTicks;
 			Lord lord = ((Building_TurretGun)parent).GetLord();
-			if (lord != null && !lord.ownedPawns.Contains(pawn))
+			lord?.ownedBuildings?.Remove(parent as Building_TurretGun);
+			if (lord != null && lord.ownedPawns?.Contains(pawn) == false)
 			{
 				lord.AddPawn(pawn);
 			}
@@ -314,6 +321,7 @@ namespace NAT
 			{
 				Find.Selector.Select(pawn, false, false);
 			}
+			Log.Message(pawn.ToString() + ":SpawnedTurretPawn");
 			return pawn;
 		}
 
@@ -344,10 +352,10 @@ namespace NAT
 			else
 			{
 				ageTicks++;
-				if (parent.IsHashIntervalTick(60) && parent is Building_RustedTurret turret && !turret.CurrentTarget.IsValid)
+				if (ageTicks > 300 && parent is Building_RustedTurret turret && !turret.CurrentTarget.IsValid)
 				{
 					string name = turret.GetLord()?.CurLordToil?.GetType().Name;
-					if (name != null && !name.Contains("Defend") && !name.Contains("Stage"))
+					if (name != null && (name.Contains("ExitMap") || (!name.Contains("Defend") && !name.Contains("Stage"))))
 					{
 						SpawnPawn(parent.Position, parent.Map);
 					}

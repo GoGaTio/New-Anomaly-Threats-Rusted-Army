@@ -27,9 +27,6 @@
       <li Class="CompProperties_HoldingPlatformTarget">
         <baseEscapeIntervalMtbDays>60</baseEscapeIntervalMtbDays>
       </li>
-      <li Class="CompProperties_EffecterOnDeath">
-        <effecterDef>NAT_RustedSoldierDeath</effecterDef>
-      </li>
       <li Class="CompProperties_AttachPoints">
         <points>
           <li>
@@ -64,7 +61,7 @@
         <maxHealth>100</maxHealth>
         <regenInterval>300</regenInterval>
         <ticksToRestore>60000</ticksToRestore>
-        <destroyedEffect>NAT_RustedSoldierDeath</destroyedEffect>
+        <destroyedEffect>NAT_RustDeathExplosion_Small</destroyedEffect>
         <renderProps>
           <debugLabel>Rusted shield</debugLabel>
           <parentTagDef>Body</parentTagDef>
@@ -95,6 +92,7 @@
       </li>
       <li Class="NAT.CompProperties_RustedSoldier">
         <interaction>NAT_RustedChat</interaction>
+        <deathEffecter>NAT_RustDeathExplosion_Small</deathEffecter>
         <canInteract>true</canInteract>
         <hasHead>true</hasHead>
         <drawData>

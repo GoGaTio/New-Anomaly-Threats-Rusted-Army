@@ -65,9 +65,13 @@ namespace NAT
 
 		protected override bool CanSelfTarget => true;
 
+		protected override bool MechanoidCanDo => true;
+
+		protected override bool RequiresManipulation => true;
+
 		protected override bool AppliesInt(FloatMenuContext context)
 		{
-			return context.FirstSelectedPawn is RustedPawn rust && rust.Comp.Props.isHumanlike;
+			return (context.FirstSelectedPawn is RustedPawn rust && rust.Comp.Props.isHumanlike) || context.ClickedPawns.Any(x => x is RustedPawn);
 		}
 
 		public override IEnumerable<FloatMenuOption> GetOptionsFor(Thing clickedThing, FloatMenuContext context)

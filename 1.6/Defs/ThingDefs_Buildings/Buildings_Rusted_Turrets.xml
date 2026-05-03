@@ -136,7 +136,7 @@
     <building>
       <turretTopDrawSize>3</turretTopDrawSize>
       <turretTopOffset>(0, 0)</turretTopOffset>
-      <destroyEffecter>NAT_RustedOfficerDeath</destroyEffecter>
+      <destroyEffecter>NAT_RustDeathExplosion_Medium</destroyEffecter>
     </building>
     <uiIconScale>0.95</uiIconScale>
     <soundImpactDefault>NAT_Pawn_RustedOfficer_Wounded</soundImpactDefault>

@@ -17,7 +17,7 @@
       <deconstructible>false</deconstructible>
       <claimable>false</claimable>
       <repairable>false</repairable>
-      <destroyEffecter>NAT_RustedSoldierDeath</destroyEffecter>
+      <destroyEffecter>NAT_RustDeathExplosion_Small</destroyEffecter>
       <neverBuildable>true</neverBuildable>
     </building>
     <filthLeaving>NAT_Filth_RustedDebris</filthLeaving>
@@ -33,7 +33,7 @@
       </li>
       <li>
         <damageDef>NAT_RustedBomb</damageDef>
-        <multiplier>0.1</multiplier>
+        <multiplier>0.5</multiplier>
       </li>
       <li>
         <damageDef>Thump</damageDef>
@@ -76,7 +76,6 @@
     <rotatable>false</rotatable>
     <staticSunShadowHeight>0.3</staticSunShadowHeight>
     <size>(1,1)</size>
-    <filthLeaving>NAT_Filth_RustedDebris</filthLeaving>
     <comps>
       <li Class="CompProperties_Stunnable">
         <affectedDamageDefs>
@@ -157,7 +156,7 @@
     <drawerType>MapMeshAndRealTime</drawerType>
     <canOverlapZones>false</canOverlapZones>
     <building>
-      <destroyEffecter>NAT_RustedBuildingDeath</destroyEffecter>
+      <destroyEffecter>NAT_RustDeathExplosion_Giant</destroyEffecter>
     </building>
     <statBases>
       <MaxHitPoints>5000</MaxHitPoints>

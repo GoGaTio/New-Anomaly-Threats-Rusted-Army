@@ -201,9 +201,8 @@ namespace NAT
 
 		protected override IEnumerable<Toil> MakeNewToils()
 		{
-
 			this.FailOnIncapable(PawnCapacityDefOf.Manipulation);
-			if (pawn is RustedPawn rust)
+			if (targetsAnotherPawn || pawn is RustedPawn)
 			{
 				foreach (Toil item in PrepareToUseToils())
 				{
@@ -224,7 +223,7 @@ namespace NAT
 				use.initAction = delegate
 				{
 					CompUsableByRust comp = Item.TryGetComp<CompUsableByRust>();
-					comp.UsedBy(targetsAnotherPawn ? Target : rust);
+					comp.UsedBy(targetsAnotherPawn ? Target : (pawn as RustedPawn));
 				};
 				use.defaultCompleteMode = ToilCompleteMode.Instant;
 				yield return use;
@@ -398,6 +397,7 @@ namespace NAT
 			{
 				if (!Comp.RectOccupied)
 				{
+					Log.Message(toil2.actor.ToString() + ":SpawnedTurret");
 					Comp.SpawnTurret(Cell, toil2.actor.Map);
 				}
 			};

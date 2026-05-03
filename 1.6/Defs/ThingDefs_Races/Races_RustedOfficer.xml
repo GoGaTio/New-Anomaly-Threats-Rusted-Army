@@ -37,9 +37,6 @@
       <li Class="CompProperties_HoldingPlatformTarget">
         <baseEscapeIntervalMtbDays>40</baseEscapeIntervalMtbDays>
       </li>
-      <li Class="CompProperties_EffecterOnDeath">
-        <effecterDef>NAT_RustedOfficerDeath</effecterDef>
-      </li>
       <li Class="CompProperties_AttachPoints">
         <points>
           <li>
@@ -77,6 +74,7 @@
       <li Class="NAT.CompProperties_RustedSoldier">
         <bodyType>Fat</bodyType>
         <interaction>NAT_RustedChat</interaction>
+        <deathEffecter>NAT_RustDeathExplosion_Medium</deathEffecter>
         <canInteract>true</canInteract>
         <hasHead>true</hasHead>
         <drawData>

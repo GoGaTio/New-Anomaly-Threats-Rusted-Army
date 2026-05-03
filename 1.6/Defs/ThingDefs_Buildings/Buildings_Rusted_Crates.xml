@@ -18,7 +18,6 @@
       <deconstructible>false</deconstructible>
       <claimable>false</claimable>
       <neverBuildable>true</neverBuildable>
-      <destroyEffecter>NAT_RustedSoldierDeath</destroyEffecter>
       <openingStartedSound>Building_Deconstructed</openingStartedSound>
       <isInert>true</isInert>
     </building>

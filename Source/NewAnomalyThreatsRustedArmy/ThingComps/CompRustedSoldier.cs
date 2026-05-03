@@ -90,6 +90,8 @@ namespace NAT
 
 		public BodyTypeDef bodyType;
 
+		public EffecterDef deathEffecter;
+
 		public CompProperties_RustedSoldier()
 		{
 			compClass = typeof(CompRustedSoldier);
@@ -139,6 +141,12 @@ namespace NAT
 
 		[TweakValue("Rust", 0f, 100f)]
 		public static bool DrawEnemyTarget = false;
+
+		public override void Notify_Killed(Map prevMap, DamageInfo? dinfo = null)
+		{
+			Props.deathEffecter?.SpawnMaintained(parent.PositionHeld, prevMap);
+			base.Notify_Killed(prevMap, dinfo);
+		}
 
 		public override void PostDrawExtraSelectionOverlays()
 		{

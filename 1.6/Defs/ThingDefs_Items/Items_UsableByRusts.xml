@@ -58,6 +58,7 @@
       <ComponentIndustrial>1</ComponentIndustrial>
       <Bioferrite>20</Bioferrite>
     </costList>
+    <uiIconScale>1.35</uiIconScale>
   </ThingDef>
 
   <ThingDef ParentName="NAT_RustActivatorBase">

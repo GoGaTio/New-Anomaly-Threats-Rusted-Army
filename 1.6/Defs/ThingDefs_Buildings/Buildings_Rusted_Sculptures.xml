@@ -24,7 +24,7 @@
       <deconstructible>false</deconstructible>
       <repairable>false</repairable>
       <alwaysUninstallable>true</alwaysUninstallable>
-      <destroyEffecter>NAT_RustedSoldierDeath</destroyEffecter>
+      <destroyEffecter>NAT_RustDeathExplosion_Small</destroyEffecter>
       <claimable>true</claimable>
     </building>
     <thingCategories>

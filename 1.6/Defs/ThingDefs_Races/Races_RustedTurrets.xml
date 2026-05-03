@@ -27,16 +27,6 @@
       <li Class="CompProperties_ProducesBioferrite">
         <bioferriteDensity>2</bioferriteDensity>
       </li>
-      <li Class="NAT.CompProperties_RustedSoldier">
-        <canInteract>false</canInteract>
-        <isHumanlike>false</isHumanlike>
-        <canRecieveInteraction>false</canRecieveInteraction>
-        <hasHead>false</hasHead>
-        <canEquipWeapons>false</canEquipWeapons>
-        <canWearApparel>false</canWearApparel>
-        <needSleep>false</needSleep>
-        <buffable>false</buffable>
-      </li>
       <li Class="NAT.CompProperties_RustedTurret">
         <turretDef>NAT_Gun_RustedAutoTurret</turretDef>
         <saveKeysPrefix>NAT</saveKeysPrefix>
@@ -110,8 +100,16 @@
         <offsetBottom>-0.25</offsetBottom>
         <offsetTop>0.25</offsetTop>
       </li>
-      <li Class="CompProperties_EffecterOnDeath">
-        <effecterDef>NAT_RustedSoldierDeath</effecterDef>
+      <li Class="NAT.CompProperties_RustedSoldier">
+        <deathEffecter>NAT_RustDeathExplosion_Small</deathEffecter>
+        <canInteract>false</canInteract>
+        <isHumanlike>false</isHumanlike>
+        <canRecieveInteraction>false</canRecieveInteraction>
+        <hasHead>false</hasHead>
+        <canEquipWeapons>false</canEquipWeapons>
+        <canWearApparel>false</canWearApparel>
+        <needSleep>false</needSleep>
+        <buffable>false</buffable>
       </li>
       <li Class="CompProperties_AttachPoints">
         <points>
@@ -169,8 +167,16 @@
         <offsetBottom>-0.75</offsetBottom>
         <offsetTop>0.5</offsetTop>
       </li>
-      <li Class="CompProperties_EffecterOnDeath">
-        <effecterDef>NAT_RustedOfficerDeath</effecterDef>
+      <li Class="NAT.CompProperties_RustedSoldier">
+        <deathEffecter>NAT_RustDeathExplosion_Medium</deathEffecter>
+        <canInteract>false</canInteract>
+        <isHumanlike>false</isHumanlike>
+        <canRecieveInteraction>false</canRecieveInteraction>
+        <hasHead>false</hasHead>
+        <canEquipWeapons>false</canEquipWeapons>
+        <canWearApparel>false</canWearApparel>
+        <needSleep>false</needSleep>
+        <buffable>false</buffable>
       </li>
       <li Class="CompProperties_AttachPoints">
         <points>

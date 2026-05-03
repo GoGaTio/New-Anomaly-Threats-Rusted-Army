@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  
+
   <ThingDef ParentName="NAT_BaseRustedPawn" Name="NAT_BaseRustedSoldier">
     <defName>NAT_RustedSoldier</defName>
     <label>rusted infantryman</label>
@@ -28,9 +28,6 @@
     <comps>
       <li Class="CompProperties_HoldingPlatformTarget">
         <baseEscapeIntervalMtbDays>60</baseEscapeIntervalMtbDays>
-      </li>
-	  <li Class="CompProperties_EffecterOnDeath">
-        <effecterDef>NAT_RustedSoldierDeath</effecterDef>
       </li>
       <li Class="CompProperties_AttachPoints">
         <points>
@@ -64,13 +61,22 @@
       </li>
       <li Class="NAT.CompProperties_RustedSoldier">
         <interaction>NAT_RustedChat</interaction>
+        <deathEffecter>NAT_RustDeathExplosion_Small</deathEffecter>
         <canInteract>true</canInteract>
         <hasHead>true</hasHead>
         <drawData>
-          <dataNorth><offset>(0, 0, 0.25)</offset></dataNorth>
-          <dataEast><offset>(0.15, 0, 0.25)</offset></dataEast>
-          <dataSouth><offset>(0, 0, 0.25)</offset></dataSouth>
-          <dataWest><offset>(-0.15, 0, 0.25)</offset></dataWest>
+          <dataNorth>
+            <offset>(0, 0, 0.25)</offset>
+          </dataNorth>
+          <dataEast>
+            <offset>(0.15, 0, 0.25)</offset>
+          </dataEast>
+          <dataSouth>
+            <offset>(0, 0, 0.25)</offset>
+          </dataSouth>
+          <dataWest>
+            <offset>(-0.15, 0, 0.25)</offset>
+          </dataWest>
         </drawData>
         <headTags>
           <li>Soldier</li>
@@ -110,7 +116,6 @@
         </forceAllowWorkTypes>
       </li>
     </comps>
-
     <killedLeavingsRanges>
       <Bioferrite>2~4</Bioferrite>
     </killedLeavingsRanges>

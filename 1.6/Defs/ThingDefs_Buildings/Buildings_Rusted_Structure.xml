@@ -34,7 +34,7 @@
       <repairable>false</repairable>
       <isAirtight>true</isAirtight>
       <displayAttackToDestroyOnInspectPane>false</displayAttackToDestroyOnInspectPane>
-      <destroyEffecter>NAT_RustedSoldierDeath</destroyEffecter>
+      <destroyEffecter>NAT_RustDeathExplosion_Small</destroyEffecter>
     </building>
     <statBases>
       <MaxHitPoints>450</MaxHitPoints>
@@ -79,6 +79,7 @@
       </doorTopGraphic>
       <doorTopHorizontalOffset>(0,0,0.05)</doorTopHorizontalOffset>
       <expandHomeArea>false</expandHomeArea>
+      <destroyEffecter>NAT_RustDeathExplosion_Small</destroyEffecter>
     </building>
     <stuffCategories Inherit="False"/>
     <costStuffCount>0</costStuffCount>
@@ -119,6 +120,7 @@
       <neverBuildable>true</neverBuildable>
       <isAirtight>true</isAirtight>
       <isSupportDoor>true</isSupportDoor>
+      <destroyEffecter>NAT_RustDeathExplosion_Medium</destroyEffecter>
       <doorTopGraphic>
         <texPath>Things/Building/NAT_RustedDoor/NAT_RustedDoor2x1_Support</texPath>
         <graphicClass>Graphic_Multi</graphicClass>

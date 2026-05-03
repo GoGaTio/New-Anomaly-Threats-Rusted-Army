@@ -435,6 +435,7 @@ namespace NAT
 								command_Action.icon = activator.def.uiIcon;
 								command_Action.iconAngle = activator.def.uiIconAngle;
 								command_Action.iconOffset = activator.def.uiIconOffset;
+								command_Action.iconDrawScale = activator.def.uiIconScale;
 								command_Action.action = delegate
 								{
 									jobs.TryTakeOrderedJob(JobMaker.MakeJob(NATRADefOf.NAT_UseItemByRust, activator), JobTag.Misc);
@@ -449,6 +450,7 @@ namespace NAT
 								command_Action2.icon = activator.def.uiIcon;
 								command_Action2.iconAngle = activator.def.uiIconAngle;
 								command_Action2.iconOffset = activator.def.uiIconOffset;
+								command_Action2.iconDrawScale = activator.def.uiIconScale;
 								command_Action2.action = delegate
 								{
 									List<FloatMenuOption> list = new List<FloatMenuOption>();
