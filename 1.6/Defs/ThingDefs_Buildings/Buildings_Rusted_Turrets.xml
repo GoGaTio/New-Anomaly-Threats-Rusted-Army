@@ -248,7 +248,7 @@
 
   <!--=============== Mortar ===============-->
 
-  <ThingDef ParentName="NAT_BaseRustedTurret">
+  <!--<ThingDef ParentName="NAT_BaseRustedTurret">
     <defName>NAT_RustedTurret_Artillery</defName>
     <label>rusted mortar</label>
     <description>A rusted bioferrite piece shaped like a mortar.</description>
@@ -291,6 +291,6 @@
         <li>NAT_RustedSiegeMember</li>
       </buildingTags>
     </building>
-  </ThingDef>
+  </ThingDef>-->
 
 </Defs>

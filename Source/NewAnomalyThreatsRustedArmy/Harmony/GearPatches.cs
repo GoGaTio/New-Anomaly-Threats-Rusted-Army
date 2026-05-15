@@ -533,6 +533,19 @@ namespace NAT
 		public static void Postfix(ref bool __result, Thing thing, Pawn pawn, ref string cantReason, bool checkBonded = true)
 		{
 			if (!__result) return;
+			if (pawn is RustedPawn rust)
+			{
+				if (thing.HasComp<CompBladelinkWeapon>())
+				{
+					cantReason = "NAT_CannotEquip_Bladelink".Translate();
+					__result = false;
+				}
+				if (thing is Apparel ap && !rust.Comp.CanWearApparel(ap))
+				{
+					cantReason = "NAT_CannotEquip_Apparel".Translate();
+					__result = false;
+				}
+			}
 			CompRustedEquipment comp = thing.TryGetComp<CompRustedEquipment>();
 			if (comp != null)
 			{
@@ -542,19 +555,6 @@ namespace NAT
 					cantReason = report.Reason;
 					__result = false;
 					return;
-				}
-			}
-			if(pawn is RustedPawn rust)
-            {
-                if (thing.HasComp<CompBladelinkWeapon>())
-                {
-					cantReason = "NAT_CannotEquip_Bladelink".Translate();
-					__result = false;
-				}
-				if (thing is Apparel ap && !rust.Comp.CanWearApparel(ap))
-                {
-					cantReason = "NAT_CannotEquip_Apparel".Translate();
-					__result = false;
 				}
 			}
 		}

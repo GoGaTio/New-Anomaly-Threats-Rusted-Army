@@ -140,11 +140,13 @@ namespace NAT
 			{
 				yield return item;
 			}
-			if (!skills.NullOrEmpty() && (!req.HasThing || req.Thing.Faction == Faction.OfPlayerSilentFail))
+			bool flag = req.Thing != null && req.Thing.Faction == Faction.OfPlayerSilentFail;
+			if (!skills.NullOrEmpty() && (!req.HasThing || flag))
 			{
+				Pawn pawn = req.Thing as Pawn;
 				foreach(SkillGain skill in skills)
 				{
-					yield return new StatDrawEntry(NATRADefOf.NAT_Skills, skill.skill.LabelCap, skill.amount.ToString(), skill.skill.description, Mathf.RoundToInt(skill.skill.listOrder), overridesHideStats: true);
+					yield return new StatDrawEntry(NATRADefOf.NAT_Skills, skill.skill.LabelCap, flag ? pawn.skills.GetSkill(skill.skill).Level.ToString() : skill.amount.ToString(), skill.skill.description, Mathf.RoundToInt(skill.skill.listOrder), overridesHideStats: true);
 				}
 			}
 		}

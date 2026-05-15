@@ -20,7 +20,7 @@
     </weaponTags>
     <verbs>
       <li>
-        <verbClass>Verb_LaunchProjectileStaticOneUse</verbClass>
+        <verbClass>Verb_ShootOneUse</verbClass>
         <label>throw rusted impact grenade</label>
         <defaultProjectile>NAT_Proj_RustedImpactGrenade</defaultProjectile>
         <warmupTime>1.5</warmupTime>
@@ -64,7 +64,7 @@
     </graphicData>
     <statBases>
       <Mass>8.5</Mass>
-      <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
+      <RangedWeapon_Cooldown>0.8</RangedWeapon_Cooldown>
       <MarketValue>600</MarketValue>
     </statBases>
     <weaponTags>
@@ -73,14 +73,56 @@
     <generateCommonality>0.1</generateCommonality>
     <verbs>
       <li>
-        <verbClass>Verb_Shoot</verbClass>
+        <verbClass>Verb_ShootOneUse</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>NAT_Proj_RustedRocket</defaultProjectile>
         <warmupTime>2.3</warmupTime>
         <range>34.9</range>
         <forcedMissRadius>1.9</forcedMissRadius>
         <burstShotCount>1</burstShotCount>
-        <soundCast>InfernoCannon_Fire</soundCast>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <soundCast>Artillery_ShellLoaded</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+      </li>
+    </verbs>
+    <butcherProducts>
+      <Bioferrite>22</Bioferrite>
+    </butcherProducts>
+  </ThingDef>
+
+  <ThingDef ParentName="NAT_BaseRustedSidearm">
+    <defName>NAT_Gun_RustedHexRocketLauncher</defName>
+    <label>rusted rocket launcher</label>
+    <description>A piece of bioferrite shaped like a light machine gun.\n\nSomehow can shoot if wielded by rusted creature.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Weapon/NAT_RustedLMG</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>8.5</Mass>
+      <RangedWeapon_Cooldown>0.8</RangedWeapon_Cooldown>
+      <MarketValue>600</MarketValue>
+    </statBases>
+    <weaponTags>
+      <li>NAT_RustedRocketLauncher</li>
+    </weaponTags>
+    <generateCommonality>0.1</generateCommonality>
+    <verbs>
+      <li>
+        <verbClass>Verb_ShootOneUse</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>NAT_Proj_RustedRocket</defaultProjectile>
+        <warmupTime>2.3</warmupTime>
+        <range>34.9</range>
+        <forcedMissRadius>4.9</forcedMissRadius>
+        <burstShotCount>6</burstShotCount>
+        <ticksBetweenBurstShots>20</ticksBetweenBurstShots>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <soundCast>Artillery_ShellLoaded</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
       </li>
     </verbs>

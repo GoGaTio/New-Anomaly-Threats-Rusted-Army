@@ -28,7 +28,7 @@
     </verbProperties>
   </AbilityDef>
 
-  <!--<AbilityDef>
+  <AbilityDef>
     <defName>NAT_ShapeRust</defName>
     <label>shape bioferrite</label>
     <description>Use dark psychic powers to shape the closest 100 bioferrite pieces into a living rust.</description>
@@ -64,6 +64,6 @@
         <onlyApplyToSelf>True</onlyApplyToSelf>
       </li>
     </comps>
-  </AbilityDef>-->
+  </AbilityDef>
 
 </Defs>

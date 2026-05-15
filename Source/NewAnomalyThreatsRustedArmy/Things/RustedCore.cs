@@ -164,19 +164,8 @@ namespace NAT
             {
                 return;
             }
-            RustedPawn rust = Rust;
-            if (rust.Discarded)
-            {
-                Log.Warning("New Anomaly Threats - " + rust.Name.ToStringFull + " was discarded during resurrection, fixing");
-                rust.ForceSetStateToUnspawned();
-                rust.DecrementMapIndex();
-            };
-            string label = Label;
-            ResurrectionParams parms = new ResurrectionParams();
-            parms.restoreMissingParts = true;
-            parms.dontSpawn = true;
-            ResurrectionUtility.TryResurrect(rust, parms);
-            rust.RemoveHediffs((x) => x is Hediff_Injury || x.Part == null || !x.Part.def.tags.Any((y) => y == BodyPartTagDefOf.ConsciousnessSource));
+			string label = Label;
+            RustedPawn rust = ResurrectRust();
 			GenSpawn.Spawn(rust, PositionHeld, MapHeld);
             try
             {
@@ -216,6 +205,23 @@ namespace NAT
             }
             Rust = null;
             this.Destroy();
+		}
+
+        public RustedPawn ResurrectRust()
+        {
+			RustedPawn rust = Rust;
+			if (rust.Discarded)
+			{
+				Log.Warning("New Anomaly Threats - " + rust.Name.ToStringFull + " was discarded during resurrection, fixing");
+				rust.ForceSetStateToUnspawned();
+				rust.DecrementMapIndex();
+			};
+			ResurrectionParams parms = new ResurrectionParams();
+			parms.restoreMissingParts = true;
+			parms.dontSpawn = true;
+			ResurrectionUtility.TryResurrect(rust, parms);
+			rust.RemoveHediffs((x) => x.Part == null || !x.Part.def.tags.Any((y) => y == BodyPartTagDefOf.ConsciousnessSource));
+            return rust;
 		}
 
         protected override void Tick()

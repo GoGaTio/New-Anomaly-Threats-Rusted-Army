@@ -22,7 +22,63 @@ using System.Diagnostics;
 
 namespace NAT
 {
-	public class DamageWorker_HateVaporize : DamageWorker_AddInjury
+	public class DamageWorker_RustedBomb : DamageWorker_AddInjury
+	{
+		protected override void ExplosionVisualEffectCenter(Explosion explosion)
+		{
+			for (int i = 0; i < 4; i++)
+			{
+				ThrowSmoke(explosion.Position.ToVector3Shifted() + Gen.RandomHorizontalVector(explosion.radius * 0.7f), explosion.Map, explosion.radius * 0.6f);
+			}
+			if (def.explosionCenterFleck != null)
+			{
+				FleckMaker.Static(explosion.Position.ToVector3Shifted(), explosion.Map, def.explosionCenterFleck);
+			}
+			else if (def.explosionCenterMote != null)
+			{
+				MoteMaker.MakeStaticMote(explosion.Position.ToVector3Shifted(), explosion.Map, def.explosionCenterMote);
+			}
+			if (def.explosionCenterEffecter != null)
+			{
+				def.explosionCenterEffecter.Spawn(explosion.Position, explosion.Map, Vector3.zero);
+			}
+			if (def.explosionInteriorMote == null && def.explosionInteriorFleck == null && def.explosionInteriorEffecter == null)
+			{
+				return;
+			}
+			int num = Mathf.RoundToInt(Mathf.PI * explosion.radius * explosion.radius / 6f * def.explosionInteriorCellCountMultiplier);
+			for (int j = 0; j < num; j++)
+			{
+				Vector3 vector = Gen.RandomHorizontalVector(explosion.radius * def.explosionInteriorCellDistanceMultiplier);
+				if (def.explosionInteriorEffecter != null)
+				{
+					Vector3 vect = explosion.Position.ToVector3Shifted() + vector;
+					def.explosionInteriorEffecter.Spawn(explosion.Position, vect.ToIntVec3(), explosion.Map);
+				}
+				else if (def.explosionInteriorFleck != null)
+				{
+					FleckMaker.ThrowExplosionInterior(explosion.Position.ToVector3Shifted() + vector, explosion.Map, def.explosionInteriorFleck);
+				}
+				else
+				{
+					MoteMaker.ThrowExplosionInteriorMote(explosion.Position.ToVector3Shifted() + vector, explosion.Map, def.explosionInteriorMote);
+				}
+			}
+		}
+
+		public static void ThrowSmoke(Vector3 loc, Map map, float size)
+		{
+			if (loc.ShouldSpawnMotesAt(map))
+			{
+				FleckCreationData dataStatic = FleckMaker.GetDataStatic(loc, map, NATRADefOf.NAT_RustedSmoke, Rand.Range(1.5f, 2.5f) * size);
+				dataStatic.rotationRate = Rand.Range(-30f, 30f);
+				dataStatic.velocityAngle = Rand.Range(30, 40);
+				dataStatic.velocitySpeed = Rand.Range(0.5f, 0.7f);
+				map.flecks.CreateFleck(dataStatic);
+			}
+		}
+	}
+	public class DamageWorker_HateVaporize : DamageWorker_RustedBomb
 	{
 		private const float VaporizeRadius = 2.9f;
 
@@ -35,7 +91,7 @@ namespace NAT
 			base.ExplosionAffectCell(explosion, c, damagedThings, ignoredThings, canThrowMotes && flag);
 			if (flag)
 			{
-				FleckMaker.ThrowSmoke(c.ToVector3Shifted(), explosion.Map, 2f);
+				DamageWorker_RustedBomb.ThrowSmoke(c.ToVector3Shifted(), explosion.Map, 2f);
 			}
 		}
 

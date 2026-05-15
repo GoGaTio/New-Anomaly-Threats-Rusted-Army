@@ -151,7 +151,7 @@
       <MoveSpeed>2</MoveSpeed>
     </statBases>
     <race>
-      <baseBodySize>1.6</baseBodySize>
+      <baseBodySize>2</baseBodySize>
       <lifeStageAges>
         <li>
           <def>EntityFullyFormed</def>

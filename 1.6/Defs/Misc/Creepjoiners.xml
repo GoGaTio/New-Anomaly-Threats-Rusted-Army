@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <CreepJoinerBenefitDef>
+    <defName>NAT_RustShaper</defName>
+    <label>bioferrite shaper</label>
+    <weight>0.5</weight>
+    <letterExtra>{PAWN_pronoun} offers to use {PAWN_possessive} bioferrite shaping power to help you.</letterExtra>
+    <abilities>
+      <li>NAT_ShapeRust</li>
+    </abilities>
+  </CreepJoinerBenefitDef>
+  
+</Defs>

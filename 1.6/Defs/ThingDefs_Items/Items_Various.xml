@@ -18,6 +18,7 @@
       <Flammability>0</Flammability>
     </statBases>
     <comps>
+      <li Class="NAT.CompProperties_RustedCore"/>
       <li Class="NAT.CompProperties_DestroyRustedCore">
         <jobString>destroy</jobString>
         <activateLabelString>None</activateLabelString>

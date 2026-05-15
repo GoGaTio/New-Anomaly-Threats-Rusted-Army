@@ -56,16 +56,31 @@
   </FleckDef>
 
   <FleckDef ParentName="FleckBase_Thrown">
-    <defName>NAT_DustPuff</defName>
+    <defName>NAT_RustedRocketTrail</defName>
     <graphicData>
-      <texPath>Things/Mote/DustPuff</texPath>
+      <texPath>Things/Mote/Smoke</texPath>
       <renderInstanced>true</renderInstanced>
-      <color>(255,30,30)</color>
+      <color>(255, 30, 30)</color>
     </graphicData>
     <altitudeLayer>MoteOverhead</altitudeLayer>
-    <fadeInTime>0.04</fadeInTime>
-    <solidTime>0.4</solidTime>
-    <fadeOutTime>1</fadeOutTime>
+    <fadeInTime>0.14</fadeInTime>
+    <solidTime>0.5</solidTime>
+    <fadeOutTime>2</fadeOutTime>
+    <growthRate>0.5</growthRate>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>NAT_RustedSmoke</defName>
+    <graphicData>
+      <texPath>Things/Mote/Smoke</texPath>
+      <renderInstanced>true</renderInstanced>
+      <color>(255, 30, 30)</color>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.50</fadeInTime>
+    <solidTime>6</solidTime>
+    <fadeOutTime>3.2</fadeOutTime>
+    <growthRate>0.005</growthRate>
   </FleckDef>
 
   <FleckDef ParentName="FleckBase">

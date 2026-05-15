@@ -3,6 +3,7 @@
 
   <DamageDef Name="NAT_RustedBomb" ParentName="Bomb">
     <defName>NAT_RustedBomb</defName>
+    <workerClass>NAt.DamageWorker_RustedBomb</workerClass>
     <plantDamageFactor>8</plantDamageFactor>
     <explosionColorCenter>(0.55, 0, 0)</explosionColorCenter>
     <explosionColorEdge>(0.75, 0.35, 0.25)</explosionColorEdge>
@@ -10,6 +11,7 @@
 
   <DamageDef ParentName="NAT_RustedBomb">
     <defName>NAT_RustedAntiTankBomb</defName>
+    <workerClass>NAt.DamageWorker_RustedBomb</workerClass>
     <explosionCellEffecter>NAT_ExplosionDust</explosionCellEffecter>
     <explosionCellEffecterChance>0.5</explosionCellEffecterChance>
     <explosionCellEffecterMaxRadius>20</explosionCellEffecterMaxRadius>

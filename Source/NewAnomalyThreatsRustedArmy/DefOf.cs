@@ -128,5 +128,7 @@ namespace NAT
 		public static TerrainDef NAT_RustedFloor;
 
 		public static TerrainDef NAT_AncientCarpet;
+
+		public static FleckDef NAT_RustedSmoke;
 	}
 }

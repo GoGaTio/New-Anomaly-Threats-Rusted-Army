@@ -22,6 +22,7 @@
     </graphicData>
     <projectile>
       <damageAmountBase>9</damageAmountBase>
+      <armorPenetrationBase>0.2</armorPenetrationBase>
       <speed>60</speed>
     </projectile>
   </ThingDef>
@@ -130,15 +131,33 @@
     <label>rusted rocket</label>
     <thingClass>Projectile_Explosive</thingClass>
     <graphicData>
-      <texPath>Things/Projectile/Bullet_Big</texPath>
-      <drawSize>1.4</drawSize>
+      <texPath>Things/Projectile/NAT_RustedShell</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawSize>(2, 2)</drawSize>
     </graphicData>
     <projectile>
       <explosionRadius>3.7</explosionRadius>
-      <damageDef>NAT_RustedBomb</damageDef>
+      <damageDef>NAT_RustedAntiTankBomb</damageDef>
       <damageAmountBase>55</damageAmountBase>
-      <speed>120</speed>
+      <speed>80</speed>
     </projectile>
+    <comps>
+      <li Class="NAT.CompProperties_ConstantFleckEmitter">
+        <fleck>NAT_RustedRocketTrail</fleck>
+        <startEmitFromTick>0</startEmitFromTick>
+        <countEmitPerTick>2</countEmitPerTick>
+        <soundOnEmitStart>InfernoCannon_Fire</soundOnEmitStart>
+        <sizeCurve>
+          <points>
+            <li>(0,3)</li>
+            <li>(5,2)</li>
+            <li>(10,1.5)</li>
+            <li>(15,1)</li>
+          </points>
+        </sizeCurve>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="BaseGrenadeProjectile">
@@ -191,7 +210,7 @@
     <projectile>
       <damageDef>NAT_HateVaporize</damageDef>
       <useGraphicClass>True</useGraphicClass>
-      <damageAmountBase>300</damageAmountBase>
+      <damageAmountBase>30000</damageAmountBase>
       <speed>20</speed>
       <soundAmbient>FleshmelterBolt_Launch</soundAmbient>
       <explosionRadius>2.9</explosionRadius>
@@ -200,6 +219,40 @@
       <filthCount>1</filthCount>
       <explosionSpawnsSingleFilth>true</explosionSpawnsSingleFilth>
     </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="NAT_RustedBulletBase">
+    <defName>NAT_Proj_RustedBigAssRocket</defName>
+    <label>rusted bigass rocket</label>
+    <thingClass>Projectile_Explosive</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/NAT_RustedShell</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawSize>(2, 2)</drawSize>
+    </graphicData>
+    <projectile>
+      <explosionRadius>12.7</explosionRadius>
+      <damageDef>NAT_RustedAntiTankBomb</damageDef>
+      <damageAmountBase>550</damageAmountBase>
+      <speed>40</speed>
+    </projectile>
+    <comps>
+      <li Class="NAT.CompProperties_ConstantFleckEmitter">
+        <fleck>NAT_RustedRocketTrail</fleck>
+        <startEmitFromTick>0</startEmitFromTick>
+        <countEmitPerTick>1</countEmitPerTick>
+        <soundOnEmitStart>InfernoCannon_Fire</soundOnEmitStart>
+        <sizeCurve>
+          <points>
+            <li>(0,8)</li>
+            <li>(5,6)</li>
+            <li>(10,4.5)</li>
+            <li>(15,3)</li>
+          </points>
+        </sizeCurve>
+      </li>
+    </comps>
   </ThingDef>
 
 </Defs>

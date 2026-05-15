@@ -119,18 +119,21 @@ namespace NAT
 
 		public override void Notify_UsedWeapon(Pawn pawn)
 		{
-			ThingWithComps primary = pawn?.inventory?.innerContainer?.FirstOrDefault(x => x.def.IsWeapon && !x.HasComp<CompRustedSidearm>()) as ThingWithComps;
-			if (primary != null && pawn.equipment != null)
+			if (parent.Destroyed)
 			{
-				foreach(Thing t in pawn.inventory.innerContainer)
+				ThingWithComps primary = pawn?.inventory?.innerContainer?.FirstOrDefault(x => x.def.IsWeapon && !x.HasComp<CompRustedSidearm>()) as ThingWithComps;
+				if (primary != null && pawn.equipment != null)
 				{
-					if(t.TryGetComp<CompRustedSidearm>(out var comp))
+					foreach (Thing t in pawn.inventory.innerContainer)
 					{
-						comp.cooldown = 210;
+						if (t.TryGetComp<CompRustedSidearm>(out var comp))
+						{
+							comp.cooldown = 210;
+						}
 					}
+					pawn.inventory.innerContainer.Remove(primary);
+					pawn.equipment.AddEquipment(primary);
 				}
-				pawn.inventory.innerContainer.Remove(primary);
-				pawn.equipment.AddEquipment(primary);
 			}
 			base.Notify_UsedWeapon(pawn);
 		}

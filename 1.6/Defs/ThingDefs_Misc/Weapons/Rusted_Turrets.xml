@@ -113,7 +113,7 @@
     </verbs>
   </ThingDef>
 
-  <ThingDef ParentName="NAT_RustedTurretWeapon">
+  <!--<ThingDef ParentName="NAT_RustedTurretWeapon">
     <defName>NAT_Gun_RustedArtillery</defName>
     <label>rusted artillery</label>
     <description>Mortar launcher. Lobs bombs over walls. Very inaccurate but long-ranged.</description>
@@ -172,7 +172,7 @@
         </filter>
       </defaultStorageSettings>
     </building>
-  </ThingDef>
+  </ThingDef>-->
 
   <ThingDef ParentName="NAT_RustedTurretWeapon">
     <defName>NAT_Gun_RustedFoamTurret</defName>
