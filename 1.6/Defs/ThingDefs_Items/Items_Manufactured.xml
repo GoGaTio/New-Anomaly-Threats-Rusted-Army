@@ -44,41 +44,6 @@
     <allowedArchonexusCount>80</allowedArchonexusCount>
   </ThingDef>
 
-  <ThingDef Name="NAT_AnomalousResourceBase" Abstract="True">
-    <thingClass>ThingWithComps</thingClass>
-    <tradeability>None</tradeability>
-    <category>Item</category>
-    <drawerType>MapMeshAndRealTime</drawerType>
-    <tickerType>Normal</tickerType>
-    <rotatable>false</rotatable>
-    <altitudeLayer>Item</altitudeLayer>
-    <selectable>true</selectable>
-    <alwaysHaulable>true</alwaysHaulable>
-    <drawGUIOverlay>true</drawGUIOverlay>
-    <scatterableOnMapGen>false</scatterableOnMapGen>
-    <useHitPoints>false</useHitPoints>
-    <healthAffectsPrice>false</healthAffectsPrice>
-    <graphicData>
-      <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <soundInteract>Standard_Pickup</soundInteract>
-    <soundDrop>Standard_Drop</soundDrop>
-    <stackLimit>1</stackLimit>
-    <intricate>true</intricate>
-    <statBases>
-      <Mass>1</Mass>
-      <Beauty>-4</Beauty>
-      <Flammability>0</Flammability>
-    </statBases>
-    <thingCategories>
-      <li>ItemsMisc</li>
-    </thingCategories>
-    <hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
-    <comps>
-      <li Class="CompProperties_Forbiddable" />
-    </comps>
-  </ThingDef>
-
   <ThingDef ParentName="NAT_AnomalousResourceBase">
     <defName>NAT_VoidmetalMedal</defName>
     <label>voidmetal medal</label>

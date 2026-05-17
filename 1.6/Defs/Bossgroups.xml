@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <NAT.AnomalyBossDef>
+  <NAT.AnomalyBossDef_Rust>
     <defName>NAT_RustedGeneral</defName>
     <bossKind>NAT_RustedGeneral</bossKind>
     <groups>
       <li>
         <escorts>
           <NAT_RustedTrooper>3</NAT_RustedTrooper>
+          <NAT_RustedGunner>4</NAT_RustedGunner>
+          <NAT_RustedHussar>1</NAT_RustedHussar>
         </escorts>
+        <fixedEscorts>
+          <NAT_RustedBannerman>3</NAT_RustedBannerman>
+          <NAT_RustedGuardsman>2</NAT_RustedGuardsman>
+        </fixedEscorts>
       </li>
     </groups>
-  </NAT.AnomalyBossDef>
+  </NAT.AnomalyBossDef_Rust>
 
 </Defs>

@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="Abilities\CompAbilityEffect_Reinforcements.cs" />
     <Compile Include="Abilities\CompAbilityEffect_ArtOfWar.cs" />
+    <Compile Include="AnomalyBossDef.cs" />
     <Compile Include="Damages.cs" />
     <Compile Include="Hediffs\HediffComp_RustedBuff.cs" />
     <Compile Include="Hediffs\HediffComp_GiveHediffsToRustInRange.cs" />

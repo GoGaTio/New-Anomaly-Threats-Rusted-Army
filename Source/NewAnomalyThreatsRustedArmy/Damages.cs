@@ -24,6 +24,14 @@ namespace NAT
 {
 	public class DamageWorker_RustedBomb : DamageWorker_AddInjury
 	{
+		protected override void ExplosionDamageThing(Explosion explosion, Thing t, List<Thing> damagedThings, List<Thing> ignoredThings, IntVec3 cell)
+		{
+			if(t == explosion.instigator)
+			{
+				return;
+			}
+			base.ExplosionDamageThing(explosion, t, damagedThings, ignoredThings, cell);
+		}
 		protected override void ExplosionVisualEffectCenter(Explosion explosion)
 		{
 			for (int i = 0; i < 4; i++)

@@ -108,42 +108,10 @@ namespace NAT
 			List<Pawn> raiders = new List<Pawn>();
 			for (int i = 0; i < groupCount; i++)
 			{
-				IntVec3 spot = new IntVec3();
 				parms.spawnRotation = Rot4.Random;
 				List<Pawn> list = PawnGroupMakerUtility.GeneratePawns(pawnGroupMakerParms).ToList();
 				list.Add(PawnGenerator.GeneratePawn(NATRADefOf.NAT_RustedBannerman, Faction.OfEntities));
-				if (forceDrop || !RCellFinder.TryFindRandomPawnEntryCell(out spot, map, CellFinder.EdgeRoadChance_Hostile))
-				{
-					if (centerDrop)
-					{
-						spot = DropCellFinder.TradeDropSpot(map);
-						radius = 30f;
-					}
-					else spot = DropCellFinder.FindRaidDropCenterDistant(map);
-				}
-				for (int j = 0; j < list.Count; j++)
-				{
-					IntVec3 loc;
-					if (randomDrop)
-					{
-						if (!CellFinder.TryFindRandomCell(map, (IntVec3 x) => DropCellFinder.IsGoodDropSpot(x, map, false, true), out loc))
-						{
-							Log.Error("New Anomaly Threats - Cannot find dropspot. Continue");
-							continue;
-						}
-					}
-					else if (!CellFinder.TryFindRandomReachableNearbyCell(spot, map, radius, TraverseParms.For(forceDrop ? TraverseMode.PassAllDestroyableThingsNotWater : TraverseMode.NoPassClosedDoors), (IntVec3 c) => forceDrop ? DropCellFinder.IsGoodDropSpot(c, map, false, true) : c.Standable(map), null, out loc))
-					{
-						loc = spot;
-					}
-					if (forceDrop)
-					{
-						Skyfaller_RustedChunk skyfaller = (Skyfaller_RustedChunk)SkyfallerMaker.SpawnSkyfaller(RustedArmyUtility.GetSkyfaller(list[j].def), list[j], loc, map);
-						skyfaller.frendlies = list.Select((x)=>x as Thing).ToList();
-						skyfaller.faction = Faction.OfEntities;
-					}
-					else GenSpawn.Spawn(list[j], loc, map, parms.spawnRotation);
-				}
+				RustsArrive(list, map, forceDrop, radius, centerDrop, randomDrop);
 				if (AnomalyIncidentUtility.IncidentShardChance(points / (groupCount * 1.5f)))
 				{
 					AnomalyIncidentUtility.PawnShardOnDeath(list.RandomElement());
@@ -170,6 +138,48 @@ namespace NAT
 				Find.LetterStack.ReceiveLetter("NAT_RustedArmyRaid".Translate(), desc, LetterDefOf.ThreatBig, raiders);
 			}
 			return raiders;
+		}
+
+		public static void RustsArrive(IEnumerable<Thing> rusts, Map map, bool drop = false, float spawnRadius = 8, bool centerDrop = false, bool randomDrop = false, IntVec3? forcedDropPosition = null) 
+		{
+			IntVec3 spot = IntVec3.Zero;
+			if (forcedDropPosition != null)
+			{
+				spot = forcedDropPosition.Value;
+			}
+			else if (!randomDrop && (drop || !RCellFinder.TryFindRandomPawnEntryCell(out spot, map, CellFinder.EdgeRoadChance_Hostile)))
+			{
+				if (centerDrop)
+				{
+					spot = DropCellFinder.TradeDropSpot(map);
+					spawnRadius = 30f;
+				}
+				else spot = DropCellFinder.FindRaidDropCenterDistant(map);
+			}
+			Rot4 facing = Rot4.FromAngleFlat((map.Center - spot).AngleFlat);
+			foreach(Thing item in rusts)
+			{
+				IntVec3 loc;
+				if (randomDrop)
+				{
+					if (!CellFinder.TryFindRandomCell(map, (IntVec3 x) => DropCellFinder.IsGoodDropSpot(x, map, false, true), out loc))
+					{
+						Log.Error("New Anomaly Threats - Cannot find dropspot. Continue");
+						continue;
+					}
+				}
+				else if (!CellFinder.TryFindRandomReachableNearbyCell(spot, map, spawnRadius, TraverseParms.For(drop ? TraverseMode.PassAllDestroyableThingsNotWater : TraverseMode.NoPassClosedDoors), (IntVec3 c) => drop ? DropCellFinder.IsGoodDropSpot(c, map, false, true) : c.Standable(map), null, out loc))
+				{
+					loc = spot;
+				}
+				if (drop)
+				{
+					Skyfaller_RustedChunk skyfaller = (Skyfaller_RustedChunk)SkyfallerMaker.SpawnSkyfaller(RustedArmyUtility.GetSkyfaller(item.def), item, loc, map);
+					skyfaller.frendlies = rusts.ToList();
+					skyfaller.faction = Faction.OfEntities;
+				}
+				else GenSpawn.Spawn(item, loc, map, facing);
+			}
 		}
 
 		public static ThingDef GetSkyfaller(ThingDef fromDef)

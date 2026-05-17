@@ -73,7 +73,7 @@
       <li>NAT_RustedLMG</li>
       <li>NAT_RustedGrenadeLauncher</li>
     </weaponTags>
-    <combatPower>320</combatPower>
+    <combatPower>220</combatPower>
     <combatEnhancingDrugsCount>-7~2</combatEnhancingDrugsCount>
     <aiAvoidCover>false</aiAvoidCover>
     <startingHediffs>
@@ -100,7 +100,7 @@
     <weaponTags>
       <li>NAT_RustedMelee</li>
     </weaponTags>
-    <combatPower>225</combatPower>
+    <combatPower>200</combatPower>
     <combatEnhancingDrugsCount>-7~2</combatEnhancingDrugsCount>
   </PawnKindDef>
 

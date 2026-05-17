@@ -6,7 +6,7 @@
     <label>rusted general</label>
     <description>Bioferrite pieces shaped like tall human figure. This type of rusted creature is Rusted army elite unit, so has thicker armor and better combat skills than regular soldiers.</description>
     <statBases>
-      <MoveSpeed>3</MoveSpeed>
+      <MoveSpeed>2.4</MoveSpeed>
       <MarketValue>7900</MarketValue>
       <ArmorRating_Blunt>1.5</ArmorRating_Blunt>
       <ArmorRating_Sharp>1.15</ArmorRating_Sharp>
@@ -153,6 +153,11 @@
         </renderNodeProperty>
       </li>
       <li Class="NAT.CompProperties_BossStages">
+        <finalLeavings>
+          <NAT_VoidmetalMedal>1</NAT_VoidmetalMedal>
+          <Shard>2~3</Shard>
+          <Bioferrite>40~100</Bioferrite>
+        </finalLeavings>
         <stages>
           <li/>
           <li>
@@ -164,8 +169,19 @@
               <IncomingDamageFactor>0.5</IncomingDamageFactor>
               <Flammability>0.5</Flammability>
             </statFactors>
+            <abilities>
+              <li>NAT_HateCube</li>
+            </abilities>
           </li>
         </stages>
+      </li>
+      <li Class="CompProperties_Explosive">
+        <wickTicks>0</wickTicks>
+        <explosiveRadius>2.9</explosiveRadius>
+        <explodeOnKilled>true</explodeOnKilled>
+        <explosiveDamageType>NAT_HateVaporize</explosiveDamageType>
+        <propagationSpeed>0.5</propagationSpeed>
+        <chanceNeverExplodeFromDamage>1</chanceNeverExplodeFromDamage>
       </li>
     </comps>
     <tools Inherit="False">
@@ -217,7 +233,7 @@
       </li>
     </tools>
     <killedLeavingsRanges>
-      <Bioferrite>40~100</Bioferrite>
+      <Bioferrite>20~50</Bioferrite>
     </killedLeavingsRanges>
   </ThingDef>
 
@@ -259,7 +275,6 @@
     <combatEnhancingDrugsCount>0</combatEnhancingDrugsCount>
     <abilities>
       <li>NAT_ArtOfWar</li>
-      <li>NAT_HateCube</li>
     </abilities>
   </PawnKindDef>
 
