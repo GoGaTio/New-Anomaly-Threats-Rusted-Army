@@ -34,7 +34,7 @@
             <li>
               <def>NAT_RustedEyeSocket</def>
               <customLabel>left eye socket</customLabel>
-              <coverage>0.03</coverage>
+              <coverage>0.01</coverage>
               <groups>
                 <li>Eyes</li>
                 <li>UpperHead</li>
@@ -44,7 +44,27 @@
             <li>
               <def>NAT_RustedEyeSocket</def>
               <customLabel>right eye socket</customLabel>
-              <coverage>0.03</coverage>
+              <coverage>0.01</coverage>
+              <groups>
+                <li>Eyes</li>
+                <li>UpperHead</li>
+                <li>FullHead</li>
+              </groups>
+            </li>
+            <li>
+              <def>NAT_RustedEyeSocket</def>
+              <customLabel>left top eye socket</customLabel>
+              <coverage>0.01</coverage>
+              <groups>
+                <li>Eyes</li>
+                <li>UpperHead</li>
+                <li>FullHead</li>
+              </groups>
+            </li>
+            <li>
+              <def>NAT_RustedEyeSocket</def>
+              <customLabel>right top eye socket</customLabel>
+              <coverage>0.01</coverage>
               <groups>
                 <li>Eyes</li>
                 <li>UpperHead</li>
@@ -54,7 +74,7 @@
             <li>
               <def>NAT_RustedEyeSocket</def>
               <customLabel>middle eye socket</customLabel>
-              <coverage>0.03</coverage>
+              <coverage>0.01</coverage>
               <groups>
                 <li>Eyes</li>
                 <li>UpperHead</li>

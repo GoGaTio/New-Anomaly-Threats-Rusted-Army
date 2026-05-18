@@ -137,7 +137,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>NAT_Bullet_RustedRifle</defaultProjectile>
         <warmupTime>1</warmupTime>
-        <range>26.9</range>
+        <range>29.9</range>
         <soundCast>Shot_BoltActionRifle</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
@@ -414,7 +414,7 @@
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>NAT_Proj_RustedTremola</defaultProjectile>
         <warmupTime>3.5</warmupTime>
-        <range>24.9</range>
+        <range>32.9</range>
         <forcedMissRadius>1.9</forcedMissRadius>
         <burstShotCount>1</burstShotCount>
         <soundCast>Shot_IncendiaryLauncher</soundCast>

@@ -53,7 +53,7 @@ using Verse.Profile;
 using Verse.Sound;
 using Verse.Steam;
 
-namespace NAT
+namespace NAT.Rusts
 {
 	[HarmonyPatch(typeof(ITab_Pawn_Gear))]
 	[HarmonyPatch("DrawThingRow")]

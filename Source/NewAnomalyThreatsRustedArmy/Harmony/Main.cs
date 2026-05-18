@@ -52,15 +52,15 @@ using Verse.Sound;
 using Verse.Steam;
 using HarmonyLib;
 
-namespace NAT
+namespace NAT.Rusts
 {
-	public class PatchMod : Mod
+	public class PatchMod_RustedArmy : Mod
 	{
 		public static Harmony harmony;
-		public PatchMod(ModContentPack content)
+		public PatchMod_RustedArmy(ModContentPack content)
 			: base(content)
 		{
-			harmony = new Harmony("GoGaTio.NewAnomalyThreats.HarmonyPatch");
+			harmony = new Harmony("GoGaTio.NewAnomalyThreats.RustedArmy.HarmonyPatch");
 			harmony.PatchAllUncategorized(Assembly.GetExecutingAssembly());
 
 			harmony.Patch((MethodBase)AccessTools.Method(typeof(EnterPortalUtility), nameof(EnterPortalUtility.FindThingToLoad), (Type[])null, (Type[])null), (HarmonyMethod)null, (HarmonyMethod)null, new HarmonyMethod(typeof(Patches_FindItemForLoad), "UniversalTranspiler", (Type[])null), (HarmonyMethod)null);

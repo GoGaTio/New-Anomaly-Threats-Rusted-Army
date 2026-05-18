@@ -54,7 +54,7 @@ using Verse.Sound;
 using Verse.Steam;
 using HarmonyLib;
 
-namespace NAT
+namespace NAT.Rusts
 {
 
     [HarmonyPatch(typeof(MapPawns), nameof(MapPawns.AnyPawnBlockingMapRemoval), MethodType.Getter)]

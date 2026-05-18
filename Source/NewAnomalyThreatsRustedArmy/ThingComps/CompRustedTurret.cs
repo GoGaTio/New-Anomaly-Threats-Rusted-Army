@@ -323,7 +323,7 @@ namespace NAT
 				burstWarmupTicksLeft--;
 				if (burstWarmupTicksLeft == 0)
 				{
-					AttackVerb.TryStartCastOn(currentTarget, surpriseAttack: false, canHitNonTargetPawns: true, preventFriendlyFire: false, nonInterruptingSelfCast: true);
+					AttackVerb.TryStartCastOn(currentTarget, surpriseAttack: false, canHitNonTargetPawns: true, preventFriendlyFire: true, nonInterruptingSelfCast: true);
 					lastAttackTargetTick = Find.TickManager.TicksGame;
 					lastAttackedTarget = currentTarget;
 				}

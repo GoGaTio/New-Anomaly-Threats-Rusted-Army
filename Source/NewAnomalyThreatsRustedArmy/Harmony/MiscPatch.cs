@@ -53,7 +53,7 @@ using Verse.Sound;
 using Verse.Steam;
 using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
 
-namespace NAT
+namespace NAT.Rusts
 {
 	public static class Patches_FindItemForLoad
 	{

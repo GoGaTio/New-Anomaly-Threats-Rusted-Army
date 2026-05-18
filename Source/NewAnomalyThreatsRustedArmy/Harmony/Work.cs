@@ -52,7 +52,7 @@ using Verse.Sound;
 using Verse.Steam;
 using HarmonyLib;
 
-namespace NAT
+namespace NAT.Rusts
 {
 	[HarmonyPatch(typeof(Pawn_WorkSettings), "EnableAndInitialize")]
 	public static class Patch_EnableAndInitialize

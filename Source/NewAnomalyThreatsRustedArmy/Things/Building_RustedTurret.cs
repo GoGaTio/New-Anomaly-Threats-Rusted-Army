@@ -104,6 +104,12 @@ namespace NAT
 			return (Thing)AttackTargetFinder.BestShootTargetFromCurrentPosition(attackTargetSearcher, targetScanFlags, IsValidTarget);
 		}
 
+		protected override void BeginBurst()
+		{
+			AttackVerb.TryStartCastOn(CurrentTarget, preventFriendlyFire: true);
+			OnAttackedTarget(CurrentTarget);
+		}
+
 		private IAttackTargetSearcher TargSearcher()
 		{
 			if (mannableComp != null && mannableComp.MannedNow)
