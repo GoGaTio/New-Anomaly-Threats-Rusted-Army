@@ -98,6 +98,8 @@ namespace NAT
 
 		public static DutyDef NAT_RustExitMap;
 
+		public static DutyDef NAT_RustFlee;
+
 		public static StatDef NAT_CoreDropChance;
 
 		public static StatDef NAT_ReinforcementsCooldown;
@@ -130,5 +132,7 @@ namespace NAT
 		public static TerrainDef NAT_AncientCarpet;
 
 		public static FleckDef NAT_RustedSmoke;
+
+		public static HediffDef NAT_RustedRegeneration;
 	}
 }

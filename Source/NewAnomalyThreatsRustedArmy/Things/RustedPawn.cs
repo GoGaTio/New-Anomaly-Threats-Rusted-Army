@@ -74,6 +74,8 @@ namespace NAT
 
 		private CompRustedSoldier comp;
 
+		public float bodySizeFactor = 1f;
+
 		public CompRustedSoldier Comp
 		{
 			get
@@ -218,6 +220,24 @@ namespace NAT
 			{
 				Vector2 pos = GenMapUI.LabelDrawPosFor(this, -0.7f);
 				GenMapUI.DrawPawnLabel(this, pos);
+			}
+		}
+
+		public override void SpawnSetup(Map map, bool respawningAfterLoad)
+		{
+			base.SpawnSetup(map, respawningAfterLoad);
+			if (!respawningAfterLoad)
+			{
+				Hediff hediff = health.hediffSet.GetFirstHediffOfDef(NATRADefOf.NAT_RustedRegeneration);
+				if(hediff == null)
+				{
+					float? severity = kindDef.startingHediffs.FirstOrDefault((x) => x.def == NATRADefOf.NAT_RustedRegeneration)?.severity;
+					if(severity != null)
+					{
+						hediff = health.AddHediff(NATRADefOf.NAT_RustedRegeneration);
+						hediff.Severity = severity.Value;
+					}
+				}
 			}
 		}
 

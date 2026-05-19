@@ -98,7 +98,7 @@
       </li>
     </comps>
     <building>
-      <combatPower>80</combatPower>
+      <combatPower>120</combatPower>
       <turretGunDef>NAT_Gun_RustedMiniTurret</turretGunDef>
       <turretBurstCooldownTime>4.8</turretBurstCooldownTime>
       <turretTopOffset>(0, 0)</turretTopOffset>
@@ -156,7 +156,7 @@
       </li>
     </comps>
     <building>
-      <combatPower>230</combatPower>
+      <combatPower>290</combatPower>
       <turretGunDef>NAT_Gun_RustedAutoTurret</turretGunDef>
       <turretBurstCooldownTime>3.5</turretBurstCooldownTime>
     </building>
@@ -182,7 +182,7 @@
       </li>
     </comps>
     <building>
-      <combatPower>290</combatPower>
+      <combatPower>370</combatPower>
       <turretGunDef>NAT_Gun_RustedSniperTurret</turretGunDef>
       <turretBurstCooldownTime>3.2</turretBurstCooldownTime>
     </building>
@@ -230,7 +230,7 @@
     </comps>
     <generateCommonality>0.2</generateCommonality>
     <building>
-      <combatPower>5</combatPower>
+      <combatPower>60</combatPower>
       <ai_combatDangerous>false</ai_combatDangerous>
       <turretGunDef>NAT_Gun_RustedFoamTurret</turretGunDef>
       <turretTopDrawSize>2</turretTopDrawSize>

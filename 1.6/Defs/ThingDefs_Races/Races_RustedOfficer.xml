@@ -225,7 +225,7 @@
         </silhouetteGraphicData>
       </li>
     </lifeStages>
-    <combatPower>280</combatPower>
+    <combatPower>450</combatPower>
     <weaponMoney>9999~9999</weaponMoney>
     <modExtensions>
       <li Class="NAT.RustedPawnExtention">

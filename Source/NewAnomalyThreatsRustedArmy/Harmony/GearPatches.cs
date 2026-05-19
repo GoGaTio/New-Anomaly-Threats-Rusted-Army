@@ -431,7 +431,6 @@ namespace NAT.Rusts
 	[HarmonyPatch(typeof(CompApparelVerbOwner), "CreateVerbTargetCommand")]
 	public class Patch_CompApparelVerbOwner
 	{
-
 		[HarmonyPostfix]
 		public static void Postfix(Thing gear, Verb verb, ref Command_VerbTarget __result, CompApparelVerbOwner __instance)
 		{
@@ -499,10 +498,6 @@ namespace NAT.Rusts
 		{
 			if (__instance is RustedPawn rust && rust.equipment?.Primary != null && rust.Faction != Faction.OfPlayerSilentFail)
 			{
-				/*if(rust.equipment.Primary.TryGetComp<CompRustedBanner>(out var banner))
-                {
-					banner.ApplyEffect(rust.PositionHeld, rust.MapHeld);
-				}*/
 				CompRustedEquipment comp = rust.equipment.Primary.TryGetComp<CompRustedEquipment>();
 				if (comp != null && comp.Props.destroyOnDrop && !comp.parent.Destroyed)
 				{
@@ -535,15 +530,22 @@ namespace NAT.Rusts
 			if (!__result) return;
 			if (pawn is RustedPawn rust)
 			{
+				if (rust.Comp.Props.canEquipWeapons)
+				{
+					__result = false;
+					return;
+				}
 				if (thing.HasComp<CompBladelinkWeapon>())
 				{
 					cantReason = "NAT_CannotEquip_Bladelink".Translate();
 					__result = false;
+					return;
 				}
 				if (thing is Apparel ap && !rust.Comp.CanWearApparel(ap))
 				{
 					cantReason = "NAT_CannotEquip_Apparel".Translate();
 					__result = false;
+					return;
 				}
 			}
 			CompRustedEquipment comp = thing.TryGetComp<CompRustedEquipment>();

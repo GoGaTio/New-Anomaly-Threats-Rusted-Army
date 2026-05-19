@@ -12,6 +12,7 @@
     <race>
       <body>NAT_RustedBasic</body>
       <baseHealthScale>0.45</baseHealthScale>
+      <baseBodySize>0.7</baseBodySize>
       <lifeStageAges>
         <li>
           <def>EntityFullyFormed</def>
@@ -202,7 +203,7 @@
         </silhouetteGraphicData>
       </li>
     </lifeStages>
-    <combatPower>185</combatPower>
+    <combatPower>220</combatPower>
     <weaponMoney>9999~9999</weaponMoney>
     <combatEnhancingDrugsCount>-7~2</combatEnhancingDrugsCount>
     <inventoryOptions>

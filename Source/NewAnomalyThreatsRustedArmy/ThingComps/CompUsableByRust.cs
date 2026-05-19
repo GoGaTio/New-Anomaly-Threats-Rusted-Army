@@ -66,6 +66,8 @@ namespace NAT
 
 		public bool replaceHediff = true;
 
+		public BodyPartDef bodyPart = null;
+
 		public int? duration;
 
 		public float? severity;
@@ -78,7 +80,7 @@ namespace NAT
 
 		public EffecterDef useEffect;
 
-		public bool combatEnhancing = true;
+		public bool combatEnhancing = false;
 
 		public List<SkillGain> skillGains = new List<SkillGain>();
 
@@ -139,9 +141,20 @@ namespace NAT
 			{
 				return false;
 			}
-			if (!Props.replaceHediff && Props.hediff != null && rust.health.hediffSet.GetFirstHediffOfDef(Props.hediff) != null)
+			if (Props.hediff != null)
 			{
-				return false;
+				if(Props.bodyPart != null && rust.RaceProps.body.GetPartsWithDef(Props.bodyPart).FirstOrFallback() == null)
+				{
+					return "InstallImplantNoBodyPart".Translate() + ": " + Props.bodyPart.LabelShort;
+				}
+				Hediff hediff = rust.health.hediffSet.GetFirstHediffOfDef(Props.hediff);
+				if(hediff != null)
+				{
+					if (Props.severity != null && (hediff.Severity >= hediff.def.maxSeverity || hediff.Severity >= hediff.def.stages.Last().minSeverity))
+					{
+						return "InstallImplantAlreadyMaxLevel".Translate();
+					}
+				}
 			}
 			if(!Props.skillGains.NullOrEmpty())
 			{
@@ -202,14 +215,39 @@ namespace NAT
 			}
 			if (Props.hediff != null)
 			{
-				Hediff hediff = rust.health.GetOrAddHediff(Props.hediff);
+				Hediff hediff = rust.health.hediffSet.GetFirstHediffOfDef(Props.hediff);
+				if(hediff == null)
+				{
+					hediff = rust.health.AddHediff(Props.hediff, Props.bodyPart == null ? null : rust.RaceProps.body.GetPartsWithDef(Props.bodyPart).FirstOrFallback());
+					if (Props.severity != null)
+					{
+						hediff.Severity = Props.severity.Value;
+					}
+				}
+				else
+				{
+					if (Props.severity != null)
+					{
+						if (hediff is Hediff_Level level)
+						{
+							level.ChangeLevel((int)Props.severity.Value);
+						}
+						else
+						{
+							if (Props.replaceHediff)
+							{
+								hediff.Severity = Props.severity.Value;
+							}
+							else
+							{
+								hediff.Severity += Props.severity.Value;
+							}
+						}
+					}
+				}
 				if (Props.duration != null)
 				{
 					hediff.TryGetComp<HediffComp_Disappears>()?.SetDuration(Props.duration.Value);
-				}
-				if (Props.severity != null)
-				{
-					hediff.Severity = Props.severity.Value;
 				}
 			}
 			if(Props.useEffect != null && rust.SpawnedOrAnyParentSpawned)

@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-
   <PawnKindDef ParentName="NAT_RustedSoldierKindBase">
     <defName>NAT_RustedBannerman</defName>
     <label>rusted bannerman</label>
@@ -9,7 +8,7 @@
     <weaponTags>
       <li>NAT_RustedArmyBanner</li>
     </weaponTags>
-    <combatPower>70</combatPower>
+    <combatPower>100</combatPower>
     <maxPerGroup>1</maxPerGroup>
     <combatEnhancingDrugsCount>-1~1</combatEnhancingDrugsCount>
   </PawnKindDef>
@@ -22,7 +21,7 @@
     <weaponTags>
       <li>NAT_RustedGrenade</li>
     </weaponTags>
-    <combatPower>160</combatPower>
+    <combatPower>180</combatPower>
     <combatEnhancingDrugsCount>-10~2</combatEnhancingDrugsCount>
   </PawnKindDef>
 
@@ -34,6 +33,7 @@
       <li>NAT_RustedBoltRifle</li>
       <li>NAT_RustedCarabine</li>
     </weaponTags>
+    <combatPower>200</combatPower>
     <combatEnhancingDrugsCount>-11~2</combatEnhancingDrugsCount>
     <inventoryOptions>
       <subOptionsTakeAll>
@@ -53,7 +53,7 @@
       <li>NAT_RustedSMG</li>
       <li>NAT_RustedAssaultSMG</li>
     </weaponTags>
-    <combatPower>190</combatPower>
+    <combatPower>240</combatPower>
     <combatEnhancingDrugsCount>-9~2</combatEnhancingDrugsCount>
     <inventoryOptions>
       <subOptionsTakeAll>
@@ -73,7 +73,7 @@
       <li>NAT_RustedLMG</li>
       <li>NAT_RustedGrenadeLauncher</li>
     </weaponTags>
-    <combatPower>220</combatPower>
+    <combatPower>270</combatPower>
     <combatEnhancingDrugsCount>-7~2</combatEnhancingDrugsCount>
     <aiAvoidCover>false</aiAvoidCover>
     <startingHediffs>
@@ -100,7 +100,7 @@
     <weaponTags>
       <li>NAT_RustedMelee</li>
     </weaponTags>
-    <combatPower>200</combatPower>
+    <combatPower>230</combatPower>
     <combatEnhancingDrugsCount>-7~2</combatEnhancingDrugsCount>
   </PawnKindDef>
 
@@ -128,7 +128,35 @@
     <weaponTags Inherit="False">
       <li>NAT_RustedBreach</li>
     </weaponTags>
-    <combatPower>180</combatPower>
+    <combatPower>200</combatPower>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="NAT_RustedTrooperKindBase">
+    <defName>NAT_RustedPilot</defName>
+    <label>rusted pilot</label>
+    <weaponTags Inherit="False">
+      <li>NAT_RustedMachinePistol</li>
+    </weaponTags>
+    <combatPower>100</combatPower>
+    <combatEnhancingDrugsCount>0</combatEnhancingDrugsCount>
+    <aiAvoidCover>false</aiAvoidCover>
+    <isFighter>false</isFighter>
+    <startingHediffs>
+      <li>
+        <def>NAT_ActivatedCharge</def>
+        <durationTicksRange>60000~300000</durationTicksRange>
+        <chance>1</chance>
+      </li>
+    </startingHediffs>
+    <inventoryOptions Inherit="false">
+      <subOptionsTakeAll>
+        <li>
+          <skipChance>0</skipChance>
+          <countRange>1~1</countRange>
+          <thingDef>NAT_RustedImpactGrenade</thingDef>
+        </li>
+      </subOptionsTakeAll>
+    </inventoryOptions>
   </PawnKindDef>
 
   <PawnKindDef ParentName="NAT_RustedTrooperKindBase">
@@ -138,7 +166,7 @@
       <li>NAT_RustedLMG</li>
       <li>NAT_RustedGrenadeLauncher</li>
     </weaponTags>
-    <combatPower>300</combatPower>
+    <combatPower>250</combatPower>
     <combatEnhancingDrugsCount>-7~2</combatEnhancingDrugsCount>
     <aiAvoidCover>false</aiAvoidCover>
     <startingHediffs>
@@ -148,7 +176,7 @@
         <chance>1</chance>
       </li>
     </startingHediffs>
-    <inventoryOptions>
+    <inventoryOptions Inherit="false">
       <subOptionsTakeAll>
         <li>
           <skipChance>0</skipChance>

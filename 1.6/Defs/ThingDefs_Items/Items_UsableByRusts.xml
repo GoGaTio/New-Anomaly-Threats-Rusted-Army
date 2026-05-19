@@ -19,6 +19,10 @@
     <soundDrop>Standard_Drop</soundDrop>
     <stackLimit>10</stackLimit>
     <intricate>true</intricate>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1</drawSize>
+    </graphicData>
     <statBases>
       <Mass>0.1</Mass>
       <Beauty>-6</Beauty>
@@ -67,7 +71,6 @@
     <description>A small device that increases speed of rust.</description>
     <graphicData>
       <texPath>Things/Item/NAT_UsableByRust/NAT_RustedActivator_Speed</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
       <MarketValue>55</MarketValue>
@@ -76,6 +79,7 @@
       <li Class="NAT.CompProperties_UsableByRust">
         <hediff>NAT_ActivatedSpeed</hediff>
         <useEffect>NAT_ActivatorUsed_Speed</useEffect>
+        <combatEnhancing>true</combatEnhancing>
       </li>
     </comps>
     <costList>
@@ -89,7 +93,6 @@
     <description>A small device that increases durability of rust.</description>
     <graphicData>
       <texPath>Things/Item/NAT_UsableByRust/NAT_RustedActivator_Durability</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
       <MarketValue>55</MarketValue>
@@ -98,6 +101,7 @@
       <li Class="NAT.CompProperties_UsableByRust">
         <hediff>NAT_ActivatedDurability</hediff>
         <useEffect>NAT_ActivatorUsed_Durability</useEffect>
+        <combatEnhancing>true</combatEnhancing>
       </li>
     </comps>
     <costList>
@@ -111,7 +115,6 @@
     <description>A small device that increases work speed of rust.</description>
     <graphicData>
       <texPath>Things/Item/NAT_UsableByRust/NAT_RustedActivator_Charge</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
       <MarketValue>35</MarketValue>
@@ -121,6 +124,7 @@
         <hediff>NAT_ActivatedCharge</hediff>
         <useEffect>NAT_ActivatorUsed_Charge</useEffect>
         <restOffset>0.8</restOffset>
+        <combatEnhancing>true</combatEnhancing>
       </li>
     </comps>
     <costList>
@@ -134,7 +138,6 @@
     <description>A small device that increases regeneration of rust.</description>
     <graphicData>
       <texPath>Things/Item/NAT_UsableByRust/NAT_RustedActivator_Regeneration</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
       <MarketValue>45</MarketValue>
@@ -143,6 +146,7 @@
       <li Class="NAT.CompProperties_UsableByRust">
         <hediff>NAT_ActivatedRegeneration</hediff>
         <useEffect>NAT_ActivatorUsed_Regeneration</useEffect>
+        <combatEnhancing>true</combatEnhancing>
       </li>
     </comps>
     <costList>
@@ -156,7 +160,6 @@
     <description>A small device that increases stability of rust's core.</description>
     <graphicData>
       <texPath>Things/Item/NAT_UsableByRust/NAT_RustedActivator_Stability</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
       <MarketValue>60</MarketValue>
@@ -165,7 +168,6 @@
       <li Class="NAT.CompProperties_UsableByRust">
         <hediff>NAT_ActivatedStability</hediff>
         <useEffect>NAT_ActivatorUsed_Stability</useEffect>
-        <combatEnhancing>false</combatEnhancing>
       </li>
     </comps>
     <costList>
@@ -206,7 +208,6 @@
     <description>A small device that increases speed of rust.</description>
     <graphicData>
       <texPath>Things/Item/NAT_UsableByRust/NAT_RustedActivator_Speed</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.75</drawSize>
     </graphicData>
     <statBases>
@@ -229,13 +230,39 @@
   
   <!--============================================Upgrades======================================================================-->
 
-  <ThingDef ParentName="NAT_ItemUsableByRust">
-    <defName>NAT_ShardUpgrader</defName>
-    <label>shard upgrader</label>
+  <ThingDef Name="NAT_RustUpgradeItemBase" Abstract="True" ParentName="NAT_ItemUsableByRust">
+    <thingSetMakerTags>
+      <li>NAT_RustedUpgrade</li>
+    </thingSetMakerTags>
+    <recipeMaker>
+      <researchPrerequisite>NAT_RustedCoreUpgrades</researchPrerequisite>
+      <workAmount>6000</workAmount>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+      <productCount>1</productCount>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <effectWorking>Cook</effectWorking>
+      <workSkill>Crafting</workSkill>
+      <recipeUsers>
+        <li>BioferriteShaper</li>
+      </recipeUsers>
+    </recipeMaker>
+    <costList>
+      <ComponentIndustrial>1</ComponentIndustrial>
+      <Bioferrite>20</Bioferrite>
+    </costList>
+    <uiIconScale>1</uiIconScale>
+    <stackLimit>5</stackLimit>
+  </ThingDef>
+      
+  <ThingDef ParentName="NAT_RustUpgradeItemBase">
+    <defName>NAT_CoreUpgrade_Stabilizator</defName>
+    <label>core stabilizator</label>
     <description>Special device that can upgrade rust using shard of dark archotechnology.\n\nMakes rust core fully stable.</description>
     <graphicData>
-      <texPath>Things/Item/NAT_UsableByRust/NAT_ShardRustUpgrader</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>Things/Item/NAT_UsableByRust/NAT_CoreUpgrade_Stabilizator</texPath>
       <drawSize>1</drawSize>
     </graphicData>
     <statBases>
@@ -243,9 +270,9 @@
     </statBases>
     <comps>
       <li Class="NAT.CompProperties_UsableByRust">
-        <hediff>NAT_ShardUpgrade</hediff>
-        <destroyAfterUse>true</destroyAfterUse>
-        <combatEnhancing>false</combatEnhancing>
+        <hediff>NAT_CoreUpgrade_Stabilizator</hediff>
+        <severity>1</severity>
+        <replaceHediff>false</replaceHediff>
       </li>
     </comps>
     <costList>
@@ -253,10 +280,31 @@
       <ComponentIndustrial>4</ComponentIndustrial>
       <Bioferrite>65</Bioferrite>
     </costList>
-    <recipeMaker>
-      <workAmount>2100</workAmount>
-    </recipeMaker>
-    <stackLimit>1</stackLimit>
+  </ThingDef>
+
+  <ThingDef ParentName="NAT_RustUpgradeItemBase">
+    <defName>NAT_CoreUpgrade_Stimulator</defName>
+    <label>core stimulator</label>
+    <description>Special device that can upgrade rust using shard of dark archotechnology.\n\nMakes rust core fully stable.</description>
+    <graphicData>
+      <texPath>Things/Item/NAT_UsableByRust/NAT_CoreUpgrade_Stimulator</texPath>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1250</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="NAT.CompProperties_UsableByRust">
+        <hediff>NAT_CoreUpgrade_Stimulator</hediff>
+        <severity>1</severity>
+        <replaceHediff>false</replaceHediff>
+      </li>
+    </comps>
+    <costList>
+      <Shard>1</Shard>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <Bioferrite>65</Bioferrite>
+    </costList>
   </ThingDef>
 
 </Defs>

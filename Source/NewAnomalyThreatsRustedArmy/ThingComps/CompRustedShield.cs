@@ -91,6 +91,9 @@ namespace NAT
 		public int ticksSinceDestroyed = -1;
 
 		public bool destroyed = false;
+
+		public bool active = true;
+
 		public CompProperties_RustedShield Props => (CompProperties_RustedShield)props;
 
 		public RustedPawn Owner => parent as RustedPawn;
@@ -104,10 +107,28 @@ namespace NAT
 			}
 		}
 
+		public override void PostSpawnSetup(bool respawningAfterLoad)
+		{
+			base.PostSpawnSetup(respawningAfterLoad);
+			OverrideBodySize();
+		}
+
+		private void OverrideBodySize()
+		{
+			if (active && !destroyed)
+			{
+				Owner.bodySizeFactor = 1.4286f;
+			}
+			else
+			{
+				Owner.bodySizeFactor = 1f;
+			}
+		}
+
 		public override void CompTick()
 		{
 			base.CompTick();
-			if (Owner == null)
+			if (!active || Owner == null)
 			{
 				return;
 			}
@@ -120,6 +141,7 @@ namespace NAT
 					health = Props.maxHealth;
 					destroyed = false;
 					Owner.Drawer.renderer.SetAllGraphicsDirty();
+					OverrideBodySize();
 				}
 			}
 			else if (Props.maxHealth > health)
@@ -139,6 +161,10 @@ namespace NAT
 			{
 				yield return g;
 			}
+			if (!active)
+			{
+				yield break;
+			}
 			if (Find.Selector.SingleSelectedThing == parent)
 			{
 				yield return new RustedShieldGizmo(this);
@@ -150,7 +176,7 @@ namespace NAT
 		public override void PostPreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
 		{
 			absorbed = false;
-			if (destroyed || !dinfo.Def.ExternalViolenceFor(parent))
+			if (!active || destroyed || !dinfo.Def.ExternalViolenceFor(parent))
 			{
 				return;
 			}
@@ -273,12 +299,13 @@ namespace NAT
 				Props.destroyedSound?.PlayOneShot(Owner);
 				Props.destroyedEffect.Spawn(Owner.PositionHeld, Owner.MapHeld);
 			}
+			OverrideBodySize();
 		}
 
 		public override float GetStatFactor(StatDef stat)
 		{
 			float num = 1f;
-			if (destroyed)
+			if (!active || destroyed)
 			{
 				if (Props.statFactorsInactive != null)
 				{
@@ -298,7 +325,7 @@ namespace NAT
 		public override List<PawnRenderNode> CompRenderNodes()
 		{
 			List<PawnRenderNode> list = new List<PawnRenderNode>();
-			if (!destroyed && Owner != null)
+			if (active && !destroyed && Owner != null)
 			{
 				PawnRenderNodeProperties pawnRenderNodeProperties = Props.renderProps;
 				PawnRenderNode pawnRenderNode = (PawnRenderNode)Activator.CreateInstance(Props.renderProps.nodeClass, Owner, pawnRenderNodeProperties, Owner.Drawer.renderer.renderTree);
@@ -311,6 +338,7 @@ namespace NAT
 		{
 			base.PostExposeData();
 			Scribe_Values.Look(ref destroyed, "destroyed", false);
+			Scribe_Values.Look(ref active, "active", defaultValue: true);
 			Scribe_Values.Look(ref health, "health", -1);
 			Scribe_Values.Look(ref ticksToRegen, "ticksToRegen", -1);
 			Scribe_Values.Look(ref ticksSinceDestroyed, "ticksSinceDestroyed", -1);
@@ -319,7 +347,7 @@ namespace NAT
 		public override void Notify_SignalReceived(Signal signal)
 		{
 			base.Notify_SignalReceived(signal);
-			if (signal.tag == "NAT_CreatedByPsychicRitual")
+			if (active && signal.tag == "NAT_CreatedByPsychicRitual")
 			{
 				Destroy(false);
 			}

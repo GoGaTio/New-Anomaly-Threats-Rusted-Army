@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
- <HediffDef Name="NAT_RustedCoreUpgradeBase" Abstract="True">
+  <HediffDef Name="NAT_RustedCoreUpgradeBase" Abstract="True">
     <hediffClass>Hediff_Level</hediffClass>
     <defaultLabelColor>(1.0, 0.6, 0.6)</defaultLabelColor>
     <isBad>false</isBad>
     <priceImpact>true</priceImpact>
-    <initialSeverity>1</initialSeverity> <!-- Severity is bound to level of implant -->
+    <initialSeverity>0</initialSeverity>
+    <!-- Severity is bound to level of implant -->
     <minSeverity>0</minSeverity>
     <maxSeverity>3</maxSeverity>
     <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
@@ -15,9 +16,9 @@
     <defaultInstallPart>NAT_RustedCore</defaultInstallPart>
   </HediffDef>
 
-<HediffDef ParentName="NAT_RustedCoreUpgradeBase" >
-    <defName>NAT_CoreUpgrade_Stability</defName>
-    <label>shard stabilizator</label>
+  <HediffDef ParentName="NAT_RustedCoreUpgradeBase">
+    <defName>NAT_CoreUpgrade_Stabilizator</defName>
+    <label>core stabilizator</label>
     <description>An implant which increases a mechanitor's control group count and the work speed of a mechanitor's mechs.\n\nThis implant can be installed up to 6 times to increase its effect.</description>
     <stages>
       <li>
@@ -41,9 +42,9 @@
     </stages>
   </HediffDef>
 
-<HediffDef ParentName="NAT_RustedCoreUpgradeBase" >
+  <HediffDef ParentName="NAT_RustedCoreUpgradeBase" >
     <defName>NAT_CoreUpgrade_Stimulator</defName>
-    <label>shard stimulator</label>
+    <label>core stimulator</label>
     <description>An implant which increases a mechanitor's control group count and the work speed of a mechanitor's mechs.\n\nThis implant can be installed up to 6 times to increase its effect.</description>
     <stages>
       <li>

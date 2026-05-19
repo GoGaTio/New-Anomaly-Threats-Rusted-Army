@@ -16,17 +16,17 @@
     <generalRules>
       <rulesStrings>
         <li>subject->clotted pain influence</li>
-		<li>subject->pain influence</li>
-		<li>subject->clotted pain techs</li>
-		<li>subject->pain technologies</li>
+        <li>subject->pain influence</li>
+        <li>subject->clotted pain techs</li>
+        <li>subject->pain technologies</li>
 
         <li>subject_story->explored ruined camp, covered in pain</li>
         <li>subject_story->watched obelisk processes</li>
         <li>subject_story->expiremented with clotted pain</li>
 
         <li>subject_gerund->restructuring archotech into pain-inducing weaponry</li>
-		<li>subject_gerund->creating pain inducers</li>
-		<li>subject_gerund->creating pain inhibitors</li>
+        <li>subject_gerund->creating pain inducers</li>
+        <li>subject_gerund->creating pain inhibitors</li>
       </rulesStrings>
     </generalRules>
   </ResearchProjectDef>
@@ -61,14 +61,14 @@
       </rulesStrings>
     </generalRules>
   </ResearchProjectDef>
-  
+
   <ResearchProjectDef>
     <defName>NAT_RustCreation</defName>
     <label>rust creation</label>
     <description>Perform a psychic rituals which create controlled rust from bioferrite and shards.</description>
     <tab>NewAnomalyThreats</tab>
     <prerequisites>
-	    <li>AdvancedPsychicRituals</li>
+      <li>AdvancedPsychicRituals</li>
     </prerequisites>
     <knowledgeCost>30</knowledgeCost>
     <knowledgeCategory>Advanced</knowledgeCategory>

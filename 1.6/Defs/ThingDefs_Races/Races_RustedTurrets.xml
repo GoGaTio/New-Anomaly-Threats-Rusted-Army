@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-
   <ThingDef ParentName="NAT_BaseRustedPawn" Name="NAT_BaseRustedTurretRace" Abstract="True">
     <label>no</label>
     <description>no</description>

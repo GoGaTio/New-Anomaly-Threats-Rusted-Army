@@ -108,6 +108,19 @@
   </DutyDef>
 
   <DutyDef>
+    <defName>NAT_RustFlee</defName>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+        <li Class="JobGiver_ExitMapBest">
+          <defaultLocomotion>Jog</defaultLocomotion>
+          <jobMaxDuration>120</jobMaxDuration>
+          <canFlyOutOfMap>true</canFlyOutOfMap>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
+
+  <DutyDef>
     <defName>NAT_RustBreacher</defName>
     <alwaysShowWeapon>true</alwaysShowWeapon>
     <thinkNode Class="ThinkNode_Priority">

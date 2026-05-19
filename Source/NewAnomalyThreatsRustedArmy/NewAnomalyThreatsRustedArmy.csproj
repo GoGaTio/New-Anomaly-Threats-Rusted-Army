@@ -72,6 +72,8 @@
     <Compile Include="Damages.cs" />
     <Compile Include="Hediffs\HediffComp_RustedBuff.cs" />
     <Compile Include="Hediffs\HediffComp_GiveHediffsToRustInRange.cs" />
+    <Compile Include="Jobs\Triggers.cs" />
+    <Compile Include="Jobs\LordsToils.cs" />
     <Compile Include="ThingComps\CompRustedBuffGiver.cs" />
     <Compile Include="ThingComps\CompRustedCore.cs" />
     <Compile Include="Verb_MeleeAttackExplode.cs" />
@@ -90,7 +92,7 @@
     <Compile Include="Incidents\IncidentWorker_RustedMassArrival.cs" />
     <Compile Include="Jobs\JobDrivers_Misc.cs" />
     <Compile Include="Jobs\JobGivers.cs" />
-    <Compile Include="Jobs\Lords.cs" />
+    <Compile Include="Jobs\LordsJobs.cs" />
     <Compile Include="MapGen\GenStep_RustedBase.cs" />
     <Compile Include="MapGen\GenStep_RustedDish.cs" />
     <Compile Include="MapGen\GenStep_RustedNode.cs" />

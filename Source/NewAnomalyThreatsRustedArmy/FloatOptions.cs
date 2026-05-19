@@ -76,17 +76,18 @@ namespace NAT
 
 		public override IEnumerable<FloatMenuOption> GetOptionsFor(Thing clickedThing, FloatMenuContext context)
 		{
-			if (!context.FirstSelectedPawn.CanReach(clickedThing, PathEndMode.ClosestTouch, Danger.Deadly))
+			if (!(context.FirstSelectedPawn is RustedPawn rust) || !context.FirstSelectedPawn.CanReach(clickedThing, PathEndMode.ClosestTouch, Danger.Deadly))
 			{
 				yield break;
 			}
 			if (clickedThing.TryGetComp<CompUsableByRust>(out var comp))
 			{
-				yield return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(comp.JobReport.Formatted(clickedThing.LabelShort), delegate
+				AcceptanceReport report = comp.CanBeUsedBy(rust);
+				yield return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(report.Accepted ? comp.JobReport.Formatted(clickedThing.LabelShort) : "CannotUseReason".Translate(report.Reason), report.Accepted ? delegate
 				{
 					clickedThing.SetForbidden(value: false, warnOnFail: false);
 					context.FirstSelectedPawn.jobs.TryTakeOrderedJob(JobMaker.MakeJob(NATRADefOf.NAT_UseItemByRust, clickedThing), JobTag.Misc);
-				}, MenuOptionPriority.High), context.FirstSelectedPawn, clickedThing);
+				} : (Action)null, MenuOptionPriority.High), context.FirstSelectedPawn, clickedThing);
 			}
 		}
 
@@ -109,14 +110,11 @@ namespace NAT
 					if (!list2.Contains(thing.def))
 					{
 						CompUsableByRust comp = thing.TryGetComp<CompUsableByRust>();
-						if (!comp.CanBeUsedBy(rust))
-						{
-							continue;
-						}
-						yield return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(comp.JobReport.Formatted(thing.Label) + (context.FirstSelectedPawn == clickedPawn ? "" : (" (" + clickedPawn.Name?.ToStringShort + ")") ?? ""), delegate
+						AcceptanceReport report = comp.CanBeUsedBy(rust);
+						yield return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(report.Accepted ? comp.JobReport.Formatted(thing.LabelShort) : "CannotUseReason".Translate(report.Reason) + (context.FirstSelectedPawn == clickedPawn ? "" : (" (" + clickedPawn.Name?.ToStringShort + ")") ?? ""), report.Accepted ? delegate
 						{
 							context.FirstSelectedPawn.jobs.TryTakeOrderedJob(JobMaker.MakeJob(NATRADefOf.NAT_UseItemByRust, thing, rust), JobTag.Misc);
-						}, MenuOptionPriority.High), context.FirstSelectedPawn, clickedPawn);
+						} : (Action)null, MenuOptionPriority.High), context.FirstSelectedPawn, clickedPawn);
 						list2.Add(thing.def);
 					}
 				}

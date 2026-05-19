@@ -22,7 +22,7 @@ namespace NAT
 
 		public override void GenerateLord(List<Pawn> list, AnomalyBossManager.AnomalyBoss boss)
 		{
-			LordMaker.MakeNewLord(Faction.OfEntities, new LordJob_RustedArmy(RCellFinder.FindSiegePositionFrom(list[0].PositionHeld, boss.Map), -1), boss.Map, list);
+			LordMaker.MakeNewLord(Faction.OfEntities, new LordJob_EscortAndDefendRust(list[0]), boss.Map, list);
 		}
 	}
 }

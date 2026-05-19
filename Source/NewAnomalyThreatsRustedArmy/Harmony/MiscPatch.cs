@@ -541,15 +541,24 @@ namespace NAT.Rusts
 		}
 	}
 
+	
+
 	[HarmonyPatch(typeof(PawnGenerator), "GenerateRandomAge")]
 	public class Patch_GenereteRustedPawn
 	{
 		[HarmonyPostfix]
 		public static void Postfix(Pawn pawn, PawnGenerationRequest request)
 		{
-			if(pawn is RustedPawn rust && rust.def.race.GetNameGenerator(pawn.gender) != null)
+			if(pawn is RustedPawn rust)
             {
-				pawn.Name = new NameSingle(NameGenerator.GenerateName(rust.def.race.GetNameGenerator(pawn.gender), (string x) => !NameTriple.FromString(x).UsedThisGame, appendNumberIfNameUsed: false, null, null));
+				if(!rust.kindDef.isFighter && rust.TryGetComp(out CompRustedShield comp))
+				{
+					comp.active = false;
+				}
+				if(rust.def.race.GetNameGenerator(pawn.gender) != null)
+				{
+					pawn.Name = new NameSingle(NameGenerator.GenerateName(rust.def.race.GetNameGenerator(pawn.gender), (string x) => !NameTriple.FromString(x).UsedThisGame, appendNumberIfNameUsed: false, null, null));
+				}
 			}
 		}
 	}
@@ -611,6 +620,21 @@ namespace NAT.Rusts
 			if (__instance is RustedPawn rust && rust.Draftable)
 			{
 				__result = true;
+			}
+		}
+	}
+
+	[HarmonyPatch(typeof(Pawn))]
+	[HarmonyPatch(nameof(Pawn.BodySize))]
+	[HarmonyPatch(MethodType.Getter)]
+	public class Patch_BodySize
+	{
+		[HarmonyPostfix]
+		public static void Postfix(ref float __result, Pawn __instance)
+		{
+			if((__instance is RustedPawn rust))
+			{
+				__result = __result * rust.bodySizeFactor;
 			}
 		}
 	}

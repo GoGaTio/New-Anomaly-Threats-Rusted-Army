@@ -15,6 +15,19 @@
   </ThingDef>
 
   <ThingDef ParentName="NAT_RustedBulletBase">
+    <defName>NAT_Bullet_RustedPistol</defName>
+    <label>rusted bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <drawSize>0.8</drawSize>
+    </graphicData>
+    <projectile>
+      <damageAmountBase>6</damageAmountBase>
+      <speed>55</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="NAT_RustedBulletBase">
     <defName>NAT_Bullet_RustedSmall</defName>
     <label>rusted bullet</label>
     <graphicData>

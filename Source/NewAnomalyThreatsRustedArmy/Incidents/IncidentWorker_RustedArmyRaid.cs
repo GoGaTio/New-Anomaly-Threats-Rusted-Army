@@ -35,11 +35,8 @@ namespace NAT
 	{
 		public static readonly SimpleCurve PointsFromPoints = new SimpleCurve
 		{
-			new CurvePoint(0f, 900f),
-			new CurvePoint(1000f, 950f),
-			new CurvePoint(5000f, 3700f),
-			new CurvePoint(10000f, 7000f),
-			new CurvePoint(14000f, 10000f)
+			new CurvePoint(1000f, 900f),
+			new CurvePoint(10000f, 11000f)
 		};
 
 		private static readonly SimpleCurve GroupsChanceFromPoints = new SimpleCurve

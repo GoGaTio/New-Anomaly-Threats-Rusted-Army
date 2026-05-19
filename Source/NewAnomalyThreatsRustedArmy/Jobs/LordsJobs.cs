@@ -1,4 +1,20 @@
-﻿using System;
+﻿using DelaunatorSharp;
+using Gilzoide.ManagedJobs;
+using Ionic.Crc;
+using Ionic.Zlib;
+using JetBrains.Annotations;
+using KTrie;
+using LudeonTK;
+using NVorbis.NAudioSupport;
+using RimWorld;
+using RimWorld.BaseGen;
+using RimWorld.IO;
+using RimWorld.Planet;
+using RimWorld.QuestGen;
+using RimWorld.SketchGen;
+using RimWorld.Utility;
+using RuntimeAudioClipLoader;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -19,22 +35,6 @@ using System.Xml.Linq;
 using System.Xml.Serialization;
 using System.Xml.XPath;
 using System.Xml.Xsl;
-using DelaunatorSharp;
-using Gilzoide.ManagedJobs;
-using Ionic.Crc;
-using Ionic.Zlib;
-using JetBrains.Annotations;
-using KTrie;
-using LudeonTK;
-using NVorbis.NAudioSupport;
-using RimWorld;
-using RimWorld.BaseGen;
-using RimWorld.IO;
-using RimWorld.Planet;
-using RimWorld.QuestGen;
-using RimWorld.SketchGen;
-using RimWorld.Utility;
-using RuntimeAudioClipLoader;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Jobs;
@@ -51,6 +51,7 @@ using Verse.Noise;
 using Verse.Profile;
 using Verse.Sound;
 using Verse.Steam;
+using static System.Collections.Specialized.BitVector32;
 
 namespace NAT
 {
@@ -175,41 +176,6 @@ namespace NAT
 		}
 	}
 
-	public class LordJob_AssistColony_Rust : LordJob
-	{
-		private IntVec3 fallbackLocation;
-
-		public LordJob_AssistColony_Rust()
-		{
-		}
-
-		public LordJob_AssistColony_Rust(IntVec3 fallbackLocation)
-		{
-			this.fallbackLocation = fallbackLocation;
-		}
-
-		public override StateGraph CreateGraph()
-		{
-			StateGraph stateGraph = new StateGraph();
-			LordToil_HuntEnemies lordToil_HuntEnemies = (LordToil_HuntEnemies)(stateGraph.StartingToil = new LordToil_HuntEnemies(fallbackLocation));
-			LordToil_ExitMap lordToil_ExitMap = new LordToil_ExitMap();
-			stateGraph.AddToil(lordToil_ExitMap);
-			Transition transition = new Transition(lordToil_HuntEnemies, lordToil_ExitMap);
-			transition.AddPreAction(new TransitionAction_Message("NAT_MessageRustedTroopersLeaving".Translate()));
-			transition.AddTrigger(new Trigger_TicksPassed(30000));
-			//transition.AddPreAction(new TransitionAction_EnsureHaveExitDestination());
-			stateGraph.AddTransition(transition);
-			return stateGraph;
-		}
-
-		public override void ExposeData()
-		{
-			Scribe_Values.Look(ref fallbackLocation, "fallbackLocation");
-		}
-	}
-
-	
-
 	public class LordJob_RustedArmy : LordJob
 	{
 		private bool canKidnap = true;
@@ -323,107 +289,6 @@ namespace NAT
 		}
 	}
 
-	public class LordToil_ExitMapRust : LordToil_ExitMap
-	{
-		public override DutyDef ExitDuty => NATRADefOf.NAT_RustExitMap;
-
-		public LordToil_ExitMapRust(LocomotionUrgency locomotion = LocomotionUrgency.None, bool canDig = false, bool interruptCurrentJob = false)
-			: base(locomotion, canDig, interruptCurrentJob)
-		{
-		}
-
-		public override void UpdateAllDuties()
-		{
-			foreach(Building b in lord.ownedBuildings.ToList())
-			{
-				if(b.TryGetComp<CompRustedTurretPawn>(out var comp) && !comp.destroyed)
-				{
-					comp.SpawnPawn(comp.parent.Position, comp.parent.Map);
-				}
-			}
-			base.UpdateAllDuties();
-		}
-	}
-
-	public class LordToil_AssaultColonyRust : LordToil
-	{
-		private bool attackDownedIfStarving;
-
-		private bool canPickUpOpportunisticWeapons;
-
-		public override bool ForceHighStoryDanger => true;
-
-		public override bool AllowSatisfyLongNeeds => false;
-
-		public LordToil_AssaultColonyRust(bool attackDownedIfStarving = false, bool canPickUpOpportunisticWeapons = false)
-		{
-			this.attackDownedIfStarving = attackDownedIfStarving;
-			this.canPickUpOpportunisticWeapons = canPickUpOpportunisticWeapons;
-		}
-
-		public override void UpdateAllDuties()
-		{
-			for (int i = 0; i < lord.ownedPawns.Count; i++)
-			{
-				if (lord.ownedPawns[i].mindState != null)
-				{
-					lord.ownedPawns[i].mindState.duty = new PawnDuty(NATRADefOf.NAT_RustAssaultColony);
-					lord.ownedPawns[i].mindState.duty.attackDownedIfStarving = attackDownedIfStarving;
-					lord.ownedPawns[i].mindState.duty.pickupOpportunisticWeapon = canPickUpOpportunisticWeapons;
-					lord.ownedPawns[i].TryGetComp<CompCanBeDormant>()?.WakeUp();
-				}
-			}
-		}
-	}
-
-	public class LordToil_DanceRust : LordToil
-	{
-		public override bool ForceHighStoryDanger => true;
-
-		public override bool AllowSatisfyLongNeeds => false;
-
-		public LordToil_DanceRust()
-		{
-		}
-
-		public override void UpdateAllDuties()
-		{
-			for (int i = 0; i < lord.ownedPawns.Count; i++)
-			{
-				if (lord.ownedPawns[i].mindState != null)
-				{
-					lord.ownedPawns[i].mindState.duty = new PawnDuty(NATRADefOf.NAT_RustDance);
-					lord.ownedPawns[i].TryGetComp<CompCanBeDormant>()?.WakeUp();
-				}
-			}
-		}
-	}
-
-	public class LordToil_StageRust : LordToil
-	{
-		public override IntVec3 FlagLoc => Data.stagingPoint;
-
-		private LordToilData_Stage Data => (LordToilData_Stage)data;
-
-		public override bool ForceHighStoryDanger => true;
-
-		public LordToil_StageRust(IntVec3 stagingLoc)
-		{
-			data = new LordToilData_Stage();
-			Data.stagingPoint = stagingLoc;
-		}
-
-		public override void UpdateAllDuties()
-		{
-			LordToilData_Stage lordToilData_Stage = Data;
-			for (int i = 0; i < lord.ownedPawns.Count; i++)
-			{
-				lord.ownedPawns[i].mindState.duty = new PawnDuty(NATRADefOf.NAT_RustDefend, lordToilData_Stage.stagingPoint);
-				lord.ownedPawns[i].mindState.duty.radius = 28f;
-			}
-		}
-	}
-
 	public class LordJob_DefendVoidStructure : LordJob
 	{
 		private Thing structure;
@@ -487,106 +352,83 @@ namespace NAT
 			Scribe_Values.Look(ref addFleeToil, "addFleeToil", defaultValue: false);
 		}
 	}
-	public class Trigger_TicksPassedWithoutHarm : Trigger_TicksPassed
+
+	public class LordJob_EscortAndDefendRust : LordJob
 	{
-		public Trigger_TicksPassedWithoutHarm(int tickLimit)
-			: base(tickLimit)
+		public Pawn escortee;
+
+		private bool canLeave = true;
+
+		public override bool GuiltyOnDowned => true;
+
+		public LordJob_EscortAndDefendRust()
 		{
 		}
 
-		public override bool ActivateOn(Lord lord, TriggerSignal signal)
+		public LordJob_EscortAndDefendRust(Pawn escortee)
 		{
-			if (Trigger_PawnHarmed.SignalIsHarm(signal))
+			//this.leaveIfEscorteeDestroyed = leaveIfEscorteeDestroyed;
+			this.escortee = escortee;
+		}
+
+		public override StateGraph CreateGraph()
+		{
+			StateGraph stateGraph = new StateGraph();
+			List<LordToil> list = new List<LordToil>();
+
+			LordToil_StageRust lordToil_Stage = new LordToil_StageRust(escortee.PositionHeld);
+			stateGraph.AddToil(lordToil_Stage);
+			stateGraph.StartingToil = lordToil_Stage;
+			
+			LordToil_EscortRust lordToil_Escort = new LordToil_EscortRust(escortee, 10f);
+			stateGraph.AddToil(lordToil_Escort);
+			LordToil_AssaultColonyRust lordToil_Assault = new LordToil_AssaultColonyRust(false, false);
+			stateGraph.AddToil(lordToil_Assault);
+			LordToil_FleeRust lordToil_Flee = new LordToil_FleeRust(LocomotionUrgency.Jog, true, true);
+			stateGraph.AddToil(lordToil_Flee);
+			list.Add(lordToil_Escort);
+			list.Add(lordToil_Assault);
+
+			Transition transition1 = new Transition(lordToil_Stage, lordToil_Escort);
+			transition1.AddTrigger(new Trigger_TicksPassed(1200));
+			transition1.AddTrigger(new Trigger_PawnHarmed());
+			transition1.AddPostAction(new TransitionAction_WakeAll());
+			stateGraph.AddTransition(transition1);
+
+			Transition transition2 = new Transition(lordToil_Escort, lordToil_Assault);
+			transition2.AddTrigger(new Trigger_PawnHarmed(1f, requireInstigatorWithFaction: false));
+			transition2.AddTrigger(new Trigger_Custom((TriggerSignal signal) => ((signal.type == TriggerSignalType.BuildingDamaged || signal.type == TriggerSignalType.BuildingLost) && signal.thing is Building b && b.GetLord() == lord)));
+			stateGraph.AddTransition(transition2);
+
+			Transition transition3 = new Transition(lordToil_Assault, lordToil_Escort);
+			transition3.AddTrigger(new Trigger_TicksPassedWithoutHarm(2500));
+			stateGraph.AddTransition(transition3);
+
+			Transition transition4 = new Transition(lordToil_Stage, lordToil_Flee);
+			transition4.AddSources(list);
+			transition4.AddTrigger(new Trigger_Custom((TriggerSignal signal) => signal.type == TriggerSignalType.Tick && escortee.Dead && Find.TickManager.TicksGame - escortee.TickDeSpawned > 10));
+			transition4.AddPreAction(new TransitionAction_Message("MessageFightersFleeing".Translate("NAT_RustedSoldiers".Translate().CapitalizeFirst(), "NAT_RustedArmy".Translate())));
+			stateGraph.AddTransition(transition4);
+
+			if (canLeave)
 			{
-				base.Data.ticksPassed = 0;
+				LordToil_ExitMapRust lordToil_ExitMap = new LordToil_ExitMapRust(LocomotionUrgency.Jog, canDig: false, interruptCurrentJob: true) { useAvoidGrid = true };
+				stateGraph.AddToil(lordToil_ExitMap);
+				Transition transition5 = new Transition(lordToil_Stage, lordToil_ExitMap);
+				transition5.AddSources(list);
+				transition5.AddTrigger(new Trigger_TicksPassedWithoutHarm(2000).WithFilter(new TriggerFilter_VictoryRust()));
+				transition5.AddPreAction(new TransitionAction_Message("MessageRaidersSatisfiedLeaving".Translate("NAT_RustedSoldiers".Translate().CapitalizeFirst(), "NAT_RustedArmy".Translate())));
+				stateGraph.AddTransition(transition5);
 			}
-			return base.ActivateOn(lord, signal);
+
+			return stateGraph;
 		}
-	}
-
-
-
-	public class TriggerData_StructureActivated : TriggerData
-	{
-		public Thing structure;
 
 		public override void ExposeData()
 		{
-			Scribe_References.Look(ref structure, "structure", saveDestroyedThings: true);
-		}
-	}
-
-	public class Trigger_StructureActivated : Trigger
-	{
-		protected TriggerData_StructureActivated Data => (TriggerData_StructureActivated)data;
-
-		public Trigger_StructureActivated(Thing structure)
-		{
-			data = new TriggerData_StructureActivated();
-			Data.structure = structure;
-		}
-
-		public override bool ActivateOn(Lord lord, TriggerSignal signal)
-		{
-			if (signal.type == TriggerSignalType.Tick)
-			{
-				if (data == null || !(data is TriggerData_StructureActivated))
-				{
-					return true;
-				}
-				TriggerData_StructureActivated triggerData_StructureActivated = Data;
-				Thing structure = triggerData_StructureActivated.structure;
-				if (!(structure is ThingWithComps s) || s.GetComp<CompVoidStructure>().Active)
-				{
-					return true;
-				}
-			}
-			return false;
-		}
-	}
-
-	public class Trigger_VictoryRust : Trigger
-	{
-		public override bool ActivateOn(Lord lord, TriggerSignal signal)
-		{
-			if (signal.type == TriggerSignalType.Tick && lord.ticksInToil % 500 == 0 && Victory(lord.Map))
-			{
-				return true;
-			}
-			return false;
-		}
-
-		public static bool Victory(Map map)
-		{
-			if(GenHostility.AnyHostileActiveThreatTo(map, Faction.OfEntities))
-			{
-				return false;
-			}
-			return true;
-		}
-	}
-
-	public class TriggerFilter_VictoryRust : TriggerFilter
-	{
-		public override bool AllowActivation(Lord lord, TriggerSignal signal)
-		{
-			return Trigger_VictoryRust.Victory(lord.Map);
-		}
-	}
-
-	public class LordToil_SleepRust : LordToil
-	{
-		public override void UpdateAllDuties()
-		{
-			for (int i = 0; i < lord.ownedPawns.Count; i++)
-			{
-				Pawn p = lord.ownedPawns[i];
-				p.mindState.duty = new PawnDuty(DutyDefOf.SleepForever);
-				if (p.canBeDormant != null && p.canBeDormant.Awake)
-				{
-					p.canBeDormant.ToSleep();
-				}
-			}
+			Scribe_References.Look(ref escortee, "escortee");
+			//Scribe_Values.Look(ref leaveIfEscorteeDestroyed, "leaveIfEscorteeDestroyed");
+			Scribe_Values.Look(ref canLeave, "canLeave", defaultValue: true);
 		}
 	}
 }

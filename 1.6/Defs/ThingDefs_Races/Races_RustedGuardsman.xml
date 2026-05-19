@@ -223,7 +223,7 @@
         </silhouetteGraphicData>
       </li>
     </lifeStages>
-    <combatPower>320</combatPower>
+    <combatPower>410</combatPower>
     <weaponMoney>9999~9999</weaponMoney>
     <combatEnhancingDrugsCount>-4~2</combatEnhancingDrugsCount>
     <inventoryOptions>
@@ -236,6 +236,5 @@
       </subOptionsTakeAll>
     </inventoryOptions>
   </PawnKindDef>
-
 
 </Defs>
