@@ -4,7 +4,7 @@
   <AbilityDef>
     <defName>NAT_RustJump</defName>
     <label>longjump</label>
-    <description>Jump to a distant location using special ultrafast mechanoid muscles.</description>
+    <description>Jump to a distant location.</description>
     <iconPath>UI/Abilities/NAT_RustJump</iconPath>
     <cooldownTicksRange>600</cooldownTicksRange>
     <hostile>false</hostile>

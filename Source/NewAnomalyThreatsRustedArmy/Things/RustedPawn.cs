@@ -74,7 +74,7 @@ namespace NAT
 
 		private CompRustedSoldier comp;
 
-		public float bodySizeFactor = 1f;
+		public float? bodySizeOverride;
 
 		public CompRustedSoldier Comp
 		{

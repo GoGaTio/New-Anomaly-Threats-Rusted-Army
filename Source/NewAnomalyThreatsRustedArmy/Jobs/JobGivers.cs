@@ -200,12 +200,6 @@ namespace NAT
 	{
 		protected override Job TryGiveJob(Pawn pawn)
 		{
-			string s = pawn.ToString() + ":JobGiver_RustedTurret";
-			/*Lord lord = pawn.GetLord();
-			if(lord.CurLordToil.GetType().Name.Contains("Assault"))
-			{
-				
-			}*/
 			if(pawn.CurJobDef == NATRADefOf.NAT_RustedTurretSetUp)
 			{
 				return pawn.CurJob;
@@ -213,17 +207,14 @@ namespace NAT
 			int ticksGame = Find.TickManager.TicksGame;
 			if (ticksGame - pawn.spawnedTick < 600 || ticksGame - pawn.mindState.lastHarmTick < 1200)
 			{
-				Log.Message(s + "1");
 				return null;
 			}
 			if(!pawn.TryGetComp(out CompRustedTurretPawn comp) || !pawn.TryGetComp(out CompRustedTurret turret) || turret.currentTarget != null)
 			{
-				Log.Message(s + "2");
 				return null;
 			}
 			if (pawn.mindState.duty?.focus.IsValid == true && pawn.mindState.duty.focus.Cell.DistanceTo(pawn.Position) > (pawn.mindState.duty.wanderRadius ?? pawn.mindState.duty.radius))
 			{
-				Log.Message(s + "3");
 				return null;
 			}
 			if (pawn.lord?.CurLordToil?.GetType().Name.Contains("ExitMap") == true)
@@ -233,16 +224,13 @@ namespace NAT
 			if (!CellRectOccupied(new CellRect(pawn.Position.x, pawn.Position.z, comp.Props.buildingDef.Size.x, comp.Props.buildingDef.Size.z), pawn.Map))
 			{
 				Job job = JobMaker.MakeJob(NATRADefOf.NAT_RustedTurretSetUp, pawn.Position);
-				Log.Message(s + "4");
 				return job;
 			}
 			if (RCellFinder.TryFindRandomCellNearWith(pawn.Position, (c) => !CellRectOccupied(new CellRect(c.x, c.z, comp.Props.buildingDef.Size.x, comp.Props.buildingDef.Size.z), pawn.Map), pawn.Map, out var cell, 2, 10))
 			{
 				Job job = JobMaker.MakeJob(NATRADefOf.NAT_RustedTurretSetUp, cell);
-				Log.Message(s + "5");
 				return job;
 			}
-			Log.Message(s + "6");
 			return null;
 		}
 

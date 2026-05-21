@@ -416,7 +416,7 @@ namespace NAT
 				stateGraph.AddToil(lordToil_ExitMap);
 				Transition transition5 = new Transition(lordToil_Stage, lordToil_ExitMap);
 				transition5.AddSources(list);
-				transition5.AddTrigger(new Trigger_TicksPassedWithoutHarm(2000).WithFilter(new TriggerFilter_VictoryRust()));
+				transition5.AddTrigger(new Trigger_TicksPassedWithoutHarm(5000).WithFilter(new TriggerFilter_VictoryRust()));
 				transition5.AddPreAction(new TransitionAction_Message("MessageRaidersSatisfiedLeaving".Translate("NAT_RustedSoldiers".Translate().CapitalizeFirst(), "NAT_RustedArmy".Translate())));
 				stateGraph.AddTransition(transition5);
 			}

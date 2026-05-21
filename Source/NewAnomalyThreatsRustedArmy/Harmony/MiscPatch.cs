@@ -634,7 +634,7 @@ namespace NAT.Rusts
 		{
 			if((__instance is RustedPawn rust))
 			{
-				__result = __result * rust.bodySizeFactor;
+				__result = rust.bodySizeOverride ?? __result;
 			}
 		}
 	}

@@ -117,11 +117,11 @@ namespace NAT
 		{
 			if (active && !destroyed)
 			{
-				Owner.bodySizeFactor = 1.4286f;
+				Owner.bodySizeOverride = 1f;
 			}
 			else
 			{
-				Owner.bodySizeFactor = 1f;
+				Owner.bodySizeOverride = null;
 			}
 		}
 

@@ -68,4 +68,30 @@
     </stages>
   </HediffDef>
 
+<HediffDef ParentName="NAT_RustedCoreUpgradeBase" >
+    <defName>NAT_CoreUpgrade_Stimulator</defName>
+    <label>core stimulator</label>
+    <description>An implant which increases a mechanitor's control group count and the work speed of a mechanitor's mechs.\n\nThis implant can be installed up to 6 times to increase its effect.</description>
+    <stages>
+      <li>
+        <minSeverity>1</minSeverity>
+        <statOffsets>
+          <RestFallRateFactor>-0.15</RestFallRateFactor>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>2</minSeverity>
+        <statOffsets>
+          <RestFallRateFactor>-0.3</RestFallRateFactor>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>3</minSeverity>
+        <statOffsets>
+          <RestFallRateFactor>-0.45</RestFallRateFactor>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef> 
+
 </Defs>
