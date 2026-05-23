@@ -24,8 +24,8 @@
     <subSounds>
       <li>
         <grains>
-          <li Class="AudioGrain_Clip">
-            <clipPath>NAT_RustedScream</clipPath>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>NAT_RustedScream</clipFolderPath>
           </li>
         </grains>
         <volumeRange>20~28</volumeRange>
@@ -42,8 +42,8 @@
     <subSounds>
       <li>
         <grains>
-          <li Class="AudioGrain_Clip">
-            <clipPath>NAT_RustedScream</clipPath>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>NAT_RustedScream</clipFolderPath>
           </li>
         </grains>
         <volumeRange>25~35</volumeRange>
@@ -60,8 +60,8 @@
     <subSounds>
       <li>
         <grains>
-          <li Class="AudioGrain_Clip">
-            <clipPath>NAT_RustedScream</clipPath>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>NAT_RustedScream</clipFolderPath>
           </li>
         </grains>
         <volumeRange>30~35</volumeRange>
@@ -78,8 +78,8 @@
     <subSounds>
       <li>
         <grains>
-          <li Class="AudioGrain_Clip">
-            <clipPath>NAT_RustedScream</clipPath>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>NAT_RustedScream</clipFolderPath>
           </li>
         </grains>
         <volumeRange>20~28</volumeRange>
@@ -96,8 +96,8 @@
     <subSounds>
       <li>
         <grains>
-          <li Class="AudioGrain_Clip">
-            <clipPath>NAT_RustedScream</clipPath>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>NAT_RustedScream</clipFolderPath>
           </li>
         </grains>
         <volumeRange>25~35</volumeRange>
@@ -114,8 +114,8 @@
     <subSounds>
       <li>
         <grains>
-          <li Class="AudioGrain_Clip">
-            <clipPath>NAT_RustedScream</clipPath>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>NAT_RustedScream</clipFolderPath>
           </li>
         </grains>
         <volumeRange>30~35</volumeRange>
@@ -132,8 +132,8 @@
     <subSounds>
       <li>
         <grains>
-          <li Class="AudioGrain_Clip">
-            <clipPath>NAT_RustedScream</clipPath>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>NAT_RustedScream</clipFolderPath>
           </li>
         </grains>
         <volumeRange>90~105</volumeRange>
@@ -150,8 +150,8 @@
     <subSounds>
       <li>
         <grains>
-          <li Class="AudioGrain_Clip">
-            <clipPath>NAT_RustedScream</clipPath>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>NAT_RustedScream</clipFolderPath>
           </li>
         </grains>
         <volumeRange>30~35</volumeRange>

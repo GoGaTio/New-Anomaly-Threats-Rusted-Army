@@ -4,26 +4,51 @@
   <ThingCategoryDef>
     <defName>NAT_WeaponsRusted</defName>
     <label>rusted weapons</label>
-    <parent>Weapons</parent>
+    <parent>Items</parent>
   </ThingCategoryDef>
 
-  <ThingDef Abstract="True" ParentName="BaseGun" Name="NAT_WeaponUsablyByRust">
+  <ThingDef Abstract="True" Name="NAT_WeaponUsablyByRust">
     <techLevel>Archotech</techLevel>
     <tradeability>None</tradeability>
     <destroyOnDrop>false</destroyOnDrop>
     <relicChance>0</relicChance>
     <smeltable>false</smeltable>
     <soundInteract>Interact_Revolver</soundInteract>
-    <thingCategories Inherit="False">
+    <thingCategories>
       <li>NAT_WeaponsRusted</li>
     </thingCategories>
-<graphicData>
+    <graphicData>
       <graphicClass>Graphic_Single</graphicClass>
+      <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
     </graphicData>
+    <weaponClasses>
+      <li>Ranged</li>
+    </weaponClasses>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <drawerType>MapMeshOnly</drawerType>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>true</alwaysHaulable>
+    <tickerType>Never</tickerType>
+    <equipmentType>Primary</equipmentType>
+    <useHitPoints>true</useHitPoints>
+    <pathCost>14</pathCost>
+    <selectable>true</selectable>
+    <rotatable>false</rotatable>
     <statBases>
-      <DeteriorationRate>0</DeteriorationRate>
+      <MaxHitPoints>100</MaxHitPoints>
       <Flammability>1.5</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Beauty>-4</Beauty>
     </statBases>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li>
+        <compClass>CompEquippable</compClass>
+      </li>
+    </comps>
+    <allowedArchonexusCount>1</allowedArchonexusCount>
   </ThingDef>
 
   <ThingDef Abstract="True" ParentName="NAT_WeaponUsablyByRust" Name="NAT_BaseRustedWeapon">
@@ -49,14 +74,14 @@
     </comps>
   </ThingDef>
 
- <ThingDef Abstract="True" ParentName="NAT_BaseRustedWeapon" Name="NAT_BaseRustedSidearm">
+  <ThingDef Abstract="True" ParentName="NAT_BaseRustedWeapon" Name="NAT_BaseRustedSidearm">
     <weaponTags>
       <li>NAT_RustedSidearm</li>
     </weaponTags>
-<tickerType>Normal</tickerType>
-   <soundInteract>Standard_Pickup</soundInteract>
+    <tickerType>Normal</tickerType>
+    <soundInteract>Standard_Pickup</soundInteract>
     <soundDrop>Standard_Drop</soundDrop>
-<generateCommonality>0.25</generateCommonality>
+    <generateCommonality>0.25</generateCommonality>
     <comps>
       <li Class="NAT.CompProperties_RustedSidearm" />
     </comps>
