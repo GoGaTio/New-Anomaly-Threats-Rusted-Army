@@ -32,6 +32,30 @@
   </HediffDef>
 
   <HediffDef>
+    <defName>NAT_HornBuff_Caster</defName>
+    <label>horn boost</label>
+    <hediffClass>HediffWithComps</hediffClass>
+    <description>This rust is affected by battle cry and fights better.</description>
+    <isBad>false</isBad>
+    <initialSeverity>1</initialSeverity>
+    <maxSeverity>1</maxSeverity>
+    <comps>
+      <li Class="HediffCompProperties_DisappearsDisableable">
+        <disappearsAfterTicks>60000</disappearsAfterTicks>
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath" />
+      <li Class="NAT.HediffCompProperties_RustedBuffGiver">
+        <range>8.9</range>
+        <hediff>NAT_HornBuff</hediff>
+      </li>
+    </comps>
+    <stages>
+      <li></li>
+    </stages>
+  </HediffDef>
+  
+  <HediffDef>
     <defName>NAT_HornBuff</defName>
     <label>horn boost</label>
     <hediffClass>HediffWithComps</hediffClass>

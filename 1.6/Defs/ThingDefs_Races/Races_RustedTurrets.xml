@@ -26,7 +26,7 @@
       <li Class="CompProperties_ProducesBioferrite">
         <bioferriteDensity>2</bioferriteDensity>
       </li>
-      <li Class="NAT.CompProperties_RustedTurret">
+      <li Class="NAT.CompProperties_Turret">
         <turretDef>NAT_Gun_RustedAutoTurret</turretDef>
         <saveKeysPrefix>NAT</saveKeysPrefix>
         <renderNodeProperty>

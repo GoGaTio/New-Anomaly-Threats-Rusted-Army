@@ -338,32 +338,4 @@ namespace NAT
 			return result;
 		}
 	}
-
-	public class PawnRenderNode_RustedTurret : PawnRenderNode
-	{
-		public CompRustedTurret turretComp;
-
-		public PawnRenderNode_RustedTurret(Pawn pawn, PawnRenderNodeProperties props, PawnRenderTree tree)
-			: base(pawn, props, tree)
-		{
-		}
-
-		public override Graphic GraphicFor(Pawn pawn)
-		{
-			return GraphicDatabase.Get<Graphic_Single>(turretComp.Props.turretDef.graphicData.texPath, ShaderDatabase.Cutout);
-		}
-	}
-
-	public class PawnRenderNodeWorker_RustedTurret : PawnRenderNodeWorker
-	{
-		public override Quaternion RotationFor(PawnRenderNode node, PawnDrawParms parms)
-		{
-			Quaternion result = base.RotationFor(node, parms);
-			if (node is PawnRenderNode_RustedTurret pawnRenderNode)
-			{
-				result *= pawnRenderNode.turretComp.curRotation.ToQuat();
-			}
-			return result;
-		}
-	}
 }

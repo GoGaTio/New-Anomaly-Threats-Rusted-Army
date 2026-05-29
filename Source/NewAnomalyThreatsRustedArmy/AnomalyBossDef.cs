@@ -15,14 +15,14 @@ namespace NAT
 {
 	public class AnomalyBossDef_Rust : AnomalyBossDef
 	{
-		public override void ArriveInt(List<Pawn> list, AnomalyBossManager.AnomalyBoss boss)
+		public override void ArriveInt(List<Pawn> list, Map map)
 		{
-			RustedArmyUtility.RustsArrive(list, boss.Map, true);
+			RustedArmyUtility.RustsArrive(list, map, true);
 		}
 
-		public override void GenerateLord(List<Pawn> list, AnomalyBossManager.AnomalyBoss boss)
+		public override void GenerateLord(List<Pawn> list, Map map)
 		{
-			LordMaker.MakeNewLord(Faction.OfEntities, new LordJob_EscortAndDefendRust(list[0]), boss.Map, list);
+			LordMaker.MakeNewLord(Faction.OfEntities, new LordJob_EscortAndDefendRust(list[0]), map, list);
 		}
 	}
 }

@@ -117,6 +117,12 @@ namespace NAT
 			holder = null;
 		}
 
+		public override void PostSplitOff(Thing piece)
+		{
+			base.PostSplitOff(piece);
+			piece.TryGetComp<CompRustedSidearm>().cooldown = cooldown;
+		}
+
 		public override void Notify_UsedWeapon(Pawn pawn)
 		{
 			if (parent.Destroyed)

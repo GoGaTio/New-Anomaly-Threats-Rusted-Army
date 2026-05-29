@@ -4,10 +4,11 @@
   <ThingDef Name="NAT_RustedSculptureBase" ParentName="BuildingBase" Abstract="True">
     <genericMarketSellable>false</genericMarketSellable>
     <tradeability>None</tradeability>
-    <minifiedDef>MinifiedThing</minifiedDef>
+    <minifiedDef>MinifiedThingRealtimeDraw</minifiedDef>
     <altitudeLayer>Building</altitudeLayer>
     <passability>PassThroughOnly</passability>
     <drawerType>MapMeshAndRealTime</drawerType>
+    <minifiedManualDraw>true</minifiedManualDraw>
     <hiddenWhileUndiscovered>true</hiddenWhileUndiscovered>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <category>Building</category>

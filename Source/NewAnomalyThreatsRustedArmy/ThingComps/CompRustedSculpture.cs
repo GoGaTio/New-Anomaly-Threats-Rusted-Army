@@ -140,12 +140,10 @@ namespace NAT
         public override void PostDraw()
         {
             base.PostDraw();
-            Log.Message("draw");
             if (head == null)
             {
                 return;
             }
-            Log.Message("no head");
             Mesh obj = head.graphicData.Graphic.MeshAt(Rot4.North);
             obj = MeshPool.GridPlaneFlip(obj);
             Vector3 drawPos = parent.DrawPos;

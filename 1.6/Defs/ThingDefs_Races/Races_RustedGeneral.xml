@@ -98,7 +98,7 @@
         </skills>
         <canWork>false</canWork>
       </li>
-      <li Class="NAT.CompProperties_RustedTurret">
+      <li Class="NAT.CompProperties_Turret">
         <turretDef>NAT_Gun_RustedAutoTurret</turretDef>
         <saveKeysPrefix>NAT_Auto</saveKeysPrefix>
         <angleOffset>-90</angleOffset>
@@ -124,7 +124,7 @@
           </drawData>
         </renderNodeProperty>
       </li>
-      <li Class="NAT.CompProperties_RustedTurret">
+      <li Class="NAT.CompProperties_Turret">
         <turretDef>NAT_Gun_RustedFoamTurret</turretDef>
         <saveKeysPrefix>NAT_Foam</saveKeysPrefix>
         <angleOffset>-90</angleOffset>

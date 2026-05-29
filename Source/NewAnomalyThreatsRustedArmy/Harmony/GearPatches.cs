@@ -369,9 +369,10 @@ namespace NAT.Rusts
 			List<SpecificApparelRequirement> att = tmpRust.kindDef.specificApparelRequirements;
 			if (att != null)
 			{
-				for (int i = 0; i < att.Count; i++)
+				int i;
+				for (i = 0; i < att.Count; i++)
 				{
-					if ((!att[i].RequiredTag.NullOrEmpty() || (!att[i].AlternateTagChoices.NullOrEmpty() && (!onlyGenerateIgnoreNaked || att[i].IgnoreNaked))) && allApparelPairs.Where((ThingStuffPair pa) => PawnApparelGenerator.ApparelRequirementTagsMatch(att[i], pa.thing) && PawnApparelGenerator.ApparelRequirementHandlesThing(att[i], pa.thing) && CanUseStuff(pa) && pa.thing.apparel.PawnCanWear(tmpRust) && !PairOverlapsAnything(pa)).TryRandomElementByWeight((ThingStuffPair pa) => pa.Commonality, out var result))
+					if ((!att[i].RequiredTag.NullOrEmpty() || (!att[i].AlternateTagChoices.NullOrEmpty() && (!onlyGenerateIgnoreNaked || att[i].IgnoreNaked))) && AllApparelPairs.Where((ThingStuffPair pa) => PawnApparelGenerator.ApparelRequirementTagsMatch(att[i], pa.thing) && PawnApparelGenerator.ApparelRequirementHandlesThing(att[i], pa.thing) && CanUseStuff(pa) && pa.thing.apparel.PawnCanWear(tmpRust)/* && !workingSet.PairOverlapsAnything(pa)*/).TryRandomElementByWeight((ThingStuffPair pa) => pa.Commonality, out var result))
 					{
 						AddApparel(result);
 						moneyLeft -= result.Price;
@@ -530,7 +531,7 @@ namespace NAT.Rusts
 			if (!__result) return;
 			if (pawn is RustedPawn rust)
 			{
-				if (rust.Comp.Props.canEquipWeapons)
+				if (!rust.Comp.Props.canEquipWeapons)
 				{
 					__result = false;
 					return;

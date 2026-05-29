@@ -18,7 +18,7 @@ namespace NAT
 
 		public HediffCompProperties_RustedBuffGiver()
 		{
-			compClass = typeof(HediffComp_GiveHediffsInRange);
+			compClass = typeof(HediffComp_GiveHediffsToRustInRange);
 		}
 	}
 

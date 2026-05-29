@@ -76,6 +76,8 @@
     <Compile Include="Jobs\LordsToils.cs" />
     <Compile Include="ThingComps\CompRustedBuffGiver.cs" />
     <Compile Include="ThingComps\CompRustedCore.cs" />
+    <Compile Include="ThingComps\CompStatue.cs" />
+    <Compile Include="Things\EntityStatue.cs" />
     <Compile Include="Verb_MeleeAttackExplode.cs" />
     <Compile Include="Abilities\CompAbilityEffect_RustedCommander.cs" />
     <Compile Include="Abilities\CompAbilityEffect_ShapeRust.cs" />
@@ -121,7 +123,6 @@
     <Compile Include="ThingComps\CompRustedSculpture.cs" />
     <Compile Include="ThingComps\CompRustedShield.cs" />
     <Compile Include="ThingComps\CompRustedSoldier.cs" />
-    <Compile Include="ThingComps\CompRustedTurret.cs" />
     <Compile Include="ThingComps\CompRustedTurretPawn.cs" />
     <Compile Include="ThingComps\CompRustedWorker.cs" />
     <Compile Include="ThingComps\CompSquareDetector.cs" />

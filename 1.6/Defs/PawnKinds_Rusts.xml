@@ -92,6 +92,15 @@
         </li>
       </subOptionsTakeAll>
     </inventoryOptions>
+    <specificApparelRequirements>
+      <li>
+        <bodyPartGroup>Waist</bodyPartGroup>
+        <apparelDef>NAT_Apparel_RustedBanner</apparelDef>
+        <ignoreNaked>true</ignoreNaked>
+        <requiredTag>NAT_RustedHeavy</requiredTag>
+      </li>
+    </specificApparelRequirements>
+    <apparelMoney>9999~9999</apparelMoney>
   </PawnKindDef>
 
   <PawnKindDef ParentName="NAT_RustedSoldierKindBase">
@@ -185,6 +194,15 @@
         </li>
       </subOptionsTakeAll>
     </inventoryOptions>
+    <specificApparelRequirements>
+      <li>
+        <bodyPartGroup>Waist</bodyPartGroup>
+        <apparelDef>NAT_Apparel_RustedBanner</apparelDef>
+        <ignoreNaked>true</ignoreNaked>
+        <requiredTag>NAT_RustedHeavy</requiredTag>
+      </li>
+    </specificApparelRequirements>
+    <apparelMoney>9999~9999</apparelMoney>
   </PawnKindDef>
 
 </Defs>

@@ -175,6 +175,27 @@ namespace NAT
 		}
 	}
 
+	public class JobGiver_RustedGeneral : ThinkNode_JobGiver
+	{
+		protected override Job TryGiveJob(Pawn pawn)
+		{
+			if (pawn.CurJob?.ability?.def != null)
+			{
+				return null;
+			}
+			if (pawn.Faction?.IsPlayer == false && pawn is RustedPawn rust && rust.Awake() && rust.Commander is CompRustedCommander comp && comp.units > 0)
+			{
+				LocalTargetInfo target = comp.TryCallSupport(out var ability);
+				if (!target.IsValid)
+				{
+					return null;
+				}
+				return ability.GetJob(target, target);
+			}
+			return null;
+		}
+	}
+
 	public class JobGiver_RustedCommander : ThinkNode_JobGiver
 	{
 		protected override Job TryGiveJob(Pawn pawn)
@@ -209,7 +230,7 @@ namespace NAT
 			{
 				return null;
 			}
-			if(!pawn.TryGetComp(out CompRustedTurretPawn comp) || !pawn.TryGetComp(out CompRustedTurret turret) || turret.currentTarget != null)
+			if(!pawn.TryGetComp(out CompRustedTurretPawn comp) || !pawn.TryGetComp(out CompTurret turret) || turret.currentTarget != null)
 			{
 				return null;
 			}

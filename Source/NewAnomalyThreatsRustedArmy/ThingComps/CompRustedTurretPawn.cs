@@ -55,7 +55,7 @@ namespace NAT
 				kindDef.race.description = parentDef.description;
 				comp.hitPoints = parentDef.BaseMaxHitPoints;
 				comp.ticksPerHeal = parentDef.GetCompProperties<CompProperties_SelfhealHitpoints>()?.ticksPerHeal ?? 1000;
-				CompProperties_RustedTurret turret = kindDef.race.GetCompProperties<CompProperties_RustedTurret>();
+				CompProperties_Turret turret = kindDef.race.GetCompProperties<CompProperties_Turret>();
 				turret.turretDef = parentDef.building.turretGunDef;
 				turret.foamTurret = typeof(Building_RustedTurretFoam).IsAssignableFrom(parentDef.thingClass);
 				turret.Init(kindDef.race);
@@ -90,15 +90,15 @@ namespace NAT
 			}
 		}
 
-		private CompRustedTurret turret;
+		private CompTurret turret;
 
-		public CompRustedTurret Turret
+		public CompTurret Turret
 		{
 			get
 			{
 				if (turret == null)
 				{
-					turret = parent.GetComp<CompRustedTurret>();
+					turret = parent.GetComp<CompTurret>();
 				}
 				return turret;
 			}
@@ -314,7 +314,7 @@ namespace NAT
 			{
 				lord.AddPawn(pawn);
 			}
-			pawn.GetComp<CompRustedTurret>().CurRotation = ((Building_TurretGun)parent).Top.CurRotation + pawn.GetComp<CompRustedTurret>().Props.angleOffset;
+			pawn.GetComp<CompTurret>().CurRotation = ((Building_TurretGun)parent).Top.CurRotation + pawn.GetComp<CompTurret>().Props.angleOffset;
 			parent.Destroy();
 			GenSpawn.Spawn(pawn, pos, map, WipeMode.VanishOrMoveAside);
 			if (selected)

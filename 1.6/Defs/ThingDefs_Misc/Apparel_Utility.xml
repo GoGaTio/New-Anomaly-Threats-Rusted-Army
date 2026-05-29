@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="ApparelNoQualityBase">
+		<defName>NAT_Apparel_RustedBanner</defName>
+		<label>rusted banner pack</label>
+		<description>A battle banner. Gives the wearer a fighting spirit and confidence.</description>
+    <techLevel>Archotech</techLevel>
+    <smeltable>false</smeltable>
+		<tradeability>None</tradeability>
+		<graphicData>
+			<texPath>Things/Apparel/NAT_RustedBanner/NAT_RustedBanner</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<WorkToMake>1600</WorkToMake>
+			<Mass>1</Mass>
+			<Flammability>0.4</Flammability>
+			<EquipDelay>2</EquipDelay>
+		</statBases>
+		<thingCategories>
+			<li>ApparelUtility</li>
+		</thingCategories>
+    <comps>
+      <li Class="NAT.CompProperties_RustedEquipment">
+        
+      </li>
+    </comps>
+		<apparel>
+      <abilities>
+        <li>NAT_HornBuff</li>
+      </abilities>
+			<wornGraphicPath>Things/Apparel/NAT_RustedBanner/NAT_RustedBanner</wornGraphicPath>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <scoreOffset>0</scoreOffset>
+      <careIfWornByCorpse>false</careIfWornByCorpse>
+      <careIfDamaged>false</careIfDamaged>
+      <wearPerDay>0</wearPerDay>
+      <bodyPartGroups>
+        <li>Waist</li>
+      </bodyPartGroups>
+      <layers>
+        <li>Belt</li>
+      </layers>
+			<tags>
+				<li>NAT_RustedHeavy</li>
+			</tags>
+			<wornGraphicData>
+				<renderUtilityAsPack>true</renderUtilityAsPack>
+				<north>
+					<offset>(0,0)</offset>
+				</north>
+				<south>
+					<offset>(0,0)</offset>
+				</south>
+				<east>
+					<offset>(0,0)</offset>
+				</east>
+				<west>
+					<offset>(0,0)</offset>
+				</west>
+			</wornGraphicData>
+		</apparel>
+	</ThingDef>
+</Defs>
