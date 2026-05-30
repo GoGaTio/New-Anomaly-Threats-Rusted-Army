@@ -29,7 +29,7 @@
         <warmupTime>2.3</warmupTime>
         <range>34.9</range>
         <ticksBetweenBurstShots>7</ticksBetweenBurstShots>
-        <burstShotCount>8</burstShotCount>
+        <burstShotCount>10</burstShotCount>
         <soundCast>Shot_Minigun</soundCast>
         <soundCastTail>GunTail_Medium</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>

@@ -137,20 +137,22 @@ namespace NAT
 			return s;
 		}
 
-        public override void PostDraw()
-        {
-            base.PostDraw();
-            if (head == null)
-            {
-                return;
-            }
-            Mesh obj = head.graphicData.Graphic.MeshAt(Rot4.North);
-            obj = MeshPool.GridPlaneFlip(obj);
-            Vector3 drawPos = parent.DrawPos;
-            drawPos.y = AltitudeLayer.BuildingOnTop.AltitudeFor() + parent.def.graphicData.drawOffset.y;
-			drawPos.z += Props.offset;
-            Graphics.DrawMesh(obj, drawPos, Quaternion.identity, head.graphicData.Graphic.MatAt(Rot4.North), 0);
-        }
+		public override void DrawAt(Vector3 drawLoc, bool flip = false)
+		{
+			base.DrawAt(drawLoc, flip);
+			if (head == null)
+			{
+				return;
+			}
+			if(parent.Spawned || parent.ParentHolder is MinifiedThing)
+			{
+				Mesh obj = head.graphicData.Graphic.MeshAt(Rot4.North);
+				obj = MeshPool.GridPlaneFlip(obj);
+				Vector3 loc = new Vector3(drawLoc.x, drawLoc.y + 0.03658537f + parent.def.graphicData.drawOffset.y, drawLoc.z + Props.offset);
+				Graphics.DrawMesh(obj, loc, Quaternion.identity, head.graphicData.Graphic.MatAt(Rot4.North), 0);
+			}
+			
+		}
 
        /* public override void PostPrintOnto(SectionLayer layer)
         {
@@ -174,7 +176,8 @@ namespace NAT
 			rust.inventory.DestroyAll();
 			rust.apparel.DestroyAll();
 			rust.GetComp<CompRustedShield>()?.Destroy(false);
-			GenSpawn.Spawn(rust, parent.PositionHeld, parent.MapHeld);
+			rust.GetComp<CompRustedCommander>()?.Reset();
+			GenSpawn.Spawn(rust, parent.PositionHeld, parent.MapHeld, Rot4.South);
 			parent.Destroy();
 		}
 

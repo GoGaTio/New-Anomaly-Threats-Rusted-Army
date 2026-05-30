@@ -76,15 +76,18 @@ namespace NAT.Rusts
 		[HarmonyPostfix]
 		public static void Postfix(Pawn pawn, bool actAsIfSpawned)
 		{
-			if (pawn.Faction == Faction.OfPlayerSilentFail && pawn is RustedPawn rust)
+			if (pawn is RustedPawn rust)
 			{
-                if (pawn.drafter == null && (actAsIfSpawned || pawn.Spawned) && rust.Draftable)
-                {
-					pawn.drafter = new Pawn_DraftController(pawn);
-				}
-				if (rust.Worker != null && pawn.workSettings == null)
+				if(pawn.Faction == Faction.OfPlayerSilentFail)
 				{
-					pawn.workSettings = new Pawn_WorkSettings(pawn);
+					if (pawn.drafter == null && (actAsIfSpawned || pawn.Spawned) && rust.Draftable)
+					{
+						pawn.drafter = new Pawn_DraftController(pawn);
+					}
+					if (rust.Worker != null && pawn.workSettings == null)
+					{
+						pawn.workSettings = new Pawn_WorkSettings(pawn);
+					}
 				}
 				if (pawn.abilities == null)
 				{

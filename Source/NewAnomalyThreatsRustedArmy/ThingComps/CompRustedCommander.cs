@@ -197,12 +197,17 @@ namespace NAT
 			Scribe_Values.Look(ref ticksSinceRestore, "ticksSinceRestore", -1);
 		}
 
+		public void Reset()
+		{
+			units = 0;
+		}
+
 		public override void Notify_SignalReceived(Signal signal)
 		{
 			base.Notify_SignalReceived(signal);
 			if (signal.tag == "NAT_CreatedByPsychicRitual")
 			{
-				units = 0;
+				Reset();
 			}
 		}
 	}

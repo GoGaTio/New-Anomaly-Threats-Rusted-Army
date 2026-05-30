@@ -32,7 +32,7 @@ namespace NAT
 		}
 	}
 
-	public class NewAnomalyThreatsRustedArmySettings : ModSettings
+	/*public class NewAnomalyThreatsRustedArmySettings : ModSettings
     {
 
 		public bool rustedSoldierName_Draft = true;
@@ -78,5 +78,5 @@ namespace NAT
 		{
 			return "New Anomaly Threats: Rusted Army";
 		}
-	}
+	}*/
 }
