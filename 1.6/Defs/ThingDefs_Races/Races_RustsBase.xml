@@ -138,18 +138,6 @@
     </tools>
     <damageMultipliers>
       <li>
-        <damageDef>Bomb</damageDef>
-        <multiplier>0.5</multiplier>
-      </li>
-      <li>
-        <damageDef>NAT_RustedBomb</damageDef>
-        <multiplier>0.5</multiplier>
-      </li>
-      <li>
-        <damageDef>Thump</damageDef>
-        <multiplier>0.5</multiplier>
-      </li>
-      <li>
         <damageDef>EMP</damageDef>
         <multiplier>0.4</multiplier>
       </li>

@@ -11,9 +11,7 @@
     <maxSeverity>3</maxSeverity>
     <defaultLabelColor>(160,131,115)</defaultLabelColor>
     <comps>
-      <li Class="NAT.HediffCompProperties_RustedBuff">
-        <ticksToDecreaseLevel>5000</ticksToDecreaseLevel>
-      </li>
+      <li Class="NAT.HediffCompProperties_RustedBuff"/>
       <li Class="HediffCompProperties_Effecter">
         <stateEffecter>NAT_BannerBuff</stateEffecter>
       </li>
@@ -64,9 +62,7 @@
     <initialSeverity>1</initialSeverity>
     <maxSeverity>3</maxSeverity>
     <comps>
-      <li Class="NAT.HediffCompProperties_RustedBuff">
-        <ticksToDecreaseLevel>5000</ticksToDecreaseLevel>
-      </li>
+      <li Class="NAT.HediffCompProperties_RustedBuff"/>
       <li Class="HediffCompProperties_Effecter">
         <stateEffecter>NAT_BannerBuff</stateEffecter>
       </li>

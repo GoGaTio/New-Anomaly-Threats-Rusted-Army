@@ -51,7 +51,8 @@ namespace NAT
 				pawn.apparel.DestroyAll();
 				pawn.ageTracker.AgeBiologicalTicks = 0;
 				pawn.ageTracker.AgeChronologicalTicks = 0;
-				pawn.Notify_SignalReceived(new Signal("NAT_CreatedByPsychicRitual", (1f).Named("QUALITY")));
+				pawn.GetComp<CompRustedShield>()?.Destroy(false);
+				pawn.GetComp<CompRustedCommander>()?.Reset();
 				GenSpawn.Spawn(pawn, target.Cell, map);
 				EffecterDefOf.PsychicRitual_Complete.SpawnMaintained(target.Cell, map);
 			}

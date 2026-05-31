@@ -197,7 +197,11 @@ namespace NAT
 		{
 			if(dinfo.Tool == null)
 			{
-				if(dinfo.Def == DamageDefOf.Blunt)
+				if (dinfo.Def.isExplosive)
+				{
+					dinfo.SetAmount(dinfo.Amount * 0.5f);
+				}
+				else if(dinfo.Def == DamageDefOf.Blunt)
 				{
 					dinfo.SetAmount(dinfo.Amount * 0.25f);
 				}
@@ -568,7 +572,7 @@ namespace NAT
 					caravan.AddPawnOrItem(core, false);
 				}
             }
-			if (isPlayer && RustedArmyUtility.Settings.rustedSoldierDeathNotification)
+			if (isPlayer)
 			{
 				TaggedString diedLetterText = HealthUtility.GetDiedLetterText(this, dinfo, exactCulprit);
 				LookTargets targets = null;

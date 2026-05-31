@@ -4,12 +4,18 @@
   <NAT.AnomalyBossDef_Rust>
     <defName>NAT_RustedGeneral</defName>
     <bossKind>NAT_RustedGeneral</bossKind>
+    <arrivedLetterLabel>Rusted general arrived</arrivedLetterLabel>
+    <arrivedLetterText>Rusted general with escorting rusts has arrived. They will prepare for some time before attacking.</arrivedLetterText>
     <groups>
       <li>
         <escorts>
           <NAT_RustedTrooper>3</NAT_RustedTrooper>
+          <NAT_RustedTrooper_Heavy>1</NAT_RustedTrooper_Heavy>
           <NAT_RustedGunner>4</NAT_RustedGunner>
+          <NAT_RustedGunner_Heavy>1</NAT_RustedGunner_Heavy>
+          <NAT_RustedRifleman>2</NAT_RustedRifleman>
           <NAT_RustedHussar>1</NAT_RustedHussar>
+          <NAT_RustedGuardsman>1</NAT_RustedGuardsman>
         </escorts>
         <fixedEscorts>
           <NAT_RustedBannerman>3</NAT_RustedBannerman>

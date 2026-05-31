@@ -44,6 +44,8 @@
   <NAT_RustedCoreDeactivate>Destroy {0}</NAT_RustedCoreDeactivate>
   <NAT_RustedCoreDeactivateDesc>Destroy {0} forever.</NAT_RustedCoreDeactivateDesc>
 
+  <NAT_RustedTurretDesc>Not actually a turret, {0} is a static rusted creature, powered by dark archotechnology shard.\n\nIt can shoot through the smoke and slowly regenerate.</NAT_RustedTurretDesc>
+
   <!--Rusted mass-->
   <NAT_RustedSphereDeactivateMissingShards>To deactivate rusted mass you need {0} shards!</NAT_RustedSphereDeactivateMissingShards>
   <NAT_RustedMassArrival>Rusted mass</NAT_RustedMassArrival>
@@ -57,6 +59,8 @@
   <NAT_CannotEquip_Bladelink>Rusts cannot use bladelink</NAT_CannotEquip_Bladelink>
   <NAT_CannotEquip_Apparel>Not allowed</NAT_CannotEquip_Apparel>
   <NAT_CannotEquip_Size>Require body size of {0}</NAT_CannotEquip_Size>
+
+  <NAT_BioferriteOnSurface>Bioferrite on surface</NAT_BioferriteOnSurface>
 
   <TerrainTagNAT_Rusted>rusted</TerrainTagNAT_Rusted>
 

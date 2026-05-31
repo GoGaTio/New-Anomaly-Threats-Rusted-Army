@@ -2,6 +2,35 @@
 <Defs>
 
   <ThingDef ParentName="MoteBase">
+    <defName>NAT_Mote_RustedMechanism_Aim</defName>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.15</fadeInTime>
+      <fadeOutTime>0</fadeOutTime>
+      <solidTime>999999</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+      <rotateTowardsTarget>True</rotateTowardsTarget>
+      <scaleToConnectTargets>True</scaleToConnectTargets>
+      <fadeOutUnmaintained>True</fadeOutUnmaintained>
+    </mote>
+    <graphicData>
+      <texPath>Things/Mote/NAT_RustedMechanism_Aim</texPath>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>MoteHellfireCannon_Aim</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/Cloudy_C</_DistortionTex>
+        <_NumFrames>10</_NumFrames>
+        <_FramesPerSec>2</_FramesPerSec>
+        <_DistortionScrollSpeed>(0.25, 0.25)</_DistortionScrollSpeed>
+        <_Intensity>8</_Intensity>
+        <_DistortionScale>0.1</_DistortionScale>
+      </shaderParameters>
+      <drawSize>(3, 0.9)</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
     <defName>NAT_Mote_ArtOfWarPreCast</defName>
     <thingClass>MoteAttached</thingClass>
     <altitudeLayer>MoteOverhead</altitudeLayer>

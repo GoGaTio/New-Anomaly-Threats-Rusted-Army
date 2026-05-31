@@ -184,7 +184,7 @@ namespace NAT
 
 		private IntVec3 stageLoc;
 
-		private bool canLeave = true;
+		public bool canLeave = true;
 
 		private bool breachers;
 
@@ -251,17 +251,17 @@ namespace NAT
 				stateGraph.AddToil(lordToil_Stage);
 				stateGraph.StartingToil = lordToil_Stage;
 			}
-			LordToil_DanceRust lordToil_DanceVictory = new LordToil_DanceRust();
-			lordToil_DanceVictory.useAvoidGrid = true;
-			stateGraph.AddToil(lordToil_DanceVictory);
-			Transition transition3 = new Transition(lordToil, lordToil_DanceVictory);
-			transition3.AddTrigger(new Trigger_VictoryRust());
-			stateGraph.AddTransition(transition3);
-			Transition transition4 = new Transition(lordToil_DanceVictory, lordToil);
-			transition4.AddTrigger(new Trigger_PawnHarmed());
-			stateGraph.AddTransition(transition4);
 			if (canLeave)
 			{
+				LordToil_DanceRust lordToil_DanceVictory = new LordToil_DanceRust();
+				lordToil_DanceVictory.useAvoidGrid = true;
+				stateGraph.AddToil(lordToil_DanceVictory);
+				Transition transition3 = new Transition(lordToil, lordToil_DanceVictory);
+				transition3.AddTrigger(new Trigger_VictoryRust());
+				stateGraph.AddTransition(transition3);
+				Transition transition4 = new Transition(lordToil_DanceVictory, lordToil);
+				transition4.AddTrigger(new Trigger_PawnHarmed());
+				stateGraph.AddTransition(transition4);
 				LordToil_ExitMapRust lordToil_ExitMap = new LordToil_ExitMapRust(LocomotionUrgency.Jog, canDig: false, interruptCurrentJob: true);
 				lordToil_ExitMap.useAvoidGrid = true;
 				stateGraph.AddToil(lordToil_ExitMap);

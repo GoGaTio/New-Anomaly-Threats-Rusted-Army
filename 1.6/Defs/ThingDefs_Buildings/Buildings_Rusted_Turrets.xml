@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-
   <ThingDef Name="NAT_BaseRustedTurret" ParentName="NAT_RustedBuildingBase" Abstract="True">
     <thingClass>NAT.Building_RustedTurret</thingClass>
     <altitudeLayer>Building</altitudeLayer>
@@ -66,6 +65,12 @@
       <li>PlaceWorker_ShowTurretRadius</li>
     </placeWorkers>
     <uiIconScale>1.1</uiIconScale>
+    <damageMultipliers Inherit="False">
+      <li>
+        <damageDef>EMP</damageDef>
+        <multiplier>0.4</multiplier>
+      </li>
+    </damageMultipliers>
   </ThingDef>
 
   <!--=============== Mini-turret ===============-->
@@ -73,7 +78,7 @@
   <ThingDef ParentName="NAT_BaseRustedTurret">
     <defName>NAT_RustedTurret_Mini</defName>
     <label>rusted mini-turret</label>
-    <description>A rusted bioferrite piece shaped like a small automatic turret. Not actually a turret, rusted mini-turret is a static rusted creature, powered by dark archotechnology shard. Can shoot through the smoke and slowly regenerate.</description>
+    <description>A rusted bioferrite piece shaped like a small automatic turret.</description>
     <graphicData>
       <texPath>Things/Building/NAT_RustedTurret</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -145,7 +150,7 @@
   <ThingDef ParentName="NAT_HeavyRustedTurret">
     <defName>NAT_RustedTurret_Auto</defName>
     <label>rusted autocannon turret</label>
-    <description>A rusted bioferrite piece shaped like a heavy automatic turret. Not actually a turret, rusted autocannon turret is a static rusted creature, powered by dark archotechnology shard. Can shoot through the smoke and slowly regenerate.</description>
+    <description>A rusted bioferrite piece shaped like a heavy automatic turret.</description>
     <uiIconPath>Things/Building/NAT_RustedAutoTurret_Icon</uiIconPath>
     <statBases>
       <ShootingAccuracyTurret>0.96</ShootingAccuracyTurret>
@@ -171,7 +176,7 @@
   <ThingDef ParentName="NAT_HeavyRustedTurret">
     <defName>NAT_RustedTurret_Sniper</defName>
     <label>rusted sniper turret</label>
-    <description>A rusted bioferrite piece shaped like an armor-piercing turret. Not actually a turret, rusted sniper turret is a static rusted creature, powered by dark archotechnology shard. Can shoot through the smoke and slowly regenerate.</description>
+    <description>A rusted bioferrite piece shaped like an armor-piercing turret.</description>
     <uiIconPath>Things/Building/NAT_RustedSniperTurret_Icon</uiIconPath>
     <statBases>
       <ShootingAccuracyTurret>0.985</ShootingAccuracyTurret>
@@ -198,7 +203,7 @@
   <ThingDef ParentName="NAT_BaseRustedTurret">
     <defName>NAT_RustedTurret_Foam</defName>
     <label>rusted foam turret</label>
-    <description>A rusted bioferrite piece shaped like a foam turret. Not actually a turret, rusted foam turret is a static rusted creature, powered by dark archotechnology shard. Can shoot through the smoke and slowly regenerate.</description>
+    <description>A rusted bioferrite piece shaped like a foam turret.</description>
     <thingClass>NAT.Building_RustedTurretFoam</thingClass>
     <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>

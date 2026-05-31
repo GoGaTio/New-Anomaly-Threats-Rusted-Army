@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingDef ParentName="NAT_MovableEntityBase">
+    <defName>NAT_RustedMechanism</defName>
+    <label>rusted mechanism</label>
+    <description>Pieces of twisted muscle and gristle, bloated with tumorous growths. These bizarre shreds of flesh must have come from a horrific creature.</description>
+    <thingClass>NAT.RustedMechanism</thingClass>
+    <graphicData>
+      <texPath>Things/Building/NAT_RustedGeneralCaller</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <fillPercent>0.4</fillPercent>
+    <statBases>
+      <Mass>100</Mass>
+      <MaxHitPoints>500</MaxHitPoints>
+    </statBases>
+    <inspectorTabs>
+      <li>ITab_StudyNotes</li>
+    </inspectorTabs>
+    <comps>
+      <li Class="CompProperties_Studiable">
+        <frequencyTicks>120000</frequencyTicks>
+        <knowledgeCategory>Advanced</knowledgeCategory>
+        <anomalyKnowledge>3</anomalyKnowledge>
+        <minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+      </li>
+      <li Class="CompProperties_StudyUnlocks">
+        <studyNotes>
+          <li>
+            <threshold>2</threshold>
+            <label>Rusted mechanism study progress</label>
+            <text>Investigation of the rusted mass has revealed some information. It is an archotech machine, that has a lot of psy-connections with something far away. \n\nIf not suppressed, its activity level will increase over time. You can't tell what will happen when the device fully activates.</text>
+          </li>
+          <li>
+            <threshold>10</threshold>
+            <label>Rusted mechanism study progress</label>
+            <text>You've learned more about the rusted mass. It is a beginning of rusted army, connected with countless rusted soldiers. Rusted mass will grow getting mor life power and then will transfofm into rusted soldiers, causing rusted hordes to attack this place.\n\nThe power level of the rusted mass rises unless suppressed. If it fully activates, it will transform into group of rusted soldiers and draw others to attack colony.\n\n{PAWN_nameDef} thinks that it may be possible to safely deactivate the rusted mass but this will need significantly more study.</text>
+          </li>
+          <li>
+            <threshold>30</threshold>
+            <label>Rusted mechanism study complete</label>
+            <text>{PAWN_nameDef} has completed {PAWN_possessive} investigation of the rusted mass. {PAWN_pronoun} has discovered a method for safely deactivating the mass using shards of archotechnology.\n\nYou can no longer study the rusted mass after deactivating it.</text>
+          </li>
+        </studyNotes>
+      </li>
+      <li Class="NAT.CompProperties_RustedMechanism">
+        <mainGunDef>NAT_Gun_RustedMechanism</mainGunDef>
+        <moteDef>NAT_Mote_RustedMechanism_Aim</moteDef>
+        <printOffsetTowards>0.5</printOffsetTowards>
+        <printCooldownTicks>600</printCooldownTicks>
+        <printWarmupTicks>300</printWarmupTicks>
+        <printingEffecter>NAT_RustedMechanism_Printing</printingEffecter>
+        <printEffecter>NAT_RustedMechanism_Printed</printEffecter>
+        <printOffsets>
+          <li>(-0.3, 0, 0.1)</li>
+          <li>(0.3, 0, 0.1)</li>
+        </printOffsets>
+        <options>
+          <NAT_RustedTrooper>3</NAT_RustedTrooper>
+          <NAT_RustedGunner>4</NAT_RustedGunner>
+          <NAT_RustedRifleman>2</NAT_RustedRifleman>
+          <NAT_RustedHussar>1</NAT_RustedHussar>
+          <NAT_RustedSapper>1</NAT_RustedSapper>
+          <NAT_RustedGuardsman>1</NAT_RustedGuardsman>
+        </options>
+        <optionsPlayer>
+          <NAT_RustedSoldier>1</NAT_RustedSoldier>
+          <NAT_RustedTrooper>1</NAT_RustedTrooper>
+        </optionsPlayer>
+        <activityPerDayFromBioferrite>
+          <points>
+            <li>(0.25, 0)</li>
+            <li>(0.8, 0.2)</li>
+            <li>(1, 0.5)</li>
+          </points>
+        </activityPerDayFromBioferrite>
+        <!--Interactible-->
+        <activeTicks>1</activeTicks>
+        <cooldownTicks>300000</cooldownTicks>
+        <ticksToActivate>180</ticksToActivate>
+        <activateTexPath>UI/Commands/DMS_UnlockContainer</activateTexPath>
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetControlledPawns>true</onlyTargetControlledPawns>
+        </targetingParameters>
+      </li>
+      <li Class="CompProperties_Activity">
+        <startingRange>0.2~0.4</startingRange>
+        <workerClass>NAT.RustedMechanismActivityWorker</workerClass>
+        <showLetterOnActivated>true</showLetterOnActivated>
+        <changePerDayOutside>0.4</changePerDayOutside>
+        <changePerDamage>0.01</changePerDamage>
+        <letterDef>ThreatBig</letterDef>
+        <letterTitle>Rusted mechanism activated!</letterTitle>
+        <letterDesc>The activity level of the rusted mechanism has reached 100% and it has activated.</letterDesc>
+        <activityResearchFactorCurve>
+          <points>
+            <li>0, 0.5</li>
+            <li>0.5, 1</li>
+            <li>1, 2</li>
+          </points>
+        </activityResearchFactorCurve>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeapon">
+    <defName>NAT_Gun_RustedMechanism</defName>
+    <label>autocannon</label>
+    <description>A self-loading large-bore cannon designed to attach to a turret.</description>
+    <graphicData>
+      <texPath>Things/Building/Security/TurretAutocannon_Top</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <destroyOnDrop>True</destroyOnDrop>
+    <drawerType>RealtimeOnly</drawerType>
+    <canGenerateDefaultDesignator>false</canGenerateDefaultDesignator>
+    <tradeability>None</tradeability>
+    <useHitPoints>false</useHitPoints>
+    <allowedArchonexusCount>0</allowedArchonexusCount>
+    <weaponClasses>
+      <li>Ranged</li>
+    </weaponClasses>
+    <statBases>
+      <AccuracyTouch>0.28</AccuracyTouch>
+      <AccuracyShort>0.72</AccuracyShort>
+      <AccuracyMedium>0.66</AccuracyMedium>
+      <AccuracyLong>0.5</AccuracyLong>
+      <RangedWeapon_Cooldown>3.5</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Mass>40</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <defaultProjectile>Bullet_AutocannonTurret</defaultProjectile>
+        <warmupTime>1</warmupTime>
+        <range>32.9</range>
+        <ticksBetweenBurstShots>17</ticksBetweenBurstShots>
+        <burstShotCount>3</burstShotCount>
+        <soundCast>Shot_Autocannon</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>12</muzzleFlashScale>
+        <defaultCooldownTime>2</defaultCooldownTime>
+        <ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
+      </li>
+    </verbs>
+  </ThingDef>
+  
+</Defs>

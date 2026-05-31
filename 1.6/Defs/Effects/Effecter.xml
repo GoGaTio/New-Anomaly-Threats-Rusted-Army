@@ -2,6 +2,82 @@
 <Defs>
 
   <EffecterDef>
+    <defName>NAT_RustedMechanism_Printed</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_CameraShakeSingle</subEffecterClass>
+        <initialDelayTicks>0</initialDelayTicks>
+        <positionOffset>(0, 0, 0)</positionOffset>
+        <cameraShake>.2</cameraShake>
+        <lifespanMaxTicks>1</lifespanMaxTicks>
+        <distanceAttenuationScale>1</distanceAttenuationScale>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>PsychicRitual_Complete</fleckDef>
+        <spawnLocType>OnTarget</spawnLocType>
+        <burstCount>10</burstCount>
+        <positionRadius>1</positionRadius>
+        <positionRadiusMin>.5</positionRadiusMin>
+        <scale>.3~.4</scale>
+        <rotation>50~120</rotation>
+        <rotationRate>-5~5</rotationRate>
+        <angle>0~0</angle>
+        <speed>1~8</speed>
+        <fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
+        <rotateTowardsTargetCenter>true</rotateTowardsTargetCenter>
+        <attachToSpawnThing>true</attachToSpawnThing>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
+    <defName>NAT_RustedMechanism_Printing</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <chancePerTick>.2</chancePerTick>
+        <chancePeriodTicks>6</chancePeriodTicks>
+        <fleckDef>HoraxianFieldQuickRingCurved</fleckDef>
+        <spawnLocType>OnTarget</spawnLocType>
+        <burstCount>2~2</burstCount>
+        <positionRadius>.3</positionRadius>
+        <positionRadiusMin>.1</positionRadiusMin>
+        <scale>.1~.15</scale>
+        <rotation>50~120</rotation>
+        <rotationRate>-5~5</rotationRate>
+        <angle>0~0</angle>
+        <speed>0</speed>
+        <fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
+        <rotateTowardsTargetCenter>true</rotateTowardsTargetCenter>
+        <attachToSpawnThing>true</attachToSpawnThing>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <positionRadius>0.4</positionRadius>
+        <moteDef>Mote_SparkSimple</moteDef>
+        <rotation>0~360</rotation>
+        <burstCount>1~4</burstCount>
+        <scale>0.2</scale>
+        <chancePerTick>0.75</chancePerTick>
+        <spawnLocType>OnTarget</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <positionRadius>0.3</positionRadius>
+        <moteDef>Mote_SparkThrownFastBright</moteDef>
+        <spawnLocType>OnSource</spawnLocType>
+        <chancePerTick>0.75</chancePerTick>
+        <color>(1, 0, 0)</color>
+        <speed>3.3~5</speed>
+        <scale>1</scale>
+        <angle>0~360</angle>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
     <defName>NAT_BannerBuff</defName>
     <offsetMode>Free</offsetMode>
     <!-- don't spawn attached, since the flecks already anchor themselves correctly, spawning attached can introduce bad offsets -->
@@ -21,7 +97,6 @@
         <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
         <speed>0</speed>
       </li>
-
     </children>
   </EffecterDef>
 
@@ -76,24 +151,6 @@
         <burstCount>1</burstCount>
         <spawnLocType>OnSource</spawnLocType>
         <color>(255,30,30)</color>
-      </li>
-    </children>
-  </EffecterDef>
-
-  <EffecterDef>
-    <defName>NAT_ExplosionDust</defName>
-    <children>
-      <li>
-        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
-        <fleckDef>NAT_DustPuff</fleckDef>
-        <burstCount>1</burstCount>
-        <speed>-0.6~-0.5</speed>
-        <useTargetAInitialRotation>true</useTargetAInitialRotation>
-        <scale>2~3</scale>
-        <angle>160~200</angle>
-        <rotationRate>1~2</rotationRate>
-        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
-        <absoluteAngle>false</absoluteAngle>
       </li>
     </children>
   </EffecterDef>

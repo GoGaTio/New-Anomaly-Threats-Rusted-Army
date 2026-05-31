@@ -153,14 +153,44 @@
         </renderNodeProperty>
       </li>
       <li Class="NAT.CompProperties_BossStages">
+        <finishedLetterLabel>Rusted general defeated</finishedLetterLabel>
+        <finishedLetterText>You've defeated rusted general and it leaved valuable resources alongside with void-metal medal.\n\nEscorting rusts are fleeing.</finishedLetterText>
         <finalLeavings>
           <NAT_VoidmetalMedal>1</NAT_VoidmetalMedal>
-          <Shard>2~3</Shard>
-          <Bioferrite>40~100</Bioferrite>
+          <Shard>3~4</Shard>
+          <Bioferrite>70~140</Bioferrite>
         </finalLeavings>
         <stages>
-          <li/>
           <li>
+            <actions>
+              <li Class="NAT.BossStageAction_Explosion">
+                <startAction>false</startAction>
+                <explosiveRadius>2.9</explosiveRadius>
+                <explosiveDamageType>NAT_HateVaporize</explosiveDamageType>
+              </li>
+            </actions>
+          </li>
+          <li>
+            <actions>
+              <li Class="NAT.BossStageAction_Explosion">
+                <startAction>false</startAction>
+                <explosiveRadius>2.9</explosiveRadius>
+                <explosiveDamageType>NAT_HateVaporize</explosiveDamageType>
+              </li>
+              <li Class="NAT.BossStageAction_SpawnPawns">
+                <endAction>false</endAction>
+                <options>
+                  <NAT_RustedTrooper>3</NAT_RustedTrooper>
+                  <NAT_RustedTrooper_Heavy>1</NAT_RustedTrooper_Heavy>
+                  <NAT_RustedGunner>4</NAT_RustedGunner>
+                  <NAT_RustedGunner_Heavy>1</NAT_RustedGunner_Heavy>
+                  <NAT_RustedRifleman>2</NAT_RustedRifleman>
+                  <NAT_RustedHussar>1</NAT_RustedHussar>
+                  <NAT_RustedGuardsman>1</NAT_RustedGuardsman>
+                </options>
+                <pointsRange>2000~2000</pointsRange>
+              </li>
+            </actions>
             <statOffsets>
               <MoveSpeed>0.4</MoveSpeed>
               <MeleeDodgeChance>10</MeleeDodgeChance>
@@ -174,14 +204,6 @@
             </abilities>
           </li>
         </stages>
-      </li>
-      <li Class="CompProperties_Explosive">
-        <wickTicks>0</wickTicks>
-        <explosiveRadius>2.9</explosiveRadius>
-        <explodeOnKilled>true</explodeOnKilled>
-        <explosiveDamageType>NAT_HateVaporize</explosiveDamageType>
-        <propagationSpeed>0.5</propagationSpeed>
-        <chanceNeverExplodeFromDamage>1</chanceNeverExplodeFromDamage>
       </li>
     </comps>
     <tools Inherit="False">

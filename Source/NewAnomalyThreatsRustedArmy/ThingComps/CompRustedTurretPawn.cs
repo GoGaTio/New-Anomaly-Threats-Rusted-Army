@@ -52,9 +52,12 @@ namespace NAT
 				kindDef.combatPower = parentDef.building.combatPower;
 				kindDef.label = parentDef.label;
 				kindDef.race.label = parentDef.label;
+				parentDef.description += "\n" + "NAT_RustedTurretDesc".Translate(parentDef.label);
 				kindDef.race.description = parentDef.description;
 				comp.hitPoints = parentDef.BaseMaxHitPoints;
 				comp.ticksPerHeal = parentDef.GetCompProperties<CompProperties_SelfhealHitpoints>()?.ticksPerHeal ?? 1000;
+				parentDef.building.turretBurstCooldownTime = parentDef.building.turretGunDef.Verbs[0].defaultCooldownTime;
+				parentDef.building.turretBurstWarmupTime = new FloatRange(parentDef.building.turretGunDef.Verbs[0].warmupTime);
 				CompProperties_Turret turret = kindDef.race.GetCompProperties<CompProperties_Turret>();
 				turret.turretDef = parentDef.building.turretGunDef;
 				turret.foamTurret = typeof(Building_RustedTurretFoam).IsAssignableFrom(parentDef.thingClass);

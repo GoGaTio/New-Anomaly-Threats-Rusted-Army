@@ -88,7 +88,7 @@ namespace NAT
 					pawn.DeSpawnOrDeselect();
 				}
 				GenSpawn.Spawn(pawn, destination, map, pawn.def.defaultPlacingRot);
-				EffecterDefOf.Skip_Exit.Spawn(destination, map).Cleanup();
+				EffecterDefOf.Skip_ExitNoDelay.Spawn(destination, map).Cleanup();
 				if (pawn.TryGetFormingCaravanLord(out var lord) && lord.Map != pawn.Map)
 				{
 					CaravanFormingUtility.RemovePawnFromCaravan(pawn, pawn.GetLord(), removeFromDowned: false);

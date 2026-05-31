@@ -31,6 +31,23 @@ namespace NAT
 			NATRADefOf.NAT_RustRest.label = NeedDefOf.Rest.label;
 		}
 	}
+	public class RustedMechanismActivityWorker : ActivityWorker_Outside
+	{
+		public override float GetChangeRatePerDay(ThingWithComps thing)
+		{
+			return base.GetChangeRatePerDay(thing) + thing.GetComp<CompRustedMechanism>().ActivityPerDay;
+		}
+
+		public override void GetSummary(ThingWithComps thing, StringBuilder sb)
+		{
+			float change = thing.GetComp<CompRustedMechanism>().ActivityPerDay;
+			base.GetSummary(thing, sb);
+			if (change >= 0.01f)
+			{
+				sb.Append(string.Format("\n - {0}: {1}", "NAT_BioferriteOnSurface".Translate(), change.ToStringPercent("0")));
+			}
+		}
+	}
 
 	/*public class NewAnomalyThreatsRustedArmySettings : ModSettings
     {

@@ -61,7 +61,7 @@ namespace NAT
 
 		public static readonly Texture2D Use = ContentFinder<Texture2D>.Get("UI/Buttons/NAT_RustUse");
 
-		public static NewAnomalyThreatsRustedArmySettings Settings
+		/*public static NewAnomalyThreatsRustedArmySettings Settings
 		{
 			get
 			{
@@ -73,7 +73,7 @@ namespace NAT
 			}
 		}
 
-		private static NewAnomalyThreatsRustedArmySettings settings;
+		private static NewAnomalyThreatsRustedArmySettings settings;*/
 
 		public static List<Pawn> ExecuteRaid(Map map, float points, int groupCount = 1, bool stageThenAttack = false, bool sendLetter = true, string extraDescString = null, PawnGroupKindDef groupKindOverride = null, bool forceDrop = false, bool randomDrop = false, bool centerDrop = false)
         {

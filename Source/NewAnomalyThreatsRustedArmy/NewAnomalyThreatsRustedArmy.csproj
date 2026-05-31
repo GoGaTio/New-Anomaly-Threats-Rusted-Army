@@ -76,8 +76,9 @@
     <Compile Include="Jobs\LordsToils.cs" />
     <Compile Include="ThingComps\CompRustedBuffGiver.cs" />
     <Compile Include="ThingComps\CompRustedCore.cs" />
+    <Compile Include="ThingComps\CompRustedMechanism.cs" />
     <Compile Include="ThingComps\CompStatue.cs" />
-    <Compile Include="Things\EntityStatue.cs" />
+    <Compile Include="Things\RustedMechanism.cs" />
     <Compile Include="Verb_MeleeAttackExplode.cs" />
     <Compile Include="Abilities\CompAbilityEffect_RustedCommander.cs" />
     <Compile Include="Abilities\CompAbilityEffect_ShapeRust.cs" />
@@ -103,7 +104,7 @@
     <Compile Include="MapGen\LayoutWorker_RustedBase.cs" />
     <Compile Include="MapGen\RoomContents.cs" />
     <Compile Include="MapGen\SitePartWorkers.cs" />
-    <Compile Include="Mod.cs" />
+    <Compile Include="Misc.cs" />
     <Compile Include="Utility.cs" />
     <Compile Include="Need_RustRest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

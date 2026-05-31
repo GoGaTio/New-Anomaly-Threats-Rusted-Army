@@ -92,6 +92,8 @@ namespace NAT
 
 		public float followRadius = 7f;
 
+		public override IntVec3 FlagLoc => escortee?.SpawnedOrAnyParentSpawned == true ? escortee.PositionHeld : base.FlagLoc;
+
 		public LordToil_EscortRust(Pawn escortee, float followRadius = 7f)
 		{
 			this.escortee = escortee;

@@ -12,7 +12,6 @@
   <DamageDef ParentName="NAT_RustedBomb">
     <defName>NAT_RustedAntiTankBomb</defName>
     <workerClass>NAt.DamageWorker_RustedBomb</workerClass>
-    <explosionCellEffecter>NAT_ExplosionDust</explosionCellEffecter>
     <explosionCellEffecterChance>0.5</explosionCellEffecterChance>
     <explosionCellEffecterMaxRadius>20</explosionCellEffecterMaxRadius>
   </DamageDef>
