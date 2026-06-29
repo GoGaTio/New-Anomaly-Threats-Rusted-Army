@@ -12,9 +12,8 @@
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<statBases>
-			<WorkToMake>1600</WorkToMake>
 			<Mass>1</Mass>
-			<Flammability>0.4</Flammability>
+			<Flammability>1.5</Flammability>
 			<EquipDelay>2</EquipDelay>
 		</statBases>
 		<thingCategories>

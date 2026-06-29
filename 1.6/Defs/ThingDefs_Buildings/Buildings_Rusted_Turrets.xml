@@ -13,7 +13,7 @@
     <fillPercent>0.4</fillPercent>
     <comps>
       <li Class="NAT.CompProperties_PreventFrendlyFire"/>
-      <li Class="NAT.CompProperties_RustedArmor"/>
+      <li Class="NAT.CompProperties_Armor"/>
       <li Class="CompProperties_Stunnable">
         <affectedDamageDefs>
           <li>Stun</li>

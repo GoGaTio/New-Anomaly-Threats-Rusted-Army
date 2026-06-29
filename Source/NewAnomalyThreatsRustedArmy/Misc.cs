@@ -1,14 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RimWorld;
+﻿using RimWorld;
 using RimWorld.BaseGen;
 using RimWorld.IO;
 using RimWorld.Planet;
 using RimWorld.QuestGen;
 using RimWorld.SketchGen;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using UnityEngine;
 using Verse;
 using Verse.AI;
 using Verse.AI.Group;
@@ -17,8 +19,7 @@ using Verse.Noise;
 using Verse.Profile;
 using Verse.Sound;
 using Verse.Steam;
-using UnityEngine;
-using System.Diagnostics;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace NAT
 {
@@ -29,8 +30,21 @@ namespace NAT
 		{
 			NATRADefOf.NAT_RustRest.description = NeedDefOf.Rest.description;
 			NATRADefOf.NAT_RustRest.label = NeedDefOf.Rest.label;
+			List<DamageDef> damages = DefDatabase<DamageDef>.AllDefs.Where((x) => x.defName.Contains("Acid")).ToList();
+			foreach (ThingDef def in DefDatabase<ThingDef>.AllDefs.Where((x) => x.thingClass == typeof(RustedPawn)))
+			{
+				if (def.damageMultipliers.NullOrEmpty())
+				{
+					def.damageMultipliers = new List<DamageMultiplier>();
+				}
+				foreach (DamageDef damage in damages)
+				{
+					def.damageMultipliers.Add(new DamageMultiplier() { damageDef = damage, multiplier = 0.25f });
+				}
+			}
 		}
 	}
+
 	public class RustedMechanismActivityWorker : ActivityWorker_Outside
 	{
 		public override float GetChangeRatePerDay(ThingWithComps thing)

@@ -130,13 +130,6 @@
           </li>
         </points>
       </li>
-      <li Class="CompProperties_Studiable">
-        <frequencyTicks>120000</frequencyTicks>
-        <knowledgeCategory>Advanced</knowledgeCategory>
-        <anomalyKnowledge>1</anomalyKnowledge>
-        <minMonolithLevelForStudy>1</minMonolithLevelForStudy>
-        <requiresHoldingPlatform>true</requiresHoldingPlatform>
-      </li>
     </comps>
   </ThingDef>
 
@@ -196,13 +189,6 @@
             <type>PlatformRestraint3</type>
           </li>
         </points>
-      </li>
-      <li Class="CompProperties_Studiable">
-        <frequencyTicks>120000</frequencyTicks>
-        <knowledgeCategory>Advanced</knowledgeCategory>
-        <anomalyKnowledge>2</anomalyKnowledge>
-        <minMonolithLevelForStudy>1</minMonolithLevelForStudy>
-        <requiresHoldingPlatform>true</requiresHoldingPlatform>
       </li>
     </comps>
   </ThingDef>

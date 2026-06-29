@@ -51,11 +51,9 @@ namespace NAT
 			Map map = (Map)parms.target;
 			if (!map.TileInfo.OnSurface || Rand.Chance(0.3f))
 			{
-				RustedArmyUtility.ExecuteRaid(map, PointsFromPoints.Evaluate(parms.points), 1, false, true, null, null, true, Rand.Chance(0.5f));
-				return true;
+				return RustedArmyUtility.ExecuteRaid(map, PointsFromPoints.Evaluate(parms.points), 1, false, true, null, null, true, Rand.Chance(0.5f)) != null;
 			}
-			RustedArmyUtility.ExecuteRaid(map, PointsFromPoints.Evaluate(parms.points), Rand.Chance(GroupsChanceFromPoints.Evaluate(parms.points)) ? new IntRange(2, 3).RandomInRange : 1, Rand.Chance(0.2f));
-			return true;
+			return RustedArmyUtility.ExecuteRaid(map, PointsFromPoints.Evaluate(parms.points), Rand.Chance(GroupsChanceFromPoints.Evaluate(parms.points)) ? new IntRange(2, 3).RandomInRange : 1, Rand.Chance(0.2f)) != null;
 		}
 	}
 }

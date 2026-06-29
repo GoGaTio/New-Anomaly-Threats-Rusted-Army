@@ -17,6 +17,7 @@
       <AimingDelayFactor>0.75</AimingDelayFactor>
     </statBases>
     <race>
+      <anomalyKnowledge>2</anomalyKnowledge>
       <body>NAT_RustedGuardsman</body>
       <thinkTreeConstant>NAT_RustedGuardsmanConstant</thinkTreeConstant>
       <baseHealthScale>3</baseHealthScale>
@@ -58,13 +59,6 @@
       </li>
       <li Class="CompProperties_ProducesBioferrite">
         <bioferriteDensity>2.5</bioferriteDensity>
-      </li>
-      <li Class="CompProperties_Studiable">
-        <frequencyTicks>120000</frequencyTicks>
-        <knowledgeCategory>Advanced</knowledgeCategory>
-        <anomalyKnowledge>2</anomalyKnowledge>
-        <minMonolithLevelForStudy>1</minMonolithLevelForStudy>
-        <requiresHoldingPlatform>true</requiresHoldingPlatform>
       </li>
       <li Class="NAT.CompProperties_RustedSoldier">
         <bodyType>Hulk</bodyType>

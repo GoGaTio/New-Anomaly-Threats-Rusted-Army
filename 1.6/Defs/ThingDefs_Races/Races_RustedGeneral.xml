@@ -15,6 +15,7 @@
       <NAT_CoreDropChance>0</NAT_CoreDropChance>
     </statBases>
     <race>
+      <anomalyKnowledge>7</anomalyKnowledge>
       <body>NAT_RustedGeneral</body>
       <nameGenerator>NAT_NamerRustedGeneral</nameGenerator>
       <baseHealthScale>7</baseHealthScale>
@@ -56,13 +57,6 @@
       </li>
       <li Class="CompProperties_ProducesBioferrite">
         <bioferriteDensity>2.5</bioferriteDensity>
-      </li>
-      <li Class="CompProperties_Studiable">
-        <frequencyTicks>120000</frequencyTicks>
-        <knowledgeCategory>Advanced</knowledgeCategory>
-        <anomalyKnowledge>7</anomalyKnowledge>
-        <minMonolithLevelForStudy>1</minMonolithLevelForStudy>
-        <requiresHoldingPlatform>true</requiresHoldingPlatform>
       </li>
       <li Class="NAT.CompProperties_RustedSoldier">
         <bodyType>Hulk</bodyType>

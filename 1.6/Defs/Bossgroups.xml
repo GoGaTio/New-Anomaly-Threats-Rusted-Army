@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <NAT.AnomalyBossDef_Rust>
+  <NAT.AnomalyBossDef_Pawn>
     <defName>NAT_RustedGeneral</defName>
     <bossKind>NAT_RustedGeneral</bossKind>
     <arrivedLetterLabel>Rusted general arrived</arrivedLetterLabel>
     <arrivedLetterText>Rusted general with escorting rusts has arrived. They will prepare for some time before attacking.</arrivedLetterText>
+    <bossClass>NAT.AnomalyBoss_Rust</bossClass>
+    <escortsLabel>rusts</escortsLabel>
     <groups>
       <li>
         <escorts>
@@ -23,6 +25,6 @@
         </fixedEscorts>
       </li>
     </groups>
-  </NAT.AnomalyBossDef_Rust>
+  </NAT.AnomalyBossDef_Pawn>
 
 </Defs>

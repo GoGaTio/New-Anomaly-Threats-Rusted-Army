@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
   <ThingDef Abstract="True" Name="NAT_RustedBuildingBase" ParentName="BuildingBase">
@@ -125,7 +125,7 @@
       <ai_neverTrashThis>true</ai_neverTrashThis>
     </building>
     <comps>
-      <li Class="NAT.CompProperties_RustedArmor"/>
+      <li Class="NAT.CompProperties_Armor"/>
     </comps>
     <statBases>
       <ArmorRating_Blunt>0.7</ArmorRating_Blunt>
@@ -178,7 +178,7 @@
           <drawSize>(7,7)</drawSize>
         </graphicData>
       </li>
-      <li Class="NAT.CompProperties_RustedArmor"/>
+      <li Class="NAT.CompProperties_Armor"/>
     </comps>
   </ThingDef>
 

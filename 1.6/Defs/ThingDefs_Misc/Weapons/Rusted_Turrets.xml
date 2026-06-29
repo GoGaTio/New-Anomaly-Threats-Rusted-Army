@@ -203,6 +203,9 @@
         <forcedMissRadius>2.5</forcedMissRadius>
         <sprayEffecterDef>FoamSpray_Directional</sprayEffecterDef>
         <ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
       </li>
     </verbs>
   </ThingDef>

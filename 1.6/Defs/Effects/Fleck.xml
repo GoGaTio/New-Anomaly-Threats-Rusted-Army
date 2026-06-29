@@ -7,7 +7,7 @@
       <texPath>Things/Mote/StressAura</texPath>
       <shaderType>Mote</shaderType>
       <renderInstanced>false</renderInstanced>
-      <color>(.7, 0, 0, .5)</color>
+      <color>(0, 0, 0, .5)</color>
       <drawSize>(.75, .75)</drawSize>
       <graphicClass>Graphic_FleckPulse</graphicClass>
     </graphicData>

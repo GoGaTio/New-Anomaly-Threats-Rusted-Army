@@ -93,6 +93,7 @@ namespace NAT.Rusts
 				{
 					pawn.abilities = new Pawn_AbilityTracker(pawn);
 				}
+				pawn.training = null;
 			}
 		}
 	}

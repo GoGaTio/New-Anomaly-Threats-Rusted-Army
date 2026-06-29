@@ -52,13 +52,6 @@
       <li Class="CompProperties_ProducesBioferrite">
         <bioferriteDensity>2</bioferriteDensity>
       </li>
-      <li Class="CompProperties_Studiable">
-        <frequencyTicks>120000</frequencyTicks>
-        <knowledgeCategory>Advanced</knowledgeCategory>
-        <anomalyKnowledge>1</anomalyKnowledge>
-        <minMonolithLevelForStudy>1</minMonolithLevelForStudy>
-        <requiresHoldingPlatform>true</requiresHoldingPlatform>
-      </li>
       <li Class="NAT.CompProperties_RustedSoldier">
         <interaction>NAT_RustedChat</interaction>
         <deathEffecter>NAT_RustDeathExplosion_Small</deathEffecter>

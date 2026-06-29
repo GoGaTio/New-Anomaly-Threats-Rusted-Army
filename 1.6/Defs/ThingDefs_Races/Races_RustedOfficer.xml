@@ -17,6 +17,7 @@
       <NAT_ReinforcementsCooldown>40</NAT_ReinforcementsCooldown>
     </statBases>
     <race>
+      <anomalyKnowledge>2.5</anomalyKnowledge>
       <baseBodySize>1.6</baseBodySize>
       <baseHealthScale>3.25</baseHealthScale>
       <nameGenerator>NAT_NamerRustedOfficer</nameGenerator>
@@ -59,13 +60,6 @@
       </li>
       <li Class="CompProperties_ProducesBioferrite">
         <bioferriteDensity>2.5</bioferriteDensity>
-      </li>
-      <li Class="CompProperties_Studiable">
-        <frequencyTicks>120000</frequencyTicks>
-        <knowledgeCategory>Advanced</knowledgeCategory>
-        <anomalyKnowledge>2.5</anomalyKnowledge>
-        <minMonolithLevelForStudy>1</minMonolithLevelForStudy>
-        <requiresHoldingPlatform>true</requiresHoldingPlatform>
       </li>
       <li Class="NAT.CompProperties_RustedCommander">
         <startingUnits>6</startingUnits>

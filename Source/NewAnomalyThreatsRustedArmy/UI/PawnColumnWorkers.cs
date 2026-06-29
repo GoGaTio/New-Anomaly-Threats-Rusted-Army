@@ -114,7 +114,6 @@ namespace NAT
 
 		public static Dialog_NameRustedSoldier NamePawnDialog(Pawn pawn, string initialFirstNameOverride = null)
 		{
-			Dictionary<NameFilter, List<string>> suggestedNames = null;
 			NameFilter editableNames;
 			NameFilter visibleNames;
 			if (pawn.babyNamingDeadline >= Find.TickManager.TicksGame || DebugSettings.ShowDevGizmos)
@@ -123,18 +122,13 @@ namespace NAT
 				visibleNames = NameFilter.First | NameFilter.Nick | NameFilter.Last;
 				List<string> list = new List<string>();
 				list.RemoveDuplicates();
-				suggestedNames = new Dictionary<NameFilter, List<string>> {
-				{
-					NameFilter.Last,
-					list
-				} };
 			}
 			else
 			{
 				visibleNames = NameFilter.First | NameFilter.Nick | NameFilter.Last | NameFilter.Title;
 				editableNames = NameFilter.Nick | NameFilter.Title;
 			}
-			return new Dialog_NameRustedSoldier(pawn, visibleNames, editableNames, suggestedNames, initialFirstNameOverride);
+			return new Dialog_NameRustedSoldier(pawn, visibleNames, editableNames, initialFirstNameOverride);
 		}
 
 		public override int GetMinWidth(PawnTable table)

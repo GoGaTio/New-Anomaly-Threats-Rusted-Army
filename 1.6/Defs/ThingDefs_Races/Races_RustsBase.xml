@@ -21,13 +21,14 @@
       <FoodPoisonChance>5</FoodPoisonChance>
       <MeatAmount>0</MeatAmount>
       <NAT_CoreDropChance>0.05</NAT_CoreDropChance>
-<ConstructSuccessChance>2</ConstructSuccessChance>
+      <ConstructSuccessChance>2</ConstructSuccessChance>
     </statBases>
     <tradeability>None</tradeability>
     <hasTooltip>true</hasTooltip>
     <hideStats>true</hideStats>
     <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
     <race>
+      <anomalyKnowledge>1</anomalyKnowledge>
       <thinkTreeMain>NAT_Rust</thinkTreeMain>
       <thinkTreeConstant>NAT_RustConstant</thinkTreeConstant>
       <nameGenerator>NAT_NamerRustedSoldier</nameGenerator>
@@ -86,6 +87,12 @@
           <canTargetHumans>true</canTargetHumans>
         </wakeUpTargetingParams>
       </li>
+      <li Class="CompProperties_Studiable">
+        <frequencyTicks>120000</frequencyTicks>
+        <knowledgeCategory>Advanced</knowledgeCategory>
+        <minMonolithLevelForStudy>1</minMonolithLevelForStudy>
+        <requiresHoldingPlatform>true</requiresHoldingPlatform>
+      </li>
     </comps>
     <tools>
       <li>
@@ -143,7 +150,7 @@
       </li>
     </damageMultipliers>
   </ThingDef>
-  
+
   <PawnKindDef Name="NAT_RustKindBase" Abstract="True">
     <defaultFactionType>Entities</defaultFactionType>
     <overrideDeathOnDownedChance>0.5</overrideDeathOnDownedChance>

@@ -13,11 +13,11 @@ using Verse.Noise;
 
 namespace NAT
 {
-	public class AnomalyBossDef_Rust : AnomalyBossDef
+	public class AnomalyBoss_Rust : AnomalyBoss_Pawn
 	{
-		public override void ArriveInt(List<Pawn> list, Map map)
+		public override bool TryArriveInt(List<Pawn> list)
 		{
-			RustedArmyUtility.RustsArrive(list, map, true);
+			return RustedArmyUtility.TryArriveRusts(list, Map, true);
 		}
 
 		public override void GenerateLord(List<Pawn> list, Map map)

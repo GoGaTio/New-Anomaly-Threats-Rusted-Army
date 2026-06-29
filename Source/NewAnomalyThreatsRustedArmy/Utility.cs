@@ -111,7 +111,10 @@ namespace NAT
 				parms.spawnRotation = Rot4.Random;
 				List<Pawn> list = PawnGroupMakerUtility.GeneratePawns(pawnGroupMakerParms).ToList();
 				list.Add(PawnGenerator.GeneratePawn(NATRADefOf.NAT_RustedBannerman, Faction.OfEntities));
-				RustsArrive(list, map, forceDrop, radius, centerDrop, randomDrop);
+				if(!TryArriveRusts(list, map, forceDrop, radius, centerDrop, randomDrop))
+				{
+					return null;
+				}
 				if (AnomalyIncidentUtility.IncidentShardChance(points / (groupCount * 1.5f)))
 				{
 					AnomalyIncidentUtility.PawnShardOnDeath(list.RandomElement());
@@ -140,7 +143,7 @@ namespace NAT
 			return raiders;
 		}
 
-		public static void RustsArrive(IEnumerable<Thing> rusts, Map map, bool drop = false, float spawnRadius = 8, bool centerDrop = false, bool randomDrop = false, IntVec3? forcedDropPosition = null) 
+		public static bool TryArriveRusts(IEnumerable<Thing> rusts, Map map, bool drop = false, float spawnRadius = 8, bool centerDrop = false, bool randomDrop = false, IntVec3? forcedDropPosition = null) 
 		{
 			IntVec3 spot = IntVec3.Zero;
 			if (forcedDropPosition != null)
@@ -156,6 +159,10 @@ namespace NAT
 				}
 				else spot = DropCellFinder.FindRaidDropCenterDistant(map);
 			}
+			if (!spot.IsValid)
+			{
+				return false;
+			}
 			Rot4 facing = Rot4.FromAngleFlat((map.Center - spot).AngleFlat);
 			foreach(Thing item in rusts)
 			{
@@ -165,7 +172,7 @@ namespace NAT
 					if (!CellFinder.TryFindRandomCell(map, (IntVec3 x) => DropCellFinder.IsGoodDropSpot(x, map, false, true), out loc))
 					{
 						Log.Error("New Anomaly Threats - Cannot find dropspot. Continue");
-						continue;
+						return false;
 					}
 				}
 				else if (!CellFinder.TryFindRandomReachableNearbyCell(spot, map, spawnRadius, TraverseParms.For(drop ? TraverseMode.PassAllDestroyableThingsNotWater : TraverseMode.NoPassClosedDoors), (IntVec3 c) => drop ? DropCellFinder.IsGoodDropSpot(c, map, false, true) : c.Standable(map), null, out loc))
@@ -180,6 +187,7 @@ namespace NAT
 				}
 				else GenSpawn.Spawn(item, loc, map, facing);
 			}
+			return true;
 		}
 
 		public static ThingDef GetSkyfaller(ThingDef fromDef)

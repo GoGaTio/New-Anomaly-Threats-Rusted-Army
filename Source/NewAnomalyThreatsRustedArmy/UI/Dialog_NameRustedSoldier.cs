@@ -74,11 +74,7 @@ namespace NAT
 
 			public int nameIndex;
 
-			public List<string> suggestedNames;
-
-			private List<FloatMenuOption> suggestedOptions;
-
-			public NameContext(string label, int nameIndex, string currentName, int maximumNameLength, bool editable, List<string> suggestedNames)
+			public NameContext(string label, int nameIndex, string currentName, int maximumNameLength, bool editable)
 			{
 				current = currentName;
 				this.nameIndex = nameIndex;
@@ -88,19 +84,6 @@ namespace NAT
 				textboxWidth = Mathf.Ceil(Text.CalcSize(new string('W', maximumNameLength + 2)).x);
 				textboxName = label;
 				this.editable = editable;
-				this.suggestedNames = suggestedNames;
-				if (suggestedNames == null)
-				{
-					return;
-				}
-				suggestedOptions = new List<FloatMenuOption>(suggestedNames.Count);
-				foreach (string suggestedName in suggestedNames)
-				{
-					suggestedOptions.Add(new FloatMenuOption(suggestedName, delegate
-					{
-						current = suggestedName;
-					}));
-				}
 			}
 
 			public void MakeRow(Pawn pawn, float randomizeButtonWidth, TaggedString randomizeText, TaggedString suggestedText, ref RectDivider divider, ref string focusControlOverride)
@@ -121,15 +104,7 @@ namespace NAT
 					return;
 				}
 				Rect rect = divider.NewCol(randomizeButtonWidth);
-				if (suggestedNames != null)
-				{
-					List<string> list = suggestedNames;
-					if (list != null && list.Count > 0 && Widgets.ButtonText(rect, suggestedText))
-					{
-						Find.WindowStack.Add(new FloatMenu(suggestedOptions));
-					}
-				}
-				else if (Widgets.ButtonText(rect, randomizeText))
+				if (Widgets.ButtonText(rect, randomizeText))
 				{
 					SoundDefOf.Tick_Tiny.PlayOneShotOnCamera();
 					Name name = PawnBioAndNameGenerator.GeneratePawnName(pawn, NameStyle.Full, null, forceNoNick: false, pawn.genes?.Xenotype);
@@ -197,7 +172,7 @@ namespace NAT
 			throw new InvalidOperationException();
 		}
 
-		public Dialog_NameRustedSoldier(Pawn pawn, NameFilter visibleNames, NameFilter editableNames, Dictionary<NameFilter, List<string>> suggestedNames, string initialFirstNameOverride = null, string initialNickNameOverride = null, string initialLastNameOverride = null, string initialTitleOverride = null)
+		public Dialog_NameRustedSoldier(Pawn pawn, NameFilter visibleNames, NameFilter editableNames, string initialFirstNameOverride = null, string initialNickNameOverride = null, string initialLastNameOverride = null, string initialTitleOverride = null)
 		{
 			this.pawn = pawn;
 			descriptionText = pawn.KindLabelIndefinite().CapitalizeFirst();
@@ -210,12 +185,12 @@ namespace NAT
 			NameTriple nameTriple = pawn.Name as NameTriple;
 			if (nameTriple != null && (visibleNames & NameFilter.First) > NameFilter.None)
 			{
-				names.Add(new NameContext("FirstName", 0, initialFirstNameOverride ?? nameTriple.First, 12, (editableNames & NameFilter.First) > NameFilter.None, suggestedNames?.GetWithFallback(NameFilter.First)));
+				names.Add(new NameContext("FirstName", 0, initialFirstNameOverride ?? nameTriple.First, 12, (editableNames & NameFilter.First) > NameFilter.None));
 			}
 			if ((visibleNames & NameFilter.Nick) > NameFilter.None)
 			{
 				string text = ((nameTriple == null || nameTriple.NickSet || (editableNames & NameFilter.Nick) <= NameFilter.None) ? pawn.Name.ToStringShort : "");
-				names.Add(new NameContext("NickName", 1, initialNickNameOverride ?? text, 16, (editableNames & NameFilter.Nick) > NameFilter.None, suggestedNames?.GetWithFallback(NameFilter.Nick)));
+				names.Add(new NameContext("NickName", 1, initialNickNameOverride ?? text, 16, (editableNames & NameFilter.Nick) > NameFilter.None));
 			}
 			float num2 = names.Max((NameContext name) => name.labelWidth);
 			float num3 = names.Max((NameContext name) => name.textboxWidth);

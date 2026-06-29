@@ -114,7 +114,6 @@
     <Compile Include="ScenParts.cs" />
     <Compile Include="ThingComps\CompBombardmentBeacon.cs" />
     <Compile Include="ThingComps\CompReinforcementsBeacon.cs" />
-    <Compile Include="ThingComps\CompRustedArmor.cs" />
     <Compile Include="ThingComps\CompRustedCommander.cs" />
     <Compile Include="ThingComps\CompRustedDish.cs" />
     <Compile Include="ThingComps\CompRustedEquipment.cs" />
