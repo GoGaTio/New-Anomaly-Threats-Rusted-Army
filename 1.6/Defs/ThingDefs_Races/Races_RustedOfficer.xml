@@ -21,7 +21,6 @@
       <baseBodySize>1.6</baseBodySize>
       <baseHealthScale>3.25</baseHealthScale>
       <nameGenerator>NAT_NamerRustedOfficer</nameGenerator>
-      <thinkTreeConstant>NAT_RustedOfficerConstant</thinkTreeConstant>
       <body>NAT_RustedOfficer</body>
       <lifeStageAges>
         <li>

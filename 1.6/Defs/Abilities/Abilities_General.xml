@@ -15,7 +15,7 @@
     <uiOrder>3</uiOrder>
     <warmupStartSound>CombatCommand_Warmup</warmupStartSound>
     <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-    <cooldownTicksRange>5000</cooldownTicksRange>
+    <cooldownTicksRange>2000</cooldownTicksRange>
     <verbProperties>
       <verbClass>Verb_CastAbility</verbClass>
       <warmupTime>3</warmupTime>

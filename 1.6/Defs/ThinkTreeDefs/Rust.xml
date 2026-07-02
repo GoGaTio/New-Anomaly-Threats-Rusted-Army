@@ -169,7 +169,7 @@
     </thinkRoot>
   </ThinkTreeDef>
 
-<ThinkTreeDef>
+  <ThinkTreeDef>
     <defName>NAT_RustedGuardsmanConstant</defName>
     <thinkRoot Class="ThinkNode_Priority">
       <subNodes>
@@ -187,7 +187,7 @@
   </ThinkTreeDef>
 
   <ThinkTreeDef>
-    <defName>NAT_RustedOfficerConstant</defName>
+    <defName>NAT_RustedGeneralConstant</defName>
     <thinkRoot Class="ThinkNode_Priority">
       <subNodes>
         <!-- Despawned -->
@@ -195,6 +195,7 @@
           <treeDef>Despawned</treeDef>
         </li>
 
+        <li Class="NAT.JobGiver_RustedGeneral"/>
       </subNodes>
     </thinkRoot>
   </ThinkTreeDef>

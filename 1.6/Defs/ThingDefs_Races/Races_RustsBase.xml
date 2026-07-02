@@ -22,6 +22,7 @@
       <MeatAmount>0</MeatAmount>
       <NAT_CoreDropChance>0.05</NAT_CoreDropChance>
       <ConstructSuccessChance>2</ConstructSuccessChance>
+      <MeleeDamageFactor>1.5</MeleeDamageFactor>
     </statBases>
     <tradeability>None</tradeability>
     <hasTooltip>true</hasTooltip>

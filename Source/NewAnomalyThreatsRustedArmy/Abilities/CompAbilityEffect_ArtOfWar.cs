@@ -163,7 +163,7 @@ namespace NAT
 				targetCells.Clear();
 				warmupMotes = new List<Mote>();
 				potentialTargets = new List<Pawn>();
-				potentialTargets.AddRange(parent.pawn.Map.mapPawns.SpawnedPawnsInFaction(parent.pawn.Faction).Where((pawn) => !pawn.kindDef.hostileToAll && pawn.Position.DistanceTo(parent.pawn.Position) < 60f && !pawn.ThreatDisabled(null)));
+				potentialTargets.AddRange(parent.pawn.Map.mapPawns.SpawnedPawnsInFaction(parent.pawn.Faction).Where((pawn) => !pawn.kindDef.hostileToAll && pawn.Position.DistanceTo(parent.pawn.Position) <= 65f && !pawn.ThreatDisabled(null)));
 				potentialTargets.Remove(parent.pawn);
 				getTargetInterval = Mathf.Max((parent.verb.WarmupTime / (float)potentialTargets.Count).SecondsToTicks(), 1);
 			}
@@ -201,7 +201,7 @@ namespace NAT
 				bool ranged = !targ.CurrentEffectiveVerb?.IsMeleeAttack ?? false;
 				IntVec3 dest = IntVec3.Invalid;
 				potentialTargets.Remove(targ);
-				List<Thing> list = map.listerThings.ThingsInGroup(ThingRequestGroup.AttackTarget).Where((x) => x.Position.InHorDistOf(targ.Position, 45f) && x.HostileTo(targ) && !(x as IAttackTarget).ThreatDisabled(null)).ToList();
+				List<Thing> list = map.listerThings.ThingsInGroup(ThingRequestGroup.AttackTarget).Where(ValidateEnemy).ToList();
 				if (list.NullOrEmpty())
 				{
 					return null;
@@ -226,6 +226,23 @@ namespace NAT
 				targetCells.Add(dest);
 				warmupMotes.Add(MoteMaker.MakeAttachedOverlay(targ, NATRADefOf.NAT_Mote_ArtOfWarPreCast, Vector3.zero, targ.ageTracker?.CurKindLifeStage?.bodyGraphicData?.Graphic?.drawSize.x ?? 2f));
 				return new ArtOfWarTarget() { pawn = targ, destination = dest };
+				bool ValidateEnemy(Thing t)
+				{
+					float distance = t.Position.DistanceTo(targ.Position);
+					if(distance < 10f || distance > 65f)
+					{
+						return false;
+					}
+					if (!t.HostileTo(targ))
+					{
+						return false;
+					}
+					if((t as IAttackTarget).ThreatDisabled(null))
+					{
+						return false;
+					}
+					return true;
+				}
 			}
 			return null;
 		}

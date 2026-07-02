@@ -65,13 +65,13 @@ namespace NAT.Rusts
 				if (list[i].opcode == OpCodes.Callvirt && list[i].operand.ToString().Contains("IsColonyMech"))
 				{
 					Log.Message("NAT-Test3");
-					list[i] = new CodeInstruction(OpCodes.Call, (object)AccessTools.Method(typeof(Patches_FindItemForLoad), "ResearchTabAnomalyOverride", (Type[])null, (Type[])null));
+					list[i] = new CodeInstruction(OpCodes.Call, (object)AccessTools.Method(typeof(Patches_FindItemForLoad), "PawnIsRust", (Type[])null, (Type[])null));
 				}
 			}
 			return list.AsEnumerable();
 		}
 
-		public static bool ResearchTabAnomalyOverride(Pawn pawn)
+		public static bool PawnIsRust(Pawn pawn)
 		{
 			if (pawn.IsColonist)
 			{
@@ -495,19 +495,6 @@ namespace NAT.Rusts
 		public static void Postfix(Pawn pawn, ref bool __result)
 		{
 			if (pawn is RustedPawn rust && rust.Draftable)
-			{
-				__result = true;
-			}
-		}
-	}
-
-	[HarmonyPatch(typeof(StunHandler), "CanAdaptToDamage")]
-	public class Patch_AddEMPResistance
-	{
-		[HarmonyPostfix]
-		public static void Postfix(DamageDef def, ref bool __result, StunHandler __instance)
-		{
-			if (__instance.parent is RustedPawn rust)
 			{
 				__result = true;
 			}

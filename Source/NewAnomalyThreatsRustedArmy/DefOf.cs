@@ -25,6 +25,7 @@ namespace NAT
 	[DefOf]
 	public static class NATRADefOf
 	{
+		public static AbilityDef NAT_ArtOfWar;
 
 		public static ThingDef NAT_RustedMassIncoming;
 

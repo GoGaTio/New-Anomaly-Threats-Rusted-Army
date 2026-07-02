@@ -76,6 +76,8 @@ namespace NAT
 
 		public float? bodySizeOverride;
 
+		public int stunAdaptationTicksLeft = -1;
+
 		public CompRustedSoldier Comp
 		{
 			get
@@ -99,6 +101,20 @@ namespace NAT
 					commander = this.GetComp<CompRustedCommander>();
 				}
 				return commander;
+			}
+		}
+
+		private CompAttachBase attach;
+
+		public CompAttachBase Attach
+		{
+			get
+			{
+				if (attach == null)
+				{
+					attach = this.GetComp<CompAttachBase>();
+				}
+				return attach;
 			}
 		}
 
@@ -195,6 +211,25 @@ namespace NAT
 
 		public override void PreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
 		{
+			if (dinfo.Def.causeStun)
+			{
+				int duration = Mathf.RoundToInt((dinfo.Def.constantStunDurationTicks ?? (dinfo.Amount * 30f)) * 2.5f);
+				if (kindDef.isBoss)
+				{
+					duration *= 2;
+				}
+				if (stunAdaptationTicksLeft > 0)
+				{
+					stunAdaptationTicksLeft += duration;
+					absorbed = true;
+					if (dinfo.Def.displayAdaptedTextMote)
+					{
+						MoteMaker.ThrowText(new Vector3((float)Position.x + 1f, Position.y, (float)Position.z + 1f), text: dinfo.Def.adaptedText ?? ((string)"Adapted".Translate()), map: Map, color: Color.white);
+					}
+					return;
+				}
+				stunAdaptationTicksLeft = Mathf.Min(duration, 600);
+			}
 			if(dinfo.Tool == null)
 			{
 				if (dinfo.Def.isExplosive)
@@ -242,6 +277,15 @@ namespace NAT
 						hediff.Severity = severity.Value;
 					}
 				}
+			}
+		}
+
+		protected override void TickInterval(int delta)
+		{
+			base.TickInterval(delta);
+			if(stunAdaptationTicksLeft > 0)
+			{
+				stunAdaptationTicksLeft -= delta;
 			}
 		}
 
@@ -602,6 +646,23 @@ namespace NAT
 			{
 				health.DropBloodFilth();
 			}
+			if(Attach?.attachments != null && Attach.attachments.Count != 0)
+			{
+				if(Attach.attachments.Count == 1)
+				{
+					if (Attach.attachments[0].def != ThingDefOf.Fire)
+					{
+						Attach.attachments[0].Destroy();
+					}
+				}
+				else
+				{
+					for (int i = Attach.attachments.Count - 1; i > 0; i--)
+					{
+						Attach.attachments[i].Destroy();
+					}
+				}
+			}
 		}
 
 		public override void DrawExtraSelectionOverlays()
@@ -627,7 +688,9 @@ namespace NAT
 		{
 			base.ExposeData();
 			Scribe_Defs.Look(ref head, "head");
-			if(Scribe.mode == LoadSaveMode.PostLoadInit && head == null && Comp?.Props?.hasHead == true)
+			Scribe_Values.Look(ref stunAdaptationTicksLeft, "stunAdaptationTicksLeft");
+			Scribe_Values.Look(ref bodySizeOverride, "bodySizeOverride");
+			if (Scribe.mode == LoadSaveMode.PostLoadInit && head == null && Comp?.Props?.hasHead == true)
             {
 				head = DefDatabase<RustHeadDef>.AllDefs.RandomElementByWeight((RustHeadDef x) => Comp.Props.headTags.Contains(x.tag) ? x.selectionWeight : 0);
 			}

@@ -7,7 +7,7 @@
     <description>Bioferrite pieces shaped like tall human figure. This type of rusted creature is Rusted army elite unit, so has thicker armor and better combat skills than regular soldiers.</description>
     <statBases>
       <MoveSpeed>2.4</MoveSpeed>
-      <MarketValue>7900</MarketValue>
+      <MarketValue>17900</MarketValue>
       <ArmorRating_Blunt>1.5</ArmorRating_Blunt>
       <ArmorRating_Sharp>1.15</ArmorRating_Sharp>
       <MinimumContainmentStrength>370</MinimumContainmentStrength>
@@ -18,6 +18,7 @@
       <anomalyKnowledge>7</anomalyKnowledge>
       <body>NAT_RustedGeneral</body>
       <nameGenerator>NAT_NamerRustedGeneral</nameGenerator>
+      <thinkTreeConstant>NAT_RustedGeneralConstant</thinkTreeConstant>
       <baseHealthScale>7</baseHealthScale>
       <baseBodySize>5</baseBodySize>
       <lifeStageAges>
@@ -163,6 +164,10 @@
                 <explosiveDamageType>NAT_HateVaporize</explosiveDamageType>
               </li>
             </actions>
+            <statFactors>
+              <IncomingDamageFactor>0.75</IncomingDamageFactor>
+              <Flammability>0.5</Flammability>
+            </statFactors>
           </li>
           <li>
             <actions>
@@ -182,7 +187,7 @@
                   <NAT_RustedHussar>1</NAT_RustedHussar>
                   <NAT_RustedGuardsman>1</NAT_RustedGuardsman>
                 </options>
-                <pointsRange>2000~2000</pointsRange>
+                <pointsRange>3000~3000</pointsRange>
               </li>
             </actions>
             <statOffsets>
@@ -193,9 +198,6 @@
               <IncomingDamageFactor>0.5</IncomingDamageFactor>
               <Flammability>0.5</Flammability>
             </statFactors>
-            <abilities>
-              <li>NAT_HateCube</li>
-            </abilities>
           </li>
         </stages>
       </li>
@@ -291,6 +293,7 @@
     <combatEnhancingDrugsCount>0</combatEnhancingDrugsCount>
     <abilities>
       <li>NAT_ArtOfWar</li>
+      <li>NAT_HateCube</li>
     </abilities>
   </PawnKindDef>
 
