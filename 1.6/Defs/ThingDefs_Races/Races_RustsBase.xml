@@ -168,6 +168,10 @@
         <key>NAT_Rusted</key>
         <value>2.0</value>
       </li>
+      <li>
+        <key>Insect</key>
+        <value>2.0</value>
+      </li>
     </moveSpeedFactorByTerrainTag>
   </PawnKindDef>
 

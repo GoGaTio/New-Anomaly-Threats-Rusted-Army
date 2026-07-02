@@ -84,7 +84,7 @@ namespace NAT
 	}
 	public class CompRustedShield : ThingComp
 	{
-		public int health = -1;
+		public float health = -1;
 
 		public int ticksToRegen = -1;
 
@@ -150,7 +150,7 @@ namespace NAT
 				if (ticksToRegen >= Props.regenInterval)
 				{
 					ticksToRegen = 0;
-					health++;
+					health = Mathf.Max(Props.maxHealth, health + 1);
 				}
 			}
 		}
@@ -274,7 +274,7 @@ namespace NAT
 			if (dinfo.Def != DamageDefOf.EMP && dinfo.Def.harmsHealth)
 			{
 				absorbed = true;
-				health -= Mathf.RoundToInt(dinfo.Amount * pawn.GetStatValue(StatDefOf.IncomingDamageFactor));
+				health -= dinfo.Amount * pawn.GetStatValue(StatDefOf.IncomingDamageFactor);
 				pawn.mindState.Notify_DamageTaken(dinfo);
 				pawn.GetLord()?.Notify_PawnDamaged(pawn, dinfo);
 				if (health <= 0)

@@ -193,6 +193,7 @@
             <statOffsets>
               <MoveSpeed>0.4</MoveSpeed>
               <MeleeDodgeChance>10</MeleeDodgeChance>
+              <MoveSpeed>1.2</MoveSpeed>
             </statOffsets>
             <statFactors>
               <IncomingDamageFactor>0.5</IncomingDamageFactor>

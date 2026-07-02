@@ -113,67 +113,6 @@
     </verbs>
   </ThingDef>
 
-  <!--<ThingDef ParentName="NAT_RustedTurretWeapon">
-    <defName>NAT_Gun_RustedArtillery</defName>
-    <label>rusted artillery</label>
-    <description>Mortar launcher. Lobs bombs over walls. Very inaccurate but long-ranged.</description>
-    <recoilPower>5</recoilPower>
-    <graphicData>
-      <texPath>Things/Item/Equipment/Weapon/NAT_RustedArtillery</texPath>
-      <drawSize>5</drawSize>
-    </graphicData>
-    <destroyOnDrop>True</destroyOnDrop>
-    <drawerType>RealtimeOnly</drawerType>
-    <canGenerateDefaultDesignator>false</canGenerateDefaultDesignator>
-    <tradeability>None</tradeability>
-    <useHitPoints>false</useHitPoints>
-    <weaponTags>
-      <li>NAT_RustedMortar</li>
-    </weaponTags>
-    <weaponClasses>
-      <li>Ranged</li>
-    </weaponClasses>
-    <allowedArchonexusCount>0</allowedArchonexusCount>
-    <verbs>
-      <li>
-        <verbClass>Verb_Shoot</verbClass>
-        <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
-        <warmupTime>9.0</warmupTime>
-        <forcedMissRadius>5</forcedMissRadius>
-        <requireLineOfSight>false</requireLineOfSight>
-        <minRange>9.9</minRange>
-        <range>500</range>
-        <burstShotCount>1</burstShotCount>
-        <soundCast>Mortar_LaunchA</soundCast>
-        <muzzleFlashScale>16</muzzleFlashScale>
-        <consumeFuelPerShot>1</consumeFuelPerShot>
-        <targetParams>
-          <canTargetLocations>true</canTargetLocations>
-        </targetParams>
-        <ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
-      </li>
-    </verbs>
-    <comps>
-      <li Class="CompProperties_ChangeableProjectile" />
-    </comps>
-    <building>
-      <fixedStorageSettings>
-        <filter>
-          <thingDefs>
-            <li>NAT_RustedShell_Explosive</li>
-          </thingDefs>
-        </filter>
-      </fixedStorageSettings>
-      <defaultStorageSettings>
-        <filter>
-          <thingDefs>
-            <li>NAT_RustedShell_Explosive</li>
-          </thingDefs>
-        </filter>
-      </defaultStorageSettings>
-    </building>
-  </ThingDef>-->
-
   <ThingDef ParentName="NAT_RustedTurretWeapon">
     <defName>NAT_Gun_RustedFoamTurret</defName>
     <label>rusted foam sprayer</label>

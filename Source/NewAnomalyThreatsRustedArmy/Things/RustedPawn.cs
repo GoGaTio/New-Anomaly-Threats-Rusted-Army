@@ -228,7 +228,7 @@ namespace NAT
 					}
 					return;
 				}
-				stunAdaptationTicksLeft = Mathf.Min(duration, 600);
+				stunAdaptationTicksLeft = Mathf.Max(duration, 600);
 			}
 			if(dinfo.Tool == null)
 			{
@@ -243,7 +243,12 @@ namespace NAT
 			}
 			else
 			{
-				dinfo.SetAmount(dinfo.Amount * 0.75f);
+				float factor = 0.75f;
+				if(dinfo.Instigator is Pawn p)
+				{
+					factor *= Mathf.Min(p.BodySize, 1);
+				}
+				dinfo.SetAmount(dinfo.Amount * factor);
 			}
 			base.PreApplyDamage(ref dinfo, out absorbed);
 		}
