@@ -74,6 +74,7 @@ namespace NAT
 
 			public void Apply(Map map)
 			{
+				if(pawn.DeadOrDowned) return;
 				if (pawn.Spawned)
 				{
 					if (pawn.carryTracker.CarriedThing != null && !pawn.Drafted)

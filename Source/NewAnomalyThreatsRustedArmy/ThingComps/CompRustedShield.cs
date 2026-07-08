@@ -150,7 +150,7 @@ namespace NAT
 				if (ticksToRegen >= Props.regenInterval)
 				{
 					ticksToRegen = 0;
-					health = Mathf.Max(Props.maxHealth, health + 1);
+					health = Mathf.Min(Props.maxHealth, health + 1);
 				}
 			}
 		}

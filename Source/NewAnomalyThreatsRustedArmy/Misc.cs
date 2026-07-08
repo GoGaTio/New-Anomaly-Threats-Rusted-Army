@@ -23,6 +23,20 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace NAT
 {
+	public class HediffGiver_Rust : HediffGiver
+	{
+		public List<HediffDef> hediffs = new List<HediffDef>();
+
+		public override bool OnHediffAdded(Pawn pawn, Hediff hediff)
+		{
+			if (hediff.def.lethalSeverity > 0 || hediffs.Contains(hediff.def))
+			{
+				pawn.health.RemoveHediff(hediff);
+			}
+			return false;
+		}
+	}
+
 	[PostDefLoadedNotify]
 	public static class RustRestLabelAdjuster
 	{
@@ -31,7 +45,7 @@ namespace NAT
 			NATRADefOf.NAT_RustRest.description = NeedDefOf.Rest.description;
 			NATRADefOf.NAT_RustRest.label = NeedDefOf.Rest.label;
 			List<DamageDef> damages = DefDatabase<DamageDef>.AllDefs.Where((x) => x.defName.Contains("Acid")).ToList();
-			foreach (ThingDef def in DefDatabase<ThingDef>.AllDefs.Where((x) => x.thingClass == typeof(RustedPawn)))
+			foreach (ThingDef def in DefDatabase<ThingDef>.AllDefs.Where((x) => typeof(RustedPawn).IsAssignableFrom(x.thingClass) || typeof(Building_RustedTurret).IsAssignableFrom(x.thingClass)))
 			{
 				if (def.damageMultipliers.NullOrEmpty())
 				{

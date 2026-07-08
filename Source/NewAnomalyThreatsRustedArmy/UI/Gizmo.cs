@@ -96,7 +96,7 @@ namespace NAT
                 {
 					return "NAT_Restored".Translate() + ": " + Mathf.FloorToInt(FillPercent * 100).ToString() + "%";
 				}
-				return shield.health + "/" + shield.Props.maxHealth;
+				return shield.health.ToStringByStyle(ToStringStyle.Integer) + "/" + shield.Props.maxHealth;
 			}
         }
 

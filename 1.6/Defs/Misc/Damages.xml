@@ -42,8 +42,8 @@
 
   <DamageDef ParentName="NAT_RustedScratch">
     <defName>NAT_RustedDemolish</defName>
-    <buildingDamageFactor>10</buildingDamageFactor>
-    <buildingDamageFactorImpassable>10</buildingDamageFactorImpassable>
+    <buildingDamageFactor>15</buildingDamageFactor>
+    <buildingDamageFactorImpassable>2</buildingDamageFactorImpassable>
   </DamageDef>
 
   <DamageDef ParentName="Vaporize">

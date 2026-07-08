@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <HediffGiverSetDef>
+    <defName>NAT_Rust</defName>
+    <hediffGivers>
+      <li Class="NAt.HediffGiver_Rust">
+        <hediffs>
+        </hediffs>
+      </li>
+    </hediffGivers>
+  </HediffGiverSetDef>
+
+</Defs>

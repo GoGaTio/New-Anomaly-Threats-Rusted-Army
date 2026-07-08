@@ -646,6 +646,10 @@ namespace NAT
 
 		public override void PostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
 		{
+			if (health.hediffSet.hediffs?.Last()?.def.lethalSeverity > 0)
+			{
+				health.RemoveHediff(health.hediffSet.hediffs.Last());
+			}
 			base.PostApplyDamage(dinfo, totalDamageDealt);
 			if (dinfo.Def.makesBlood && totalDamageDealt > 0f && Rand.Chance(0.5f))
 			{

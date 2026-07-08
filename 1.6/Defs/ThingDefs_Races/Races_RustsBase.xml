@@ -52,7 +52,7 @@
       <bloodDef>NAT_Filth_RustedDebris</bloodDef>
       <waterCellCost>24</waterCellCost>
       <hediffGiverSets>
-        <li>AnomalyEntity</li>
+        <li>NAT_Rust</li>
       </hediffGiverSets>
     </race>
     <inspectorTabs Inherit="False">

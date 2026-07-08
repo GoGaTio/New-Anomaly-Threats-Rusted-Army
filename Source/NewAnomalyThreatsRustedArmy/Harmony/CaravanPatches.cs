@@ -81,7 +81,7 @@ namespace NAT.Rusts
         [HarmonyPrefix]
         public static void Postfix(IEnumerable<IThingHolder> pods, ref bool __result)
         {
-            if(!__result) return;
+			if (!__result) return;
 			foreach (IThingHolder pod in pods)
 			{
 				ThingOwner directlyHeldThings = pod.GetDirectlyHeldThings();
