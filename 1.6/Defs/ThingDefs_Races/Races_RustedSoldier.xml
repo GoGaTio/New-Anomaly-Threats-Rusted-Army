@@ -5,7 +5,7 @@
   <ThingDef ParentName="NAT_BaseRustedPawn" Name="NAT_BaseRustedSoldier">
     <defName>NAT_RustedSoldier</defName>
     <label>rusted infantryman</label>
-    <description>Bioferrite pieces shaped like spindly human figure. Rusted soldiers usually appear in armed groups, sneaking around and looking for a target.</description>
+    <description>A twisted humanoid figure made of rusted bioferrite. Rusted infantrymen form the backbone of the Rusted Army. They are skilled in the use of melee weapons, firearms and explosives. Their bioferrite bodies are resistant to acid and blunt damage but are highly flammable and vulnerable to EMP. Although they carry out command orders without question, they show little initiative of their own and prefer to lie low in dark places.</description>
     <statBases>
       <MinimumContainmentStrength>70</MinimumContainmentStrength>
       <StaggerDurationFactor>0.5</StaggerDurationFactor>

@@ -411,6 +411,10 @@ namespace NAT
 	{
 		protected override Job TryGiveJob(Pawn pawn)
 		{
+			if(pawn.carryTracker.CarriedThing != null)
+			{
+				return null;
+			}
 			Pawn pawn2 = ReachableWounded(pawn);
 			if (pawn2 == null)
 			{
@@ -428,7 +432,7 @@ namespace NAT
 			for (int i = 0; i < list.Count; i++)
 			{
 				Pawn pawn = list[i];
-				if (pawn.Downed && searcher.CanReserveAndReach(pawn, PathEndMode.OnCell, Danger.Deadly))
+				if (pawn is RustedPawn rust && pawn.Downed && searcher.CanReserveAndReach(pawn, PathEndMode.OnCell, Danger.Deadly))
 				{
 					return pawn;
 				}

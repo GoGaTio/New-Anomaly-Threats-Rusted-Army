@@ -80,11 +80,29 @@
   <EffecterDef>
     <defName>NAT_BannerBuff</defName>
     <offsetMode>Free</offsetMode>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <scale>0.5~0.5</scale>
+        <positionRadius>.2</positionRadius>
+        <fleckDef>NAT_BannerBuffAura</fleckDef>
+        <burstCount>1~1</burstCount>
+        <rotationRate>0~0</rotationRate>
+        <speed>0~0</speed>
+        <spawnLocType>OnTarget</spawnLocType>
+        <ticksBetweenMotes>60</ticksBetweenMotes>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
+    <defName>NAT_HornBuff</defName>
+    <offsetMode>Free</offsetMode>
     <!-- don't spawn attached, since the flecks already anchor themselves correctly, spawning attached can introduce bad offsets -->
     <children>
       <li>
         <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
-        <fleckDef>NAT_BuffAura</fleckDef>
+        <fleckDef>NAT_HornBuffAura</fleckDef>
         <ticksBetweenMotes>30</ticksBetweenMotes>
         <burstCount>1</burstCount>
         <spawnLocType>OnSource</spawnLocType>

@@ -64,7 +64,7 @@
     <comps>
       <li Class="NAT.HediffCompProperties_RustedBuff"/>
       <li Class="HediffCompProperties_Effecter">
-        <stateEffecter>NAT_BannerBuff</stateEffecter>
+        <stateEffecter>NAT_HornBuff</stateEffecter>
       </li>
     </comps>
     <stages>

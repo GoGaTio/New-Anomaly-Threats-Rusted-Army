@@ -4,7 +4,7 @@
   <ThingDef ParentName="NAT_BaseRustedPawn">
     <defName>NAT_RustedTrooper</defName>
     <label>rusted stormtrooper</label>
-    <description>Bioferrite pieces shaped like human figure. Rusted stormtroopers have bioferrite shield that protects them from incoming damage.</description>
+    <description>A stumpy humanoid figure made of rusted bioferrite. Rusted trooper is a reinforced variant of the standard infantryman, designed for direct assaults on enemy positions. Its dual-layered shell and enhanced regeneration allow it to withstand significant damage without compromising operational integrity. If the outer shell is destroyed, trooper becomes much more mobile but could be eliminated much easier. Their combat-oriented design and the constraints of their armored shell render them incapable of performing skilled tasks.</description>
     <statBases>
       <MinimumContainmentStrength>60</MinimumContainmentStrength>
       <MarketValue>900</MarketValue>

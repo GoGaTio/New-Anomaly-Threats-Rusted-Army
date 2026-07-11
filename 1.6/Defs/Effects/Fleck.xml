@@ -2,13 +2,42 @@
 <Defs>
 
   <FleckDef ParentName="FleckBase_Thrown">
-    <defName>NAT_BuffAura</defName>
+    <defName>NAT_BannerBuffAura</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.4</fadeInTime>
+    <solidTime>2</solidTime>
+    <fadeOutTime>1</fadeOutTime>
+    <growthRate>-0.25</growthRate>
+    <useAttachLink>True</useAttachLink>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <graphicData>
+      <texPath>Things/Mote/HoraxianLineGlow</texPath>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <shaderType>MoteMultiplyCircular</shaderType>
+      <color>(1,0.1,0.1,0.35)</color>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/RadiationDistortion_A</_DistortionTex>
+        <_texAScale>0.5</_texAScale>
+        <_texBScale>2</_texBScale>
+        <_texAScrollSpeed>0</_texAScrollSpeed>
+        <_texBScrollSpeed>-0.4</_texBScrollSpeed>
+        <_Intensity>0.5</_Intensity>
+        <_InnerFadeAmount>0</_InnerFadeAmount>
+        <_DistortionIntensity>0.5</_DistortionIntensity>
+        <_TexAScaleDivisorPerProgress>1.5</_TexAScaleDivisorPerProgress>
+      </shaderParameters>
+      <drawSize>(6, 6)</drawSize>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>NAT_HornBuffAura</defName>
     <graphicData>
       <texPath>Things/Mote/StressAura</texPath>
       <shaderType>Mote</shaderType>
       <renderInstanced>false</renderInstanced>
-      <color>(0, 0, 0, .5)</color>
-      <drawSize>(.75, .75)</drawSize>
+      <color>(0.06, 0.54, 0.09, 0.5)</color>
+      <drawSize>(.35, 0.75)</drawSize>
       <graphicClass>Graphic_FleckPulse</graphicClass>
     </graphicData>
     <altitudeLayer>MoteLow</altitudeLayer>

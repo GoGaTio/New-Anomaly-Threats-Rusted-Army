@@ -4,6 +4,7 @@
   <NAT.AnomalyBossDef_Pawn>
     <defName>NAT_RustedGeneral</defName>
     <bossKind>NAT_RustedGeneral</bossKind>
+    <confirmationText>Summoning {0} threat will summon following hostile {1}</confirmationText>
     <arrivedLetterLabel>Rusted general arrived</arrivedLetterLabel>
     <arrivedLetterText>Rusted general with escorting rusts has arrived. They will prepare for some time before attacking.</arrivedLetterText>
     <bossClass>NAT.AnomalyBoss_Rust</bossClass>
@@ -20,8 +21,8 @@
           <NAT_RustedGuardsman>1</NAT_RustedGuardsman>
         </escorts>
         <fixedEscorts>
-          <NAT_RustedBannerman>3</NAT_RustedBannerman>
-          <NAT_RustedGuardsman>2</NAT_RustedGuardsman>
+          <NAT_RustedBannerman>5</NAT_RustedBannerman>
+          <NAT_RustedGuardsman>3</NAT_RustedGuardsman>
         </fixedEscorts>
       </li>
     </groups>

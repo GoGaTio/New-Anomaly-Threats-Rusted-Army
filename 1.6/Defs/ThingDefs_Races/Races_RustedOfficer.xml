@@ -5,7 +5,7 @@
   <ThingDef Name="NAT_RustedOfficerBase" ParentName="NAT_BaseRustedPawn">
     <defName>NAT_RustedOfficer</defName>
     <label>rusted officer</label>
-    <description>A large bioferrite chunk shaped like fat human figure with tall three-eyed head. This creature usually appears as leader of rusts groups.</description>
+    <description>A bulky humanoid figure made of rusted bioferrite. A frontline commander of the Rusted Army, capable of leading an assault squad, an outpost or a corvette. His tactical skills allow him to efficiently allocate forces, utilize terrain and structures and outflank enemy positions. The rusted officer possesses the ability to call in orbital reinforcements, however it requires a certain amount of time.</description>
     <statBases>
       <MoveSpeed>3.2</MoveSpeed>
       <MarketValue>3700</MarketValue>
