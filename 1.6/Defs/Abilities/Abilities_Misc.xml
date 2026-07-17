@@ -29,11 +29,11 @@
   </AbilityDef>
 
   <AbilityDef>
-    <defName>NAT_HornBuff</defName>
-    <label>horn boost</label>
+    <defName>NAT_BannerBuff</defName>
+    <label>banner boost</label>
     <description>Use the adrenal heart to saturate the bloodstream with stress hormones and liquid energy, permitting the ghoul to move and attack at incredible speeds for a short time.</description>
-    <iconPath>UI/Abilities/GhoulFrenzy</iconPath>
-    <cooldownTicksRange>1800</cooldownTicksRange>
+    <iconPath>Things/Apparel/NAT_RustedBanner/NAT_RustedBanner</iconPath>
+    <cooldownTicksRange>60000</cooldownTicksRange>
     <hostile>false</hostile>
     <groupAbility>true</groupAbility>
     <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
@@ -49,7 +49,6 @@
       <drawAimPie>false</drawAimPie>
       <requireLineOfSight>false</requireLineOfSight>
       <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
-      <soundCast>Pawn_Ghoul_Frenzy</soundCast>
       <targetable>false</targetable>
       <targetParams>
         <canTargetSelf>true</canTargetSelf>
@@ -58,7 +57,7 @@
     <comps>
       <li Class="CompProperties_AbilityGiveHediff">
         <compClass>CompAbilityEffect_GiveHediff</compClass>
-        <hediffDef>NAT_HornBuff_Caster</hediffDef>
+        <hediffDef>NAT_BannerBuff_Caster</hediffDef>
         <onlyApplyToSelf>True</onlyApplyToSelf>
         <replaceExisting>true</replaceExisting>
       </li>

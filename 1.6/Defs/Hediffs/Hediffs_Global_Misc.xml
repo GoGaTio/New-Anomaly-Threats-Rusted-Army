@@ -8,7 +8,7 @@
     <description>This rust is affected by battle cry and fights better.</description>
     <isBad>false</isBad>
     <initialSeverity>1</initialSeverity>
-    <maxSeverity>3</maxSeverity>
+    <maxSeverity>5</maxSeverity>
     <defaultLabelColor>(160,131,115)</defaultLabelColor>
     <comps>
       <li Class="NAT.HediffCompProperties_RustedBuff"/>
@@ -20,7 +20,8 @@
       <li>
         <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
         <statOffsets>
-          <MeleeCooldownFactor>-0.1</MeleeCooldownFactor>
+          <MoveSpeed>0.15</MoveSpeed>
+          <MeleeCooldownFactor>-0.07</MeleeCooldownFactor>
           <MeleeHitChance>1</MeleeHitChance>
           <RangedCooldownFactor>-0.1</RangedCooldownFactor>
           <ShootingAccuracyPawn>1</ShootingAccuracyPawn>
@@ -30,8 +31,8 @@
   </HediffDef>
 
   <HediffDef>
-    <defName>NAT_HornBuff_Caster</defName>
-    <label>horn boost</label>
+    <defName>NAT_BannerBuff_Caster</defName>
+    <label>banner boost</label>
     <hediffClass>HediffWithComps</hediffClass>
     <description>This rust is affected by battle cry and fights better.</description>
     <isBad>false</isBad>
@@ -45,35 +46,12 @@
       <li Class="HediffCompProperties_DisappearsOnDeath" />
       <li Class="NAT.HediffCompProperties_RustedBuffGiver">
         <range>8.9</range>
-        <hediff>NAT_HornBuff</hediff>
-      </li>
-    </comps>
-    <stages>
-      <li></li>
-    </stages>
-  </HediffDef>
-  
-  <HediffDef>
-    <defName>NAT_HornBuff</defName>
-    <label>horn boost</label>
-    <hediffClass>HediffWithComps</hediffClass>
-    <description>This rust is affected by battle cry and fights better.</description>
-    <isBad>false</isBad>
-    <initialSeverity>1</initialSeverity>
-    <maxSeverity>3</maxSeverity>
-    <comps>
-      <li Class="NAT.HediffCompProperties_RustedBuff"/>
-      <li Class="HediffCompProperties_Effecter">
-        <stateEffecter>NAT_HornBuff</stateEffecter>
+        <hediff>NAT_BannerBuff</hediff>
       </li>
     </comps>
     <stages>
       <li>
-        <multiplyStatChangesBySeverity>true</multiplyStatChangesBySeverity>
-        <statOffsets>
-          <MoveSpeed>0.15</MoveSpeed>
-          <IncomingDamageFactor>-0.15</IncomingDamageFactor>
-        </statOffsets>
+        <becomeVisible>false</becomeVisible>
       </li>
     </stages>
   </HediffDef>

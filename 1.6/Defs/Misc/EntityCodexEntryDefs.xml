@@ -2,16 +2,16 @@
 <Defs>
 
   <EntityCodexEntryDef>
-    <defName>NAT_RustedMass</defName>
-    <label>rusted mass</label>
-    <useDescriptionFrom>NAT_RustedMass</useDescriptionFrom>
+    <defName>NAT_RustedMechanism</defName>
+    <label>rusted mechanism</label>
+    <useDescriptionFrom>NAT_RustedMechanism</useDescriptionFrom>
     <uiIconPath>UI/CodexEntries/NAT_RustedMass</uiIconPath>
     <category>Advanced</category>
     <linkedThings>
-      <li>NAT_RustedMass</li>
+      <li>NAT_RustedMechanism</li>
     </linkedThings>
     <provocationIncidents>
-      <li>NAT_RustedMassArrival</li>
+      <li>NAT_RustedMechanismArrival</li>
     </provocationIncidents>
     <discoveredResearchProjects>
       <li>NAT_RustCreation</li>

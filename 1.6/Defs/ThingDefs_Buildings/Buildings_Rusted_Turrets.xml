@@ -58,6 +58,9 @@
       <ai_combatDangerous>true</ai_combatDangerous>
       <expandHomeArea>false</expandHomeArea>
       <draftAttackNonDeconstructable>false</draftAttackNonDeconstructable>
+      <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+      <repairable>false</repairable>
+      <claimable>false</claimable>
     </building>
     <soundImpactDefault>NAT_Pawn_RustedSoldier_Wounded</soundImpactDefault>
     <drawHighlight>true</drawHighlight>

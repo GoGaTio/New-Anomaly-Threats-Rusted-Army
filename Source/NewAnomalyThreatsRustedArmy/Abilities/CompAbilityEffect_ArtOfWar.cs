@@ -225,7 +225,7 @@ namespace NAT
 				}
 				dest = cells.RandomElement();
 				targetCells.Add(dest);
-				warmupMotes.Add(MoteMaker.MakeAttachedOverlay(targ, NATRADefOf.NAT_Mote_ArtOfWarPreCast, Vector3.zero, targ.ageTracker?.CurKindLifeStage?.bodyGraphicData?.Graphic?.drawSize.x ?? 2f));
+				warmupMotes.Add(MoteMaker.MakeAttachedOverlay(targ, NATRADefOf.NAT_Mote_ArtOfWarPreCast, Vector3.zero, targ.RaceProps.Humanlike ? 1.5f : (targ.ageTracker?.CurKindLifeStage?.bodyGraphicData?.Graphic?.drawSize.x ?? 2f)));
 				return new ArtOfWarTarget() { pawn = targ, destination = dest };
 				bool ValidateEnemy(Thing t)
 				{

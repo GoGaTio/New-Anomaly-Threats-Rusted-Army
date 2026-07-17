@@ -93,7 +93,7 @@
     <Compile Include="Harmony\Work.cs" />
     <Compile Include="Incidents\IncidentWorker_RustedArmyRaid.cs" />
     <Compile Include="Incidents\IncidentWorker_RustedArmySiege.cs" />
-    <Compile Include="Incidents\IncidentWorker_RustedMassArrival.cs" />
+    <Compile Include="Incidents\IncidentWorker_RustedMechanismArrival.cs" />
     <Compile Include="Jobs\JobDrivers_Misc.cs" />
     <Compile Include="Jobs\JobGivers.cs" />
     <Compile Include="Jobs\LordsJobs.cs" />
@@ -119,8 +119,7 @@
     <Compile Include="ThingComps\CompRustedDish.cs" />
     <Compile Include="ThingComps\CompRustedEquipment.cs" />
     <Compile Include="ThingComps\CompRustedSidearm.cs" />
-    <Compile Include="ThingComps\CompRustedMass.cs" />
-    <Compile Include="ThingComps\CompRustedMassDeactivation.cs" />
+    <Compile Include="ThingComps\CompRustedMechanismDeactivation.cs" />
     <Compile Include="ThingComps\CompRustedSculpture.cs" />
     <Compile Include="ThingComps\CompRustedShield.cs" />
     <Compile Include="ThingComps\CompRustedSoldier.cs" />

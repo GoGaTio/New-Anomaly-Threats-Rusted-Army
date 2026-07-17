@@ -290,7 +290,8 @@ namespace NAT
 			{
 				return null;
 			}
-			if (pawn.lord?.CurLordToil?.GetType().Name.Contains("ExitMap") == true)
+			string name = pawn.lord?.CurLordToil?.GetType().Name;
+			if (name != null && (name.Contains("ExitMap") || name.Contains("Flee")))
 			{
 				return null;
 			}

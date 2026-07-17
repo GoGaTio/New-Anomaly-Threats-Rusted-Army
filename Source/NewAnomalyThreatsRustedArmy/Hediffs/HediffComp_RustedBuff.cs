@@ -27,6 +27,23 @@ namespace NAT
 
 		public HediffCompProperties_RustedBuff Props => (HediffCompProperties_RustedBuff)props;
 
+		public override string CompDescriptionExtra
+		{
+			get
+			{
+				if (affecters.NullOrEmpty())
+				{
+					return null;
+				}
+				string s = "\n\n" + "AffectedBy".Translate();
+				foreach (var item in affecters)
+				{
+					s += "\n  " + item.Key.LabelCap;
+				}
+				return s;
+			}
+		}
+
 		public override bool CompShouldRemove
 		{
 			get

@@ -1,8 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-
-
   <ThingDef ParentName="SkyfallerBase">
     <defName>NAT_RustedTrooperIncoming</defName>
     <label>rusted stormtrooper (incoming)</label>
@@ -23,30 +21,6 @@
       <rotateGraphicTowardsDirection>true</rotateGraphicTowardsDirection>
       <motesPerCell>0</motesPerCell>
       <explosionRadius>1.9</explosionRadius>
-    </skyfaller>
-  </ThingDef>
-
-  <ThingDef ParentName="SkyfallerBase">
-    <defName>NAT_RustedMassIncoming</defName>
-    <label>rusted mass (incoming)</label>
-    <graphicData>
-      <texPath>Things/NAT_RustedMassIncoming</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <shaderType>CutoutFlying</shaderType>
-      <drawSize>(3, 3)</drawSize>
-    </graphicData>
-    <skyfaller>
-      <movementType>ConstantSpeed</movementType>
-      <shadow>Things/Skyfaller/SkyfallerShadowRectangle</shadow>
-      <shadowSize>(1, 1)</shadowSize>
-      <ticksToImpactRange>780~780</ticksToImpactRange>
-      <anticipationSound>WarpedObelisk_Fall</anticipationSound>
-      <anticipationSoundTicks>780</anticipationSoundTicks>
-      <impactSound>WarpedObelisk_Impact</impactSound>
-      <rotateGraphicTowardsDirection>true</rotateGraphicTowardsDirection>
-      <motesPerCell>0</motesPerCell>
-      <explosionRadius>1</explosionRadius>
-      <explosionDamage>Bomb</explosionDamage>
     </skyfaller>
   </ThingDef>
 
@@ -124,7 +98,6 @@
     </skyfaller>
   </ThingDef>
 
-
   <ThingDef ParentName="SkyfallerBase">
     <defName>NAT_RustedChunk3x3Incoming</defName>
     <label>large rusted chunk (incoming)</label>
@@ -144,6 +117,5 @@
       <explosionDamageFactor>0.25</explosionDamageFactor>
     </skyfaller>
   </ThingDef>
-
 
 </Defs>

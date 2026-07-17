@@ -115,6 +115,7 @@ namespace NAT
 					Pawn pawn = PawnGenerator.GeneratePawn(currentKind, Faction.OfEntities);
 					pawn.ageTracker.AgeBiologicalTicks = 0;
 					pawn.ageTracker.AgeChronologicalTicks = 0;
+					pawn.inventory.DestroyAll();
 					GenSpawn.Spawn(pawn, currentTarget.Cell, parent.Map, WipeMode.VanishOrMoveAside);
 					Lord lord = parent.Map.lordManager.lords.FirstOrDefault((x) => x.LordJob is LordJob_RustedArmy job && job.canLeave == false);
 					if (lord == null)
@@ -126,6 +127,8 @@ namespace NAT
 				}
 				cooldownTicksLeft = parent.Comp.Props.printCooldownTicks;
 				currentTarget = LocalTargetInfo.Invalid;
+				parent.bioferrite -= currentKind.combatPower * 0.1f;
+				currentKind = null;
 			}
 
 			public void PrintPlayerRust()
@@ -182,6 +185,8 @@ namespace NAT
 
 		Thing IAttackTargetSearcher.Thing => this;
 
+		public float BioferritePercent => bioferrite / Comp.Props.maxBioferrite;
+
 		public bool active = false;
 
 		public LocalTargetInfo currentTarget = LocalTargetInfo.Invalid;
@@ -198,11 +203,14 @@ namespace NAT
 
 		public int workingPrinter = -1;
 
+		public float bioferrite;
+
 		public List<MechanismPrinter> printers = new List<MechanismPrinter>();
 
 		public override void ExposeData()
 		{
 			base.ExposeData();
+			Scribe_Values.Look(ref bioferrite, "bioferrite");
 			Scribe_Values.Look(ref burstCooldownTicksLeft, "burstCooldownTicksLeft");
 			Scribe_Values.Look(ref burstWarmupTicksLeft, "burstWarmupTicksLeft");
 			Scribe_TargetInfo.Look(ref currentTarget, "currentTarget");
@@ -238,12 +246,26 @@ namespace NAT
 			}
 		}
 
+		public void Deactivate()
+		{
+			Comp.CompActivity.EnterPassiveState();
+			Comp.CompActivity.SetActivity(0);
+			bioferrite = -100;
+		}
+
 		public void Activate()
 		{
+			if(bioferrite <= 0)
+			{
+				bioferrite = 100;
+			}
 			active = true;
+			burstWarmupTicksLeft = 0;
+			burstCooldownTicksLeft = BurstCooldownTime.SecondsToTicks();
 			for (int i = 0; i < printers.Count; i++)
 			{
 				printers[i].cooldownTicksLeft = Mathf.RoundToInt((float)Comp.Props.printCooldownTicks * Rand.Value);
+				printers[i].warmupTicksLeft = 0;
 			}
 		}
 
@@ -259,6 +281,41 @@ namespace NAT
 				printer.cooldownTicksLeft = Comp.Props.printCooldownTicks;
 				printers.Add(printer);
 			}
+		}
+
+		public override void PreApplyDamage(ref DamageInfo dinfo, out bool absorbed)
+		{
+			if(bioferrite <= 0)
+			{
+				absorbed = true;
+				return;
+			}
+			base.PreApplyDamage(ref dinfo, out absorbed);
+		}
+
+		public override void PostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
+		{
+			base.PostApplyDamage(dinfo, totalDamageDealt);
+			bioferrite -= dinfo.Amount;
+			if(bioferrite <= 0)
+			{
+				Deactivate();
+			}
+		}
+
+		public override string GetInspectString()
+		{
+			string s = base.GetInspectString();
+			if (s.NullOrEmpty())
+			{
+				s = string.Empty;
+			}
+			else
+			{
+				s += "\n";
+			}
+			s += "NAT_BioferriteOnSurface".Translate() + ": " + Mathf.Max(bioferrite, 0).ToStringByStyle(ToStringStyle.Integer);
+			return s;
 		}
 
 		public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
@@ -316,6 +373,11 @@ namespace NAT
 			}
 			if (active)
 			{
+				if (bioferrite <= 0)
+				{
+					Deactivate();
+					return;
+				}
 				for (int i = 0; i < printers.Count; i++)
 				{
 					printers[i].Tick();

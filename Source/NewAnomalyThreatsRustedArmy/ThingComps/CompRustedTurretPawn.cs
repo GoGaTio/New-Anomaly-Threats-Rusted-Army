@@ -297,7 +297,7 @@ namespace NAT
 			Log.Message(building.ToString() + ":SpawnedTurretBuilding");
 		}
 
-		public Pawn SpawnPawn(IntVec3 pos, Map map)
+		public Pawn SpawnPawn(IntVec3 pos, Map map, bool updateDuties = true)
 		{
 			if (destroyed)
 			{
@@ -315,7 +315,14 @@ namespace NAT
 			lord?.ownedBuildings?.Remove(parent as Building_TurretGun);
 			if (lord != null && lord.ownedPawns?.Contains(pawn) == false)
 			{
-				lord.AddPawn(pawn);
+				if (updateDuties)
+				{
+					lord.AddPawn(pawn);
+				}
+				else
+				{
+					lord.AddPawns(Gen.YieldSingle(pawn), false);
+				}
 			}
 			pawn.GetComp<CompTurret>().CurRotation = ((Building_TurretGun)parent).Top.CurRotation + pawn.GetComp<CompTurret>().Props.angleOffset;
 			parent.Destroy();
@@ -352,7 +359,7 @@ namespace NAT
 					}
 				}
 			}
-			else
+			else if(parent.Spawned)
 			{
 				ageTicks++;
 				if (ageTicks > 300 && parent is Building_RustedTurret turret && !turret.CurrentTarget.IsValid)

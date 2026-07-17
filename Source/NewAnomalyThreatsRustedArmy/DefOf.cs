@@ -27,10 +27,6 @@ namespace NAT
 	{
 		public static AbilityDef NAT_ArtOfWar;
 
-		public static ThingDef NAT_RustedMassIncoming;
-
-		public static ThingDef NAT_RustedTrooperIncoming;
-
 		public static ThingDef NAT_RustedWall;
 
 		public static ThingDef NAT_RustedDoor;
@@ -70,8 +66,6 @@ namespace NAT
 		public static JobDef NAT_UseItemByRust;
 
 		public static JobDef NAT_RustedTurretSetUp;
-
-		public static PawnKindDef NAT_RustedMass;
 
 		public static PawnKindDef NAT_RustedBannerman;
 

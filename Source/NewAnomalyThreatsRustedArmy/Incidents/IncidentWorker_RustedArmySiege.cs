@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Diagnostics;
+﻿using LudeonTK;
 using RimWorld;
 using RimWorld.BaseGen;
 using RimWorld.IO;
@@ -11,15 +6,13 @@ using RimWorld.Planet;
 using RimWorld.QuestGen;
 using RimWorld.SketchGen;
 using RimWorld.Utility;
-using LudeonTK;
-using Verse;
-using Verse.AI;
-using Verse.AI.Group;
-using Verse.Grammar;
-using Verse.Noise;
-using Verse.Profile;
-using Verse.Sound;
-using Verse.Steam;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Net.NetworkInformation;
+using System.Text;
+using System.Threading.Tasks;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Jobs;
@@ -28,6 +21,15 @@ using UnityEngine.Jobs;
 using UnityEngine.Profiling;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
+using Verse;
+using Verse.AI;
+using Verse.AI.Group;
+using Verse.Grammar;
+using Verse.Noise;
+using Verse.Profile;
+using Verse.Sound;
+using Verse.Steam;
+using static NAT.IncidentWorker_RustedArmySiege;
 
 namespace NAT
 {
@@ -117,12 +119,14 @@ namespace NAT
 
 		public bool TryExecuteSiege(IntVec3 center, Map map, float points, string letterDescExtra = "")
 		{
-			if(points < 1000f)
+			string extraDesc = "";
+			ThingDef descThingDef = null;
+			List<Thing> targets = new List<Thing>();
+			if (points < 1000f)
 			{
 				points = 1000f;
 			}
             List<Unit> list = GenerateUnits(points, map).ToList();
-            GenerateProblems(list, points, map, out var extraDesc, out var descThingDef);
             if (!center.IsValid)
             {
                 center = FindSiegePosition(map, list, 100);
@@ -131,13 +135,18 @@ namespace NAT
                     return false;
                 }
             }
-            SiegeArrive(center, list, map, out var targets);
+			List<IntVec3> cells = null;
+			if (true)
+			{
+				cells = GenerateProblems(center, map, points, targets, out extraDesc, out descThingDef);
+			}
+			SiegeArrive(center, list, map, cells, targets);
             Find.LetterStack.ReceiveLetter("NAT_RustedArmySiege".Translate(), "NAT_RustedArmySiege_Desc".Translate() + extraDesc + letterDescExtra, LetterDefOf.ThreatBig, new LookTargets(targets), hyperlinkThingDefs: descThingDef == null ? null : new List<ThingDef>() { descThingDef });
             letterDescExtra = "";
             return true;
         }
 
-		public void SiegeArrive(IntVec3 cell, List<Unit> units, Map map, out List<Thing> sentThings, int baseRectSize = 5)
+		public void SiegeArrive(IntVec3 cell, List<Unit> units, Map map, IEnumerable<IntVec3> alreadyFilledCells, List<Thing> sentThings, int baseRectSize = 5)
         {
 			List<Unit> sentUnits = new List<Unit>();
 			List<Unit> waitingUnits = units.ToList();
@@ -148,6 +157,10 @@ namespace NAT
             {
 				if(searchRect.TryFindRandomInnerRect(waitingUnits[0].size, out var rect, delegate (CellRect x)
 				{
+					if(alreadyFilledCells != null && x.Any(c => alreadyFilledCells.Contains(c)))
+					{
+						return false;
+					}
 					foreach(Unit u in sentUnits)
                     {
                         if (u.rect.ExpandedBy(1).Overlaps(x))
@@ -190,9 +203,9 @@ namespace NAT
                     }
 				}
             }
-			sentThings = (from u in sentUnits
+			sentThings.AddRange(from u in sentUnits
 						 where u.thing != null
-						 select u.thing).ToList();
+						 select u.thing);
 			List<Pawn> lordPawns = new List<Pawn>();
 			foreach(Unit unit in sentUnits)
             {
@@ -218,7 +231,14 @@ namespace NAT
 			}
             if (!lordPawns.NullOrEmpty())
             {
-				LordMaker.MakeNewLord(Faction.OfEntities, new LordJob_RustedArmy(cell, 60, true), map, lordPawns);
+				Lord lord = LordMaker.MakeNewLord(Faction.OfEntities, new LordJob_SiegeRust(sentThings.First()), map, lordPawns);
+				foreach(var thing in sentThings)
+				{
+					if(thing is Building b)
+					{
+						lord.AddBuilding(b);
+					}
+				}
 			}
 		}
 
@@ -238,7 +258,7 @@ namespace NAT
                 }
                 else
                 {
-					ThingDef def = Buildings.RandomElementByWeight((ThingDef x) => (x.building.buildingTags.Contains("NAT_RustedSiegeProblem")) ? 0 : (x.building.combatPower > points ? 0.001f : x.generateCommonality));
+					ThingDef def = Buildings.RandomElementByWeight((ThingDef x) => (x.building.buildingTags.Contains("NAT_HoraxMachine")) ? 0 : (x.building.combatPower > points ? 0.001f : x.generateCommonality));
 					unit.thing = ThingMaker.MakeThing(def);
 					unit.thing.SetFaction(Faction.OfEntities);
 					cost = def.building.combatPower;
@@ -253,36 +273,45 @@ namespace NAT
             }
 		}
 
-		public static void GenerateProblems(List<Unit> units, float points, Map map, out string extraLetterString, out ThingDef problemThingDef)
+		public static List<IntVec3> GenerateProblems(IntVec3 cell, Map map, float points, List<Thing> sentThings, out string extraLetterString, out ThingDef problemThingDef)
 		{
 			extraLetterString = "";
-			List<ThingDef> items = Buildings.Where((ThingDef x) => x.building.buildingTags.Contains("NAT_RustedSiegeProblem")).ToList();
+			List<ThingDef> items = Buildings.Where((ThingDef x) => x.building.buildingTags.Contains("NAT_HoraxMachine")).ToList();
 			if (items.NullOrEmpty())
             {
 				problemThingDef = null;
-				return;
+				return null;
             }
-			problemThingDef = items.RandomElementByWeight((ThingDef y) => (y.building.combatPower > points ? 0.001f : y.generateCommonality));
+			problemThingDef = items.RandomElementByWeight((ThingDef y) => y.generateCommonality);
 			//extraLetterString = problemThingDef.description;
-			Log.Message(points);
-			int num = Mathf.RoundToInt(ProblemsFromPoints.Evaluate(points));
-			for(int i = 0; i < num; i++)
+			List<IntVec3> cells = new List<IntVec3>();
+			Building_HoraxMachine machine = (Building_HoraxMachine)ThingMaker.MakeThing(problemThingDef);
+			machine.SetFaction(Faction.OfEntities);
+			machine.needStabilizers = true;
+			sentThings.Add(machine);
+			cells.AddRange(GenAdj.OccupiedRect(cell, Rot4.North, machine.def.Size).ExpandedBy(1));
+			int num = GenMath.RoundRandom(StabilizersFromPoints.Evaluate(points));
+			SkyfallerMaker.SpawnSkyfaller(NATDefOf.NAT_HoraxMachineIncoming, machine, cell, map);
+			for (int i = 0; i < num; i++)
 			{
-				Unit unit = new Unit(null);
-				unit.thing = ThingMaker.MakeThing(problemThingDef);
-				unit.thing.SetFaction(Faction.OfEntities);
-				unit.size = problemThingDef.size;
-				units.Insert(0, unit);
+				Building_HoraxStabilizer stabilizer = (Building_HoraxStabilizer)ThingMaker.MakeThing(NATDefOf.NAT_HoraxStabilizer);
+				stabilizer.SetFaction(Faction.OfEntities);
+				stabilizer.parent = machine;
+				machine.stabilizers.Add(stabilizer);
+				sentThings.Add(stabilizer);
+				if (RCellFinder.TryFindRandomCellNearWith(cell, c => GenSpawn.CanSpawnAt(NATDefOf.NAT_HoraxStabilizer, c, map) && c.Standable(map) && !c.Roofed(map), map, out var result, 6))
+				{
+					SkyfallerMaker.SpawnSkyfaller(NATDefOf.NAT_HoraxMachineIncoming, stabilizer, result, map);
+				}
 			}
+			return cells;
 		}
 
-		public static readonly SimpleCurve ProblemsFromPoints = new SimpleCurve
+		public static readonly SimpleCurve StabilizersFromPoints = new SimpleCurve
 		{
-			new CurvePoint(0f, 1f),
-			new CurvePoint(3000f, 1f),
-			new CurvePoint(5000f, 1.5f),
-			new CurvePoint(8000f, 2.5f),
-			new CurvePoint(9000f, 3f)
+			new CurvePoint(0f, 2f),
+			new CurvePoint(3000f, 3f),
+			new CurvePoint(9000f, 5f)
 		};
 
 		public static IntVec3 FindSiegePosition(Map map, List<Unit> units, int maxTries = 100)
@@ -296,7 +325,7 @@ namespace NAT
 				{
 					continue;
 				}
-				IntVec3 intVec2 = RCellFinder.FindSiegePositionFrom(intVec, map, allowRoofed: false, errorOnFail: false);
+				IntVec3 intVec2 = RCellFinder.FindSiegePositionFrom(intVec, map, allowRoofed: false, errorOnFail: false, validator: c => !CellRect.FromCell(c).ExpandedBy(2).Cells.Any(x => !x.Standable(map)));
 				if (intVec2.IsValid)
 				{
 					float clusterPositionScore2 = GetSiegePositionScore(intVec2, map, units);

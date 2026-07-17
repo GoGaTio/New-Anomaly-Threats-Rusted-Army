@@ -13,12 +13,16 @@
     <fillPercent>0.4</fillPercent>
     <statBases>
       <Mass>100</Mass>
-      <MaxHitPoints>500</MaxHitPoints>
+      <ShootingAccuracyTurret>0.99</ShootingAccuracyTurret>
+      <ArmorRating_Blunt>0.9</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.7</ArmorRating_Sharp>
     </statBases>
+    <useHitPoints>false</useHitPoints>
     <inspectorTabs>
       <li>ITab_StudyNotes</li>
     </inspectorTabs>
     <comps>
+      <li Class="NAT.CompProperties_Armor"/>
       <li Class="CompProperties_Studiable">
         <frequencyTicks>120000</frequencyTicks>
         <knowledgeCategory>Advanced</knowledgeCategory>
@@ -75,6 +79,8 @@
             <li>(1, 0.5)</li>
           </points>
         </activityPerDayFromBioferrite>
+        <maxBioferrite>500</maxBioferrite>
+        <bioferritePerDay>1000</bioferritePerDay>
         <!--Interactible-->
         <activeTicks>1</activeTicks>
         <cooldownTicks>300000</cooldownTicks>
@@ -125,7 +131,7 @@
       <li>Ranged</li>
     </weaponClasses>
     <statBases>
-      <AccuracyTouch>0.28</AccuracyTouch>
+      <AccuracyTouch>1</AccuracyTouch>
       <AccuracyShort>0.72</AccuracyShort>
       <AccuracyMedium>0.66</AccuracyMedium>
       <AccuracyLong>0.5</AccuracyLong>
@@ -137,13 +143,13 @@
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
-        <defaultProjectile>Bullet_AutocannonTurret</defaultProjectile>
+        <defaultProjectile>NAT_Bullet_Heatspear</defaultProjectile>
         <warmupTime>1</warmupTime>
         <range>32.9</range>
         <ticksBetweenBurstShots>17</ticksBetweenBurstShots>
-        <burstShotCount>3</burstShotCount>
-        <soundCast>Shot_Autocannon</soundCast>
-        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <burstShotCount>5</burstShotCount>
+        <soundCast>Heatspikes_Shot</soundCast>
+        <soundCastTail>Heatspikes_Tail</soundCastTail>
         <muzzleFlashScale>12</muzzleFlashScale>
         <defaultCooldownTime>2</defaultCooldownTime>
         <ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>

@@ -31,18 +31,18 @@ using UnityEngine.SceneManagement;
 
 namespace NAT
 {
-	public class CompProperties_RustedMassDeactivation : CompProperties_Interactable
+	public class CompProperties_RustedMechanismDeactivation : CompProperties_Interactable
 	{
 		public int shardsRequired = 1;
 
-		public CompProperties_RustedMassDeactivation()
+		public CompProperties_RustedMechanismDeactivation()
 		{
-			compClass = typeof(CompRustedMassDeactivation);
+			compClass = typeof(CompRustedMechanismDeactivation);
 		}
 	}
-	public class CompRustedMassDeactivation : CompInteractable
+	public class CompRustedMechanismDeactivation : CompInteractable
 	{
-		private new CompProperties_RustedMassDeactivation Props => (CompProperties_RustedMassDeactivation)props;
+		private new CompProperties_RustedMechanismDeactivation Props => (CompProperties_RustedMechanismDeactivation)props;
 
 		private CompStudyUnlocks studyComp;
 
@@ -103,9 +103,7 @@ namespace NAT
 		protected override void OnInteracted(Pawn caster)
 		{
 			parent.TryGetComp<CompActivity>().Deactivate();
-			caster.infectionVectors.AddInfectionVector(DefDatabase<InfectionPathwayDef>.GetNamed("EntityAttacked"), parent as Pawn);
-			parent.TryGetComp<CompRustedMass>().passive = true;
-			parent.Kill();
+			parent.Destroy();
 		}
 
 		private void OrderDeactivation(Pawn pawn)
@@ -117,6 +115,11 @@ namespace NAT
 				job.playerForced = true;
 				pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
 			}
+		}
+
+		public override string CompInspectStringExtra()
+		{
+			return null;
 		}
 	}
 }

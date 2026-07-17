@@ -96,29 +96,6 @@
   </EffecterDef>
 
   <EffecterDef>
-    <defName>NAT_HornBuff</defName>
-    <offsetMode>Free</offsetMode>
-    <!-- don't spawn attached, since the flecks already anchor themselves correctly, spawning attached can introduce bad offsets -->
-    <children>
-      <li>
-        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
-        <fleckDef>NAT_HornBuffAura</fleckDef>
-        <ticksBetweenMotes>30</ticksBetweenMotes>
-        <burstCount>1</burstCount>
-        <spawnLocType>OnSource</spawnLocType>
-        <positionRadius>0</positionRadius>
-        <scale>1</scale>
-        <rotation>0~0</rotation>
-        <rotationRate>0</rotationRate>
-        <absoluteAngle>True</absoluteAngle>
-        <angle>0</angle>
-        <fleckUsesAngleForVelocity>false</fleckUsesAngleForVelocity>
-        <speed>0</speed>
-      </li>
-    </children>
-  </EffecterDef>
-
-  <EffecterDef>
     <defName>NAT_HateVaporize_Heatwave</defName>
     <children>
       <li>

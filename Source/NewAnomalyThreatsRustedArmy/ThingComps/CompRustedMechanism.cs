@@ -41,6 +41,10 @@ namespace NAT
 
 		public float printOffsetTowards;
 
+		public float maxBioferrite;
+
+		public float bioferritePerDay;
+
 		public int printCooldownTicks;
 
 		public int printWarmupTicks;
@@ -82,16 +86,13 @@ namespace NAT
 
 		public RustedMechanism Parent => (RustedMechanism)parent;
 
-		public float ActivityPerDay => Parent.active ? 0f : Props.activityPerDayFromBioferrite.Evaluate(bioferritePercent);
-
-		public float bioferritePercent;
+		public float ActivityPerDay => Parent.active ? 0f : Props.activityPerDayFromBioferrite.Evaluate(Parent.BioferritePercent);
 
 		public bool passive;
 
 		public override void PostExposeData()
 		{
 			base.PostExposeData();
-			Scribe_Values.Look(ref bioferritePercent, "bioferritePercent", 0);
 			Scribe_Values.Look(ref passive, "passive");
 		}
 
@@ -120,6 +121,15 @@ namespace NAT
 				return;
 			}
 			base.CompTick();
+		}
+
+		public override void CompTickInterval(int delta)
+		{
+			base.CompTickInterval(delta);
+			if(Parent.bioferrite < Props.maxBioferrite)
+			{
+				Parent.bioferrite += (float)delta * Props.bioferritePerDay / 60000f;
+			}
 		}
 
 		public RoofCollapseResponse Notify_OnBeforeRoofCollapse()
@@ -197,6 +207,11 @@ namespace NAT
 			{
 				yield return item;
 			}
+		}
+
+		public override string CompInspectStringExtra()
+		{
+			return null;
 		}
 	}
 }

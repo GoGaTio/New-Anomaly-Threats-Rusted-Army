@@ -69,7 +69,7 @@ namespace NAT
 			{
 				if(b.TryGetComp<CompRustedTurretPawn>(out var comp) && !comp.destroyed)
 				{
-					comp.SpawnPawn(comp.parent.Position, comp.parent.Map);
+					comp.SpawnPawn(comp.parent.Position, comp.parent.Map, false);
 				}
 			}
 			base.UpdateAllDuties();

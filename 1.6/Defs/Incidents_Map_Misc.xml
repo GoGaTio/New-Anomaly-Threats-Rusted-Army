@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  
+
   <IncidentDef ParentName="AnomalyIncidentBase">
-    <defName>NAT_RustedMassArrival</defName>
-    <label>rusted mass arrival</label>
+    <defName>NAT_RustedMechanismArrival</defName>
+    <label>rusted mechanism arrival</label>
     <targetTags>
       <li>Map_PlayerHome</li>
     </targetTags>
-    <workerClass>NAT.IncidentWorker_RustedMassArrival</workerClass>
+    <workerClass>NAT.IncidentWorker_RustedMechanismArrival</workerClass>
     <baseChance>0.5</baseChance>
     <minAnomalyThreatLevel>2</minAnomalyThreatLevel>
     <minPopulation>1</minPopulation>
     <earliestDay>30</earliestDay>
     <category>ThreatBig</category>
-    <minRefireDays>70</minRefireDays>
-	<pointsScaleable>true</pointsScaleable>
-	<hidden>true</hidden>
+    <minRefireDays>100</minRefireDays>
+    <pointsScaleable>false</pointsScaleable>
+    <hidden>true</hidden>
   </IncidentDef>
-  
+
 </Defs>
