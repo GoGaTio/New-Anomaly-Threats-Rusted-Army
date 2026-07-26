@@ -146,7 +146,7 @@ namespace NAT
 				Pawn pawn = req.Thing as Pawn;
 				foreach(SkillGain skill in skills)
 				{
-					yield return new StatDrawEntry(NATRADefOf.NAT_Skills, skill.skill.LabelCap, flag ? pawn.skills.GetSkill(skill.skill).Level.ToString() : skill.amount.ToString(), skill.skill.description, Mathf.RoundToInt(skill.skill.listOrder), overridesHideStats: true);
+					yield return new StatDrawEntry(NATRADefOf.NAT_Skills, skill.skill.LabelCap, flag ? pawn.skills.GetSkill(skill.skill).levelInt.ToString() : skill.amount.ToString(), skill.skill.description, Mathf.RoundToInt(skill.skill.listOrder), overridesHideStats: true);
 				}
 			}
 		}

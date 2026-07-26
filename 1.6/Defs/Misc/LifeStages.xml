@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+  <LifeStageDef>
+    <defName>NAT_RustFullyFormed</defName>
+    <label>fully-formed</label>
+    <visible>false</visible>
+    <canDoRandomMentalBreaks>false</canDoRandomMentalBreaks>
+  </LifeStageDef>
+
+</Defs>

@@ -154,6 +154,8 @@
       <damageDef>NAT_RustedAntiTankBomb</damageDef>
       <damageAmountBase>55</damageAmountBase>
       <speed>80</speed>
+      <arcHeightFactor>5</arcHeightFactor>
+      <flyOverhead>true</flyOverhead>
     </projectile>
     <comps>
       <li Class="NAT.CompProperties_ConstantFleckEmitter">

@@ -62,7 +62,10 @@ namespace NAT
 
 		public bool destroyOnDrop = true;
 
+		public bool requireBoss = false;
+
 		public Vector2 apparelDrawSize;
+
 		public CompProperties_RustedEquipment()
 		{
 			compClass = typeof(CompRustedEquipment);
@@ -83,12 +86,16 @@ namespace NAT
 
 		public AcceptanceReport EquipableBy(Pawn pawn)
 		{
-			if(Props.minBodySize > pawn.BodySize)
-            {
-				return "NAT_CannotEquip_Size".Translate(Props.minBodySize);
-			}
 			if (pawn is RustedPawn rust)
 			{
+				if (Props.minBodySize > pawn.BodySize)
+				{
+					return "NAT_CannotEquip_Size".Translate(Props.minBodySize.ToStringByStyle(ToStringStyle.FloatOne));
+				}
+				if (Props.requireBoss && !pawn.kindDef.isBoss)
+				{
+					return false;
+				}
 				return true;
 			}
 			return "NAT_CannotEquip_NotRust".Translate();

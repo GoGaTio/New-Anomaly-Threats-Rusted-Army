@@ -674,16 +674,6 @@ namespace NAT
 			}
 		}
 
-		public override void DrawExtraSelectionOverlays()
-        {
-            base.DrawExtraSelectionOverlays();
-			if (EverControllable && Spawned)
-			{
-				pather.curPath?.DrawPath(this);
-				jobs.DrawLinesBetweenTargets();
-			}
-		}
-
 		public override void SetFaction(Faction newFaction, Pawn recruiter = null)
 		{
 			base.SetFaction(newFaction, recruiter);

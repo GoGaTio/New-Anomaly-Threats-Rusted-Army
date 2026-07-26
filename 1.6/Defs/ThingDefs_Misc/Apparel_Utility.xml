@@ -16,12 +16,17 @@
 			<Flammability>1.5</Flammability>
 			<EquipDelay>2</EquipDelay>
 		</statBases>
-		<thingCategories>
-			<li>ApparelUtility</li>
-		</thingCategories>
+    <thingCategories>
+      <li>NAT_RustedEquipment</li>
+    </thingCategories>
     <comps>
       <li Class="NAT.CompProperties_RustedEquipment">
         
+      </li>
+      <li Class="NAT.CompProperties_ConverterSubject">
+        <useButchery>true</useButchery>
+        <categoryKey>NAT_RustedEquipment</categoryKey>
+        <butcheryRandomOffsetPct>0.2</butcheryRandomOffsetPct>
       </li>
     </comps>
 		<apparel>
@@ -59,5 +64,9 @@
 				</west>
 			</wornGraphicData>
 		</apparel>
+    <butcherProducts>
+      <Bioferrite>14</Bioferrite>
+      <NAT_AncientFabric>17</NAT_AncientFabric>
+    </butcherProducts>
 	</ThingDef>
 </Defs>

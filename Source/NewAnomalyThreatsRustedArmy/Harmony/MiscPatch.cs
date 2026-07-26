@@ -289,6 +289,19 @@ namespace NAT.Rusts
 		}
 	}
 
+	[HarmonyPatch(typeof(Pawn), nameof(Pawn.IsPlayerControlled), MethodType.Getter)]
+	public class Patch_IsPlayerControlled
+	{
+		[HarmonyPostfix]
+		public static void Postfix(ref bool __result, Pawn __instance)
+		{
+			if (!__result && __instance is RustedPawn rust && rust.EverControllable)
+			{
+				__result = true;
+			}
+		}
+	}
+
 	[HarmonyPatch(typeof(JobGiver_AIFightEnemy), nameof(JobGiver_AIFightEnemy.GetAbilityJob))]
 	public class Patch_AIFightEnemy_Ability
 	{

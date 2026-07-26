@@ -73,7 +73,7 @@
     <generateCommonality>0.1</generateCommonality>
     <verbs>
       <li>
-        <verbClass>Verb_ShootOneUse</verbClass>
+        <verbClass>NAT.Verb_ShootOneUseOverhead</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>NAT_Proj_RustedRocket</defaultProjectile>
         <warmupTime>2.3</warmupTime>
@@ -85,6 +85,8 @@
         </targetParams>
         <soundCast>Artillery_ShellLoaded</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
+        <requireLineOfSight>false</requireLineOfSight>
+        <stopBurstWithoutLos>false</stopBurstWithoutLos>
       </li>
     </verbs>
     <butcherProducts>
@@ -111,7 +113,7 @@
     <generateCommonality>0.1</generateCommonality>
     <verbs>
       <li>
-        <verbClass>Verb_ShootOneUse</verbClass>
+        <verbClass>NAT.Verb_ShootOneUseOverhead</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>NAT_Proj_RustedRocket</defaultProjectile>
         <warmupTime>2.3</warmupTime>
@@ -124,6 +126,8 @@
         </targetParams>
         <soundCast>Artillery_ShellLoaded</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
+        <requireLineOfSight>false</requireLineOfSight>
+        <stopBurstWithoutLos>false</stopBurstWithoutLos>
       </li>
     </verbs>
     <butcherProducts>

@@ -113,22 +113,30 @@ namespace NAT
 			HediffCompProperties_Disappears comp = hediff?.CompProps<HediffCompProperties_Disappears>();
 			if (comp != null)
 			{
-				yield return new StatDrawEntry(StatCategoryDefOf.Drug, "StatsReport_SerumDuration".Translate(), comp.disappearsAfterTicks.min.ToStringTicksToPeriod(), "StatsReport_SerumDuration_Desc".Translate(), 1000);
+				yield return new StatDrawEntry(StatCategoryDefOf.CapacityEffects, "StatsReport_SerumDuration".Translate(), comp.disappearsAfterTicks.min.ToStringTicksToPeriod(), "StatsReport_SerumDuration_Desc".Translate(), 9000);
 			}
 			if (restOffset != 0f)
 			{
-				string text = ((restOffset > 0f) ? "+" : string.Empty);
-				yield return new StatDrawEntry(StatCategoryDefOf.Drug, NATRADefOf.NAT_RustRest.LabelCap, text + restOffset.ToStringPercent(), NATRADefOf.NAT_RustRest.description, 500);
+				string text = ((restOffset > 0f) ? "+" : "-");
+				yield return new StatDrawEntry(StatCategoryDefOf.CapacityEffects, NATRADefOf.NAT_RustRest.LabelCap, text + restOffset.ToStringPercent(), NATRADefOf.NAT_RustRest.description, 4050);
 			}
 			if (!skillGains.NullOrEmpty())
 			{
 				foreach (SkillGain s in skillGains)
 				{
-					yield return new StatDrawEntry(StatCategoryDefOf.Drug, s.skill.LabelCap, "+" + s.amount.ToString() + ", (" + "MaxValue".Translate(maxSkillLevel) + ")", s.skill.description, 500);
+					yield return new StatDrawEntry(StatCategoryDefOf.CapacityEffects, s.skill.LabelCap, "+" + s.amount.ToString() + ", (" + "MaxValue".Translate(maxSkillLevel) + ")", s.skill.description, 4080);
+				}
+			}
+			if(hediff != null && !hediff.stages.NullOrEmpty())
+			{
+				foreach (StatDrawEntry item in hediff.stages[0].SpecialDisplayStats())
+				{
+					yield return item;
 				}
 			}
 		}
     }
+
 	public class CompUsableByRust : ThingComp
 	{
 		public CompProperties_UsableByRust Props => (CompProperties_UsableByRust)props;

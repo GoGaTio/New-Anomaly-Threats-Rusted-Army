@@ -171,12 +171,14 @@
       </li>
     </comps>
     <costList>
-      <NAT_PainClot>10</NAT_PainClot>
+      <NAT_VoidOil>10</NAT_VoidOil>
     </costList>
   </ThingDef>
 
   <!--============================================Skills======================================================================-->
 
+  <!-- Isn't used anywhere and probably shouldn't -->
+  
   <ThingDef Name="NAT_RustSkillTrainerBase" Abstract="True" ParentName="NAT_ItemUsableByRust">
     <thingSetMakerTags>
       <li>NAT_RustedSkillTrainer</li>
@@ -196,43 +198,13 @@
         <li>BioferriteShaper</li>
       </recipeUsers>
     </recipeMaker>
-    <costList>
-      <ComponentIndustrial>1</ComponentIndustrial>
-      <Bioferrite>20</Bioferrite>
-    </costList>
-  </ThingDef>
-
-  <ThingDef ParentName="NAT_RustSkillTrainerBase">
-    <defName>NAT_RustedSkillTrainer_</defName>
-    <label>rusted speed activator</label>
-    <description>A small device that increases speed of rust.</description>
-    <graphicData>
-      <texPath>Things/Item/NAT_UsableByRust/NAT_RustedActivator_Speed</texPath>
-      <drawSize>0.75</drawSize>
-    </graphicData>
-    <statBases>
-      <MarketValue>55</MarketValue>
-    </statBases>
-    <comps>
-      <li Class="NAT.CompProperties_UsableByRust">
-        <skillGains>
-          <Shooting>1</Shooting>
-          <Melee>1</Melee>
-        </skillGains>
-        <maxSkillLevel>12</maxSkillLevel>
-        <useEffect>NAT_ActivatorUsed_Speed</useEffect>
-      </li>
-    </comps>
-    <costList>
-      <Neutroamine>5</Neutroamine>
-    </costList>
   </ThingDef>
   
   <!--============================================Upgrades======================================================================-->
 
   <ThingDef Name="NAT_RustUpgradeItemBase" Abstract="True" ParentName="NAT_ItemUsableByRust">
     <thingSetMakerTags>
-      <li>NAT_RustedUpgrade</li>
+      <li>NAT_RustedCoreUpgrade</li>
     </thingSetMakerTags>
     <recipeMaker>
       <researchPrerequisite>NAT_RustedCoreUpgrades</researchPrerequisite>
@@ -249,12 +221,35 @@
         <li>BioferriteShaper</li>
       </recipeUsers>
     </recipeMaker>
-    <costList>
-      <ComponentIndustrial>1</ComponentIndustrial>
-      <Bioferrite>20</Bioferrite>
-    </costList>
     <uiIconScale>1</uiIconScale>
     <stackLimit>5</stackLimit>
+    <costList>
+      <ComponentSpacer>1</ComponentSpacer>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="NAT_RustUpgradeItemBase">
+    <defName>NAT_CoreUpgrade_Amplifier</defName>
+    <label>core amplifier</label>
+    <description>Special device that can upgrade rust using shard of dark archotechnology.\n\nMakes rust core fully stable.</description>
+    <graphicData>
+      <texPath>Things/Item/NAT_UsableByRust/NAT_CoreUpgrade_Aftraz</texPath>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1250</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="NAT.CompProperties_UsableByRust">
+        <hediff>NAT_CoreUpgrade_Amplifier</hediff>
+        <severity>1</severity>
+        <replaceHediff>false</replaceHediff>
+      </li>
+    </comps>
+    <costList>
+      <NAT_VoidOil>30</NAT_VoidOil>
+    </costList>
   </ThingDef>
       
   <ThingDef ParentName="NAT_RustUpgradeItemBase">
@@ -262,7 +257,7 @@
     <label>core stabilizator</label>
     <description>Special device that can upgrade rust using shard of dark archotechnology.\n\nMakes rust core fully stable.</description>
     <graphicData>
-      <texPath>Things/Item/NAT_UsableByRust/NAT_CoreUpgrade_Stabilizator</texPath>
+      <texPath>Things/Item/NAT_UsableByRust/NAT_CoreUpgrade_Vejipy</texPath>
       <drawSize>1</drawSize>
     </graphicData>
     <statBases>
@@ -276,9 +271,7 @@
       </li>
     </comps>
     <costList>
-      <Shard>1</Shard>
-      <ComponentIndustrial>4</ComponentIndustrial>
-      <Bioferrite>65</Bioferrite>
+      <NAT_VoidOil>30</NAT_VoidOil>
     </costList>
   </ThingDef>
 
@@ -287,7 +280,7 @@
     <label>core stimulator</label>
     <description>Special device that can upgrade rust using shard of dark archotechnology.\n\nMakes rust core fully stable.</description>
     <graphicData>
-      <texPath>Things/Item/NAT_UsableByRust/NAT_CoreUpgrade_Stimulator</texPath>
+      <texPath>Things/Item/NAT_UsableByRust/NAT_CoreUpgrade_Obavi</texPath>
       <drawSize>1</drawSize>
     </graphicData>
     <statBases>
@@ -301,9 +294,54 @@
       </li>
     </comps>
     <costList>
+      <NAT_PainClot>10</NAT_PainClot>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="NAT_RustUpgradeItemBase">
+    <defName>NAT_CoreUpgrade_Reinforcer</defName>
+    <label>core reinforcer</label>
+    <description>Special device that can upgrade rust using shard of dark archotechnology.\n\nMakes rust core fully stable.</description>
+    <graphicData>
+      <texPath>Things/Item/NAT_UsableByRust/NAT_CoreUpgrade_Boqul</texPath>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1250</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="NAT.CompProperties_UsableByRust">
+        <hediff>NAT_CoreUpgrade_Reinforcer</hediff>
+        <severity>1</severity>
+        <replaceHediff>false</replaceHediff>
+      </li>
+    </comps>
+    <costList>
+      <NAT_DarkMetal>15</NAT_DarkMetal>
       <Shard>1</Shard>
-      <ComponentIndustrial>4</ComponentIndustrial>
-      <Bioferrite>65</Bioferrite>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="NAT_RustUpgradeItemBase">
+    <defName>NAT_CoreUpgrade_Regenerator</defName>
+    <label>core regenerator</label>
+    <description>Special device that can upgrade rust using shard of dark archotechnology.\n\nMakes rust core fully stable.</description>
+    <graphicData>
+      <texPath>Things/Item/NAT_UsableByRust/NAT_CoreUpgrade_Leex</texPath>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1250</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="NAT.CompProperties_UsableByRust">
+        <hediff>NAT_CoreUpgrade_Regenerator</hediff>
+        <severity>1</severity>
+        <replaceHediff>false</replaceHediff>
+      </li>
+    </comps>
+    <costList>
+      <NAT_DarkMetal>15</NAT_DarkMetal>
     </costList>
   </ThingDef>
 

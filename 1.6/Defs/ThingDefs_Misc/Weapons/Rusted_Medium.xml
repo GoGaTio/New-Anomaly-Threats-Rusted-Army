@@ -89,6 +89,20 @@
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
+    <comps Inherit="False">
+      <li Class="CompProperties_Forbiddable"/>
+      <li>
+        <compClass>CompEquippable</compClass>
+      </li>
+      <li Class="NAT.CompProperties_RustedEquipment">
+        <requireBoss>true</requireBoss>
+      </li>
+      <li Class="NAT.CompProperties_ConverterSubject">
+        <useButchery>true</useButchery>
+        <categoryKey>NAT_RustedEquipment</categoryKey>
+        <butcheryRandomOffsetPct>0.2</butcheryRandomOffsetPct>
+      </li>
+    </comps>
     <tools>
       <li>
         <label>grip</label>

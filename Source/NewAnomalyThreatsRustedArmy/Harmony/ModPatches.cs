@@ -127,4 +127,60 @@ namespace NAT.Rusts
 			return true;
 		}
 	}
+
+	[HarmonyPatch]
+	public static class CombatExtended_ITab_Inventory_DrawThingRowCE
+	{
+		public static MethodBase TargetMethod()
+		{
+			return AccessTools.Method("CombatExtended.ITab_Inventory:DrawThingRowCE");
+		}
+
+		public static bool Prepare(MethodBase method)
+		{
+			return AccessTools.Method("CombatExtended.ITab_Inventory:DrawThingRowCE") != null;
+		}
+
+		[HarmonyPostfix]
+		public static void Postfix(ref float y, float width, Thing thing, bool showDropButtonIfPrisoner = false)
+		{
+			if (thing.TryGetComp<CompUsableByRust>(out CompUsableByRust comp) && Find.Selector.SingleSelectedThing is RustedPawn rust && rust.Controllable)
+			{
+				Rect rect = new Rect(width - 72f, y - 28f, 24f, 24f);
+				TooltipHandler.TipRegion(rect, comp.JobReport);
+				if (Widgets.ButtonImage(rect, RustedArmyUtility.Use))
+				{
+					SoundDefOf.Tick_High.PlayOneShotOnCamera();
+					rust.jobs.TryTakeOrderedJob(JobMaker.MakeJob(NATRADefOf.NAT_UseItemByRust, thing), JobTag.DraftedOrder);
+				}
+			}
+		}
+	}
+
+	[HarmonyPatch]
+	public static class CombatExtended_ITab_Inventory_get_IsVisible
+	{
+		public static MethodBase TargetMethod()
+		{
+			return AccessTools.Method("CombatExtended.ITab_Inventory:get_IsVisible");
+		}
+
+		public static bool Prepare(MethodBase method)
+		{
+			return AccessTools.Method("CombatExtended.ITab_Inventory:get_IsVisible") != null;
+		}
+
+		[HarmonyPostfix]
+		public static void Postfix(ref bool __result)
+		{
+			if (__result)
+			{
+				return;
+			}
+			if (Find.Selector.SingleSelectedThing is RustedPawn rust && (rust.Faction?.IsPlayer == true || DebugSettings.ShowDevGizmos))
+			{
+				__result = true;
+			}
+		}
+	}
 }

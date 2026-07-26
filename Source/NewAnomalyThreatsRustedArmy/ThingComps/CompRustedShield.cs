@@ -274,7 +274,13 @@ namespace NAT
 			if (dinfo.Def != DamageDefOf.EMP && dinfo.Def.harmsHealth)
 			{
 				absorbed = true;
-				health -= dinfo.Amount * pawn.GetStatValue(StatDefOf.IncomingDamageFactor);
+				float damage = dinfo.Amount * pawn.GetStatValue(StatDefOf.IncomingDamageFactor);
+				health -= damage;
+				pawn.records.AddTo(RecordDefOf.DamageTaken, damage);
+				if (dinfo.Instigator is Pawn pawn2)
+				{
+					pawn2.records.AddTo(RecordDefOf.DamageDealt, damage);
+				}
 				pawn.mindState.Notify_DamageTaken(dinfo);
 				pawn.GetLord()?.Notify_PawnDamaged(pawn, dinfo);
 				if (health <= 0)

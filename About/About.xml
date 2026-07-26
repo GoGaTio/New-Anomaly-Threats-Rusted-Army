@@ -17,7 +17,7 @@
 			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
 		</li>
     <li>
-      <packageId>GoGaTio.NewAnomalyThreats.Framework</packageId>
+      <packageId>GoGaTio.NewAnomalyThreats.Frameworks</packageId>
       <displayName>New Anomaly Threats Framework</displayName>
       <steamWorkshopUrl>steam://url/CommunityFilePage/3274840013</steamWorkshopUrl>
     </li>
@@ -32,7 +32,7 @@
 		<li>CETeam.CombatExtended</li>
     <li>CETeam.CombatExtended_steam</li>
     <li>22.AnomalyPortal</li>
-    <li>GoGaTio.NewAnomalyThreats.Framework</li>
+    <li>GoGaTio.NewAnomalyThreats.Frameworks</li>
 	</loadAfter>
 	<packageId>GoGaTio.NewAnomalyThreats.RustedArmy</packageId>
 	<description>

@@ -21,7 +21,7 @@
         <multiplier>0.5</multiplier>
       </li>
     </damageMultipliers>
-    <uiIconPath>Things/Building/Linked/GreyWall_MenuIcon</uiIconPath>
+    <uiIconPath>Things/Building/Linked/NAT_RustedWall_Icon</uiIconPath>
     <graphicData>
       <texPath>Things/Building/Linked/NAT_RustedWall_Atlas</texPath>
       <graphicClass>Graphic_Single</graphicClass>

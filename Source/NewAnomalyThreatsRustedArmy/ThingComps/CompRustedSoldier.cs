@@ -214,7 +214,7 @@ namespace NAT
 				for (int i = 0; i < pawns.Count; i++)
 				{
 					Pawn p = pawns[i];
-					if (p != Rust && !p.Downed && !p.InAggroMentalState && p.Awake() && !p.IsBurning() && ((p is RustedPawn rust && rust.Comp?.Props?.canRecieveInteraction == true) || (p.RaceProps.Humanlike && Rand.Chance(0.2f))) && SocialInteractionUtility.IsGoodPositionForInteraction(Rust, p))
+					if (p != Rust && !p.Downed && !p.InAggroMentalState && p.Awake() && !p.IsBurning() && p is RustedPawn rust && rust.Comp?.Props?.canRecieveInteraction == true && SocialInteractionUtility.IsGoodPositionForInteraction(Rust, p))
 					{
 						if (TryInteractWith(p, Props.interaction))
 						{

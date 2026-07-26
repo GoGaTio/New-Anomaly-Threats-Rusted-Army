@@ -31,7 +31,7 @@
         <ticksBetweenBurstShots>7</ticksBetweenBurstShots>
         <burstShotCount>10</burstShotCount>
         <soundCast>Shot_Minigun</soundCast>
-        <soundCastTail>GunTail_Medium</soundCastTail>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
       </li>
     </verbs>
@@ -118,7 +118,7 @@
   <ThingDef ParentName="NAT_BaseHeavyRustedWeapon">
     <defName>NAT_Gun_RustedSniperRifle</defName>
     <label>rusted sniper rifle</label>
-    <description>A piece of bioferrite shaped like a bolt-action rifle.\n\nSomehow can shoot if wielded by rusted creature.</description>
+    <description>A piece of bioferrite shaped like a sniper rifle.\n\nSomehow can shoot if wielded by rusted creature.</description>
     <graphicData>
       <texPath>Things/Item/Equipment/Weapon/NAT_RustedSniperRifle</texPath>
       <drawSize>2</drawSize>

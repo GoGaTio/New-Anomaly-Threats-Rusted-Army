@@ -141,6 +141,7 @@
     </tools>
     <butcherProducts>
       <Bioferrite>17</Bioferrite>
+      <NAT_AncientFabric>21</NAT_AncientFabric>
     </butcherProducts>
     <comps>
       <li Class="NAT.CompProperties_RustedBuffGiver">

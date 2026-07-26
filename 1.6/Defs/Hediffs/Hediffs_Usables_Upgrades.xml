@@ -17,6 +17,35 @@
   </HediffDef>
 
   <HediffDef ParentName="NAT_RustedCoreUpgradeBase">
+    <defName>NAT_CoreUpgrade_Amplifier</defName>
+    <label>core amplifier</label>
+    <description>An implant which increases a mechanitor's control group count and the work speed of a mechanitor's mechs.\n\nThis implant can be installed up to 6 times to increase its effect.</description>
+    <stages>
+      <li>
+        <minSeverity>1</minSeverity>
+        <statOffsets>
+          <MeleeHitChance>2</MeleeHitChance>
+          <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>2</minSeverity>
+        <statOffsets>
+          <MeleeHitChance>4</MeleeHitChance>
+          <ShootingAccuracyPawn>4</ShootingAccuracyPawn>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>3</minSeverity>
+        <statOffsets>
+          <MeleeHitChance>6</MeleeHitChance>
+          <ShootingAccuracyPawn>6</ShootingAccuracyPawn>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="NAT_RustedCoreUpgradeBase">
     <defName>NAT_CoreUpgrade_Stabilizator</defName>
     <label>core stabilizator</label>
     <description>An implant which increases a mechanitor's control group count and the work speed of a mechanitor's mechs.\n\nThis implant can be installed up to 6 times to increase its effect.</description>
@@ -42,7 +71,7 @@
     </stages>
   </HediffDef>
 
-  <HediffDef ParentName="NAT_RustedCoreUpgradeBase" >
+  <HediffDef ParentName="NAT_RustedCoreUpgradeBase">
     <defName>NAT_CoreUpgrade_Stimulator</defName>
     <label>core stimulator</label>
     <description>An implant which increases a mechanitor's control group count and the work speed of a mechanitor's mechs.\n\nThis implant can be installed up to 6 times to increase its effect.</description>
@@ -68,30 +97,56 @@
     </stages>
   </HediffDef>
 
-<HediffDef ParentName="NAT_RustedCoreUpgradeBase" >
-    <defName>NAT_CoreUpgrade_Stimulator</defName>
-    <label>core stimulator</label>
+  <HediffDef ParentName="NAT_RustedCoreUpgradeBase">
+    <defName>NAT_CoreUpgrade_Reinforcer</defName>
+    <label>core reinforcer</label>
     <description>An implant which increases a mechanitor's control group count and the work speed of a mechanitor's mechs.\n\nThis implant can be installed up to 6 times to increase its effect.</description>
     <stages>
       <li>
         <minSeverity>1</minSeverity>
-        <statOffsets>
-          <RestFallRateFactor>-0.15</RestFallRateFactor>
-        </statOffsets>
+        <statFactors>
+          <IncomingDamageFactor>0.9</IncomingDamageFactor>
+          <Flammability>0.85</Flammability>
+        </statFactors>
       </li>
       <li>
         <minSeverity>2</minSeverity>
-        <statOffsets>
-          <RestFallRateFactor>-0.3</RestFallRateFactor>
-        </statOffsets>
+        <statFactors>
+          <IncomingDamageFactor>0.8</IncomingDamageFactor>
+          <Flammability>0.7</Flammability>
+        </statFactors>
       </li>
       <li>
         <minSeverity>3</minSeverity>
-        <statOffsets>
-          <RestFallRateFactor>-0.45</RestFallRateFactor>
-        </statOffsets>
+        <statFactors>
+          <IncomingDamageFactor>0.7</IncomingDamageFactor>
+          <Flammability>0.55</Flammability>
+        </statFactors>
       </li>
     </stages>
-  </HediffDef> 
+  </HediffDef>
+
+  <HediffDef ParentName="NAT_RustedCoreUpgradeBase">
+    <defName>NAT_CoreUpgrade_Regenerator</defName>
+    <label>core regenerator</label>
+    <description>An implant which increases a mechanitor's control group count and the work speed of a mechanitor's mechs.\n\nThis implant can be installed up to 6 times to increase its effect.</description>
+    <stages>
+      <li>
+        <minSeverity>1</minSeverity>
+        <regeneration>20</regeneration>
+        <showRegenerationStat>true</showRegenerationStat>
+      </li>
+      <li>
+        <minSeverity>2</minSeverity>
+        <regeneration>40</regeneration>
+        <showRegenerationStat>true</showRegenerationStat>
+      </li>
+      <li>
+        <minSeverity>3</minSeverity>
+        <regeneration>60</regeneration>
+        <showRegenerationStat>true</showRegenerationStat>
+      </li>
+    </stages>
+  </HediffDef>
 
 </Defs>
