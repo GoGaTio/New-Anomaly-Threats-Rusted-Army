@@ -109,6 +109,10 @@ namespace NAT
 					Thing thing = ThingMaker.MakeThing(t.thingDef);
 					thing.SetFaction(faction);
 					list.Add(thing);
+					if (lord != null && thing is Building b)
+					{
+						lord.AddBuilding(b);
+					}
 					if (!CellFinder.TryFindRandomCellNear(target.Cell, map, GenMath.RoundRandom(Props.missRadius), (c) => c.GetRoof(map)?.isThickRoof != true, out dropCell))
 					{
 						dropCell = cell;

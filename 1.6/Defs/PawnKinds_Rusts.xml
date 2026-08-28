@@ -16,13 +16,20 @@
   <PawnKindDef ParentName="NAT_RustedSoldierKindBase">
     <defName>NAT_RustedGrenadier</defName>
     <label>rusted grenadier</label>
-    <canBeSapper>true</canBeSapper>
-    <isGoodBreacher>true</isGoodBreacher>
     <weaponTags>
-      <li>NAT_RustedGrenade</li>
+      <li>NAT_RustedMachinePistol</li>
     </weaponTags>
-    <combatPower>180</combatPower>
-    <combatEnhancingDrugsCount>-10~2</combatEnhancingDrugsCount>
+    <combatPower>200</combatPower>
+    <combatEnhancingDrugsCount>-5~2</combatEnhancingDrugsCount>
+    <inventoryOptions>
+      <subOptionsTakeAll>
+        <li>
+          <skipChance>0</skipChance>
+          <countRange>6~8</countRange>
+          <thingDef>NAT_RustedImpactGrenade</thingDef>
+        </li>
+      </subOptionsTakeAll>
+    </inventoryOptions>
   </PawnKindDef>
 
   <PawnKindDef ParentName="NAT_RustedSoldierKindBase">

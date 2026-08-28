@@ -57,20 +57,6 @@
           <treeDef>LordDuty</treeDef>
         </li>
 
-        <!-- Reinforcement -->
-        <li Class="NAT.ThinkNode_ConditionalReinforcement">
-          <subNodes>
-            <li Class="JobGiver_AIFightEnemies">
-              <targetAcquireRadius>90</targetAcquireRadius>
-              <targetKeepRadius>145</targetKeepRadius>
-            </li>
-
-            <li Class="JobGiver_ExitMapRandom">
-              <defaultLocomotion>Walk</defaultLocomotion>
-            </li>
-          </subNodes>
-        </li>
-
         <!-- Player rusts -->
         <li Class="ThinkNode_ConditionalOfPlayerFaction">
           <subNodes>
@@ -111,6 +97,8 @@
                 </li>
 
                 <li Class="JobGiver_Work"/>
+
+                <li Class="NAT.JobGiver_ReadRust"/>
 
                 <!-- Sleep -->
                 <li Class="NAT.JobGiver_Sleep">

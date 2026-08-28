@@ -144,11 +144,19 @@ namespace NAT.Rusts
 		[HarmonyPostfix]
 		public static void Postfix(ref float y, float width, Thing thing, bool showDropButtonIfPrisoner = false)
 		{
-			if (thing.TryGetComp<CompUsableByRust>(out CompUsableByRust comp) && Find.Selector.SingleSelectedThing is RustedPawn rust && rust.Controllable)
+			if (Find.Selector.SingleSelectedThing is RustedPawn rust && rust.Controllable && thing.TryGetComp(out CompUsableByRust comp))
 			{
 				Rect rect = new Rect(width - 72f, y - 28f, 24f, 24f);
-				TooltipHandler.TipRegion(rect, comp.JobReport);
-				if (Widgets.ButtonImage(rect, RustedArmyUtility.Use))
+				AcceptanceReport report = comp.CanBeUsedBy(rust);
+				bool flag = report.Accepted;
+				if (!flag && report.Reason.NullOrEmpty())
+				{
+					return;
+				}
+				TooltipHandler.TipRegion(rect, (flag) ? comp.JobReport.Formatted(thing.LabelShort) : "CannotUseReason".Translate(report.Reason));
+				Color color = (flag ? Color.white : Color.gray);
+				Color mouseoverColor = (flag ? GenUI.MouseoverColor : color);
+				if (Widgets.ButtonImage(rect, RustedArmyUtility.Use, color, mouseoverColor, flag) && flag)
 				{
 					SoundDefOf.Tick_High.PlayOneShotOnCamera();
 					rust.jobs.TryTakeOrderedJob(JobMaker.MakeJob(NATRADefOf.NAT_UseItemByRust, thing), JobTag.DraftedOrder);
@@ -177,7 +185,7 @@ namespace NAT.Rusts
 			{
 				return;
 			}
-			if (Find.Selector.SingleSelectedThing is RustedPawn rust && (rust.Faction?.IsPlayer == true || DebugSettings.ShowDevGizmos))
+			if (Find.Selector.SingleSelectedThing is RustedPawn rust && (rust.Faction?.IsPlayer == true || DebugSettings.ShowDevGizmos || SubModSettings_RustedArmy.Value.showGearTabOnEnemies))
 			{
 				__result = true;
 			}

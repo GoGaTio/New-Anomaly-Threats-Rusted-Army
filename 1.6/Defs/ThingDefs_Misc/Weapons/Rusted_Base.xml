@@ -24,6 +24,9 @@
     <weaponClasses>
       <li>Ranged</li>
     </weaponClasses>
+    <weaponTags>
+      <li>NoSwitch</li>
+    </weaponTags>
     <thingClass>ThingWithComps</thingClass>
     <category>Item</category>
     <drawerType>MapMeshOnly</drawerType>

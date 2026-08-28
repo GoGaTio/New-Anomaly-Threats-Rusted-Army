@@ -190,7 +190,7 @@
     </graphicData>
     <statBases>
       <Mass>3.1</Mass>
-      <AccuracyTouch>0.75</AccuracyTouch>
+      <AccuracyTouch>0.80</AccuracyTouch>
       <AccuracyShort>0.80</AccuracyShort>
       <AccuracyMedium>0.85</AccuracyMedium>
       <AccuracyLong>0.75</AccuracyLong>
@@ -236,7 +236,7 @@
     </butcherProducts>
   </ThingDef>
 
-  <ThingDef ParentName="NAT_BaseRustedWeapon">
+  <!--<ThingDef ParentName="NAT_BaseRustedWeapon">
     <defName>NAT_Gun_RustedShotgun</defName>
     <label>rusted shotgun</label>
     <description>A piece of bioferrite shaped like a shotgun.\n\nSomehow can shoot if wielded by rusted creature.</description>
@@ -289,7 +289,7 @@
     <butcherProducts>
       <Bioferrite>18</Bioferrite>
     </butcherProducts>
-  </ThingDef>
+  </ThingDef>-->
 
   <ThingDef ParentName="NAT_BaseRustedWeapon">
     <defName>NAT_Gun_RustedSMG</defName>
@@ -515,48 +515,6 @@
     </tools>
     <butcherProducts>
       <Bioferrite>22</Bioferrite>
-    </butcherProducts>
-  </ThingDef>
-
-  <!--==================Special==================-->
-
-  <ThingDef ParentName="NAT_BaseRustedWeapon">
-    <defName>NAT_Weapon_RustedGrenade</defName>
-    <label>rusted grenades</label>
-    <description>A pieces of bioferrite shaped like grenades.\n\nSomehow can explode if were thrown by rusted creature.</description>
-    <graphicData>
-      <texPath>Things/Item/Equipment/Weapon/NAT_RustedGrenades</texPath>
-      <drawSize>1</drawSize>
-    </graphicData>
-    <statBases>
-      <Mass>1</Mass>
-      <RangedWeapon_Cooldown>2.66</RangedWeapon_Cooldown>
-      <MarketValue>250</MarketValue>
-    </statBases>
-    <weaponTags>
-      <li>NAT_RustedGrenade</li>
-    </weaponTags>
-    <generateCommonality>0.25</generateCommonality>
-    <verbs>
-      <li>
-        <label>throw rusted grenade</label>
-        <verbClass>Verb_LaunchProjectile</verbClass>
-        <hasStandardCommand>true</hasStandardCommand>
-        <range>12.9</range>
-        <forcedMissRadius>1.9</forcedMissRadius>
-        <warmupTime>1.5</warmupTime>
-        <noiseRadius>4</noiseRadius>
-        <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
-        <soundCast>ThrowGrenade</soundCast>
-        <targetParams>
-          <canTargetLocations>true</canTargetLocations>
-        </targetParams>
-        <defaultProjectile>NAT_Proj_RustedGrenade</defaultProjectile>
-        <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
-      </li>
-    </verbs>
-    <butcherProducts>
-      <Bioferrite>13</Bioferrite>
     </butcherProducts>
   </ThingDef>
 

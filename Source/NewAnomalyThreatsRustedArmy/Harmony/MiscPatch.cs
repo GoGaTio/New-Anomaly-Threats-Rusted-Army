@@ -64,7 +64,7 @@ namespace NAT.Rusts
 			{
 				if (list[i].opcode == OpCodes.Callvirt && list[i].operand.ToString().Contains("IsColonyMech"))
 				{
-					Log.Message("NAT-Test3");
+					//Log.Message("NAT-Test3");
 					list[i] = new CodeInstruction(OpCodes.Call, (object)AccessTools.Method(typeof(Patches_FindItemForLoad), "PawnIsRust", (Type[])null, (Type[])null));
 				}
 			}
@@ -96,7 +96,7 @@ namespace NAT.Rusts
 		public static bool Prepare(MethodBase method)
 		{
 			bool flag = AccessTools.Method(AccessTools.Inner(typeof(EnterPortalUtility), "<>c"), "<MakeLordsAsAppropriate>b__6_0") != null;
-			Log.Warning("NATRA - Test1 " + flag);
+			//Log.Warning("NATRA - Test1 " + flag);
 			return flag;
 		}
 
@@ -129,7 +129,7 @@ namespace NAT.Rusts
 		public static bool Prepare(MethodBase method)
 		{
 			bool flag = AccessTools.Method(AccessTools.Inner(typeof(TransporterUtility), "<>c"), "<MakeLordsAsAppropriate>b__7_0") != null;
-			Log.Warning("NATRA - Test2 " + flag);
+			//Log.Warning("NATRA - Test2 " + flag);
 			return flag;
 		}
 
@@ -295,7 +295,7 @@ namespace NAT.Rusts
 		[HarmonyPostfix]
 		public static void Postfix(ref bool __result, Pawn __instance)
 		{
-			if (!__result && __instance is RustedPawn rust && rust.EverControllable)
+			if (!__result && __instance is RustedPawn rust && rust.Controllable)
 			{
 				__result = true;
 			}
@@ -541,8 +541,6 @@ namespace NAT.Rusts
 		}
 	}
 
-	
-
 	[HarmonyPatch(typeof(PawnGenerator), "GenerateRandomAge")]
 	public class Patch_GenereteRustedPawn
 	{
@@ -658,63 +656,6 @@ namespace NAT.Rusts
 				}
 			}
 			return false;
-		}
-	}
-
-	[HarmonyPatch(typeof(FormCaravanComp))]
-	[HarmonyPatch(nameof(FormCaravanComp.GetGizmos))]
-	public class Patch_ReformCaravan
-	{
-		[HarmonyPostfix]
-		public static IEnumerable<Gizmo> Postfix(IEnumerable<Gizmo> __result, FormCaravanComp __instance)
-		{
-			bool flag = false;
-			foreach(Gizmo g in __result)
-			{
-				if(g is Command_Action action && action.tutorTag == "ReformCaravan")
-				{
-					flag = true;
-				}
-				yield return g;
-			}
-			if (flag)
-			{
-				yield break;
-			}
-			MapParent mapParent = (MapParent)__instance.parent;
-			if (mapParent.HasMap && __instance.Reform && mapParent.Map.mapPawns.FreeColonistsSpawned.Count == 0 && !__instance.AnyActiveThreatNow && mapParent.Map.mapPawns.PawnsInFaction(Faction.OfPlayerSilentFail).Any((x) => x is RustedPawn))
-			{
-				Command_Action command_Action = new Command_Action();
-				command_Action.defaultLabel = "CommandReformCaravan".Translate();
-				command_Action.defaultDesc = "CommandReformCaravanDesc".Translate();
-				command_Action.icon = FormCaravanComp.FormCaravanCommand;
-				command_Action.hotKey = KeyBindingDefOf.Misc2;
-				command_Action.tutorTag = "ReformCaravan";
-				command_Action.action = delegate
-				{
-					if (ModsConfig.OdysseyActive && mapParent.Map.listerThings.ThingsOfDef(ThingDefOf.GravEngine).Any())
-					{
-						Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("ConfirmLoseGravship".Translate(), Form));
-					}
-					else if (ModsConfig.OdysseyActive && mapParent.Map.listerThings.ThingsInGroup(ThingRequestGroup.PassengerShuttle).Any())
-					{
-						Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("ConfirmLoseShuttle".Translate(), Form));
-					}
-					else
-					{
-						Form();
-					}
-				};
-				if (GenHostility.AnyHostileActiveThreatToPlayer(mapParent.Map, countDormantPawnsAsHostile: true))
-				{
-					command_Action.Disable("CommandReformCaravanFailHostilePawns".Translate());
-				}
-				yield return command_Action;
-			}
-			void Form()
-			{
-				Find.WindowStack.Add(new Dialog_FormCaravan(mapParent.Map, reform: true));
-			}
 		}
 	}
 

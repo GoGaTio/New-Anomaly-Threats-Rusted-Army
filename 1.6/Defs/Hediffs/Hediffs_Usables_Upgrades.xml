@@ -149,4 +149,36 @@
     </stages>
   </HediffDef>
 
+  <HediffDef ParentName="NAT_RustedCoreUpgradeBase">
+    <defName>NAT_CoreUpgrade_Connector</defName>
+    <label>core connector</label>
+    <description>An implant which increases a mechanitor's control group count and the work speed of a mechanitor's mechs.\n\nThis implant can be installed up to 6 times to increase its effect.</description>
+    <stages>
+      <li>
+        <minSeverity>1</minSeverity>
+        <statOffsets>
+          <MechBandwidth>2</MechBandwidth>
+          <MechFormingSpeed>0.333</MechFormingSpeed>
+          <WorkSpeedGlobalOffsetMech>0.05</WorkSpeedGlobalOffsetMech>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>2</minSeverity>
+        <statOffsets>
+          <MechBandwidth>4</MechBandwidth>
+          <MechFormingSpeed>0.666</MechFormingSpeed>
+          <WorkSpeedGlobalOffsetMech>0.1</WorkSpeedGlobalOffsetMech>
+        </statOffsets>
+      </li>
+      <li>
+        <minSeverity>3</minSeverity>
+        <statOffsets>
+          <MechBandwidth>6</MechBandwidth>
+          <MechFormingSpeed>1</MechFormingSpeed>
+          <WorkSpeedGlobalOffsetMech>0.15</WorkSpeedGlobalOffsetMech>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
 </Defs>

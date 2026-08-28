@@ -24,7 +24,7 @@
   <BodyPartDef ParentName="NAT_RustedBase">
     <defName>NAT_RustedCore</defName>
     <label>core</label>
-    <hitPoints>20</hitPoints>
+    <hitPoints>60</hitPoints>
     <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
     <executionPartPriority>1000</executionPartPriority>
     <tags>

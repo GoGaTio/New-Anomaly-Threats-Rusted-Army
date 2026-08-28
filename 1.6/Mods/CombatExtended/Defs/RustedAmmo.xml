@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingCategoryDef>
+    <defName>NAT_RustedAmmo</defName>
+    <label>rusted</label>
+    <parent>Ammo</parent>
+    <iconPath>UI/Icons/ThingCategories/CaliberRifle</iconPath>
+  </ThingCategoryDef>
+
+  <CombatExtended.AmmoCategoryDef>
+    <defName>NAT_RustedAmmo</defName>
+    <label>rusted</label>
+    <labelShort>rusted</labelShort>
+    <description>.</description>
+  </CombatExtended.AmmoCategoryDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" Name="NAT_RustedAmmoBase" ParentName="AmmoBase" Abstract="True">
+    <statBases>
+      <Mass>0.026</Mass>
+      <Bulk>0.03</Bulk>
+    </statBases>
+    <thingCategories>
+      <li>NAT_RustedAmmo</li>
+    </thingCategories>
+    <tradeability>None</tradeability>
+    <tradeTags Inherit="False">
+      <li>CE_AmmoInjector</li>
+    </tradeTags>
+    <ammoClass>NAT_RustedAmmo</ammoClass>
+  </ThingDef>
+
+  <!-- ==================== Small ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>NAT_AmmoSet_RustedSmall</defName>
+    <label>rusted light ammo</label>
+    <ammoTypes>
+      <NAT_Ammo_RustedSmall>NAT_Bullet_RustedSmall</NAT_Ammo_RustedSmall>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="NAT_RustedAmmoBase">
+    <defName>NAT_Ammo_RustedSmall</defName>
+    <label>rusted light ammo</label>
+    <description>Large, rimmed rifle bullet used by various outdated firearms.</description>
+    <graphicData>
+      <texPath>Things/Ammo/NAT_RustedAmmo_Light</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <stackLimit>500</stackLimit>
+    <comps>
+      <li Class="NAT.CompProperties_ConverterSubject">
+        <ticksToConvert>750</ticksToConvert>
+        <categoryKey>NAT_RustedAmmo</categoryKey>
+        <products>
+          <li>
+            <def>Bioferrite</def>
+            <chance>0.05</chance>
+            <countRange>1</countRange>
+          </li>
+        </products>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- ==================== Rifle ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>NAT_AmmoSet_RustedRifle</defName>
+    <label>rusted rifle ammo</label>
+    <ammoTypes>
+      <NAT_Ammo_RustedRifle>NAT_Bullet_RustedRifle</NAT_Ammo_RustedRifle>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="NAT_RustedAmmoBase">
+    <defName>NAT_Ammo_RustedRifle</defName>
+    <label>rusted rifle ammo</label>
+    <description>Large, rimmed rifle bullet used by various outdated firearms.</description>
+    <graphicData>
+      <texPath>Things/Ammo/NAT_RustedAmmo_Light</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <stackLimit>500</stackLimit>
+    <comps>
+      <li Class="NAT.CompProperties_ConverterSubject">
+        <ticksToConvert>750</ticksToConvert>
+        <categoryKey>NAT_RustedAmmo</categoryKey>
+        <products>
+          <li>
+            <def>Bioferrite</def>
+            <chance>0.05</chance>
+            <countRange>1</countRange>
+          </li>
+        </products>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- ==================== Large ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>NAT_AmmoSet_RustedLarge</defName>
+    <label>rusted large ammo</label>
+    <description>Large, rimmed rifle bullet used by various outdated firearms.</description>
+    <ammoTypes>
+      <NAT_Ammo_RustedLarge>NAT_Bullet_RustedLarge</NAT_Ammo_RustedLarge>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="NAT_RustedAmmoBase">
+    <defName>NAT_Ammo_RustedLarge</defName>
+    <label>rusted large ammo</label>
+    <graphicData>
+      <texPath>Things/Ammo/NAT_RustedAmmo_Medium</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <stackLimit>500</stackLimit>
+    <comps>
+      <li Class="NAT.CompProperties_ConverterSubject">
+        <ticksToConvert>1250</ticksToConvert>
+        <categoryKey>NAT_RustedAmmo</categoryKey>
+        <products>
+          <li>
+            <def>Bioferrite</def>
+            <chance>0.1</chance>
+            <countRange>1</countRange>
+          </li>
+        </products>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- ==================== High Velocity ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>NAT_AmmoSet_RustedHighVelocity</defName>
+    <label>rusted shell</label>
+    <ammoTypes>
+      <NAT_Ammo_RustedHighVelocity>NAT_Bullet_RustedHighVelocity</NAT_Ammo_RustedHighVelocity>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="NAT_RustedAmmoBase">
+    <defName>NAT_Ammo_RustedHighVelocity</defName>
+    <label>rusted shell</label>
+    <description>Large, rimmed rifle bullet used by various outdated firearms.</description>
+    <graphicData>
+      <texPath>Things/Ammo/NAT_RustedAmmo_Medium</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <stackLimit>500</stackLimit>
+    <comps>
+      <li Class="NAT.CompProperties_ConverterSubject">
+        <ticksToConvert>1250</ticksToConvert>
+        <categoryKey>NAT_RustedAmmo</categoryKey>
+        <products>
+          <li>
+            <def>Bioferrite</def>
+            <chance>0.1</chance>
+            <countRange>1</countRange>
+          </li>
+        </products>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- ==================== Tremola ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>NAT_AmmoSet_RustedTremola</defName>
+    <label>rusted bombshell</label>
+    <description>Large, rimmed rifle bullet used by various outdated firearms.</description>
+    <ammoTypes>
+      <NAT_Ammo_RustedTremola>NAT_Proj_RustedTremola</NAT_Ammo_RustedTremola>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="NAT_RustedAmmoBase">
+    <defName>NAT_Ammo_RustedTremola</defName>
+    <label>rusted bombshell</label>
+    <graphicData>
+      <texPath>Things/Ammo/NAT_RustedAmmo_Tremola</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <stackLimit>50</stackLimit>
+    <comps>
+      <li Class="NAT.CompProperties_ConverterSubject">
+        <ticksToConvert>7500</ticksToConvert>
+        <categoryKey>NAT_RustedAmmo</categoryKey>
+        <products>
+          <li>
+            <def>Bioferrite</def>
+            <countRange>1~3</countRange>
+          </li>
+        </products>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

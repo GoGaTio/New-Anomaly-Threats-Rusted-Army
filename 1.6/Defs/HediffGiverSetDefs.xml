@@ -4,9 +4,14 @@
   <HediffGiverSetDef>
     <defName>NAT_Rust</defName>
     <hediffGivers>
-      <li Class="NAt.HediffGiver_Rust">
+      <li Class="NAT.HediffGiver_Rust">
         <hediffs>
+          <li MayRequireAnyOf="CETeam.CombatExtended,CETeam.CombatExtended_steam">PrometheumSoaked</li>
         </hediffs>
+      </li>
+      <li MayRequireAnyOf="CETeam.CombatExtended,CETeam.CombatExtended_steam" Class="NAT.HediffGiver_RevertDebuff">
+        <debuffDef>BioferriteToxicity</debuffDef>
+        <buffDef>NAT_BioferriteBinding</buffDef>
       </li>
     </hediffGivers>
   </HediffGiverSetDef>

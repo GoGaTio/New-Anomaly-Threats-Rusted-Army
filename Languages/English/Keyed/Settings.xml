@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <NAT_Setting_AllowMechanitorRust>Rusts can be mechanitor</NAT_Setting_AllowMechanitorRust>
+
+  <NAT_Setting_AllowMechanitorRust_Desc>Allows rusts to be mechanitors.</NAT_Setting_AllowMechanitorRust_Desc>
+  
+</LanguageData>

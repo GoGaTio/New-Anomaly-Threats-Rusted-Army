@@ -64,6 +64,8 @@ namespace NAT
 
 		public HediffDef hediff;
 
+		public HediffDef requireHediff;
+
 		public bool replaceHediff = true;
 
 		public BodyPartDef bodyPart = null;
@@ -149,6 +151,10 @@ namespace NAT
 			{
 				return false;
 			}
+			if(Props.requireHediff != null && !rust.health.hediffSet.HasHediff(Props.requireHediff))
+			{
+				return "InstallImplantHediffRequired".Translate(Props.requireHediff.label);
+			}
 			if (Props.hediff != null)
 			{
 				if(Props.bodyPart != null && rust.RaceProps.body.GetPartsWithDef(Props.bodyPart).FirstOrFallback() == null)
@@ -158,9 +164,19 @@ namespace NAT
 				Hediff hediff = rust.health.hediffSet.GetFirstHediffOfDef(Props.hediff);
 				if(hediff != null)
 				{
-					if (Props.severity != null && (hediff.Severity >= hediff.def.maxSeverity || hediff.Severity >= hediff.def.stages.Last().minSeverity))
+					if (Props.severity == null)
 					{
-						return "InstallImplantAlreadyMaxLevel".Translate();
+						if (!Props.replaceHediff)
+						{
+							return false;
+						}
+					}
+					else
+					{
+						if (hediff.Severity >= hediff.def.maxSeverity || hediff.Severity >= hediff.def.stages.Last().minSeverity)
+						{
+							return "InstallImplantAlreadyMaxLevel".Translate();
+						}
 					}
 				}
 			}

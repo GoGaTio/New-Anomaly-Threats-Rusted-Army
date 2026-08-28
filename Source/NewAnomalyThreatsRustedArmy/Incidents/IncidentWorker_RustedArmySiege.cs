@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Net.NetworkInformation;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using Unity.Burst;
@@ -33,9 +34,20 @@ using static NAT.IncidentWorker_RustedArmySiege;
 
 namespace NAT
 {
-	public class IncidentWorker_RustedArmySiege : IncidentWorker
+	public class IncidentWorker_RustedArmySiege : IncidentWorker, IAnomalyEvent
 	{
+		public Def Def => def;
+
+		public float CommonalityFactor { get; set; } = 1f;
+
+		public bool AdjustPoints => true;
+
+		public float PointsFactor { get; set; } = 1f;
+
 		public static float minPoints = -1f;
+
+		public override float BaseChanceThisGame => base.BaseChanceThisGame * CommonalityFactor;
+
 		public struct Unit
 		{
 			public Thing thing;

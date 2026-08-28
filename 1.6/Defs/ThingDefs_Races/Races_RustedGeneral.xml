@@ -5,6 +5,7 @@
     <defName>NAT_RustedGeneral</defName>
     <label>rusted general</label>
     <description>Bioferrite pieces shaped like tall human figure. This type of rusted creature is Rusted army elite unit, so has thicker armor and better combat skills than regular soldiers.</description>
+    <thingClass>NAT.RustedBoss</thingClass>
     <statBases>
       <MoveSpeed>2.4</MoveSpeed>
       <MarketValue>17900</MarketValue>
@@ -271,11 +272,6 @@
     <skipResistant>true</skipResistant>
     <aiAvoidCover>true</aiAvoidCover>
     <isBoss>true</isBoss>
-    <modExtensions>
-      <li Class="NAT.RustedPawnExtention">
-        <scenarioAvailable>false</scenarioAvailable>
-      </li>
-    </modExtensions>
     <lifeStages>
       <li>
         <bodyGraphicData>

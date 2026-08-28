@@ -31,8 +31,16 @@ using UnityEngine.SceneManagement;
 
 namespace NAT
 {
-	public class IncidentWorker_RustedArmyRaid : IncidentWorker
+	public class IncidentWorker_RustedArmyRaid : IncidentWorker, IAnomalyEvent
 	{
+		public Def Def => def;
+
+		public float CommonalityFactor { get; set; } = 1f;
+
+		public bool AdjustPoints => true;
+
+		public float PointsFactor { get; set; } = 1f;
+
 		public static readonly SimpleCurve PointsFromPoints = new SimpleCurve
 		{
 			new CurvePoint(1000f, 900f),
@@ -46,14 +54,17 @@ namespace NAT
 			new CurvePoint(2000f, 0.2f),
 			new CurvePoint(10000f, 0.9f)
 		};
+
+		public override float BaseChanceThisGame => base.BaseChanceThisGame * CommonalityFactor;
+
 		protected override bool TryExecuteWorker(IncidentParms parms)
 		{
 			Map map = (Map)parms.target;
 			if (!map.TileInfo.OnSurface || Rand.Chance(0.3f))
 			{
-				return RustedArmyUtility.ExecuteRaid(map, PointsFromPoints.Evaluate(parms.points), 1, false, true, null, null, true, Rand.Chance(0.5f)) != null;
+				return RustedArmyUtility.ExecuteRaid(map, PointsFromPoints.Evaluate(parms.points * PointsFactor), 1, false, true, null, null, true, Rand.Chance(0.5f)) != null;
 			}
-			return RustedArmyUtility.ExecuteRaid(map, PointsFromPoints.Evaluate(parms.points), Rand.Chance(GroupsChanceFromPoints.Evaluate(parms.points)) ? new IntRange(2, 3).RandomInRange : 1, Rand.Chance(0.2f)) != null;
+			return RustedArmyUtility.ExecuteRaid(map, PointsFromPoints.Evaluate(parms.points * PointsFactor), Rand.Chance(GroupsChanceFromPoints.Evaluate(parms.points)) ? new IntRange(2, 3).RandomInRange : 1, Rand.Chance(0.2f)) != null;
 		}
 	}
 }

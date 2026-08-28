@@ -1,0 +1,4 @@
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\NewAnomalyThreatsRustedArmy\1.6\Mods\CombatExtended\Assemblies\NewAnomalyThreatsRustedArmyCE.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\NewAnomalyThreatsRustedArmy\Source\NewAnomalyThreatsRustedArmyCE\obj\Debug\NewAnomalyThreatsRustedArmyCE.csproj.AssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\NewAnomalyThreatsRustedArmy\Source\NewAnomalyThreatsRustedArmyCE\obj\Debug\NewAnomalyThreatsRustedArmyCE.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\NewAnomalyThreatsRustedArmy\Source\NewAnomalyThreatsRustedArmyCE\obj\Debug\NewAnomalyThreatsRustedArmyCE.dll

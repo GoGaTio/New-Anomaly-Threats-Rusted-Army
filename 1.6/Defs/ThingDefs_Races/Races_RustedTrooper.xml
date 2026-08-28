@@ -151,14 +151,9 @@
     </startingHediffs>
     <race>NAT_RustedTrooper</race>
     <weaponTags>
-      <li>NAT_RustedShotgun</li>
+      <li>NAT_RustedCarabine</li>
       <li>NAT_RustedAssaultSMG</li>
     </weaponTags>
-    <modExtensions>
-      <li Class="NAT.RustedPawnExtention">
-        <scenarioAvailable>true</scenarioAvailable>
-      </li>
-    </modExtensions>
     <alternateGraphicChance>0.5</alternateGraphicChance>
     <alternateGraphics>
       <li>

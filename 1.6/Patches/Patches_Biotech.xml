@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="NAT.PatchOperationRustMechanitorAllowed">
+    <match Class="PatchOperationSequence">
+      <operations>
+
+        <li Class="PatchOperationAttributeRemove">
+          <xpath>Defs/ThingDef[defName = "NAT_CoreUpgrade_Mechlink" or defName = "NAT_CoreUpgrade_Connector"]</xpath>
+          <attribute>Abstract</attribute>
+        </li>
+
+        <li Class="PatchOperationAttributeRemove">
+          <xpath>Defs/RecipeDef[defName = "NAT_MakeRustMechlink"]</xpath>
+          <attribute>Abstract</attribute>
+        </li>
+
+      </operations>
+    </match>
+  </Operation>
+
+</Patch>

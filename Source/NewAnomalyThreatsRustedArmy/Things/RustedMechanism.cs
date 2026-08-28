@@ -301,6 +301,10 @@ namespace NAT
 			{
 				Deactivate();
 			}
+			else if (!active)
+			{
+				Activate();
+			}
 		}
 
 		public override string GetInspectString()

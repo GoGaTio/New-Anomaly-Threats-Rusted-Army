@@ -52,6 +52,7 @@ using Verse.Noise;
 using Verse.Profile;
 using Verse.Sound;
 using Verse.Steam;
+using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
 
 namespace NAT.Rusts
 {
@@ -63,11 +64,19 @@ namespace NAT.Rusts
 		[HarmonyPostfix]
 		public static void Postfix(ref float y, float width, Thing thing, bool inventory = false)
 		{
-			if (inventory && thing.TryGetComp<CompUsableByRust>(out CompUsableByRust comp) && Find.Selector.SingleSelectedThing is RustedPawn rust && rust.Controllable)
+			if (inventory && Find.Selector.SingleSelectedThing is RustedPawn rust && rust.Controllable && thing.TryGetComp(out CompUsableByRust comp))
 			{
 				Rect rect = new Rect(width - 72f, y - 28f, 24f, 24f);
-				TooltipHandler.TipRegion(rect, comp.JobReport.Formatted(thing.LabelShort));
-				if (Widgets.ButtonImage(rect, RustedArmyUtility.Use))
+				AcceptanceReport report = comp.CanBeUsedBy(rust);
+				bool flag = report.Accepted;
+				if(!flag && report.Reason.NullOrEmpty())
+				{
+					return;
+				}
+				TooltipHandler.TipRegion(rect, (flag) ? comp.JobReport.Formatted(thing.LabelShort) : "CannotUseReason".Translate(report.Reason));
+				Color color = (flag ? Color.white : Color.gray);
+				Color mouseoverColor = (flag ? GenUI.MouseoverColor : color);
+				if (Widgets.ButtonImage(rect, RustedArmyUtility.Use, color, mouseoverColor, flag) && flag)
 				{
 					SoundDefOf.Tick_High.PlayOneShotOnCamera();
 					rust.jobs.TryTakeOrderedJob(JobMaker.MakeJob(NATRADefOf.NAT_UseItemByRust, thing), JobTag.DraftedOrder);
@@ -101,7 +110,7 @@ namespace NAT.Rusts
 		public static void Postfix(ref bool __result)
 		{
 			if (__result) return;
-			if (Find.Selector.SingleSelectedThing is RustedPawn rust && (DebugSettings.godMode || rust.EverControllable))
+			if (Find.Selector.SingleSelectedThing is RustedPawn rust && (DebugSettings.godMode || rust.EverControllable || SubModSettings_RustedArmy.Value.showGearTabOnEnemies))
 			{
 				__result = true;
 			}

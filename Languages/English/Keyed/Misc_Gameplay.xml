@@ -66,4 +66,8 @@
 
   <NAT_RustDormant>Inactive</NAT_RustDormant>
 
+  <NAT_RustedEquipment>Rusted equipment</NAT_RustedEquipment>
+  <NAT_RustedActivators>Rusted activators</NAT_RustedActivators>
+  <NAT_RustedAmmo>RustedAmmo</NAT_RustedAmmo>
+
 </LanguageData>

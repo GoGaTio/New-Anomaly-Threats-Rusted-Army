@@ -31,8 +31,18 @@ using UnityEngine.SceneManagement;
 
 namespace NAT
 {
-	public class IncidentWorker_RustedMechanismArrival : IncidentWorker
+	public class IncidentWorker_RustedMechanismArrival : IncidentWorker, IAnomalyEvent
 	{
+		public Def Def => def;
+
+		public float CommonalityFactor { get; set; } = 1f;
+
+		public bool AdjustPoints => false;
+
+		public float PointsFactor { get; set; } = 1f;
+
+		public override float BaseChanceThisGame => base.BaseChanceThisGame * CommonalityFactor;
+
 		protected override bool CanFireNowSub(IncidentParms parms)
 		{
 			Map map = (Map)parms.target;

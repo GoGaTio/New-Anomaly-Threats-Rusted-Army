@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/DamageDef[defName="NAT_RustedBomb" or defName="NAT_RustedBullet" or defName="NAT_RustedScratch"]</xpath>
+		<value>
+      <additionalHediffs>
+        <li>
+          <hediff>BioferriteToxicity</hediff>
+          <severityPerDamageDealt>0.015</severityPerDamageDealt>
+        </li>
+      </additionalHediffs>
+		</value>
+	</Operation>
+
+</Patch>

@@ -57,17 +57,18 @@ using Verse.Steam;
 
 namespace NAT
 {
-	public class RustedPawnExtention : DefModExtension
+	public class RustedBoss : RustedPawn, ICapacityAffect
 	{
-		public bool defaultDraftable = true;
-
-		public bool scenarioAvailable = true;
-
-		public bool sendDeathLetter = true;
-
-		public bool nonPlayer = false;
+		public float AffectCapacity(float level, HediffSet diffSet, PawnCapacityDef capacity, ref List<PawnCapacityUtility.CapacityImpactor> impactors)
+		{
+			if(level > 0 || capacity != PawnCapacityDefOf.Consciousness)
+			{
+				impactors?.Add(new CapacityImpactorBoss());
+				return Mathf.Max(level, 0.5f);
+			}
+			return level;
+		}
 	}
-
 	public class RustedPawn : Pawn
 	{
 		public Need_RustRest restNeed;
@@ -188,14 +189,14 @@ namespace NAT
 				{
 					return false;
 				}
-                if (!EverControllable)
-                {
-					return false;
-                }
 				if (!Spawned)
 				{
 					return false;
 				}
+				if (!EverControllable)
+                {
+					return false;
+                }
 				return !Downed;
 			}
 		}
@@ -636,11 +637,11 @@ namespace NAT
 						targets = caravan;
 					}
 				}
-                else if(pos.IsValid)
+                else if(pos.IsValid && map != null)
                 {
 					targets = new LookTargets(pos, map);
 				}
-				Find.LetterStack.ReceiveLetter("Death".Translate() + ": " + (Name.IsValid ? Name.ToStringFull : LabelCap), diedLetterText, LetterDefOf.Death, targets);
+				Find.LetterStack.ReceiveLetter("Death".Translate() + ": " + (Name?.IsValid == true ? Name.ToStringFull : LabelCap), diedLetterText, LetterDefOf.Death, targets);
 			}
 		}
 
@@ -683,11 +684,14 @@ namespace NAT
 			}
 		}
 
+		public int preventReadingTill;
+
         public override void ExposeData()
 		{
 			base.ExposeData();
 			Scribe_Defs.Look(ref head, "head");
 			Scribe_Values.Look(ref stunAdaptationTicksLeft, "stunAdaptationTicksLeft");
+			Scribe_Values.Look(ref preventReadingTill, "preventReadingTill");
 			Scribe_Values.Look(ref bodySizeOverride, "bodySizeOverride");
 			if (Scribe.mode == LoadSaveMode.PostLoadInit && head == null && Comp?.Props?.hasHead == true)
             {

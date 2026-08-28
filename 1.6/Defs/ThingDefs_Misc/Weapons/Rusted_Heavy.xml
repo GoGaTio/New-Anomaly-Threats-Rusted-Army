@@ -58,7 +58,7 @@
     </butcherProducts>
   </ThingDef>
 
-  <ThingDef ParentName="NAT_BaseHeavyRustedWeapon">
+  <!--<ThingDef ParentName="NAT_BaseHeavyRustedWeapon">
     <defName>NAT_Gun_RustedAssaultShotgun</defName>
     <label>rusted assault shotgun</label>
     <description>A piece of bioferrite shaped like a large chain shotgun.\n\nSomehow can shoot if wielded by rusted creature.</description>
@@ -170,6 +170,6 @@
     <butcherProducts>
       <Bioferrite>19</Bioferrite>
     </butcherProducts>
-  </ThingDef>
+  </ThingDef>-->
 
 </Defs>

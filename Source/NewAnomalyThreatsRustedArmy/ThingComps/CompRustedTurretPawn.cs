@@ -19,7 +19,7 @@ using static HarmonyLib.Code;
 
 namespace NAT
 {
-	public class CompProperties_RustedTurretPawn : CompProperties
+	public class CompProperties_RustedTurretPawn : CompProperties_Armor
 	{
 		public PawnKindDef kindDef;
 
@@ -28,8 +28,6 @@ namespace NAT
 		public int hitPoints;
 
 		public int ticksPerHeal;
-
-		public bool combatExtendedArmor;
 
 		public float offsetTop;
 
@@ -66,6 +64,11 @@ namespace NAT
 				kindDef.race.uiIcon = parentDef.uiIcon;
 				kindDef.race.killedLeavingsRanges = parentDef.killedLeavingsRanges.ListFullCopy();
 			}
+		}
+
+		public override IEnumerable<StatDrawEntry> SpecialDisplayStats(StatRequest req)
+		{
+			return base.SpecialDisplayStats(req);
 		}
 	}
 	public class CompRustedTurretPawn : ThingComp, IThingHolder
@@ -390,118 +393,16 @@ namespace NAT
 				}
 				return;
 			}
-			if (!dinfo.Def.ExternalViolenceFor(parent))
-			{
-				return;
-			}
-			bool spawnedOrAnyParentSpawned = pawn.SpawnedOrAnyParentSpawned;
-			if (spawnedOrAnyParentSpawned && pawn.jobs != null)
-			{
-				Job job = pawn.CurJob;
-				if (job != null && dinfo.Def.canInterruptJobs && !job.playerForced && Find.TickManager.TicksGame >= lastDamageCheckTick + 180)
-				{
-					Thing instigator = dinfo.Instigator;
-					if (job.def.checkOverrideOnDamage == CheckJobOverrideOnDamageMode.Always || (job.def.checkOverrideOnDamage == CheckJobOverrideOnDamageMode.OnlyIfInstigatorNotJobTarget && !job.AnyTargetIs(instigator)))
-					{
-						lastDamageCheckTick = Find.TickManager.TicksGame;
-						pawn.jobs?.CheckForJobOverride();
-					}
-				}
-			}
-			if (dinfo.Def.armorCategory != null)
-			{
-				StatDef armorRatingStat = dinfo.Def.armorCategory.armorRatingStat;
-				float armorPenetration = dinfo.ArmorPenetrationInt;
-				float armorRating = parent.GetStatValue(armorRatingStat);
-				bool diminished = false;
-				if (Props.combatExtendedArmor)
-				{
-					if (armorPenetration < armorRating)
-					{
-						absorbed = true;
-					}
-				}
-				else
-				{
-					float num = Mathf.Max(armorRating - armorPenetration, 0f);
-					float value = Rand.Value;
-					float num2 = num * 0.5f;
-					float num3 = num;
-					if (value < num2)
-					{
-						absorbed = true;
-					}
-					else if (value < num3)
-					{
-						dinfo.SetAmount(GenMath.RoundRandom(dinfo.Amount / 2f));
-						diminished = true;
-					}
-				}
-				if (spawnedOrAnyParentSpawned)
-				{
-					if (absorbed || diminished)
-					{
-						EffecterDef effecterDef = (absorbed ? (dinfo.Def.canUseDeflectMetalEffect ? ((dinfo.Def != DamageDefOf.Bullet) ? EffecterDefOf.Deflect_Metal : EffecterDefOf.Deflect_Metal_Bullet) : ((dinfo.Def != DamageDefOf.Bullet) ? EffecterDefOf.Deflect_General : EffecterDefOf.Deflect_General_Bullet)) : EffecterDefOf.DamageDiminished_Metal);
-						if (pawn.health.deflectionEffecter == null || pawn.health.deflectionEffecter.def != effecterDef)
-						{
-							if (pawn.health.deflectionEffecter != null)
-							{
-								pawn.health.deflectionEffecter.Cleanup();
-								pawn.health.deflectionEffecter = null;
-							}
-							pawn.health.deflectionEffecter = effecterDef.Spawn();
-						}
-						TargetInfo targetInfo = new TargetInfo(pawn.Position, pawn.MapHeld);
-						Effecter deflectionEffecter = pawn.health.deflectionEffecter;
-						Thing instigator = dinfo.Instigator;
-						deflectionEffecter.Trigger(targetInfo, (instigator != null) ? ((TargetInfo)instigator) : targetInfo);
-						if (absorbed)
-						{
-							pawn.Drawer.Notify_DamageDeflected(dinfo);
-							return;
-						}
-					}
-					else
-					{
-						LifeStageUtility.PlayNearestLifestageSound(pawn, (LifeStageAge lifeStage) => lifeStage.soundWounded, null, null, 0.7f);
-						pawn.Drawer.Notify_DamageApplied(dinfo);
-						EffecterDef damageEffecter = pawn.RaceProps.FleshType.damageEffecter;
-						if (damageEffecter != null)
-						{
-							if (pawn.health.woundedEffecter != null && pawn.health.woundedEffecter.def != damageEffecter)
-							{
-								pawn.health.woundedEffecter.Cleanup();
-							}
-							pawn.health.woundedEffecter = damageEffecter.Spawn();
-							pawn.health.woundedEffecter.Trigger(pawn, dinfo.Instigator ?? pawn);
-						}
-						if (dinfo.Def.damageEffecter != null)
-						{
-							Effecter effecter = dinfo.Def.damageEffecter.Spawn();
-							effecter.Trigger(pawn, pawn);
-							effecter.Cleanup();
-						}
-					}
-				}
-			}
+			base.PostPreApplyDamage(ref dinfo, out absorbed);
 			if (dinfo.Def != DamageDefOf.EMP && dinfo.Def.harmsHealth)
 			{
 				absorbed = true;
-				health -= Mathf.RoundToInt(dinfo.Amount * pawn.GetStatValue(StatDefOf.IncomingDamageFactor));
-				pawn.mindState.Notify_DamageTaken(dinfo);
-				pawn.GetLord()?.Notify_PawnDamaged(pawn, dinfo);
+				health -= Mathf.RoundToInt(dinfo.Amount);
 				if (health <= 0)
 				{
 					health = 0;
 					destroyed = true;
 					parent.Kill(dinfo);
-				}
-				else
-				{
-					if (dinfo.Def.makesBlood && Rand.Chance(0.5f))
-					{
-						pawn.health.DropBloodFilth();
-					}
 				}
 			}
 		}

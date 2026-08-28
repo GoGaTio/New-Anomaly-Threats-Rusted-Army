@@ -109,20 +109,6 @@
   </ThingDef>
 
   <ThingDef ParentName="NAT_RustedBulletBase">
-    <defName>NAT_Bullet_RustedShotgun</defName>
-    <label>rusted shotgun blast</label>
-    <graphicData>
-      <texPath>Things/Projectile/Bullet_Shotgun</texPath>
-    </graphicData>
-    <projectile>
-      <damageAmountBase>18</damageAmountBase>
-      <stoppingPower>3</stoppingPower>
-      <armorPenetrationBase>0.15</armorPenetrationBase>
-      <speed>55</speed>
-    </projectile>
-  </ThingDef>
-
-  <ThingDef ParentName="NAT_RustedBulletBase">
     <defName>NAT_Proj_RustedTremola</defName>
     <label>rusted bombshell</label>
     <graphicData>
@@ -176,21 +162,6 @@
   </ThingDef>
 
   <ThingDef ParentName="BaseGrenadeProjectile">
-    <defName>NAT_Proj_RustedGrenade</defName>
-    <label>rusted grenade</label>
-    <thingClass>Projectile_Explosive</thingClass>
-    <graphicData>
-      <texPath>Things/Projectile/NAT_RustedGrenade</texPath>
-      <graphicClass>Graphic_Random</graphicClass>
-    </graphicData>
-    <projectile>
-      <explosionRadius>1.9</explosionRadius>
-      <damageDef>NAT_RustedBomb</damageDef>
-      <explosionDelay>100</explosionDelay>
-    </projectile>
-  </ThingDef>
-
-  <ThingDef ParentName="BaseGrenadeProjectile">
     <defName>NAT_Proj_RustedImpactGrenade</defName>
     <label>rusted impact grenade</label>
     <thingClass>Projectile_Explosive</thingClass>
@@ -234,40 +205,6 @@
       <filthCount>1</filthCount>
       <explosionSpawnsSingleFilth>true</explosionSpawnsSingleFilth>
     </projectile>
-  </ThingDef>
-
-  <ThingDef ParentName="NAT_RustedBulletBase">
-    <defName>NAT_Proj_RustedBigAssRocket</defName>
-    <label>rusted bigass rocket</label>
-    <thingClass>Projectile_Explosive</thingClass>
-    <graphicData>
-      <texPath>Things/Projectile/NAT_RustedShell</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
-      <shaderType>TransparentPostLight</shaderType>
-      <drawSize>(2, 2)</drawSize>
-    </graphicData>
-    <projectile>
-      <explosionRadius>12.7</explosionRadius>
-      <damageDef>NAT_RustedAntiTankBomb</damageDef>
-      <damageAmountBase>550</damageAmountBase>
-      <speed>40</speed>
-    </projectile>
-    <comps>
-      <li Class="NAT.CompProperties_ConstantFleckEmitter">
-        <fleck>NAT_RustedRocketTrail</fleck>
-        <startEmitFromTick>0</startEmitFromTick>
-        <countEmitPerTick>1</countEmitPerTick>
-        <soundOnEmitStart>InfernoCannon_Fire</soundOnEmitStart>
-        <sizeCurve>
-          <points>
-            <li>(0,8)</li>
-            <li>(5,6)</li>
-            <li>(10,4.5)</li>
-            <li>(15,3)</li>
-          </points>
-        </sizeCurve>
-      </li>
-    </comps>
   </ThingDef>
 
 </Defs>

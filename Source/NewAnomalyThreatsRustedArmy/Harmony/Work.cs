@@ -88,6 +88,21 @@ namespace NAT.Rusts
 					{
 						pawn.workSettings = new Pawn_WorkSettings(pawn);
 					}
+					if (ModsConfig.BiotechActive && SubModSettings_RustedArmy.Value?.allowMechanitorRusts == true)
+					{
+						if (pawn.relations == null)
+						{
+							pawn.relations = new Pawn_RelationsTracker(pawn);
+						}
+						if (MechanitorUtility.ShouldBeMechanitor(rust) && rust.mechanitor == null)
+						{
+							rust.mechanitor = new Pawn_MechanitorTracker(rust);
+						}
+						else if (!MechanitorUtility.ShouldBeMechanitor(rust) && rust.mechanitor != null)
+						{
+							rust.mechanitor = null;
+						}
+					}
 				}
 				if (pawn.abilities == null)
 				{

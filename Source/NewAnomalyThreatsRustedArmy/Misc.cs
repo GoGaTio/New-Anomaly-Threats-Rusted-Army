@@ -10,6 +10,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using UnityEngine;
 using Verse;
 using Verse.AI;
@@ -23,17 +24,31 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace NAT
 {
-	public class HediffGiver_Rust : HediffGiver
+	public class PatchOperationRustMechanitorAllowed : PatchOperation
 	{
-		public List<HediffDef> hediffs = new List<HediffDef>();
+		private PatchOperation match;
 
-		public override bool OnHediffAdded(Pawn pawn, Hediff hediff)
+		private PatchOperation nomatch;
+
+		protected override bool ApplyWorker(XmlDocument xml)
 		{
-			if (hediff.def.lethalSeverity > 0 || hediffs.Contains(hediff.def))
+			if (ModsConfig.BiotechActive && SubModSettings_RustedArmy.Value?.allowMechanitorRusts == true)
 			{
-				pawn.health.RemoveHediff(hediff);
+				if (match != null)
+				{
+					return match.Apply(xml);
+				}
 			}
-			return false;
+			else if (nomatch != null)
+			{
+				return nomatch.Apply(xml);
+			}
+			return true;
+		}
+
+		public override string ToString()
+		{
+			return $"{base.ToString()}(SubModSettings_RustedArmy.allowMechanitorRusts)";
 		}
 	}
 

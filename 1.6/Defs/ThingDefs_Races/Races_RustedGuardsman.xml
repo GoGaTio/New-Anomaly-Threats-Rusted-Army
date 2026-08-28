@@ -190,8 +190,6 @@
     <race>NAT_RustedGuardsman</race>
     <weaponTags>
       <li>NAT_RustedMachineGun</li>
-      <li>NAT_RustedSniperRifle</li>
-      <li>NAT_RustedAssaultShotgun</li>
     </weaponTags>
     <abilities>
       <li>NAT_RustJump</li>
@@ -199,11 +197,6 @@
     <skipResistant>true</skipResistant>
     <aiAvoidCover>true</aiAvoidCover>
     <isBoss>true</isBoss>
-    <modExtensions>
-      <li Class="NAT.RustedPawnExtention">
-        <scenarioAvailable>true</scenarioAvailable>
-      </li>
-    </modExtensions>
     <lifeStages>
       <li>
         <bodyGraphicData>

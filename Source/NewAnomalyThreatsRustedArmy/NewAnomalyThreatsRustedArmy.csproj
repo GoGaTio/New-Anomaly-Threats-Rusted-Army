@@ -73,12 +73,30 @@
     <Compile Include="Harmony\ModPatches.cs" />
     <Compile Include="Hediffs\HediffComp_RustedBuff.cs" />
     <Compile Include="Hediffs\HediffComp_GiveHediffsToRustInRange.cs" />
+    <Compile Include="Hediffs\HediffGivers\HediffGiver_Rust.cs" />
+    <Compile Include="Jobs\Drivers\JobDriver_DanceRust.cs" />
+    <Compile Include="Jobs\Drivers\JobDriver_UseItemByRust.cs" />
+    <Compile Include="Jobs\Givers\JobGiver_DanceRust.cs" />
+    <Compile Include="Jobs\Givers\JobGiver_ReadRust.cs" />
+    <Compile Include="Jobs\Givers\JobGiver_RustedCommander.cs" />
+    <Compile Include="Jobs\Givers\JobGiver_RustedGeneral.cs" />
+    <Compile Include="Jobs\Givers\JobGiver_RustedTurret.cs" />
+    <Compile Include="Jobs\Givers\JobGiver_Sleep.cs" />
+    <Compile Include="Jobs\LordJobs\LordJob_DefendRust.cs" />
+    <Compile Include="Jobs\LordJobs\LordJob_RustedArmy.cs" />
+    <Compile Include="Jobs\LordJobs\LordJob_DefendVoidStructure.cs" />
+    <Compile Include="Jobs\LordJobs\LordJob_EscortAndDefendRust.cs" />
+    <Compile Include="Jobs\LordToils\LordToil_SleepRust.cs" />
+    <Compile Include="Jobs\LordToils\LordToils_ExitMapRust.cs" />
+    <Compile Include="Jobs\LordToils\LordToil_EscortRust.cs" />
+    <Compile Include="Jobs\LordToils\LordToil_AssaultColonyRust.cs" />
+    <Compile Include="Jobs\LordToils\LordToil_DanceRust.cs" />
+    <Compile Include="Jobs\LordToils\LordToil_StageRust.cs" />
     <Compile Include="Jobs\Triggers.cs" />
-    <Compile Include="Jobs\LordsToils.cs" />
+    <Compile Include="Mod.cs" />
     <Compile Include="ThingComps\CompRustedBuffGiver.cs" />
     <Compile Include="ThingComps\CompRustedCore.cs" />
     <Compile Include="ThingComps\CompRustedMechanism.cs" />
-    <Compile Include="ThingComps\CompStatue.cs" />
     <Compile Include="Things\RustedMechanism.cs" />
     <Compile Include="Verb_MeleeAttackExplode.cs" />
     <Compile Include="Abilities\CompAbilityEffect_RustedCommander.cs" />
@@ -94,9 +112,9 @@
     <Compile Include="Incidents\IncidentWorker_RustedArmyRaid.cs" />
     <Compile Include="Incidents\IncidentWorker_RustedArmySiege.cs" />
     <Compile Include="Incidents\IncidentWorker_RustedMechanismArrival.cs" />
-    <Compile Include="Jobs\JobDrivers_Misc.cs" />
-    <Compile Include="Jobs\JobGivers.cs" />
-    <Compile Include="Jobs\LordsJobs.cs" />
+    <Compile Include="Jobs\Drivers\JobDriver_TurretSetUp.cs" />
+    <Compile Include="Jobs\Givers\JobGiver_TakeWoundedRust.cs" />
+    <Compile Include="Jobs\LordJobs\LordsJobs.cs" />
     <Compile Include="MapGen\GenStep_RustedBase.cs" />
     <Compile Include="MapGen\GenStep_RustedDish.cs" />
     <Compile Include="MapGen\GenStep_RustedNode.cs" />
@@ -138,5 +156,6 @@
     <Compile Include="UI\MainButtons.cs" />
     <Compile Include="UI\PawnColumnWorkers.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -138,7 +138,7 @@ namespace NAT
 					List<Pawn> list = currentMap.mapPawns.SpawnedPawnsInFaction(Faction.OfPlayer);
 					for (int i = 0; i < list.Count; i++)
 					{
-						if (list[i] is RustedPawn rust && rust.Controllable)
+						if (list[i] is RustedPawn rust && rust.EverControllable)
 						{
 							return false;
 						}
@@ -146,7 +146,7 @@ namespace NAT
 					List<Pawn> list2 = currentMap.mapPawns.PawnsInFaction(Faction.OfPlayer);
 					for (int j = 0; j < list2.Count; j++)
 					{
-						if (list2[j] is RustedPawn rust && rust.Controllable)
+						if (list2[j] is RustedPawn rust && rust.EverControllable)
 						{
 							return false;
 						}

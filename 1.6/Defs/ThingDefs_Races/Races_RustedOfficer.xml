@@ -17,7 +17,7 @@
       <NAT_ReinforcementsCooldown>40</NAT_ReinforcementsCooldown>
     </statBases>
     <race>
-      <anomalyKnowledge>2.5</anomalyKnowledge>
+      <anomalyKnowledge>3</anomalyKnowledge>
       <baseBodySize>1.6</baseBodySize>
       <baseHealthScale>3.25</baseHealthScale>
       <nameGenerator>NAT_NamerRustedOfficer</nameGenerator>
@@ -220,11 +220,6 @@
     </lifeStages>
     <combatPower>450</combatPower>
     <weaponMoney>9999~9999</weaponMoney>
-    <modExtensions>
-      <li Class="NAT.RustedPawnExtention">
-        <scenarioAvailable>true</scenarioAvailable>
-      </li>
-    </modExtensions>
     <combatEnhancingDrugsCount>-5~2</combatEnhancingDrugsCount>
   </PawnKindDef>
 

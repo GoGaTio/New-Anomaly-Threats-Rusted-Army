@@ -54,6 +54,7 @@
       <soundWorking>Recipe_Machining</soundWorking>
       <effectWorking>Cook</effectWorking>
       <workSkill>Crafting</workSkill>
+      <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
       <recipeUsers>
         <li>BioferriteShaper</li>
       </recipeUsers>
@@ -63,6 +64,16 @@
       <Bioferrite>20</Bioferrite>
     </costList>
     <uiIconScale>1.35</uiIconScale>
+    <comps>
+      <li Class="NAT.CompProperties_ConverterSubject">
+        <useButchery>true</useButchery>
+        <categoryKey>NAT_RustedActivators</categoryKey>
+        <butcheryRandomOffsetPct>0.2</butcheryRandomOffsetPct>
+      </li>
+    </comps>
+    <butcherProducts>
+      <Bioferrite>10</Bioferrite>
+    </butcherProducts>
   </ThingDef>
 
   <ThingDef ParentName="NAT_RustActivatorBase">
@@ -85,6 +96,9 @@
     <costList>
       <Neutroamine>5</Neutroamine>
     </costList>
+    <butcherProducts>
+      <Neutroamine>2</Neutroamine>
+    </butcherProducts>
   </ThingDef>
 
   <ThingDef ParentName="NAT_RustActivatorBase">
@@ -107,6 +121,9 @@
     <costList>
       <Plasteel>10</Plasteel>
     </costList>
+    <butcherProducts>
+      <Plasteel>4</Plasteel>
+    </butcherProducts>
   </ThingDef>
 
   <ThingDef ParentName="NAT_RustActivatorBase">
@@ -130,6 +147,9 @@
     <costList>
       <Neutroamine>5</Neutroamine>
     </costList>
+    <butcherProducts>
+      <Neutroamine>2</Neutroamine>
+    </butcherProducts>
   </ThingDef>
 
   <ThingDef ParentName="NAT_RustActivatorBase">
@@ -152,6 +172,9 @@
     <costList>
       <Meat_Twisted>40</Meat_Twisted>
     </costList>
+    <butcherProducts>
+      <Meat_Twisted>10</Meat_Twisted>
+    </butcherProducts>
   </ThingDef>
 
   <ThingDef ParentName="NAT_RustActivatorBase">
@@ -173,6 +196,9 @@
     <costList>
       <NAT_VoidOil>10</NAT_VoidOil>
     </costList>
+    <butcherProducts>
+      <NAT_VoidOil>4</NAT_VoidOil>
+    </butcherProducts>
   </ThingDef>
 
   <!--============================================Skills======================================================================-->
@@ -217,6 +243,7 @@
       <soundWorking>Recipe_Machining</soundWorking>
       <effectWorking>Cook</effectWorking>
       <workSkill>Crafting</workSkill>
+      <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
       <recipeUsers>
         <li>BioferriteShaper</li>
       </recipeUsers>
@@ -344,5 +371,115 @@
       <NAT_DarkMetal>15</NAT_DarkMetal>
     </costList>
   </ThingDef>
+
+  <ThingDef MayRequire="Ludeon.RimWorld.Biotech" Abstract="True" ParentName="NAT_RustUpgradeItemBase">
+    <defName>NAT_CoreUpgrade_Connector</defName>
+    <label>core connector</label>
+    <description>Special device that can upgrade rust using shard of dark archotechnology.\n\nMakes rust core fully stable.</description>
+    <graphicData>
+      <texPath>Things/Item/NAT_UsableByRust/NAT_CoreUpgrade_Czeta</texPath>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>1250</MarketValue>
+    </statBases>
+    <comps>
+      <li Class="NAT.CompProperties_UsableByRust">
+        <hediff>NAT_CoreUpgrade_Regenerator</hediff>
+        <requireHediff>MechlinkImplant</requireHediff>
+        <severity>1</severity>
+        <replaceHediff>false</replaceHediff>
+      </li>
+    </comps>
+    <costList>
+      <SignalChip>1</SignalChip>
+    </costList>
+  </ThingDef>
+
+  <ThingDef MayRequire="Ludeon.RimWorld.Biotech" Abstract="True" ParentName="NAT_ItemUsableByRust">
+    <defName>NAT_CoreUpgrade_Mechlink</defName>
+    <label>core mechlink</label>
+    <description>Special device that can upgrade rust using shard of dark archotechnology.\n\nMakes rust core fully stable.</description>
+    <graphicData>
+      <texPath>Things/Item/NAT_UsableByRust/NAT_CoreUpgrade_Czeta</texPath>
+      <drawSize>1</drawSize>
+    </graphicData>
+    <uiIconScale>1</uiIconScale>
+    <statBases>
+      <MarketValue>1250</MarketValue>
+    </statBases>
+    <stackLimit>1</stackLimit>
+    <comps>
+      <li Class="NAT.CompProperties_UsableByRust">
+        <hediff>MechlinkImplant</hediff>
+        <bodyPart>NAT_RustedCore</bodyPart>
+        <replaceHediff>false</replaceHediff>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <RecipeDef MayRequire="Ludeon.RimWorld.Biotech" Abstract="True">
+    <defName>NAT_MakeRustMechlink</defName>
+    <label>make core mechlink</label>
+    <description>Synthesize synthetic polyester fibers using chemfuel.</description>
+    <jobString>Making core mechlink.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+    <recipeUsers>
+      <li>BioferriteShaper</li>
+    </recipeUsers>
+    <skillRequirements>
+      <Crafting>10</Crafting>
+    </skillRequirements>
+    <workSkill>Crafting</workSkill>
+    <researchPrerequisite>NAT_RustedCoreUpgrades</researchPrerequisite>
+    <workAmount>6000</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Mechlink</li>
+            <li MayRequire="Aoba.DeadManSwitch.Core">DMS_MechLink</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Shard</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>NAT_DarkMetal</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>NAT_VoidOil</li>
+          </thingDefs>
+        </filter>
+        <count>30</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Mechlink</li>
+        <li MayRequire="Aoba.DeadManSwitch.Core">DMS_MechLink</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <NAT_CoreUpgrade_Mechlink>1</NAT_CoreUpgrade_Mechlink>
+    </products>
+  </RecipeDef>
 
 </Defs>

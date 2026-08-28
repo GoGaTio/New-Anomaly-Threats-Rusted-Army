@@ -26,7 +26,7 @@ namespace NAT
 	{
 		private PawnKindDef pawnKind;
 
-		private IEnumerable<PawnKindDef> PossibleRusts => DefDatabase<PawnKindDef>.AllDefs.Where((PawnKindDef td) => td.GetModExtension<RustedPawnExtention>()?.scenarioAvailable == true);
+		private IEnumerable<PawnKindDef> PossibleRusts => DefDatabase<PawnKindDef>.AllDefs.Where((PawnKindDef p) => p.isBoss == false && p.race.thingClass == typeof(RustedPawn));
 
 		public override void ExposeData()
 		{

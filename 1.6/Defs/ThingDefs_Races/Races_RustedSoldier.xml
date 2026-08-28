@@ -185,11 +185,6 @@
     </lifeStages>
     <combatPower>170</combatPower>
     <weaponMoney>9999~9999</weaponMoney>
-    <modExtensions>
-      <li Class="NAT.RustedPawnExtention">
-        <scenarioAvailable>true</scenarioAvailable>
-      </li>
-    </modExtensions>
   </PawnKindDef>
 
 </Defs>

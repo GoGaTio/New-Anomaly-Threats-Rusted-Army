@@ -15,6 +15,7 @@
 			<Mass>1</Mass>
 			<Flammability>1.5</Flammability>
 			<EquipDelay>2</EquipDelay>
+      <MarketValue>500</MarketValue>
 		</statBases>
     <thingCategories>
       <li>NAT_RustedEquipment</li>
@@ -39,15 +40,15 @@
       <careIfWornByCorpse>false</careIfWornByCorpse>
       <careIfDamaged>false</careIfDamaged>
       <wearPerDay>0</wearPerDay>
+      <tags>
+        <li>NAT_RustedHeavy</li>
+      </tags>
       <bodyPartGroups>
         <li>Waist</li>
       </bodyPartGroups>
       <layers>
         <li>Belt</li>
       </layers>
-			<tags>
-				<li>NAT_RustedHeavy</li>
-			</tags>
 			<wornGraphicData>
 				<renderUtilityAsPack>true</renderUtilityAsPack>
 				<north>
