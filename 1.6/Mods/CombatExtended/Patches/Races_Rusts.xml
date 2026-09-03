@@ -103,7 +103,34 @@
     </value>
   </Operation>
 
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="NAT_RustedOfficer" or defName="NAT_RustedGuardsman"]/statBases</xpath>
+    <value>
+      <CarryWeight>70</CarryWeight>
+      <CarryBulk>50</CarryBulk>
+    </value>
+  </Operation>
+
   <!--===================== Soldier & Trooper ========================-->
+
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>
+      Defs/PawnKindDef[
+      defName="NAT_RustedSoldier" or
+      defName="NAT_RustedTrooper" or
+      defName="NAT_RustedGuardsman"
+      ]
+    </xpath>
+    <value>
+      <li Class="CombatExtended.LoadoutPropertiesExtension">
+        <primaryMagazineCount>
+          <min>6</min>
+          <max>10</max>
+        </primaryMagazineCount>
+        <forcedAmmoCategory>NAT_RustedAmmo</forcedAmmoCategory>
+      </li>
+    </value>
+  </Operation>
 
   <Operation Class="PatchOperationAddModExtension">
     <xpath>Defs/ThingDef[defName="NAT_RustedSoldier"]</xpath>
@@ -127,14 +154,19 @@
     </value>
   </Operation>
 
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ThingDef[defName="NAT_RustedTrooper"]/comps/li[@Class="NAT.CompProperties_RustedShield"]/maxHealth</xpath>
+  <!--===================== Officer ========================-->
+
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>Defs/PawnKindDef[defName="NAT_RustedOfficer"]</xpath>
     <value>
-      <maxHealth>150</maxHealth>
+      <li Class="CombatExtended.LoadoutPropertiesExtension">
+        <primaryMagazineCount>
+          <min>15</min>
+          <max>30</max>
+        </primaryMagazineCount>
+      </li>
     </value>
   </Operation>
-
-  <!--===================== Officer ========================-->
 
   <Operation Class="PatchOperationAddModExtension">
     <xpath>Defs/ThingDef[defName="NAT_RustedOfficer"]</xpath>

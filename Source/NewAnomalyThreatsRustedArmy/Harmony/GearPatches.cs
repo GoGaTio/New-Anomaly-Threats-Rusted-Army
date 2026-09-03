@@ -212,7 +212,7 @@ namespace NAT.Rusts
 		{
 			if (pawn is RustedPawn rust)
 			{
-				rust.inventory.DestroyAll();
+				//rust.inventory.DestroyAll();
 				pawn.apparel.DestroyAll();
 				int drugsAmount = pawn.kindDef.combatEnhancingDrugsCount.RandomInRange;
 				if (drugsAmount > 0)

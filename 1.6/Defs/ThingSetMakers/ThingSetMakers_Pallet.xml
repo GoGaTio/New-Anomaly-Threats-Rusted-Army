@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-
   <ThingSetMakerDef>
     <defName>NAT_RustedPallet</defName>
     <root Class="ThingSetMaker_RandomOption">
@@ -12,7 +11,7 @@
           <thingSetMaker Class="NAT.ThingSetMaker_Pawns">
             <kindDef>NAT_RustedTrooper</kindDef>
             <ageRange>200~600</ageRange>
-            <weaponOverride>NAT_Gun_RustedShotgun</weaponOverride>
+            <weaponOverride>NAT_Gun_RustedCarabine</weaponOverride>
             <countRange>1</countRange>
           </thingSetMaker>
         </li>
@@ -162,6 +161,5 @@
       </options>
     </root>
   </ThingSetMakerDef>
-
 
 </Defs>

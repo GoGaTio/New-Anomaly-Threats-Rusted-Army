@@ -2,6 +2,29 @@
 <Defs>
 
   <ThingDef ParentName="MoteBase">
+    <defName>NAT_Mote_HatebandEmitterWaves</defName>
+    <thingClass>MoteAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.2</fadeInTime>
+      <fadeOutTime>0.4</fadeOutTime>
+      <solidTime>1.6</solidTime>
+    </mote>
+    <graphicData>
+      <texPath>Things/Mote/NAT_HateWaves</texPath>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <color>(1, 0.1, 0.1)</color>
+      <shaderType>MoteGlowCircularScrolling</shaderType>
+      <shaderParameters>
+        <_MaskTex>/Things/Mote/NAT_Wave</_MaskTex>
+        <_ScrollSpeed>-1.2</_ScrollSpeed>
+        <_ScrollScale>0.22</_ScrollScale>
+      </shaderParameters>
+      <drawSize>(10, 10)</drawSize>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
     <defName>NAT_Mote_RustedMechanism_Aim</defName>
     <thingClass>MoteDualAttached</thingClass>
     <altitudeLayer>MoteOverhead</altitudeLayer>

@@ -149,7 +149,7 @@
     </stages>
   </HediffDef>
 
-  <HediffDef ParentName="NAT_RustedCoreUpgradeBase">
+  <HediffDef MayRequire="Ludeon.RimWorld.Biotech" ParentName="NAT_RustedCoreUpgradeBase">
     <defName>NAT_CoreUpgrade_Connector</defName>
     <label>core connector</label>
     <description>An implant which increases a mechanitor's control group count and the work speed of a mechanitor's mechs.\n\nThis implant can be installed up to 6 times to increase its effect.</description>

@@ -2,8 +2,8 @@
 <Defs>
   
   <ThingDef ParentName="NAT_BossCallerBase">
-    <defName>NAT_HatePulser</defName>
-    <label>hateband dish</label>
+    <defName>NAT_HatebandEmitter</defName>
+    <label>hateband emitter</label>
     <description>A mech-band signaling device more powerful than the normal mechband antenna. When activated, it puts out an ultra-powerful mech signal pulse, which will attract a mechanoid commander to attack with its escorts. If you can defeat it, you can collect special technologies from its corpse. The signal pulse burns out the dish, so this building can only be used once.</description>
     <researchPrerequisites>
       <li>NAT_RustCreation</li>
@@ -11,14 +11,21 @@
     <comps>
       <li Class="NAT.CompProperties_CallAnomalyBoss">
         <floatingGraphic>
-          <texPath>Things/Building/NAT_RustedGeneralCaller</texPath>
-          <graphicClass>Graphic_Single</graphicClass>
+          <texPath>Things/Projectile/NAT_HateCube</texPath>
+          <graphicClass>Graphic_Single_AgeSecs</graphicClass>
+          <shaderType>GlowAnimated</shaderType>
           <drawSize>(1,1)</drawSize>
           <drawOffset>(0, 0, 1)</drawOffset>
+          <drawSize>3</drawSize>
+          <shaderParameters>
+            <_NumFrames>6</_NumFrames>
+            <_FramesPerSec>6</_FramesPerSec>
+          </shaderParameters>
         </floatingGraphic>
+        <extraFloatingRotation>90</extraFloatingRotation>
         <bossDef>NAT_RustedGeneral</bossDef>
-        <effecterDef>MechbandDishUsed</effecterDef>
-        <destroyEffecterDef>MechbandBuildingDestroyed</destroyEffecterDef>
+        <effecterDef>NAT_HatebandEmitterUsed</effecterDef>
+        <destroyEffecterDef>NAT_HatebandEmitterDestroyed</destroyEffecterDef>
         <activeTicks>1</activeTicks>
         <ticksToActivate>180</ticksToActivate>
         <destroyDelayTicks>120</destroyDelayTicks>

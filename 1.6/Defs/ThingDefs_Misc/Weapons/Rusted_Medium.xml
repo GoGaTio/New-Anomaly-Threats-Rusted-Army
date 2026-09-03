@@ -145,7 +145,7 @@
     <weaponTags>
       <li>NAT_RustedBoltRifle</li>
     </weaponTags>
-    <generateCommonality>1.5</generateCommonality>
+    <generateCommonality>1</generateCommonality>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
@@ -200,7 +200,7 @@
     <weaponTags>
       <li>NAT_RustedCarabine</li>
     </weaponTags>
-    <generateCommonality>1</generateCommonality>
+    <generateCommonality>0.7</generateCommonality>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
@@ -367,7 +367,7 @@
     <weaponTags>
       <li>NAT_RustedAssaultSMG</li>
     </weaponTags>
-    <generateCommonality>0.5</generateCommonality>
+    <generateCommonality>0.7</generateCommonality>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>

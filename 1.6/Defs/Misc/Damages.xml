@@ -18,7 +18,7 @@
 
   <DamageDef Name="NAT_RustedBullet" ParentName="Bullet">
     <defName>NAT_RustedBullet</defName>
-    <plantDamageFactor>2</plantDamageFactor>
+    <plantDamageFactor>4</plantDamageFactor>
   </DamageDef>
 
   <DamageDef ParentName="NAT_RustedBullet">
@@ -38,6 +38,7 @@
     <armorCategory>Sharp</armorCategory>
     <overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
     <scratchSplitPercentage>0.67</scratchSplitPercentage>
+    <plantDamageFactor>6</plantDamageFactor>
   </DamageDef>
 
   <DamageDef ParentName="NAT_RustedScratch">

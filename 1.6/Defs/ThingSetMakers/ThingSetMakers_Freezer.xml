@@ -1,12 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Defs>
+<Defs>
+
 
   <ThingSetMakerDef>
     <defName>NAT_RustedFreezer</defName>
     <root Class="ThingSetMaker_Sum">
-      <options>
+      <options>
 
-        <!-- Resources -->
+
+
+
+        <!-- Resources -->
+
         <li>
           <chance>1</chance>
           <thingSetMaker Class="ThingSetMaker_StackCount">
@@ -30,10 +35,12 @@
             <killerKind>NAT_RustedSoldier</killerKind>
             <corpseAgeRangeDays>10~300</corpseAgeRangeDays>
           </thingSetMaker>
-        </li>
+        </li>
+
 
       </options>
     </root>
-  </ThingSetMakerDef>
+  </ThingSetMakerDef>
 
-</Defs>
+
+</Defs>

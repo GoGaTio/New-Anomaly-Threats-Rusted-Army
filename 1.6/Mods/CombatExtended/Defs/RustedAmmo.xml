@@ -24,6 +24,7 @@
       <li>NAT_RustedAmmo</li>
     </thingCategories>
     <tradeability>None</tradeability>
+    <menuHidden>false</menuHidden>
     <tradeTags Inherit="False">
       <li>CE_AmmoInjector</li>
     </tradeTags>

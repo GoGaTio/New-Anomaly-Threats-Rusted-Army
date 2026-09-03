@@ -2,6 +2,56 @@
 <Defs>
 
   <EffecterDef>
+    <defName>NAT_HatebandEmitterUsed</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
+        <soundDef>MechbandDishUsed</soundDef>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>NAT_Mote_HatebandEmitterWaves</moteDef>
+        <useTargetAInitialRotation>true</useTargetAInitialRotation>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>AntennaFlash</fleckDef>
+        <burstCount>1~1</burstCount>
+        <useTargetAInitialRotation>true</useTargetAInitialRotation>
+        <scale>5</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
+    <defName>NAT_HatebandEmitterDestroyed</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>Mote_MechbandElectricity</moteDef>
+        <burstCount>3</burstCount>
+        <positionRadius>0.6</positionRadius>
+        <positionOffset>(-0.5, 0, -0.5)</positionOffset>
+        <useTargetAInitialRotation>true</useTargetAInitialRotation>
+        <scale>1~1.5</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>BrightFlashLong</fleckDef>
+        <burstCount>1~1</burstCount>
+        <positionOffset>(-0.5, 0, -0.5)</positionOffset>
+        <useTargetAInitialRotation>true</useTargetAInitialRotation>
+        <scale>2.7</scale>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
     <defName>NAT_RustedMechanism_Printed</defName>
     <children>
       <li>
