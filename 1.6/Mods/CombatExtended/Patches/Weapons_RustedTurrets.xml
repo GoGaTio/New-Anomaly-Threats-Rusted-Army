@@ -28,11 +28,6 @@
       <ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
       <linkedBodyPartsGroup>NAT_RustedTurret</linkedBodyPartsGroup>
 		</Properties>
-		<FireModes>
-			<aiAimMode>AimedShot</aiAimMode>
-			<noSnapshot>true</noSnapshot>
-			<noSingleShot>true</noSingleShot>
-		</FireModes>
 	</Operation>
 
 	<!-- ========== Improvised turret gun ========== -->
@@ -63,11 +58,6 @@
       <ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
       <linkedBodyPartsGroup>NAT_RustedTurret</linkedBodyPartsGroup>
 		</Properties>
-		<FireModes>
-			<aiAimMode>AimedShot</aiAimMode>
-			<noSnapshot>true</noSnapshot>
-			<noSingleShot>true</noSingleShot>
-		</FireModes>
 	</Operation>
 
 	<!-- ========== Improvised turret gun ========== -->
@@ -96,11 +86,6 @@
       <ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
       <linkedBodyPartsGroup>NAT_RustedTurret</linkedBodyPartsGroup>
 		</Properties>
-		<FireModes>
-			<aiAimMode>AimedShot</aiAimMode>
-			<noSnapshot>true</noSnapshot>
-			<noSingleShot>true</noSingleShot>
-		</FireModes>
 	</Operation>
 
 </Patch>

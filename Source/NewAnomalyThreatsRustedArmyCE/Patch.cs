@@ -64,6 +64,48 @@ namespace NAT.CE.Rusts
 		{
 			Harmony harmony = new Harmony("GoGaTio.NewAnomalyThreats.RustedArmy.CE.HarmonyPatch");
 			harmony.PatchAll();
+			CompArmor.DeflectAction = delegate (DamageInfo di, ThingWithComps twc, float localDmgAmount)
+			{
+				float localPenAmount = di.ArmorPenetrationInt;
+				if (di.Weapon?.projectile is ProjectilePropertiesCE projectile)
+				{
+					localPenAmount = projectile.armorPenetrationBlunt;
+				}
+				else
+				{
+					if (Verb_MeleeAttackCE.LastAttackVerb != null)
+					{
+						localPenAmount = Verb_MeleeAttackCE.LastAttackVerb.ArmorPenetrationBlunt;
+					}
+					else if (di.Def.defaultArmorPenetration > 0)
+					{
+						localPenAmount = di.Def.defaultArmorPenetration;
+					}
+				}
+				var curPart = di.HitPart;
+				if (curPart != null)
+				{
+					while (curPart.parent != null && curPart.depth != BodyPartDepth.Outside)
+					{
+						curPart = curPart.parent;
+					}
+				}
+				DamageInfo newDinfo = new DamageInfo(DamageDefOf.Blunt,
+									  localDmgAmount,
+									  localPenAmount,
+									  di.Angle,
+									  di.Instigator,
+									  curPart,
+									  di.Weapon,
+									  instigatorGuilty: di.InstigatorGuilty);
+				newDinfo.SetBodyRegion(di.Height, di.Depth);
+				newDinfo.SetWeaponBodyPartGroup(di.WeaponBodyPartGroup);
+				newDinfo.SetWeaponHediff(di.WeaponLinkedHediff);
+				newDinfo.SetInstantPermanentInjury(di.InstantPermanentInjury);
+				newDinfo.SetAllowDamagePropagation(di.AllowDamagePropagation);
+				Log.Message(localDmgAmount + " " + localPenAmount);
+				twc.TakeDamage(newDinfo);
+			};
 		}
 	}
 

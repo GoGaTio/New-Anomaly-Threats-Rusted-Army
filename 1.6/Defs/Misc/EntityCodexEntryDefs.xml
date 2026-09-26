@@ -2,27 +2,6 @@
 <Defs>
 
   <EntityCodexEntryDef>
-    <defName>NAT_RustedMechanism</defName>
-    <label>rusted mechanism</label>
-    <useDescriptionFrom>NAT_RustedMechanism</useDescriptionFrom>
-    <uiIconPath>UI/CodexEntries/NAT_RustedMass</uiIconPath>
-    <category>Advanced</category>
-    <linkedThings>
-      <li>NAT_RustedMechanism</li>
-    </linkedThings>
-    <provocationIncidents>
-      <li>NAT_RustedMechanismArrival</li>
-    </provocationIncidents>
-    <discoveredResearchProjects>
-      <li>NAT_RustCreation</li>
-    </discoveredResearchProjects>
-    <orderInCategory>393</orderInCategory>
-    <modExtensions>
-      <li Class="NAT.CodexEntryExtension"/>
-    </modExtensions>
-  </EntityCodexEntryDef>
-
-  <EntityCodexEntryDef>
     <defName>NAT_RustedArmy</defName>
     <label>rusted army</label>
     <description>Alive bioferrite pieces, behaving like some kind of military organization. Rough bioferrite bodies make them tough, but also very flammable.\n\nOutlander researchers don't fully understand the nature of rusted creatures, their goals and function mechanism, but designate that rusts have signs of separation from Horax mind.</description>
@@ -43,6 +22,7 @@
     </provocationIncidents>
     <discoveredResearchProjects>
       <li>NAT_RustedActivators</li>
+      <li>NAT_RustCreation</li>
     </discoveredResearchProjects>
     <orderInCategory>394</orderInCategory>
     <modExtensions>

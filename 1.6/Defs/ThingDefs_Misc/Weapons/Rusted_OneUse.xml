@@ -54,7 +54,7 @@
     </butcherProducts>
   </ThingDef>
 
-  <ThingDef ParentName="NAT_BaseRustedSidearm">
+  <!--<ThingDef ParentName="NAT_BaseRustedSidearm">
     <defName>NAT_Gun_RustedRocketLauncher</defName>
     <label>rusted rocket launcher</label>
     <description>A piece of bioferrite shaped like a light machine gun.\n\nSomehow can shoot if wielded by rusted creature.</description>
@@ -133,6 +133,6 @@
     <butcherProducts>
       <Bioferrite>22</Bioferrite>
     </butcherProducts>
-  </ThingDef>
+  </ThingDef>-->
 
 </Defs>

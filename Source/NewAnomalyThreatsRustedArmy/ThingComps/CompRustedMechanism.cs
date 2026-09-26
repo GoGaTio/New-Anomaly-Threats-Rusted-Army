@@ -31,7 +31,7 @@ using UnityEngine.SceneManagement;
 
 namespace NAT
 {
-	public class CompProperties_RustedMechanism : CompProperties_Interactable
+	/*public class CompProperties_RustedMechanism : CompProperties_Interactable
 	{
 		public SimpleCurve activityPerDayFromBioferrite;
 
@@ -213,5 +213,5 @@ namespace NAT
 		{
 			return null;
 		}
-	}
+	}*/
 }

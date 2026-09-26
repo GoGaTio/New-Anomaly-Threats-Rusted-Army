@@ -73,6 +73,8 @@
           <RangedCooldownFactor>1.15</RangedCooldownFactor>
           <StaggerDurationFactor>0</StaggerDurationFactor>
           <AimingDelayFactor>1.15</AimingDelayFactor>
+          <ArmorRating_Blunt>1.1</ArmorRating_Blunt>
+          <ArmorRating_Sharp>1.1</ArmorRating_Sharp>
         </statFactors>
         <statFactorsInactive>
           <MoveSpeed>1.1</MoveSpeed>

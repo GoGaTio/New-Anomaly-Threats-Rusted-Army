@@ -14,6 +14,7 @@ using static UnityEngine.GraphicsBuffer;
 
 namespace NAT
 {
+	/*
 	public class RustedMechanism : MovableEntity, IAttackTargetSearcher
 	{
 		public class MechanismPrinter : IExposable
@@ -479,5 +480,5 @@ namespace NAT
 				verb.castCompleteCallback = BurstComplete;
 			}
 		}
-	}
+	}*/
 }

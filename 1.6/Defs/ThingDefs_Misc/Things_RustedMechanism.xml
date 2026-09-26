@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <ThingDef ParentName="NAT_MovableEntityBase">
+  <!--<ThingDef ParentName="NAT_MovableEntityBase">
     <defName>NAT_RustedMechanism</defName>
     <label>rusted mechanism</label>
     <description>Pieces of twisted muscle and gristle, bloated with tumorous growths. These bizarre shreds of flesh must have come from a horrific creature.</description>
@@ -81,7 +81,6 @@
         </activityPerDayFromBioferrite>
         <maxBioferrite>500</maxBioferrite>
         <bioferritePerDay>1000</bioferritePerDay>
-        <!--Interactible-->
         <activeTicks>1</activeTicks>
         <cooldownTicks>300000</cooldownTicks>
         <ticksToActivate>180</ticksToActivate>
@@ -155,6 +154,6 @@
         <ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
       </li>
     </verbs>
-  </ThingDef>
+  </ThingDef>-->
   
 </Defs>

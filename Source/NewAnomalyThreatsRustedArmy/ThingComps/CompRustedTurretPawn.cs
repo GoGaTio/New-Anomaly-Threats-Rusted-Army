@@ -127,8 +127,6 @@ namespace NAT
 
 		protected ThingOwner<RustedPawn> innerContainer;
 
-		private int lastDamageCheckTick = -99999;
-
 		public int health = -1;
 
 		public int ticksToRegen = -1;

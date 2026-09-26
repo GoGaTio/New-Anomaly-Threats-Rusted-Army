@@ -52,7 +52,7 @@ namespace NAT
 		}
 	}
 
-	public class Graphic_RustedMechanism : Graphic_Collection
+	/*public class Graphic_RustedMechanism : Graphic_Collection
 	{
 		public override Material MatSingle => subGraphics[0].MatSingle;
 
@@ -111,7 +111,7 @@ namespace NAT
 		{
 			return "RustedMechanism(path=" + path + ", count=" + subGraphics.Length + ")";
 		}
-	}
+	}*/
 
 	[PostDefLoadedNotify]
 	public static class RustRestLabelAdjuster
@@ -135,7 +135,7 @@ namespace NAT
 		}
 	}
 
-	public class RustedMechanismActivityWorker : ActivityWorker_Outside
+	/*public class RustedMechanismActivityWorker : ActivityWorker_Outside
 	{
 		public override float GetChangeRatePerDay(ThingWithComps thing)
 		{
@@ -151,7 +151,7 @@ namespace NAT
 				sb.Append(string.Format("\n - {0}: {1}", "NAT_BioferriteOnSurface".Translate(), change.ToStringPercent("0")));
 			}
 		}
-	}
+	}*/
 
 	/*public class NewAnomalyThreatsRustedArmySettings : ModSettings
     {

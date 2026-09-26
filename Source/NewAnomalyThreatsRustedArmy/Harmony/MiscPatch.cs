@@ -608,7 +608,7 @@ namespace NAT.Rusts
 	}
 
 	[HarmonyPatch(typeof(Pawn))]
-	[HarmonyPatch("CanTakeOrder")]
+	[HarmonyPatch(nameof(Pawn.CanTakeOrder))]
 	[HarmonyPatch(MethodType.Getter)]
 	public class Patch_MovingOrders
 	{

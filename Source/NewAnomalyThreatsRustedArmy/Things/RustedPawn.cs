@@ -325,26 +325,6 @@ namespace NAT
 			return true;
 		}
 
-		private IEnumerable<IReloadableComp> GetReloadablesUsingAmmo(Pawn pawn, Thing clickedThing)
-		{
-			if (pawn.equipment?.PrimaryEq != null && pawn.equipment.PrimaryEq is IReloadableComp reloadableComp && clickedThing.def == reloadableComp.AmmoDef)
-			{
-				yield return reloadableComp;
-			}
-			if (pawn.apparel == null)
-			{
-				yield break;
-			}
-			foreach (Apparel item in pawn.apparel.WornApparel)
-			{
-				IReloadableComp reloadableComp2 = item.TryGetComp<CompApparelReloadable>();
-				if (reloadableComp2 != null && clickedThing.def == reloadableComp2.AmmoDef)
-				{
-					yield return reloadableComp2;
-				}
-			}
-		}
-
 		public IEnumerable<Gizmo> GetDraftedGizmos()
 		{
 			if (drafter.ShowDraftGizmo)

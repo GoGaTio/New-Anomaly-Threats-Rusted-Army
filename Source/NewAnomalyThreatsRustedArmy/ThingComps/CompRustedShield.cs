@@ -193,6 +193,10 @@ namespace NAT
 
 		public void Destroy(bool doEffect = true)
         {
+			if (deflectActionActive)
+			{
+				return;//We don't want secondary damage to pass shield
+			}
 			health = 0;
 			ticksSinceDestroyed = 0;
 			destroyed = true;
