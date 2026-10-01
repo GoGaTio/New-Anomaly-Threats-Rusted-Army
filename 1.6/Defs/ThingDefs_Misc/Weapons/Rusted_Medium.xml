@@ -19,6 +19,7 @@
       <AccuracyMedium>0.35</AccuracyMedium>
       <AccuracyLong>0.15</AccuracyLong>
       <RangedWeapon_Cooldown>0.9</RangedWeapon_Cooldown>
+      <MarketValue>200</MarketValue>
     </statBases>
     <verbs>
       <li>
@@ -66,12 +67,12 @@
     </graphicData>
     <statBases>
       <Mass>1.4</Mass>
-      <AccuracyTouch>0.80</AccuracyTouch>
+      <AccuracyTouch>0.90</AccuracyTouch>
       <AccuracyShort>0.75</AccuracyShort>
-      <AccuracyMedium>0.45</AccuracyMedium>
-      <AccuracyLong>0.55</AccuracyLong>
+      <AccuracyMedium>0.65</AccuracyMedium>
+      <AccuracyLong>0.70</AccuracyLong>
       <RangedWeapon_Cooldown>1.6</RangedWeapon_Cooldown>
-      <MarketValue>200</MarketValue>
+      <MarketValue>700</MarketValue>
     </statBases>
     <weaponTags>
       <li>NAT_RustedRevolver</li>
